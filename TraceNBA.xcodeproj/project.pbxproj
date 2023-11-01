@@ -12,6 +12,7 @@
 		2C4D69322AF28FA000CF5A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4D69312AF28FA000CF5A55 /* Assets.xcassets */; };
 		2C4D69352AF28FA000CF5A55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4D69342AF28FA000CF5A55 /* Preview Assets.xcassets */; };
 		2C4D69512AF2A2C700CF5A55 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D69502AF2A2C700CF5A55 /* TabBarItem.swift */; };
+		2C4D69532AF2A33700CF5A55 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D69522AF2A33700CF5A55 /* TabBarItemsPreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		2C4D69312AF28FA000CF5A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C4D69342AF28FA000CF5A55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C4D69502AF2A2C700CF5A55 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		2C4D69522AF2A33700CF5A55 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				2C4D69502AF2A2C700CF5A55 /* TabBarItem.swift */,
+				2C4D69522AF2A33700CF5A55 /* TabBarItemsPreferenceKey.swift */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				2C4D69512AF2A2C700CF5A55 /* TabBarItem.swift in Sources */,
 				2C4D69302AF28F9F00CF5A55 /* ContentView.swift in Sources */,
 				2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */,
+				2C4D69532AF2A33700CF5A55 /* TabBarItemsPreferenceKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
