@@ -78,4 +78,33 @@ final class StreamMatchesViewModel_Tests: XCTestCase {
         
         cancellables.forEach{ $0.cancel() }
     }
+    
+    func test_StreamMatchesViewModel_getListLiveMatches_shouldSetlistLiveMatchesAsBlankWhenDataIsBad() {
+        let vm = StreamMatchesViewModel(manager: MockDataService<[Int]>(data: [1, 2, 3]))
+        
+        XCTAssertTrue(vm.listLiveMatches.isEmpty)
+        
+        let expection = XCTestExpectation()
+        
+        vm.getListLiveMatches()
+        
+        var initial: Bool = true
+        
+        vm.$listLiveMatches
+            .sink(receiveValue: { newValue in
+                guard !initial else {
+                    initial = false
+                    return
+                }
+                
+                XCTAssertTrue(newValue.isEmpty)
+
+                expection.fulfill()
+            })
+            .store(in: &cancellables)
+
+        wait(for: [expection], timeout: 5)
+        
+        cancellables.forEach{ $0.cancel() }
+    }
 }
