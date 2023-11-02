@@ -27,7 +27,7 @@ struct CustomTabBarContainerView<Content>: View where Content: View {
         ZStack(alignment: .bottom, content: {
             content
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea()
+              //  .ignoresSafeArea()
             
             CustomTabBarView(tabs: tabs, iconColor: iconColor, selection: $selection)
         })
