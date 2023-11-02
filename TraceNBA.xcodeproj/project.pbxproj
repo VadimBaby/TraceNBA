@@ -32,6 +32,9 @@
 		2C88F9702AF3861C007B28F8 /* TraceNBA_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F96F2AF3861C007B28F8 /* TraceNBA_Tests.swift */; };
 		2C88F9772AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9762AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift */; };
 		2C88F9792AF396AB007B28F8 /* MockDataService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9782AF396AB007B28F8 /* MockDataService_Tests.swift */; };
+		2C88F97B2AF4050B007B28F8 /* MatchViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F97A2AF4050B007B28F8 /* MatchViewComponent.swift */; };
+		2C88F97D2AF40779007B28F8 /* GradientComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F97C2AF40779007B28F8 /* GradientComponent.swift */; };
+		2C88F97F2AF4099B007B28F8 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F97E2AF4099B007B28F8 /* LocalFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		2C88F96F2AF3861C007B28F8 /* TraceNBA_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceNBA_Tests.swift; sourceTree = "<group>"; };
 		2C88F9762AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamMatchesViewModel_Tests.swift; sourceTree = "<group>"; };
 		2C88F9782AF396AB007B28F8 /* MockDataService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService_Tests.swift; sourceTree = "<group>"; };
+		2C88F97A2AF4050B007B28F8 /* MatchViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewComponent.swift; sourceTree = "<group>"; };
+		2C88F97C2AF40779007B28F8 /* GradientComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientComponent.swift; sourceTree = "<group>"; };
+		2C88F97E2AF4099B007B28F8 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,7 @@
 			children = (
 				2C88F94D2AF360EF007B28F8 /* DataService.swift */,
 				2C88F9672AF37DC4007B28F8 /* MockDataService.swift */,
+				2C88F97E2AF4099B007B28F8 /* LocalFileManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -207,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				2C88F9612AF372F5007B28F8 /* LiveComponent.swift */,
+				2C88F97A2AF4050B007B28F8 /* MatchViewComponent.swift */,
+				2C88F97C2AF40779007B28F8 /* GradientComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -324,12 +333,14 @@
 				2C4D69512AF2A2C700CF5A55 /* TabBarItem.swift in Sources */,
 				2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */,
 				2C88F9502AF362AF007B28F8 /* Errors.swift in Sources */,
+				2C88F97D2AF40779007B28F8 /* GradientComponent.swift in Sources */,
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
 				2C88F93F2AF358CA007B28F8 /* MatchModel.swift in Sources */,
 				2C88F9682AF37DC4007B28F8 /* MockDataService.swift in Sources */,
 				2C88F9412AF35973007B28F8 /* TeamModel.swift in Sources */,
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
 				2C4D69572AF2A58C00CF5A55 /* CustomTabBarContainerView.swift in Sources */,
+				2C88F97B2AF4050B007B28F8 /* MatchViewComponent.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
 				2C88F9492AF35CA6007B28F8 /* PlayerModel.swift in Sources */,
 				2C88F94B2AF35F20007B28F8 /* Constants.swift in Sources */,
@@ -341,6 +352,7 @@
 				2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */,
 				2C4D69532AF2A33700CF5A55 /* TabBarItemsPreferenceKey.swift in Sources */,
 				2C88F95D2AF36D4A007B28F8 /* StreamMatchesView.swift in Sources */,
+				2C88F97F2AF4099B007B28F8 /* LocalFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
