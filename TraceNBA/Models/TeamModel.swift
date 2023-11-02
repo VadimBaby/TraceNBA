@@ -13,14 +13,7 @@ struct TeamModel: Identifiable, Codable {
     let nameCode: String
     let manager: ManagerModel?
     
-    init(id: Int, name: String, nameCode: String) {
-        self.id = id
-        self.name = name
-        self.nameCode = nameCode
-        self.manager = nil
-    }
-    
-    init(id: Int, name: String, nameCode: String, manager: ManagerModel?) {
+    init(id: Int, name: String, nameCode: String, manager: ManagerModel? = nil) {
         self.id = id
         self.name = name
         self.nameCode = nameCode
