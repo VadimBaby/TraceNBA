@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 actor DataService: DataServiceProtocol {
-    func getLiveMatchesData(urlString: String) async throws -> Data {
+    func getLiveMatchesData() async throws -> Data {
         
-        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
         
         guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
         

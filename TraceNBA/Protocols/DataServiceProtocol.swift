@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DataServiceProtocol {
-    func getLiveMatchesData(urlString: String) async throws -> Data
+    func getLiveMatchesData() async throws -> Data
 }
