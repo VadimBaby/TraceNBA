@@ -27,6 +27,7 @@ class StreamMatchesViewModel: ObservableObject {
                     listLiveMatches = events
                 }
             } catch {
+                listLiveMatches = []
                 print(error.localizedDescription)
             }
         }
