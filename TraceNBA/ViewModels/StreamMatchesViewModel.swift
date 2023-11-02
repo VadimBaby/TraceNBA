@@ -48,4 +48,8 @@ class StreamMatchesViewModel: ObservableObject {
         tasks.forEach{ $0.cancel() }
         tasks = []
     }
+    
+    func getLiveMatches_Tests() async throws -> [MatchModel] {
+        return try await getLiveMatches()
+    }
 }
