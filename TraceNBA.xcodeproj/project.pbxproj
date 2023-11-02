@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */; };
-		2C4D69302AF28F9F00CF5A55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D692F2AF28F9F00CF5A55 /* ContentView.swift */; };
 		2C4D69322AF28FA000CF5A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4D69312AF28FA000CF5A55 /* Assets.xcassets */; };
 		2C4D69352AF28FA000CF5A55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4D69342AF28FA000CF5A55 /* Preview Assets.xcassets */; };
 		2C4D69512AF2A2C700CF5A55 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D69502AF2A2C700CF5A55 /* TabBarItem.swift */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		2C4D692A2AF28F9F00CF5A55 /* TraceNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraceNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceNBAApp.swift; sourceTree = "<group>"; };
-		2C4D692F2AF28F9F00CF5A55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C4D69312AF28FA000CF5A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C4D69342AF28FA000CF5A55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C4D69502AF2A2C700CF5A55 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */,
-				2C4D692F2AF28F9F00CF5A55 /* ContentView.swift */,
 				2C4D69582AF2A70C00CF5A55 /* TabBarView.swift */,
 				2C4D69312AF28FA000CF5A55 /* Assets.xcassets */,
 				2C4D694F2AF2A29F00CF5A55 /* CustomTabBar */,
@@ -164,7 +161,6 @@
 				2C4D69572AF2A58C00CF5A55 /* CustomTabBarContainerView.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
 				2C4D69552AF2A38D00CF5A55 /* CustomTabBarView.swift in Sources */,
-				2C4D69302AF28F9F00CF5A55 /* ContentView.swift in Sources */,
 				2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */,
 				2C4D69532AF2A33700CF5A55 /* TabBarItemsPreferenceKey.swift in Sources */,
 			);
