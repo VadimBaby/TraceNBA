@@ -30,6 +30,8 @@
 		2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9652AF37711007B28F8 /* StreamMatchesViewModel.swift */; };
 		2C88F9682AF37DC4007B28F8 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9672AF37DC4007B28F8 /* MockDataService.swift */; };
 		2C88F9702AF3861C007B28F8 /* TraceNBA_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F96F2AF3861C007B28F8 /* TraceNBA_Tests.swift */; };
+		2C88F9772AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9762AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift */; };
+		2C88F9792AF396AB007B28F8 /* MockDataService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9782AF396AB007B28F8 /* MockDataService_Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		2C88F9672AF37DC4007B28F8 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
 		2C88F96D2AF3861C007B28F8 /* TraceNBA_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraceNBA_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C88F96F2AF3861C007B28F8 /* TraceNBA_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceNBA_Tests.swift; sourceTree = "<group>"; };
+		2C88F9762AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamMatchesViewModel_Tests.swift; sourceTree = "<group>"; };
+		2C88F9782AF396AB007B28F8 /* MockDataService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				2C88F96F2AF3861C007B28F8 /* TraceNBA_Tests.swift */,
+				2C88F9762AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift */,
+				2C88F9782AF396AB007B28F8 /* MockDataService_Tests.swift */,
 			);
 			path = TraceNBA_Tests;
 			sourceTree = "<group>";
@@ -342,7 +348,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C88F9772AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift in Sources */,
 				2C88F9702AF3861C007B28F8 /* TraceNBA_Tests.swift in Sources */,
+				2C88F9792AF396AB007B28F8 /* MockDataService_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
