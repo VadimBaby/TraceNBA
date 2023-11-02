@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataModel {
+struct DataModel: Codable {
     let events: [MatchModel]?
     let players: [PlayerDataModel]?
 }

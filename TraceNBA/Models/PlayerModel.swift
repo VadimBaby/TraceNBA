@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct PlayerDataModel {
+struct PlayerDataModel: Codable {
     let player: PlayerModel
 }
 
-struct PlayerModel: Identifiable {
+struct PlayerModel: Identifiable, Codable {
     let id: Int
     let name: String
     let firstName: String

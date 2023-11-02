@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TeamModel: Identifiable {
+struct TeamModel: Identifiable, Codable {
     let id: Int
     let name: String
     let nameCode: String

@@ -27,6 +27,7 @@
 		2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9542AF368D3007B28F8 /* DataServiceProtocol.swift */; };
 		2C88F95D2AF36D4A007B28F8 /* StreamMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */; };
 		2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9612AF372F5007B28F8 /* LiveComponent.swift */; };
+		2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9652AF37711007B28F8 /* StreamMatchesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		2C88F9542AF368D3007B28F8 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
 		2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamMatchesView.swift; sourceTree = "<group>"; };
 		2C88F9612AF372F5007B28F8 /* LiveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveComponent.swift; sourceTree = "<group>"; };
+		2C88F9652AF37711007B28F8 /* StreamMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamMatchesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		2C88F9512AF36431007B28F8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2C88F9652AF37711007B28F8 /* StreamMatchesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
 				2C88F9492AF35CA6007B28F8 /* PlayerModel.swift in Sources */,
 				2C88F94B2AF35F20007B28F8 /* Constants.swift in Sources */,
+				2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,
 				2C4D69552AF2A38D00CF5A55 /* CustomTabBarView.swift in Sources */,
 				2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */,

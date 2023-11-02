@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ScoreModel {
+struct ScoreModel: Codable {
     let current: Int
     let display: Int
     let period1: Int

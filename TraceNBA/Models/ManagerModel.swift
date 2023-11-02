@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ManagerModel: Identifiable {
+struct ManagerModel: Identifiable, Codable {
     let id: Int
     let name: String
     let shortName: String
