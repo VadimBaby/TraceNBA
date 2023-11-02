@@ -83,6 +83,7 @@
 			children = (
 				2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */,
 				2C4D69582AF2A70C00CF5A55 /* TabBarView.swift */,
+				2C88F95E2AF36EF3007B28F8 /* Components */,
 				2C88F95B2AF36D20007B28F8 /* Views */,
 				2C88F9532AF368BF007B28F8 /* Protocols */,
 				2C88F9522AF36477007B28F8 /* Enums */,
@@ -166,6 +167,13 @@
 				2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2C88F95E2AF36EF3007B28F8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
