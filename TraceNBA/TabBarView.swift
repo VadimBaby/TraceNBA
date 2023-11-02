@@ -11,13 +11,9 @@ struct TabBarView: View {
     
     @State private var selection: TabItem = TabItem(title: "Home", iconName: "house")
     
-    let firstGradientColor: Color = Color("FirstGradientColor")
-    let secondGradientColor: Color = Color("SecondGradientColor")
-    
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [firstGradientColor, secondGradientColor]), startPoint: .leading, endPoint: .trailing)
-                .ignoresSafeArea()
+            GradientComponent()
             
             CustomTabBarContainerView(
                 selection: $selection,
