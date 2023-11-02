@@ -28,6 +28,7 @@
 		2C88F95D2AF36D4A007B28F8 /* StreamMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */; };
 		2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9612AF372F5007B28F8 /* LiveComponent.swift */; };
 		2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9652AF37711007B28F8 /* StreamMatchesViewModel.swift */; };
+		2C88F9682AF37DC4007B28F8 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9672AF37DC4007B28F8 /* MockDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamMatchesView.swift; sourceTree = "<group>"; };
 		2C88F9612AF372F5007B28F8 /* LiveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveComponent.swift; sourceTree = "<group>"; };
 		2C88F9652AF37711007B28F8 /* StreamMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamMatchesViewModel.swift; sourceTree = "<group>"; };
+		2C88F9672AF37DC4007B28F8 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2C88F94D2AF360EF007B28F8 /* DataService.swift */,
+				2C88F9672AF37DC4007B28F8 /* MockDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				2C88F9502AF362AF007B28F8 /* Errors.swift in Sources */,
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
 				2C88F93F2AF358CA007B28F8 /* MatchModel.swift in Sources */,
+				2C88F9682AF37DC4007B28F8 /* MockDataService.swift in Sources */,
 				2C88F9412AF35973007B28F8 /* TeamModel.swift in Sources */,
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
 				2C4D69572AF2A58C00CF5A55 /* CustomTabBarContainerView.swift in Sources */,
