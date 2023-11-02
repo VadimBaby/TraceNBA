@@ -7,7 +7,9 @@
 
 import Foundation
 
-actor MockDataService: DataServiceProtocol {
+actor MockDataService<AnyData: Codable>: DataServiceProtocol {
+    
+    let anyData: AnyData?
     
     var listLiveMatches: [MatchModel] = [
         MatchModel(
@@ -66,18 +68,22 @@ actor MockDataService: DataServiceProtocol {
         )
     ]
     
-    init(listLiveMatches: [MatchModel]? = nil) {
-        guard let listLiveMatches = listLiveMatches else { return }
-        
-        self.listLiveMatches = listLiveMatches
+    init(data: AnyData? = nil) {
+        anyData = data
     }
     
     func getLiveMatchesData() async throws -> Data {
         
-        let dataModel: DataModel = DataModel(events: self.listLiveMatches)
-        
-        let data = try JSONEncoder().encode(dataModel)
-        
-        return data
+        if let data = anyData {
+            let dataEncode = try JSONEncoder().encode(data)
+            
+            return dataEncode
+        } else {
+            let dataModel: DataModel = DataModel(events: self.listLiveMatches)
+            
+            let data = try JSONEncoder().encode(dataModel)
+            
+            return data
+        }
     }
 }
