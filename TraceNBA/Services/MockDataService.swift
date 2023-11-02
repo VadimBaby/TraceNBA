@@ -66,7 +66,7 @@ actor MockDataService: DataServiceProtocol {
         )
     ]
     
-    init(listLiveMatches: [MatchModel]?) {
+    init(listLiveMatches: [MatchModel]? = nil) {
         guard let listLiveMatches = listLiveMatches else { return }
         
         self.listLiveMatches = listLiveMatches
