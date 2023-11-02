@@ -9,43 +9,59 @@ import SwiftUI
 
 struct StreamMatchesView: View {
     var body: some View {
-        Text("Hello World")
+        ScrollView {
+            VStack {
+                LiveComponent()
+                    .frame(width: 250, height: 50)
+                ForEach(1..<30) { _ in
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(height: 50)
+                        .padding()
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    CustomTabBarContainerView(
-        selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right")),
-        iconColor: Color.green
-    ) {
-        Text("Home")
-            .tabBarItem (
-                tab: TabItem(title: "Home", iconName: "house"),
-                selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
-            )
+    ZStack {
+        LinearGradient(gradient: Gradient(colors: [Color("FirstGradientColor"), Color("SecondGradientColor")]), startPoint: .leading, endPoint: .trailing)
+            .ignoresSafeArea()
         
-        Text("Search")
-            .tabBarItem (
-                tab: TabItem(title: "Search", iconName: "magnifyingglass"),
-                selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
-            )
-        
-        StreamMatchesView()
-            .tabBarItem (
-                tab: TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"),
-                selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
-            )
-        
-        Text("Events")
-            .tabBarItem (
-                tab: TabItem(title: "Events", iconName: "calendar"),
-                selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
-            )
-        
-        Text("Settings")
-            .tabBarItem (
-                tab: TabItem(title: "Settings", iconName: "gear"),
-                selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
-            )
+        CustomTabBarContainerView(
+            selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right")),
+            iconColor: Color.green
+        ) {
+            Text("Home")
+                .tabBarItem (
+                    tab: TabItem(title: "Home", iconName: "house"),
+                    selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
+                )
+            
+            Text("Search")
+                .tabBarItem (
+                    tab: TabItem(title: "Search", iconName: "magnifyingglass"),
+                    selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
+                )
+            
+            StreamMatchesView()
+                .tabBarItem (
+                    tab: TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"),
+                    selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
+                )
+            
+            Text("Events")
+                .tabBarItem (
+                    tab: TabItem(title: "Events", iconName: "calendar"),
+                    selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
+                )
+            
+            Text("Settings")
+                .tabBarItem (
+                    tab: TabItem(title: "Settings", iconName: "gear"),
+                    selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
+                )
+        }
     }
 }
