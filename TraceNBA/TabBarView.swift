@@ -28,7 +28,7 @@ struct TabBarView: View {
                     selection: $selection
                 )
             
-            Text("Streams")
+            StreamMatchesView()
                 .tabBarItem (
                     tab: TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"),
                     selection: $selection

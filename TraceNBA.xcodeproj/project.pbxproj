@@ -25,7 +25,7 @@
 		2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F94D2AF360EF007B28F8 /* DataService.swift */; };
 		2C88F9502AF362AF007B28F8 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F94F2AF362AF007B28F8 /* Errors.swift */; };
 		2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9542AF368D3007B28F8 /* DataServiceProtocol.swift */; };
-		2C88F9582AF36C06007B28F8 /* SteamsMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9572AF36C06007B28F8 /* SteamsMatchesView.swift */; };
+		2C88F95D2AF36D4A007B28F8 /* StreamMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 		2C88F94D2AF360EF007B28F8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		2C88F94F2AF362AF007B28F8 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		2C88F9542AF368D3007B28F8 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
-		2C88F9572AF36C06007B28F8 /* SteamsMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamsMatchesView.swift; sourceTree = "<group>"; };
+		2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamMatchesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			children = (
 				2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */,
 				2C4D69582AF2A70C00CF5A55 /* TabBarView.swift */,
-				2C88F9562AF36BEF007B28F8 /* Views */,
+				2C88F95B2AF36D20007B28F8 /* Views */,
 				2C88F9532AF368BF007B28F8 /* Protocols */,
 				2C88F9522AF36477007B28F8 /* Enums */,
 				2C88F9512AF36431007B28F8 /* ViewModels */,
@@ -160,13 +160,12 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		2C88F9562AF36BEF007B28F8 /* Views */ = {
+		2C88F95B2AF36D20007B28F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2C88F9572AF36C06007B28F8 /* SteamsMatchesView.swift */,
+				2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */,
 			);
-			name = Views;
-			path = ViewModels/Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,13 +248,13 @@
 				2C4D69572AF2A58C00CF5A55 /* CustomTabBarContainerView.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
 				2C88F9492AF35CA6007B28F8 /* PlayerModel.swift in Sources */,
-				2C88F9582AF36C06007B28F8 /* SteamsMatchesView.swift in Sources */,
 				2C88F94B2AF35F20007B28F8 /* Constants.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,
 				2C4D69552AF2A38D00CF5A55 /* CustomTabBarView.swift in Sources */,
 				2C88F9432AF359DC007B28F8 /* ScoreModel.swift in Sources */,
 				2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */,
 				2C4D69532AF2A33700CF5A55 /* TabBarItemsPreferenceKey.swift in Sources */,
+				2C88F95D2AF36D4A007B28F8 /* StreamMatchesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
