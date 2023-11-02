@@ -22,6 +22,10 @@
 		2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9462AF35BF3007B28F8 /* ManagerModel.swift */; };
 		2C88F9492AF35CA6007B28F8 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9482AF35CA6007B28F8 /* PlayerModel.swift */; };
 		2C88F94B2AF35F20007B28F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F94A2AF35F20007B28F8 /* Constants.swift */; };
+		2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F94D2AF360EF007B28F8 /* DataService.swift */; };
+		2C88F9502AF362AF007B28F8 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F94F2AF362AF007B28F8 /* Errors.swift */; };
+		2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9542AF368D3007B28F8 /* DataServiceProtocol.swift */; };
+		2C88F9582AF36C06007B28F8 /* SteamsMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9572AF36C06007B28F8 /* SteamsMatchesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		2C88F9462AF35BF3007B28F8 /* ManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerModel.swift; sourceTree = "<group>"; };
 		2C88F9482AF35CA6007B28F8 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		2C88F94A2AF35F20007B28F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C88F94D2AF360EF007B28F8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		2C88F94F2AF362AF007B28F8 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		2C88F9542AF368D3007B28F8 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
+		2C88F9572AF36C06007B28F8 /* SteamsMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamsMatchesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +82,12 @@
 			isa = PBXGroup;
 			children = (
 				2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */,
-				2C88F94A2AF35F20007B28F8 /* Constants.swift */,
 				2C4D69582AF2A70C00CF5A55 /* TabBarView.swift */,
+				2C88F9562AF36BEF007B28F8 /* Views */,
+				2C88F9532AF368BF007B28F8 /* Protocols */,
+				2C88F9522AF36477007B28F8 /* Enums */,
+				2C88F9512AF36431007B28F8 /* ViewModels */,
+				2C88F94C2AF360DC007B28F8 /* Services */,
 				2C88F93D2AF358A0007B28F8 /* Models */,
 				2C4D69312AF28FA000CF5A55 /* Assets.xcassets */,
 				2C4D694F2AF2A29F00CF5A55 /* CustomTabBar */,
@@ -114,6 +126,47 @@
 				2C88F9462AF35BF3007B28F8 /* ManagerModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2C88F94C2AF360DC007B28F8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2C88F94D2AF360EF007B28F8 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2C88F9512AF36431007B28F8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2C88F9522AF36477007B28F8 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2C88F94A2AF35F20007B28F8 /* Constants.swift */,
+				2C88F94F2AF362AF007B28F8 /* Errors.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2C88F9532AF368BF007B28F8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2C88F9542AF368D3007B28F8 /* DataServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2C88F9562AF36BEF007B28F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C88F9572AF36C06007B28F8 /* SteamsMatchesView.swift */,
+			);
+			name = Views;
+			path = ViewModels/Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,12 +240,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4D69512AF2A2C700CF5A55 /* TabBarItem.swift in Sources */,
+				2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */,
+				2C88F9502AF362AF007B28F8 /* Errors.swift in Sources */,
+				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
 				2C88F93F2AF358CA007B28F8 /* MatchModel.swift in Sources */,
 				2C88F9412AF35973007B28F8 /* TeamModel.swift in Sources */,
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
 				2C4D69572AF2A58C00CF5A55 /* CustomTabBarContainerView.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
 				2C88F9492AF35CA6007B28F8 /* PlayerModel.swift in Sources */,
+				2C88F9582AF36C06007B28F8 /* SteamsMatchesView.swift in Sources */,
 				2C88F94B2AF35F20007B28F8 /* Constants.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,
 				2C4D69552AF2A38D00CF5A55 /* CustomTabBarView.swift in Sources */,
