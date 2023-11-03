@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct StreamMatchesView: View {
+    
+    @StateObject private var viewModel: StreamMatchesViewModel
+    
+    init(dataService: DataServiceProtocol) {
+        self._viewModel = StateObject(wrappedValue: StreamMatchesViewModel(manager: dataService))
+    }
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -45,7 +52,7 @@ struct StreamMatchesView: View {
                     selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))
                 )
             
-            StreamMatchesView()
+            StreamMatchesView(dataService: DataService())
                 .tabBarItem (
                     tab: TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"),
                     selection: .constant(TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"))

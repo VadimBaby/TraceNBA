@@ -11,6 +11,8 @@ struct TabBarView: View {
     
     @State private var selection: TabItem = TabItem(title: "Home", iconName: "house")
     
+    let dataService: DataServiceProtocol = DataService()
+    
     var body: some View {
         ZStack {
             GradientComponent()
@@ -31,7 +33,7 @@ struct TabBarView: View {
                         selection: $selection
                     )
                 
-                StreamMatchesView()
+                StreamMatchesView(dataService: dataService)
                     .tabBarItem (
                         tab: TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"),
                         selection: $selection
