@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 class MatchItemImageViewModel: ObservableObject {
-    @Published public var image: Image? = nil
+    @Published public var image: UIImage? = nil
     
     private let manager: DataServiceProtocol
     
@@ -26,7 +26,7 @@ class MatchItemImageViewModel: ObservableObject {
         let uiImage: UIImage? = localFileManager.getImage(name: "\(id)", typeFolder: .teams)
         
         if let uiImage {
-            image = Image(uiImage: uiImage)
+            image = uiImage
         } else {
             getTeamImagefromDataBase(id: id)
         }
@@ -39,11 +39,9 @@ class MatchItemImageViewModel: ObservableObject {
                 
                 guard let uiImage: UIImage = UIImage(data: dataImage) else { throw Errors.badImage }
                 
-                let image: Image = Image(uiImage: uiImage)
-                
                 await MainActor.run {
                     localFileManager.saveImage(image: uiImage, name: "\(id)", typeFolder: .teams)
-                    self.image = image
+                    self.image = uiImage
                 }
                 
             } catch {
