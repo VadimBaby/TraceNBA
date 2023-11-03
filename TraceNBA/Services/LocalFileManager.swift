@@ -17,24 +17,25 @@ enum TypeFolder: String {
 class LocalFileManager {
     static let instance = LocalFileManager()
     
-    let folderTeams = "teams"
-    let folderPlayers = "players"
-    let folderManagers = "managers"
+    private let folderTeams = "teams"
+    private let folderPlayers = "players"
+    private let folderManagers = "managers"
     
-    func saveImage(image: UIImage, name: String, typeFolder: TypeFolder) -> String {
+    func saveImage(image: UIImage, name: String, typeFolder: TypeFolder) {
         createFolderIfNeeded(typeFolder: typeFolder)
         
         guard
             let data = image.jpegData(compressionQuality: 1.0),
             let path = getPathForImage(name: name, typeFolder: typeFolder) else {
-            return "Error getting data"
+            print("Error getting data")
+            return
         }
         
         do {
             try data.write(to: path)
-            return "Success saving"
+            print("Success saving")
         } catch let error {
-            return "error: \(error)"
+            print("error: \(error.localizedDescription)")
         }
     }
     
