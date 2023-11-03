@@ -9,49 +9,38 @@ import SwiftUI
 
 struct TabBarView: View {
     
-    @State private var selection: TabItem = TabItem(title: "Home", iconName: "house")
+    @State private var selection: Int = 0
     
     let dataService: DataServiceProtocol = DataService()
     
+    init() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithDefaultBackground()
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
     var body: some View {
-        ZStack {
-            GradientComponent()
+        TabView(selection: $selection) {
+            Text("Start")
+                .tabItem {
+                    VStack {
+                        Text("house")
+                        Image(systemName: "house")
+                    }
+                }
+                .tag(0)
             
-            CustomTabBarContainerView(
-                selection: $selection,
-                iconColor: Color.green
-            ) {
-                Text("Home")
-                    .tabBarItem (
-                        tab: TabItem(title: "Home", iconName: "house"),
-                        selection: $selection
-                    )
-                
-                Text("Search")
-                    .tabBarItem (
-                        tab: TabItem(title: "Search", iconName: "magnifyingglass"),
-                        selection: $selection
-                    )
-                
-                StreamMatchesView(dataService: dataService)
-                    .tabBarItem (
-                        tab: TabItem(title: "Streams", iconName: "dot.radiowaves.left.and.right"),
-                        selection: $selection
-                    )
-                
-                Text("Events")
-                    .tabBarItem (
-                        tab: TabItem(title: "Events", iconName: "calendar"),
-                        selection: $selection
-                    )
-                
-                Text("Settings")
-                    .tabBarItem (
-                        tab: TabItem(title: "Settings", iconName: "gear"),
-                        selection: $selection
-                    )
-            }
+            StreamMatchesView(dataService: dataService)
+                .tabItem {
+                    VStack {
+                        Text("Streams")
+                        Image(systemName: "star")
+                    }
+                }
+                .tag(1)
         }
+        .tint(Color.green)
     }
 }
 
