@@ -11,8 +11,12 @@ struct StreamMatchesView: View {
     
     @StateObject private var viewModel: StreamMatchesViewModel
     
+    let dataService: DataServiceProtocol
+    
     init(dataService: DataServiceProtocol) {
         self._viewModel = StateObject(wrappedValue: StreamMatchesViewModel(manager: dataService))
+        
+        self.dataService = dataService
     }
     
     var body: some View {
@@ -20,13 +24,18 @@ struct StreamMatchesView: View {
             VStack {
                 LiveComponent()
                     .frame(width: 250, height: 50)
-                ForEach(1..<30) { _ in
-                    Rectangle()
-                        .fill(Color.white)
-                        .frame(height: 50)
-                        .padding()
+                ForEach(viewModel.listLiveMatches) { match in
+                    MatchItemViewComponent(
+                        matchModel: match,
+                        dataService: dataService)
                 }
             }
+        }
+        .onAppear {
+            viewModel.getListLiveMatches()
+        }
+        .onDisappear {
+            viewModel.cancelAllTasks()
         }
     }
 }
