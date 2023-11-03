@@ -1,14 +1,15 @@
 //
-//  MatchItemViewComponentViewModel.swift
+//  MatchItemImageViewModel.swift
 //  TraceNBA
 //
 //  Created by Вадим Мартыненко on 03.11.2023.
 //
 
 import Foundation
+
 import SwiftUI
 
-class MatchItemViewComponentViewModel: ObservableObject {
+class MatchItemImageViewModel: ObservableObject {
     @Published public var image: Image? = nil
     
     private let manager: DataServiceProtocol
