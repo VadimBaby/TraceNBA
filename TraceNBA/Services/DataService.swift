@@ -15,9 +15,7 @@ actor DataService: DataServiceProtocol {
     
     func getLiveMatchesData() async throws -> Data {
         
-       // guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
-        
-        guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/tournament/132/season/38191/matches/last/1") else { throw URLError(.badURL) }
+        guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
         
         guard let apiKey = Constants.rapidKeys.first else { throw Errors.apiKeySetIsEmpty }
         
