@@ -11,11 +11,13 @@ struct TeamModel: Identifiable, Codable {
     let id: Int
     let name: String
     let nameCode: String
+    let shortName: String
     let manager: ManagerModel?
     
-    init(id: Int, name: String, nameCode: String, manager: ManagerModel? = nil) {
+    init(id: Int, name: String, shortName: String ,nameCode: String, manager: ManagerModel? = nil) {
         self.id = id
         self.name = name
+        self.shortName = shortName
         self.nameCode = nameCode
         self.manager = manager
     }
