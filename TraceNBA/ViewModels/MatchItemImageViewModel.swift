@@ -21,26 +21,12 @@ class MatchItemImageViewModel: ObservableObject {
     }
     
     func getTeamImage(id: Int) async {
-        let uiImage: UIImage? = localFileManager.getImage(name: "\(id)", typeFolder: .teams)
-        
-        if let uiImage {
-            image = uiImage
-        } else {
-            await getTeamImagefromDataBase(id: id)
-        }
-    }
-    
-    private func getTeamImagefromDataBase(id: Int) async {
         do {
-            let dataImage = try await manager.getPhotoEntity(entity: .team, id: id)
-            
-            guard let uiImage: UIImage = UIImage(data: dataImage) else { throw Errors.badImage }
+            let uiImage = try await manager.getPhotoEntity(entity: .team, id: id)
             
             await MainActor.run {
-                localFileManager.saveImage(image: uiImage, name: "\(id)", typeFolder: .teams)
                 self.image = uiImage
             }
-            
         } catch {
             print(error.localizedDescription)
         }
