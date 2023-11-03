@@ -22,23 +22,50 @@ struct TabBarView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            Text("Start")
+            Text("Home")
                 .tabItem {
                     VStack {
-                        Text("house")
+                        Text("Home")
                         Image(systemName: "house")
                     }
                 }
                 .tag(0)
             
+            Text("Search")
+                .tabItem {
+                    VStack {
+                        Text("Search")
+                        Image(systemName: "magnifyingglass")
+                    }
+                }
+                .tag(1)
+            
             StreamMatchesView(dataService: dataService)
                 .tabItem {
                     VStack {
                         Text("Streams")
-                        Image(systemName: "star")
+                        Image(systemName: "dot.radiowaves.left.and.right")
                     }
                 }
-                .tag(1)
+                .tag(2)
+            
+            Text("Events")
+                .tabItem {
+                    VStack {
+                        Text("Events")
+                        Image(systemName: "calendar")
+                    }
+                }
+                .tag(3)
+            
+            Text("Settings")
+                .tabItem {
+                    VStack {
+                        Text("Settings")
+                        Image(systemName: "gear")
+                    }
+                }
+                .tag(4)
         }
         .tint(Color.green)
     }
