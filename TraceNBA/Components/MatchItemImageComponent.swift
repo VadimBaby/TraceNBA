@@ -20,8 +20,19 @@ struct MatchItemImageComponent: View {
     }
     
     var body: some View {
-        Circle()
-            .frame(width: imageScale, height: imageScale)
+        ZStack {
+            if let image = viewModel.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .frame(width: imageScale, height: imageScale)
+            } else {
+                ProgressView()
+                    .frame(width: imageScale, height: imageScale)
+            }
+        }
+        .task {
+            await viewModel.getTeamImage(id: id)
+        }
     }
 }
 
