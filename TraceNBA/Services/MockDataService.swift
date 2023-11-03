@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     
@@ -85,5 +86,37 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
             
             return data
         }
+    }
+    
+    func getPhotoEntity(entity: TypeEntity, id: Int) async throws -> Data {
+        
+        let managers: [String] = ["manager1", "manager2"]
+        let teams: [String] = ["team1", "team2"]
+        let players: [String] = ["player1", "player2"]
+        
+        if let data = anyData {
+            let dataEncode = try JSONEncoder().encode(data)
+            
+            return dataEncode
+        } else {
+            switch entity {
+            case .team:
+                return try encodeRandomImageFromList(list: teams)
+            case .player:
+                return try encodeRandomImageFromList(list: players)
+            case .manager:
+                return try encodeRandomImageFromList(list: managers)
+            }
+        }
+    }
+    
+    private func encodeRandomImageFromList(list: [String]) throws -> Data {
+        guard let randomNameImage = list.randomElement() else { throw Errors.listIsEmpty }
+        
+        guard let uiImage = UIImage(named: randomNameImage) else { throw Errors.badImage }
+        
+        guard let data = uiImage.pngData() else { throw Errors.badImage }
+        
+        return data
     }
 }
