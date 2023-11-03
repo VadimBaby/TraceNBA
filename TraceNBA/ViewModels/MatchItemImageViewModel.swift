@@ -14,6 +14,8 @@ class MatchItemImageViewModel: ObservableObject {
     
     private let manager: DataServiceProtocol
     
+    private let localFileManager = LocalFileManager.instance
+    
     private var tasks: [Task<Void, Never>] = []
     
     init(dataService: DataServiceProtocol) {
@@ -21,6 +23,16 @@ class MatchItemImageViewModel: ObservableObject {
     }
     
     func getTeamImage(id: Int) {
+        let uiImage: UIImage? = localFileManager.getImage(name: "\(id)", typeFolder: .teams)
+        
+        if let uiImage {
+            image = Image(uiImage: uiImage)
+        } else {
+            getTeamImagefromDataBase(id: id)
+        }
+    }
+    
+    private func getTeamImagefromDataBase(id: Int) {
         let task1 = Task {
             do {
                 let dataImage = try await manager.getPhotoEntity(entity: .team, id: id)
@@ -30,6 +42,7 @@ class MatchItemImageViewModel: ObservableObject {
                 let image: Image = Image(uiImage: uiImage)
                 
                 await MainActor.run {
+                    localFileManager.saveImage(image: uiImage, name: "\(id)", typeFolder: .teams)
                     self.image = image
                 }
                 
