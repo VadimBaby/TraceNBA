@@ -11,8 +11,6 @@ struct MatchItemViewComponent: View {
     
     let matchModel: MatchModel
     
-    let imageScale: CGFloat = 70
-    
     var body: some View {
         content
             .frame(height: 75)
@@ -28,8 +26,7 @@ struct MatchItemViewComponent: View {
 extension MatchItemViewComponent {
     @ViewBuilder private var content: some View {
         HStack {
-            Circle()
-                .frame(width: imageScale, height: imageScale)
+            MatchItemImageComponent(id: matchModel.homeTeam.id)
             
             Spacer()
             
@@ -37,8 +34,7 @@ extension MatchItemViewComponent {
             
             Spacer()
             
-            Circle()
-                .frame(width: imageScale, height: imageScale)
+            MatchItemImageComponent(id: matchModel.awayTeam.id)
         }
     }
     

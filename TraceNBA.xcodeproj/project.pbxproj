@@ -37,6 +37,7 @@
 		2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */; };
 		2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9822AF4B653007B28F8 /* TypeEntity.swift */; };
 		2C88F9852AF4BB68007B28F8 /* MatchItemViewComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9842AF4BB68007B28F8 /* MatchItemViewComponentViewModel.swift */; };
+		2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemViewComponent.swift; sourceTree = "<group>"; };
 		2C88F9822AF4B653007B28F8 /* TypeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEntity.swift; sourceTree = "<group>"; };
 		2C88F9842AF4BB68007B28F8 /* MatchItemViewComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemViewComponentViewModel.swift; sourceTree = "<group>"; };
+		2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemImageComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				2C88F9612AF372F5007B28F8 /* LiveComponent.swift */,
+				2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */,
 				2C88F97C2AF40779007B28F8 /* GradientComponent.swift */,
 				2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */,
 			);
@@ -338,6 +341,7 @@
 			files = (
 				2C4D69512AF2A2C700CF5A55 /* TabBarItem.swift in Sources */,
 				2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */,
+				2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */,
 				2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */,
 				2C88F9502AF362AF007B28F8 /* Errors.swift in Sources */,
 				2C88F97D2AF40779007B28F8 /* GradientComponent.swift in Sources */,
