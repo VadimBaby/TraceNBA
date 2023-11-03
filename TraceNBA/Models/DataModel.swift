@@ -10,23 +10,23 @@ import Foundation
 struct DataModel: Codable {
     let events: [MatchModel]?
     let players: [PlayerDataModel]?
-    let text: String?
+    let message: String?
     
     init(events: [MatchModel]) {
         self.events = events
         self.players = nil
-        self.text = nil
+        self.message = nil
     }
     
     init(players: [PlayerDataModel]) {
         self.players = players
         self.events = nil
-        self.text = nil
+        self.message = nil
     }
     
     
-    init(text: String) {
-        self.text = text
+    init(message: String) {
+        self.message = message
         self.players = nil
         self.events = nil
     }
