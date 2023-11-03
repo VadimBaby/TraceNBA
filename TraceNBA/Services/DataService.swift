@@ -7,38 +7,19 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 actor DataService: DataServiceProtocol {
+    
+    var lastRequestInterval: Double = Date().timeIntervalSince1970
+    
     func getLiveMatchesData() async throws -> Data {
         
-        guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
+       // guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
         
-        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
+        guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/tournament/132/season/38191/matches/last/1") else { throw URLError(.badURL) }
         
-        let headers = [
-            "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
-        ]
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        do {
-            let (response, _) = try await URLSession.shared.data(for: request)
-            
-            return response
-        } catch {
-            throw error
-        }
-    }
-    
-    func getPhotoEntity(entity: TypeEntity, id: Int) async throws -> Data {
-        let urlString = entity.getUrlString(id: id)
-        
-        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
-        
-        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
+        guard let apiKey = Constants.rapidKeys.first else { throw Errors.apiKeySetIsEmpty }
         
         let headers = [
             "X-RapidAPI-Key": apiKey,
@@ -50,7 +31,73 @@ actor DataService: DataServiceProtocol {
         request.allHTTPHeaderFields = headers
         
         let (response, _) = try await URLSession.shared.data(for: request)
-        
+
         return response
+    }
+    
+    func getPhotoEntity(entity: TypeEntity, id: Int) async throws -> UIImage {
+        let urlString = entity.getUrlString(id: id)
+        
+        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        
+        guard let apiKey = Constants.rapidKeys.first else { throw Errors.apiKeySetIsEmpty }
+        
+        let headers = [
+            "X-RapidAPI-Key": apiKey,
+            "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
+        ]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let seconds: Double = 1.5
+        
+        let nowInterval: Double = Date().timeIntervalSince1970
+        
+        let differenceBetweenInterval: Double = nowInterval - lastRequestInterval
+        
+        print(differenceBetweenInterval)
+        
+        let imageFromManager = LocalFileManager.instance.getImage(name: "\(id)", typeFolder: .teams)
+        
+        guard imageFromManager == nil else {
+            guard let imageFromManager else { throw URLError(.badServerResponse) }
+            return imageFromManager
+        }
+        
+        if differenceBetweenInterval >= seconds {
+            lastRequestInterval = nowInterval + seconds
+        } else if differenceBetweenInterval < 0 {
+            lastRequestInterval = lastRequestInterval + seconds
+            
+            try await Task.sleep(for: .seconds(abs(differenceBetweenInterval) + seconds))
+            
+            let imageFromFileManager = LocalFileManager.instance.getImage(name: "\(id)", typeFolder: .teams)
+            
+            if let imageFromFileManager {
+                return imageFromFileManager
+            }
+            
+        } else {
+            lastRequestInterval = nowInterval + seconds
+            
+            try await Task.sleep(for: .seconds(seconds))
+            
+            let imageFromFileManager = LocalFileManager.instance.getImage(name: "\(id)", typeFolder: .teams)
+            
+            if let imageFromFileManager {
+                return imageFromFileManager
+            }
+        }
+        
+        let (response, _) = try await URLSession.shared.data(for: request)
+        
+        guard let uiImage = UIImage(data: response) else { throw URLError(.badServerResponse) }
+        
+        LocalFileManager.instance.saveImage(image: uiImage, name: "\(id)", typeFolder: .teams)
+        
+        return uiImage
+
     }
 }
