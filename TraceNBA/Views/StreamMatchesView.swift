@@ -20,14 +20,18 @@ struct StreamMatchesView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack {
-                LiveComponent()
-                    .frame(width: 250, height: 50)
-                ForEach(viewModel.listLiveMatches) { match in
-                    MatchItemViewComponent(
-                        matchModel: match,
-                        dataService: dataService)
+        ZStack {
+            GradientComponent()
+            
+            ScrollView {
+                LazyVStack {
+                    LiveComponent()
+                        .frame(width: 250, height: 50)
+                    ForEach(viewModel.listLiveMatches) { match in
+                        MatchItemViewComponent(
+                            matchModel: match,
+                            dataService: dataService)
+                    }
                 }
             }
         }
