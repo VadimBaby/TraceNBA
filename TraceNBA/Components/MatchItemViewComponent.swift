@@ -48,12 +48,18 @@ extension MatchItemViewComponent {
     @ViewBuilder private var scoreContent: some View {
         VStack {
             HStack {
-                getViewScoreTeam(team: "Warrios", score: 120)
+                getViewScoreTeam(
+                    team: matchModel.homeTeam.shortName,
+                    score: matchModel.homeScore.display
+                )
                 
                 Text(":")
                     .font(.largeTitle)
                 
-                getViewScoreTeam(team: "Grizzlies", score: 120)
+                getViewScoreTeam(
+                    team: matchModel.awayTeam.shortName,
+                    score: matchModel.awayScore.display
+                )
             }
         }
     }
@@ -86,8 +92,8 @@ extension MatchItemViewComponent {
                     shortName: "Kings",
                     nameCode: "SAC"),
                 homeScore: ScoreModel(
-                    current: 86,
-                    display: 86,
+                    current: 103,
+                    display: 103,
                     period1: 28,
                     period2: 28,
                     period3: 18,
