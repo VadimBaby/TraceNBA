@@ -10,6 +10,7 @@ import SwiftUI
 struct MatchItemViewComponent: View {
     
     let matchModel: MatchModel
+    let dataService: DataServiceProtocol
     
     var body: some View {
         content
@@ -26,7 +27,10 @@ struct MatchItemViewComponent: View {
 extension MatchItemViewComponent {
     @ViewBuilder private var content: some View {
         HStack {
-            MatchItemImageComponent(id: matchModel.homeTeam.id)
+            MatchItemImageComponent(
+                id: matchModel.homeTeam.id,
+                dataService: dataService
+            )
             
             Spacer()
             
@@ -34,7 +38,10 @@ extension MatchItemViewComponent {
             
             Spacer()
             
-            MatchItemImageComponent(id: matchModel.awayTeam.id)
+            MatchItemImageComponent(
+                id: matchModel.awayTeam.id,
+                dataService: dataService
+            )
         }
     }
     
@@ -93,7 +100,7 @@ extension MatchItemViewComponent {
                     period4: 6
                 ),
                 startTimestamp: 1698890400
-        ))
+            ), dataService: DataService())
     }
 }
 
