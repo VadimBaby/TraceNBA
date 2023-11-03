@@ -32,9 +32,9 @@
 		2C88F9702AF3861C007B28F8 /* TraceNBA_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F96F2AF3861C007B28F8 /* TraceNBA_Tests.swift */; };
 		2C88F9772AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9762AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift */; };
 		2C88F9792AF396AB007B28F8 /* MockDataService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9782AF396AB007B28F8 /* MockDataService_Tests.swift */; };
-		2C88F97B2AF4050B007B28F8 /* MatchViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F97A2AF4050B007B28F8 /* MatchViewComponent.swift */; };
 		2C88F97D2AF40779007B28F8 /* GradientComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F97C2AF40779007B28F8 /* GradientComponent.swift */; };
 		2C88F97F2AF4099B007B28F8 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F97E2AF4099B007B28F8 /* LocalFileManager.swift */; };
+		2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,9 +75,9 @@
 		2C88F96F2AF3861C007B28F8 /* TraceNBA_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceNBA_Tests.swift; sourceTree = "<group>"; };
 		2C88F9762AF388B9007B28F8 /* StreamMatchesViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamMatchesViewModel_Tests.swift; sourceTree = "<group>"; };
 		2C88F9782AF396AB007B28F8 /* MockDataService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService_Tests.swift; sourceTree = "<group>"; };
-		2C88F97A2AF4050B007B28F8 /* MatchViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewComponent.swift; sourceTree = "<group>"; };
 		2C88F97C2AF40779007B28F8 /* GradientComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientComponent.swift; sourceTree = "<group>"; };
 		2C88F97E2AF4099B007B28F8 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemViewComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,8 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				2C88F9612AF372F5007B28F8 /* LiveComponent.swift */,
-				2C88F97A2AF4050B007B28F8 /* MatchViewComponent.swift */,
 				2C88F97C2AF40779007B28F8 /* GradientComponent.swift */,
+				2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -340,13 +340,13 @@
 				2C88F9412AF35973007B28F8 /* TeamModel.swift in Sources */,
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
 				2C4D69572AF2A58C00CF5A55 /* CustomTabBarContainerView.swift in Sources */,
-				2C88F97B2AF4050B007B28F8 /* MatchViewComponent.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
 				2C88F9492AF35CA6007B28F8 /* PlayerModel.swift in Sources */,
 				2C88F94B2AF35F20007B28F8 /* Constants.swift in Sources */,
 				2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,
 				2C4D69552AF2A38D00CF5A55 /* CustomTabBarView.swift in Sources */,
+				2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */,
 				2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */,
 				2C88F9432AF359DC007B28F8 /* ScoreModel.swift in Sources */,
 				2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */,

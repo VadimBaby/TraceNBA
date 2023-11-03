@@ -1,13 +1,13 @@
 //
-//  MatchViewComponent.swift
+//  MatchItemViewComponent.swift
 //  TraceNBA
 //
-//  Created by Вадим Мартыненко on 02.11.2023.
+//  Created by Вадим Мартыненко on 03.11.2023.
 //
 
 import SwiftUI
 
-struct MatchViewComponent: View {
+struct MatchItemViewComponent: View {
     
     let matchModel: MatchModel
     
@@ -25,7 +25,7 @@ struct MatchViewComponent: View {
     }
 }
 
-extension MatchViewComponent {
+extension MatchItemViewComponent {
     @ViewBuilder private var content: some View {
         HStack {
             Circle()
@@ -69,7 +69,7 @@ extension MatchViewComponent {
     ZStack {
         GradientComponent()
         
-        MatchViewComponent(
+        MatchItemViewComponent(
             matchModel: MatchModel(
                 id: 11548663,
                 homeTeam: TeamModel(
@@ -100,3 +100,4 @@ extension MatchViewComponent {
         ))
     }
 }
+
