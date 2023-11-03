@@ -22,7 +22,7 @@ actor DataService: DataServiceProtocol {
         guard let apiKey = Constants.rapidKeys.first else { throw Errors.apiKeySetIsEmpty }
         
         let headers = [
-            "X-RapidAPI-Key": apiKey,
+            "X-RapidAPI-Key": "f2996c39d6mshd0038ef0b5c5bfcp11fafdjsn1ce8657d5ec9",
             "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
         ]
         
@@ -32,6 +32,8 @@ actor DataService: DataServiceProtocol {
         
         let (response, _) = try await URLSession.shared.data(for: request)
 
+        print(String(data: response, encoding: .utf8))
+        
         return response
     }
     
@@ -43,7 +45,7 @@ actor DataService: DataServiceProtocol {
         guard let apiKey = Constants.rapidKeys.first else { throw Errors.apiKeySetIsEmpty }
         
         let headers = [
-            "X-RapidAPI-Key": apiKey,
+            "X-RapidAPI-Key": "f2996c39d6mshd0038ef0b5c5bfcp11fafdjsn1ce8657d5ec9",
             "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
         ]
         
@@ -51,7 +53,7 @@ actor DataService: DataServiceProtocol {
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         
-        let seconds: Double = 1.5
+        let seconds: Double = 2.5
         
         let nowInterval: Double = Date().timeIntervalSince1970
         
