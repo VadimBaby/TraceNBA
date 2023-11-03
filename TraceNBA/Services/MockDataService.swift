@@ -17,11 +17,13 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
             id: 11548663,
             homeTeam: TeamModel(
                 id: 3428,
-                name: "Golden State Warriors",
+                name: "Golden State Warriors", 
+                shortName: "Warriors",
                 nameCode: "GSW"),
             awayTeam: TeamModel(
                 id: 3413,
-                name: "Sacramento Kings",
+                name: "Sacramento Kings", 
+                shortName: "Kings",
                 nameCode: "SAC"),
             homeScore: ScoreModel(
                 current: 86,
@@ -46,10 +48,12 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
             homeTeam: TeamModel(
                 id: 3427,
                 name: "Los Angeles Lakers",
+                shortName: "Lakers",
                 nameCode: "LAL"),
             awayTeam: TeamModel(
                 id: 3425,
-                name: "Los Angeles Clippers",
+                name: "Los Angeles Clippers", 
+                shortName: "Clippers",
                 nameCode: "LAC"),
             homeScore: ScoreModel(
                 current: 81,
