@@ -27,6 +27,7 @@ struct MatchItemImageComponent: View {
                     .frame(width: imageScale, height: imageScale)
             } else {
                 ProgressView()
+                    .tint(Color.gray)
                     .frame(width: imageScale, height: imageScale)
             }
         }
