@@ -32,6 +32,9 @@ struct StreamMatchesView: View {
                             matchModel: match,
                             dataService: dataService)
                     }
+                    Rectangle()
+                        .fill(.clear)
+                        .frame(height: 30)
                 }
             }
         }
