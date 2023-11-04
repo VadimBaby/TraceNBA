@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 class MatchItemImageViewModel: ObservableObject {
-    @Published public var image: UIImage? = nil
+    @Published private(set) var image: UIImage? = nil
     
     private let manager: DataServiceProtocol
     
