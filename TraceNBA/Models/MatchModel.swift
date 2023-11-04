@@ -15,4 +15,14 @@ struct MatchModel: Identifiable, Codable {
     let homeScore: ScoreModel
     let awayScore: ScoreModel
     let startTimestamp: Int
+    
+    init(id: Int, tournament: TournamentModel? = nil, homeTeam: TeamModel, awayTeam: TeamModel, homeScore: ScoreModel, awayScore: ScoreModel, startTimestamp: Int) {
+        self.id = id
+        self.tournament = tournament
+        self.homeTeam = homeTeam
+        self.awayTeam = awayTeam
+        self.homeScore = homeScore
+        self.awayScore = awayScore
+        self.startTimestamp = startTimestamp
+    }
 }
