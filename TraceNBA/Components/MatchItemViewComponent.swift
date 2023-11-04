@@ -71,6 +71,7 @@ extension MatchItemViewComponent {
             Text("\(score)")
                 .font(.largeTitle)
         }
+        .frame(minWidth: 60, maxWidth: 70)
     }
 }
 
