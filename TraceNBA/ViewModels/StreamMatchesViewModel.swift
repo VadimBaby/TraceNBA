@@ -44,7 +44,13 @@ class StreamMatchesViewModel: ObservableObject {
         
         guard let events = decodeData.events else { throw URLError(.badServerResponse) }
         
-        return events
+        let filterEvents = events.filter { match in
+            guard let tournament = match.tournament else { return false }
+            
+            return tournament.uniqueTournament.id == Constants.tournament
+        }
+        
+        return filterEvents
     }
     
     func cancelAllTasks() {
