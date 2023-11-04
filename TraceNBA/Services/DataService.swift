@@ -17,10 +17,10 @@ actor DataService: DataServiceProtocol {
         
         guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
         
-        guard let apiKey = Constants.rapidKeys.first else { throw Errors.apiKeySetIsEmpty }
+        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
         
         let headers = [
-            "X-RapidAPI-Key": "f2996c39d6mshd0038ef0b5c5bfcp11fafdjsn1ce8657d5ec9",
+            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
         ]
         
@@ -40,10 +40,10 @@ actor DataService: DataServiceProtocol {
         
         guard let url = URL(string: urlString) else { throw URLError(.badURL) }
         
-        guard let apiKey = Constants.rapidKeys.first else { throw Errors.apiKeySetIsEmpty }
+        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
         
         let headers = [
-            "X-RapidAPI-Key": "f2996c39d6mshd0038ef0b5c5bfcp11fafdjsn1ce8657d5ec9",
+            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
         ]
         
