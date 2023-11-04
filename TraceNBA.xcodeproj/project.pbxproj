@@ -38,6 +38,7 @@
 		2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9822AF4B653007B28F8 /* TypeEntity.swift */; };
 		2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */; };
 		2C88F9892AF4BE59007B28F8 /* MatchItemImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9882AF4BE59007B28F8 /* MatchItemImageViewModel.swift */; };
+		2C9576E12AF686BD00BC7F75 /* TournamentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		2C88F9822AF4B653007B28F8 /* TypeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEntity.swift; sourceTree = "<group>"; };
 		2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemImageComponent.swift; sourceTree = "<group>"; };
 		2C88F9882AF4BE59007B28F8 /* MatchItemImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemImageViewModel.swift; sourceTree = "<group>"; };
+		2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				2C88F9422AF359DC007B28F8 /* ScoreModel.swift */,
 				2C88F9442AF35A4D007B28F8 /* DataModel.swift */,
 				2C88F9462AF35BF3007B28F8 /* ManagerModel.swift */,
+				2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */,
 				2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */,
 				2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */,
+				2C9576E12AF686BD00BC7F75 /* TournamentModel.swift in Sources */,
 				2C88F9502AF362AF007B28F8 /* Errors.swift in Sources */,
 				2C88F97D2AF40779007B28F8 /* GradientComponent.swift in Sources */,
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,

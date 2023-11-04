@@ -9,6 +9,7 @@ import Foundation
 
 struct MatchModel: Identifiable, Codable {
     let id: Int
+    let tournament: TournamentModel?
     let homeTeam: TeamModel
     let awayTeam: TeamModel
     let homeScore: ScoreModel
