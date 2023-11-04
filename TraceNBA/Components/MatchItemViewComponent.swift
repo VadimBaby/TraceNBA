@@ -50,7 +50,7 @@ extension MatchItemViewComponent {
             HStack {
                 getViewScoreTeam(
                     team: matchModel.homeTeam.shortName,
-                    score: matchModel.homeScore.display
+                    score: matchModel.homeScore
                 )
                 
                 Text(":")
@@ -58,17 +58,26 @@ extension MatchItemViewComponent {
                 
                 getViewScoreTeam(
                     team: matchModel.awayTeam.shortName,
-                    score: matchModel.awayScore.display
+                    score: matchModel.awayScore
                 )
             }
         }
     }
     
-    @ViewBuilder func getViewScoreTeam(team: String, score: Int) -> some View {
+    @ViewBuilder func getViewScoreTeam(team: String, score: ScoreModel?) -> some View {
+        
+        var display: String {
+            if let score {
+                return "\(score.display)"
+            }
+            
+            return "-"
+        }
+        
         VStack(alignment: .center) {
             Text(team)
                 .font(.subheadline)
-            Text("\(score)")
+            Text("\(display)")
                 .font(.largeTitle)
         }
         .frame(minWidth: 60, maxWidth: 70)
