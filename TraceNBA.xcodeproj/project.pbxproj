@@ -35,6 +35,7 @@
 		2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */; };
 		2C88F9892AF4BE59007B28F8 /* MatchItemImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9882AF4BE59007B28F8 /* MatchItemImageViewModel.swift */; };
 		2C9576E12AF686BD00BC7F75 /* TournamentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */; };
+		2C9576E32AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemImageComponent.swift; sourceTree = "<group>"; };
 		2C88F9882AF4BE59007B28F8 /* MatchItemImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemImageViewModel.swift; sourceTree = "<group>"; };
 		2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentModel.swift; sourceTree = "<group>"; };
+		2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLiveMatchViewComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */,
 				2C88F97C2AF40779007B28F8 /* GradientComponent.swift */,
 				2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */,
+				2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
 				2C88F93F2AF358CA007B28F8 /* MatchModel.swift in Sources */,
 				2C88F9682AF37DC4007B28F8 /* MockDataService.swift in Sources */,
+				2C9576E32AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift in Sources */,
 				2C88F9412AF35973007B28F8 /* TeamModel.swift in Sources */,
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
