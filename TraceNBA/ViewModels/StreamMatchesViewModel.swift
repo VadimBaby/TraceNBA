@@ -33,10 +33,13 @@ final class StreamMatchesViewModel: ObservableObject {
             await MainActor.run {
                 listLiveMatches = events
             }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
         } catch {
             await MainActor.run {
                 listLiveMatches = []
             }
+            
             print(error.localizedDescription)
         }
     }
