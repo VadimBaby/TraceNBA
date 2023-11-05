@@ -57,10 +57,9 @@ final class EventsViewModel: ObservableObject {
             await MainActor.run {
                 scheduleMatches = events
             }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
         } catch {
-            guard let myError = error as? Errors,
-                    myError != Errors.cannotRefresh else { return }
-            
             await MainActor.run {
                 scheduleMatches = []
             }
