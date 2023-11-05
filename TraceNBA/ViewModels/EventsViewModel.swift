@@ -9,4 +9,9 @@ import Foundation
 
 final class EventsViewModel: ObservableObject {
     
+    private let dataService: DataServiceProtocol
+    
+    init(dataService: DataServiceProtocol) {
+        self.dataService = dataService
+    }
 }

@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct EventsView: View {
+    
+    @StateObject private var viewModel: EventsViewModel
+    
+    init(dataService: DataServiceProtocol) {
+        self._viewModel = StateObject(wrappedValue: EventsViewModel(dataService: dataService))
+    }
+    
     var body: some View {
         ZStack {
             GradientComponent()
@@ -46,7 +53,7 @@ struct EventsView: View {
             }
             .tag(2)
         
-        EventsView()
+        EventsView(dataService: DataService())
             .tabItem {
                 VStack {
                     Text("Events")
