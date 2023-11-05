@@ -11,15 +11,45 @@ struct EventsView: View {
     
     @StateObject private var viewModel: EventsViewModel
     
+    private let dataService: DataServiceProtocol
+    
     init(dataService: DataServiceProtocol) {
         self._viewModel = StateObject(wrappedValue: EventsViewModel(dataService: dataService))
+        
+        self.dataService = dataService
     }
     
     var body: some View {
         ZStack {
             GradientComponent()
             
-            Text("Events")
+            VStack {
+                ChangingDateViewComponent(viewModel: viewModel)
+                
+                if let matches = viewModel.scheduleMatches {
+                    ScrollView {
+                        if matches.isEmpty {
+                            NoDataViewComponent(message: .noScheduleMatches)
+                        } else {
+                            LazyVStack {
+                                ForEach(matches) { match in
+                                    MatchItemViewComponent(
+                                        matchModel: match,
+                                        dataService: dataService
+                                    )
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    ProgressView()
+                        .tint(Color.white)
+                        .frame(maxHeight: .infinity)
+                }
+            }
+        }
+        .onDisappear {
+            viewModel.cancelAllTasks()
         }
     }
 }
