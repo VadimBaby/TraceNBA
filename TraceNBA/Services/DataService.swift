@@ -13,6 +13,8 @@ actor DataService: DataServiceProtocol {
     
     var lastRequestInterval: Double = Date().timeIntervalSince1970
     
+    let seconds: Double = 2.5
+    
     func getLiveMatchesData() async throws -> Data {
         
         guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
@@ -35,6 +37,49 @@ actor DataService: DataServiceProtocol {
         return response
     }
     
+    func getScheduleMatchesData(dateSchedule: Date) async throws -> Data {
+        
+        let day = try getIntOfTypeTimeFromDate(date: dateSchedule, typeTime: .day)
+        let month = try getIntOfTypeTimeFromDate(date: dateSchedule, typeTime: .month)
+        let year = try getIntOfTypeTimeFromDate(date: dateSchedule, typeTime: .year)
+        
+        let urlString: String = "https://basketapi1.p.rapidapi.com/api/basketball/category/\(Constants.category)/events/\(day)/\(month)/\(year)"
+        
+        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        
+        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
+        
+        let headers = [
+            "X-RapidAPI-Key": apiKey,
+            "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
+        ]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let nowInterval: Double = Date().timeIntervalSince1970
+        
+        let differenceBetweenInterval: Double = nowInterval - lastRequestInterval
+        
+        if differenceBetweenInterval >= seconds {
+            lastRequestInterval = nowInterval + seconds
+        } else if differenceBetweenInterval < 0 {
+            lastRequestInterval = lastRequestInterval + seconds
+            
+            try await Task.sleep(for: .seconds(abs(differenceBetweenInterval) + seconds))
+            
+        } else {
+            lastRequestInterval = nowInterval + seconds
+            
+            try await Task.sleep(for: .seconds(seconds))
+        }
+        
+        let (response, _) = try await URLSession.shared.data(for: request)
+        
+        return response
+    }
+    
     func getPhotoEntity(entity: TypeEntity, id: Int) async throws -> UIImage {
         let urlString = entity.getUrlString(id: id)
         
@@ -50,8 +95,6 @@ actor DataService: DataServiceProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-        
-        let seconds: Double = 2.5
         
         let nowInterval: Double = Date().timeIntervalSince1970
         
@@ -98,6 +141,46 @@ actor DataService: DataServiceProtocol {
         LocalFileManager.instance.saveImage(image: uiImage, name: "\(id)", typeFolder: .teams)
         
         return uiImage
-
+        
+    }
+    
+    private func getIntOfTypeTimeFromDate(date: Date, typeTime: TypeTime) throws -> Int {
+        
+        var formatter: DateFormatter
+        
+        if typeTime == .day {
+            var dayFormatter: DateFormatter {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "d"
+                
+                return formatter
+            }
+            
+            formatter = dayFormatter
+        } else if typeTime == .month {
+            var monthFormatter: DateFormatter {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "M"
+                
+                return formatter
+            }
+            
+            formatter = monthFormatter
+        } else {
+            var yearFormatter: DateFormatter {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy"
+                
+                return formatter
+            }
+            
+            formatter = yearFormatter
+        }
+        
+        let typeTime = formatter.string(from: date)
+        
+        guard let intTypeTime: Int = Int(typeTime) else { throw Errors.badDate }
+        
+        return intTypeTime
     }
 }
