@@ -40,6 +40,7 @@
 		2C9576E92AF7735400BC7F75 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */; };
 		2C9576EB2AF779D200BC7F75 /* NoDataViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */; };
 		2C9576ED2AF77A1000BC7F75 /* NoDateMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */; };
+		2C9576F32AF782BB00BC7F75 /* TypeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F22AF782BB00BC7F75 /* TypeTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataViewComponent.swift; sourceTree = "<group>"; };
 		2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDateMessage.swift; sourceTree = "<group>"; };
+		2C9576F22AF782BB00BC7F75 /* TypeTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				2C88F94F2AF362AF007B28F8 /* Errors.swift */,
 				2C88F9822AF4B653007B28F8 /* TypeEntity.swift */,
 				2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */,
+				2C9576F22AF782BB00BC7F75 /* TypeTime.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */,
 				2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */,
+				2C9576F32AF782BB00BC7F75 /* TypeTime.swift in Sources */,
 				2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */,
 				2C9576E12AF686BD00BC7F75 /* TournamentModel.swift in Sources */,
 				2C88F9502AF362AF007B28F8 /* Errors.swift in Sources */,

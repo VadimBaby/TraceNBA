@@ -11,4 +11,5 @@ enum Errors: Error {
     case apiKeySetIsEmpty
     case listIsEmpty
     case badImage
+    case badDate
 }
