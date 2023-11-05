@@ -11,7 +11,11 @@ import Combine
 final class EventsViewModel: ObservableObject {
     @Published private(set) var scheduleMatches: [MatchModel]? = nil
     
-    @Published private(set) var dateSchedule: Date = Date()
+    @Published private(set) var dateSchedule: Date = Date() {
+        didSet {
+            self.scheduleMatches = nil
+        }
+    }
     
     private var tasks: [Task<Void, Never>] = []
     
@@ -31,8 +35,8 @@ final class EventsViewModel: ObservableObject {
     
     func subcriberDateSchedule() {
         $dateSchedule
+            .debounce(for: .seconds(1.5), scheduler: DispatchQueue.main)
             .sink { newDate in
-                self.scheduleMatches = nil
                 self.getScheduleMatches(date: newDate)
             }
             .store(in: &cancellables)
@@ -59,8 +63,6 @@ final class EventsViewModel: ObservableObject {
     
     func getScheduleData(date: Date) async throws -> [MatchModel] {
         let data = try await dataService.getScheduleMatchesData(dateSchedule: date)
-        
-        print("hi")
         
         let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
         
