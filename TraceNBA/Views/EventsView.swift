@@ -38,6 +38,8 @@ struct EventsView: View {
                                         dataService: dataService
                                     )
                                 }
+                                
+                                PlugRectangleViewComponent()
                             }
                         }
                     }

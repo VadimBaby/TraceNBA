@@ -37,9 +37,7 @@ struct StreamMatchesView: View {
                                     dataService: dataService)
                             }
                             
-                            Rectangle()
-                                .fill(.clear)
-                                .frame(height: 30)
+                            PlugRectangleViewComponent()
                         }
                     }
                 }
