@@ -67,8 +67,9 @@ extension MatchItemViewComponent {
     @ViewBuilder func getViewScoreTeam(team: String, score: ScoreModel?) -> some View {
         
         var display: String {
-            if let score {
-                return "\(score.display)"
+            if let score,
+               let display = score.display {
+                return "\(display)"
             }
             
             return "-"
@@ -91,6 +92,7 @@ extension MatchItemViewComponent {
         MatchItemViewComponent(
             matchModel: MatchModel(
                 id: 11548663,
+                tournament: nil,
                 homeTeam: TeamModel(
                     id: 3428,
                     name: "Golden State Warriors", 
