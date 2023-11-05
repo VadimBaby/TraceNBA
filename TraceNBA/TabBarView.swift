@@ -18,6 +18,8 @@ struct TabBarView: View {
         appearance.configureWithDefaultBackground()
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
+        
+        UIRefreshControl.appearance().tintColor = UIColor.white
     }
     
     var body: some View {
