@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 actor DataService: DataServiceProtocol {
-    
+
     var lastRequestInterval: Double = Date().timeIntervalSince1970
     
     let seconds: Double = 2.5
@@ -37,7 +37,7 @@ actor DataService: DataServiceProtocol {
         return response
     }
     
-    func getScheduleMatchesData(dateSchedule: Date) async throws -> Data {
+    func getScheduleMatchesData(dateSchedule: Date, isRefresh: Bool) async throws -> Data {
         
         let day = try getIntOfTypeTimeFromDate(date: dateSchedule, typeTime: .day)
         let month = try getIntOfTypeTimeFromDate(date: dateSchedule, typeTime: .month)
@@ -65,6 +65,8 @@ actor DataService: DataServiceProtocol {
         if differenceBetweenInterval >= seconds {
             lastRequestInterval = nowInterval + seconds
         } else if differenceBetweenInterval < 0 {
+            guard !isRefresh else { throw Errors.cannotRefresh }
+            
             lastRequestInterval = lastRequestInterval + seconds
             
             try await Task.sleep(for: .seconds(abs(differenceBetweenInterval) + seconds))

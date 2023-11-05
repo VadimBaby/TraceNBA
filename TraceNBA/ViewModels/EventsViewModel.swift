@@ -44,20 +44,23 @@ final class EventsViewModel: ObservableObject {
     
     func getScheduleMatches(date: Date) {
         let task1 = Task {
-            await asyncGetScheduleMatches()
+            await asyncGetScheduleMatches(isRefresh: false)
         }
         
         tasks.append(task1)
     }
     
-    func asyncGetScheduleMatches() async {
+    func asyncGetScheduleMatches(isRefresh: Bool) async {
         do {
-            let events = try await getScheduleData(date: dateSchedule)
+            let events = try await getScheduleData(date: dateSchedule, isRefresh: isRefresh)
             
             await MainActor.run {
                 scheduleMatches = events
             }
         } catch {
+            guard let myError = error as? Errors,
+                    myError != Errors.cannotRefresh else { return }
+            
             await MainActor.run {
                 scheduleMatches = []
             }
@@ -66,8 +69,8 @@ final class EventsViewModel: ObservableObject {
         }
     }
     
-    private func getScheduleData(date: Date) async throws -> [MatchModel] {
-        let data = try await dataService.getScheduleMatchesData(dateSchedule: date)
+    private func getScheduleData(date: Date, isRefresh: Bool) async throws -> [MatchModel] {
+        let data = try await dataService.getScheduleMatchesData(dateSchedule: date, isRefresh: isRefresh)
         
         let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
         

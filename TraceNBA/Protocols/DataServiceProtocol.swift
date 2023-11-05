@@ -13,5 +13,5 @@ protocol DataServiceProtocol {
     
     func getPhotoEntity(entity: TypeEntity, id: Int) async throws -> UIImage
     
-    func getScheduleMatchesData(dateSchedule: Date) async throws -> Data
+    func getScheduleMatchesData(dateSchedule: Date, isRefresh: Bool) async throws -> Data
 }

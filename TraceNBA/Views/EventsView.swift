@@ -44,7 +44,7 @@ struct EventsView: View {
                         }
                     }
                     .refreshable {
-                        await viewModel.asyncGetScheduleMatches()
+                        await viewModel.asyncGetScheduleMatches(isRefresh: true)
                     }
                 } else {
                     ProgressView()

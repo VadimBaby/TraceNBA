@@ -94,7 +94,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
         }
     }
     
-    func getScheduleMatchesData(dateSchedule: Date) async throws -> Data {
+    func getScheduleMatchesData(dateSchedule: Date, isRefresh: Bool) async throws -> Data {
         if let data = anyData {
             let dataEncode = try JSONEncoder().encode(data)
             
