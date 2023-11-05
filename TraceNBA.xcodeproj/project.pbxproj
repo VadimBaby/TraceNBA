@@ -37,6 +37,7 @@
 		2C9576E12AF686BD00BC7F75 /* TournamentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */; };
 		2C9576E32AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */; };
 		2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */; };
+		2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E62AF7730900BC7F75 /* EventsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentModel.swift; sourceTree = "<group>"; };
 		2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLiveMatchViewComponent.swift; sourceTree = "<group>"; };
 		2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingDateViewComponent.swift; sourceTree = "<group>"; };
+		2C9576E62AF7730900BC7F75 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */,
+				2C9576E62AF7730900BC7F75 /* EventsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				2C88F9412AF35973007B28F8 /* TeamModel.swift in Sources */,
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
 				2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */,
+				2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
 				2C88F9492AF35CA6007B28F8 /* PlayerModel.swift in Sources */,
 				2C88F9892AF4BE59007B28F8 /* MatchItemImageViewModel.swift in Sources */,
