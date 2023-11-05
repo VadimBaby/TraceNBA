@@ -80,6 +80,9 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getLiveMatchesData(isRefresh: Bool) async throws -> Data {
+        if isRefresh {
+            throw Errors.cannotRefresh
+        }
         
         if let data = anyData {
             let dataEncode = try JSONEncoder().encode(data)
@@ -95,6 +98,10 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getScheduleMatchesData(dateSchedule: Date, isRefresh: Bool) async throws -> Data {
+        if isRefresh {
+            throw Errors.cannotRefresh
+        }
+        
         if let data = anyData {
             let dataEncode = try JSONEncoder().encode(data)
             
