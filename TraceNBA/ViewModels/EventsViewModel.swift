@@ -8,6 +8,7 @@
 import Foundation
 
 final class EventsViewModel: ObservableObject {
+    @Published private(set) var scheduleMatches: [MatchModel]? = nil
     
     @Published private(set) var dateSchedule: Date = Date()
     
