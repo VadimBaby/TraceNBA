@@ -43,6 +43,9 @@ struct EventsView: View {
                             }
                         }
                     }
+                    .refreshable {
+                        await viewModel.asyncGetScheduleMatches()
+                    }
                 } else {
                     ProgressView()
                         .tint(Color.white)
