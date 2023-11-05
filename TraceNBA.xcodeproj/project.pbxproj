@@ -35,10 +35,11 @@
 		2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */; };
 		2C88F9892AF4BE59007B28F8 /* MatchItemImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9882AF4BE59007B28F8 /* MatchItemImageViewModel.swift */; };
 		2C9576E12AF686BD00BC7F75 /* TournamentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */; };
-		2C9576E32AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */; };
 		2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */; };
 		2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E62AF7730900BC7F75 /* EventsView.swift */; };
 		2C9576E92AF7735400BC7F75 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */; };
+		2C9576EB2AF779D200BC7F75 /* NoDataViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */; };
+		2C9576ED2AF77A1000BC7F75 /* NoDateMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,10 +83,11 @@
 		2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemImageComponent.swift; sourceTree = "<group>"; };
 		2C88F9882AF4BE59007B28F8 /* MatchItemImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemImageViewModel.swift; sourceTree = "<group>"; };
 		2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentModel.swift; sourceTree = "<group>"; };
-		2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLiveMatchViewComponent.swift; sourceTree = "<group>"; };
 		2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingDateViewComponent.swift; sourceTree = "<group>"; };
 		2C9576E62AF7730900BC7F75 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataViewComponent.swift; sourceTree = "<group>"; };
+		2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDateMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				2C88F94A2AF35F20007B28F8 /* Constants.swift */,
 				2C88F94F2AF362AF007B28F8 /* Errors.swift */,
 				2C88F9822AF4B653007B28F8 /* TypeEntity.swift */,
+				2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -218,7 +221,7 @@
 				2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */,
 				2C88F97C2AF40779007B28F8 /* GradientComponent.swift */,
 				2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */,
-				2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */,
+				2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */,
 				2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */,
 			);
 			path = Components;
@@ -343,7 +346,6 @@
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
 				2C88F93F2AF358CA007B28F8 /* MatchModel.swift in Sources */,
 				2C88F9682AF37DC4007B28F8 /* MockDataService.swift in Sources */,
-				2C9576E32AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift in Sources */,
 				2C88F9412AF35973007B28F8 /* TeamModel.swift in Sources */,
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
 				2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */,
@@ -355,8 +357,10 @@
 				2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,
 				2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */,
+				2C9576EB2AF779D200BC7F75 /* NoDataViewComponent.swift in Sources */,
 				2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */,
 				2C88F9432AF359DC007B28F8 /* ScoreModel.swift in Sources */,
+				2C9576ED2AF77A1000BC7F75 /* NoDateMessage.swift in Sources */,
 				2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */,
 				2C9576E92AF7735400BC7F75 /* EventsViewModel.swift in Sources */,
 				2C88F95D2AF36D4A007B28F8 /* StreamMatchesView.swift in Sources */,

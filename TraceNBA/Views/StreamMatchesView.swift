@@ -29,7 +29,7 @@ struct StreamMatchesView: View {
                         LiveComponent()
                             .frame(width: 250, height: 50)
                         if matches.isEmpty {
-                            NoLiveMatchViewComponent()
+                            NoDataViewComponent(message: .noLiveMatches)
                         } else {
                             ForEach(matches) { match in
                                 MatchItemViewComponent(

@@ -1,5 +1,5 @@
 //
-//  NoLiveMatchViewComponent.swift
+//  NoDataViewComponent.swift
 //  TraceNBA
 //
 //  Created by Вадим Мартыненко on 05.11.2023.
@@ -7,9 +7,12 @@
 
 import SwiftUI
 
-struct NoLiveMatchViewComponent: View {
+struct NoDataViewComponent: View {
+    
+    let message: NoDateMessage
+    
     var body: some View {
-        Text("Unfortunately, none of the teams aren't playing now")
+        Text(message.rawValue)
             .foregroundStyle(Color.white)
             .font(.system(size: 35, weight: .medium, design: .rounded))
             .padding()
@@ -21,13 +24,6 @@ struct NoLiveMatchViewComponent: View {
     ZStack {
         GradientComponent()
         
-        ScrollView {
-            VStack {
-                LiveComponent()
-                    .frame(width: 250, height: 50)
-                
-                NoLiveMatchViewComponent()
-            }
-        }
+        NoDataViewComponent(message: .noScheduleMatches)
     }
 }
