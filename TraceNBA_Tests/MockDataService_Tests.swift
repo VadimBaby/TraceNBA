@@ -27,7 +27,7 @@ final class MockDataService_Tests: XCTestCase {
             let encodeData = try JSONEncoder().encode(data)
             
             Task {
-                let dataFromManager = try await manager.getLiveMatchesData()
+                let dataFromManager = try await manager.getLiveMatchesData(isRefresh: false)
                 
                 XCTAssertEqual(dataFromManager, encodeData)
             }
@@ -45,7 +45,7 @@ final class MockDataService_Tests: XCTestCase {
             let encodeData = try JSONEncoder().encode(data)
             
             Task {
-                let dataFromManager = try await manager.getLiveMatchesData()
+                let dataFromManager = try await manager.getLiveMatchesData(isRefresh: false)
                 
                 XCTAssertNotEqual(dataFromManager, encodeData)
             }

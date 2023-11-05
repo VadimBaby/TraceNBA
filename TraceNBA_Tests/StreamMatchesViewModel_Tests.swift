@@ -24,19 +24,21 @@ final class StreamMatchesViewModel_Tests: XCTestCase {
     func test_StreamMatchesViewModel_getLiveMatches_shouldReturnListOfMatchModel() {
         let vm = StreamMatchesViewModel(manager: MockDataService<Int>())
         
-        XCTAssertTrue(vm.listLiveMatches.isEmpty)
+        XCTAssertNil(vm.listLiveMatches)
         
         Task {
             let result = try await vm.getLiveMatches_Tests()
             
-            XCTAssertGreaterThan(result.count, 0)
+            await MainActor.run {
+                XCTAssertGreaterThan(result.count, 0)
+            }
         }
     }
     
     func test_StreamMatchesViewModel_getLiveMatches_shouldReturnBlankList() {
         let vm = StreamMatchesViewModel(manager: MockDataService<[String]>(data: []))
         
-        XCTAssertTrue(vm.listLiveMatches.isEmpty)
+        XCTAssertNil(vm.listLiveMatches)
         
         Task {
             let result = try await vm.getLiveMatches_Tests()
@@ -58,7 +60,7 @@ final class StreamMatchesViewModel_Tests: XCTestCase {
     func test_StreamMatchesViewModel_getListLiveMatches_shouldSetlistLiveMatches() {
         let vm = StreamMatchesViewModel(manager: MockDataService<Int>())
         
-        XCTAssertTrue(vm.listLiveMatches.isEmpty)
+        XCTAssertNil(vm.listLiveMatches)
         
         let expection = XCTestExpectation()
         
@@ -66,9 +68,9 @@ final class StreamMatchesViewModel_Tests: XCTestCase {
         
         vm.$listLiveMatches
             .sink(receiveValue: { newValue in
-                guard !newValue.isEmpty else { return }
+                guard let value = newValue else { return }
 
-                XCTAssertFalse(newValue.isEmpty)
+                XCTAssertFalse(value.isEmpty)
 
                 expection.fulfill()
             })
@@ -82,7 +84,7 @@ final class StreamMatchesViewModel_Tests: XCTestCase {
     func test_StreamMatchesViewModel_getListLiveMatches_shouldSetlistLiveMatchesAsBlankWhenDataIsBad() {
         let vm = StreamMatchesViewModel(manager: MockDataService<[Int]>(data: [1, 2, 3]))
         
-        XCTAssertTrue(vm.listLiveMatches.isEmpty)
+        XCTAssertNil(vm.listLiveMatches)
         
         let expection = XCTestExpectation()
         
@@ -97,7 +99,9 @@ final class StreamMatchesViewModel_Tests: XCTestCase {
                     return
                 }
                 
-                XCTAssertTrue(newValue.isEmpty)
+                guard let value = newValue else { return }
+                
+                XCTAssertTrue(value.isEmpty)
 
                 expection.fulfill()
             })
