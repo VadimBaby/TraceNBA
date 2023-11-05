@@ -102,6 +102,8 @@ extension MatchItemViewComponent {
         VStack(alignment: .center) {
             Text(team)
                 .font(.subheadline)
+                .multilineTextAlignment(.center)
+                .lineLimit(1)
             Text("\(display)")
                 .font(.largeTitle)
         }
