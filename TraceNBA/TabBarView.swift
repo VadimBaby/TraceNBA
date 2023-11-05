@@ -49,7 +49,7 @@ struct TabBarView: View {
                 }
                 .tag(2)
             
-            Text("Events")
+            EventsView(dataService: dataService)
                 .tabItem {
                     VStack {
                         Text("Events")
