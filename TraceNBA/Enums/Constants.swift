@@ -9,6 +9,7 @@ import Foundation
 
 enum Constants {
     static let tournament: Int = 132
+    static let category: Int = 15
     static let rapidKeys: Set<String> = [
         "f2996c39d6mshd0038ef0b5c5bfcp11fafdjsn1ce8657d5ec9",
         "5b561445e9msh71e928590d6385fp161de1jsnd24aefb07b88",
