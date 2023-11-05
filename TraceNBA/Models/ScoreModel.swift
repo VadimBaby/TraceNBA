@@ -8,14 +8,14 @@
 import Foundation
 
 struct ScoreModel: Codable {
-    let current: Int
-    let display: Int
-    let period1: Int
+    let current: Int?
+    let display: Int?
+    let period1: Int?
     let period2: Int?
     let period3: Int?
     let period4: Int?
     
-    init(current: Int, display: Int, period1: Int, period2: Int? = nil, period3: Int? = nil, period4: Int? = nil) {
+    init(current: Int? = nil, display: Int? = nil, period1: Int? = nil, period2: Int? = nil, period3: Int? = nil, period4: Int? = nil) {
         self.current = current
         self.display = display
         self.period1 = period1
