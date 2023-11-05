@@ -12,4 +12,5 @@ enum Errors: Error {
     case listIsEmpty
     case badImage
     case badDate
+    case cannotRefresh
 }
