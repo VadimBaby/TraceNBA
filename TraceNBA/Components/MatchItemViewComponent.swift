@@ -14,7 +14,7 @@ struct MatchItemViewComponent: View {
     
     var body: some View {
         content
-            .frame(height: 75)
+            .frame(height: 105)
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 15)
@@ -26,22 +26,26 @@ struct MatchItemViewComponent: View {
 
 extension MatchItemViewComponent {
     @ViewBuilder private var content: some View {
-        HStack {
-            MatchItemImageComponent(
-                id: matchModel.homeTeam.id,
-                dataService: dataService
-            )
+        VStack {
+            HStack {
+                MatchItemImageComponent(
+                    id: matchModel.homeTeam.id,
+                    dataService: dataService
+                )
+                
+                Spacer()
+                
+                scoreContent
+                
+                Spacer()
+                
+                MatchItemImageComponent(
+                    id: matchModel.awayTeam.id,
+                    dataService: dataService
+                )
+            }
             
-            Spacer()
-            
-            scoreContent
-            
-            Spacer()
-            
-            MatchItemImageComponent(
-                id: matchModel.awayTeam.id,
-                dataService: dataService
-            )
+            getStartDate(startTimestamp: matchModel.startTimestamp)
         }
     }
     
@@ -62,6 +66,26 @@ extension MatchItemViewComponent {
                 )
             }
         }
+    }
+    
+    @ViewBuilder func getStartDate(startTimestamp: Int) -> some View {
+        let date: Date = Date(timeIntervalSince1970: TimeInterval(startTimestamp))
+        
+        let nowDate: Date = Date()
+        
+        var formatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mma, MMM d"
+            
+            return formatter
+        }
+        
+        let stringData = formatter.string(from: date)
+        
+        let start: String = nowDate > date ? "Started" : "Start"
+        
+        Text("\(start) at \(stringData)")
+            .font(.callout)
     }
     
     @ViewBuilder func getViewScoreTeam(team: String, score: ScoreModel?) -> some View {
