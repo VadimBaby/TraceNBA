@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 protocol DataServiceProtocol {
-    func getLiveMatchesData() async throws -> Data
+    func getLiveMatchesData(isRefresh: Bool) async throws -> Data
     
     func getPhotoEntity(entity: TypeEntity, id: Int) async throws -> UIImage
     

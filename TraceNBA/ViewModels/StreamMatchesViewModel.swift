@@ -20,15 +20,15 @@ final class StreamMatchesViewModel: ObservableObject {
     
     func getListLiveMatches() {
         let task1 = Task {
-            await asyncGetListLiveMatches()
+            await asyncGetListLiveMatches(isRefresh: false)
         }
         
         tasks.append(task1)
     }
     
-    func asyncGetListLiveMatches() async {
+    func asyncGetListLiveMatches(isRefresh: Bool) async {
         do {
-            let events = try await getLiveMatches()
+            let events = try await getLiveMatches(isRefresh: isRefresh)
             
             await MainActor.run {
                 listLiveMatches = events
@@ -41,8 +41,8 @@ final class StreamMatchesViewModel: ObservableObject {
         }
     }
     
-    private func getLiveMatches() async throws -> [MatchModel] {
-        let data = try await manager.getLiveMatchesData()
+    private func getLiveMatches(isRefresh: Bool) async throws -> [MatchModel] {
+        let data = try await manager.getLiveMatchesData(isRefresh: isRefresh)
         
         let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
         
@@ -64,6 +64,6 @@ final class StreamMatchesViewModel: ObservableObject {
     }
     
     func getLiveMatches_Tests() async throws -> [MatchModel] {
-        return try await getLiveMatches()
+        return try await getLiveMatches(isRefresh: false)
     }
 }

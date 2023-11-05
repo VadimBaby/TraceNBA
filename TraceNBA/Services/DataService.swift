@@ -15,7 +15,7 @@ actor DataService: DataServiceProtocol {
     
     let seconds: Double = 2.5
     
-    func getLiveMatchesData() async throws -> Data {
+    func getLiveMatchesData(isRefresh: Bool) async throws -> Data {
         
         guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
         
@@ -29,6 +29,12 @@ actor DataService: DataServiceProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
+        
+        let nowInterval: Double = Date().timeIntervalSince1970
+        
+        let differenceBetweenInterval: Double = nowInterval - lastRequestInterval
+        
+        guard differenceBetweenInterval >= 0 else { throw Errors.cannotRefresh }
         
         let (response, _) = try await URLSession.shared.data(for: request)
 

@@ -46,7 +46,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
         ),
         MatchModel(
             id: 11548667, 
-            tournament: nil,
+            tournament: TournamentModel(uniqueTournament: UniqueTournamentModel(name: "NBA", slug: "nba", id: 132)),
             homeTeam: TeamModel(
                 id: 3427,
                 name: "Los Angeles Lakers",
@@ -79,7 +79,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
         anyData = data
     }
     
-    func getLiveMatchesData() async throws -> Data {
+    func getLiveMatchesData(isRefresh: Bool) async throws -> Data {
         
         if let data = anyData {
             let dataEncode = try JSONEncoder().encode(data)

@@ -42,7 +42,7 @@ struct StreamMatchesView: View {
                     }
                 }
                 .refreshable {
-                    await viewModel.asyncGetListLiveMatches()
+                    await viewModel.asyncGetListLiveMatches(isRefresh: true)
                 }
             } else {
                 ProgressView()
