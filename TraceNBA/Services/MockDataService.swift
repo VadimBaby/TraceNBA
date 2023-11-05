@@ -15,6 +15,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     var listLiveMatches: [MatchModel] = [
         MatchModel(
             id: 11548663,
+            tournament: nil,
             homeTeam: TeamModel(
                 id: 3428,
                 name: "Golden State Warriors", 
@@ -44,7 +45,8 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
             startTimestamp: 1698890400
         ),
         MatchModel(
-            id: 11548667,
+            id: 11548667, 
+            tournament: nil,
             homeTeam: TeamModel(
                 id: 3427,
                 name: "Los Angeles Lakers",
@@ -79,6 +81,20 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     
     func getLiveMatchesData() async throws -> Data {
         
+        if let data = anyData {
+            let dataEncode = try JSONEncoder().encode(data)
+            
+            return dataEncode
+        } else {
+            let dataModel: DataModel = DataModel(events: self.listLiveMatches)
+            
+            let data = try JSONEncoder().encode(dataModel)
+            
+            return data
+        }
+    }
+    
+    func getScheduleMatchesData(dateSchedule: Date) async throws -> Data {
         if let data = anyData {
             let dataEncode = try JSONEncoder().encode(data)
             
