@@ -6,16 +6,76 @@
 //
 
 import Foundation
+import Combine
 
 final class EventsViewModel: ObservableObject {
     @Published private(set) var scheduleMatches: [MatchModel]? = nil
     
     @Published private(set) var dateSchedule: Date = Date()
     
+    private var tasks: [Task<Void, Never>] = []
+    
+    private var cancellables = Set<AnyCancellable>()
+    
     private let dataService: DataServiceProtocol
     
     init(dataService: DataServiceProtocol) {
         self.dataService = dataService
+        
+        subcriberDateSchedule()
+    }
+    
+    deinit {
+        cancelAllCancellables()
+    }
+    
+    func subcriberDateSchedule() {
+        $dateSchedule
+            .sink { newDate in
+                self.scheduleMatches = nil
+                self.getScheduleMatches(date: newDate)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func getScheduleMatches(date: Date) {
+        let task1 = Task {
+            do {
+                let events = try await getScheduleData(date: date)
+                
+                await MainActor.run {
+                    scheduleMatches = events
+                }
+            } catch {
+                await MainActor.run {
+                    scheduleMatches = []
+                }
+                debugPrint(error)
+            }
+        }
+        
+        tasks.append(task1)
+    }
+    
+    func getScheduleData(date: Date) async throws -> [MatchModel] {
+        let data = try await dataService.getScheduleMatchesData(dateSchedule: date)
+        
+        print("hi")
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        print(decodeData)
+        
+        guard let events = decodeData.events else { throw URLError(.badServerResponse) }
+        
+        let filteredEvents = events.filter { match in
+            guard let tournament = match.tournament,
+                  match.awayScore != nil && match.homeScore != nil else { return false }
+            
+            return tournament.uniqueTournament.id == Constants.tournament
+        }
+        
+        return filteredEvents
     }
     
     func addDayToDateSchedule() {
@@ -32,5 +92,17 @@ final class EventsViewModel: ObservableObject {
         guard let newDate else { return }
         
         dateSchedule = newDate
+    }
+    
+    func cancelAllCancellables() {
+        cancellables.forEach{ $0.cancel() }
+        
+        cancellables = Set<AnyCancellable>()
+    }
+    
+    func cancelAllTasks() {
+        tasks.forEach{ $0.cancel() }
+        
+        tasks = []
     }
 }
