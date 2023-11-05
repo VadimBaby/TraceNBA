@@ -38,6 +38,7 @@
 		2C9576E32AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */; };
 		2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */; };
 		2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E62AF7730900BC7F75 /* EventsView.swift */; };
+		2C9576E92AF7735400BC7F75 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		2C9576E22AF76CDA00BC7F75 /* NoLiveMatchViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLiveMatchViewComponent.swift; sourceTree = "<group>"; };
 		2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingDateViewComponent.swift; sourceTree = "<group>"; };
 		2C9576E62AF7730900BC7F75 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				2C88F9652AF37711007B28F8 /* StreamMatchesViewModel.swift */,
 				2C88F9882AF4BE59007B28F8 /* MatchItemImageViewModel.swift */,
+				2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */,
 				2C88F9432AF359DC007B28F8 /* ScoreModel.swift in Sources */,
 				2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */,
+				2C9576E92AF7735400BC7F75 /* EventsViewModel.swift in Sources */,
 				2C88F95D2AF36D4A007B28F8 /* StreamMatchesView.swift in Sources */,
 				2C88F97F2AF4099B007B28F8 /* LocalFileManager.swift in Sources */,
 			);
