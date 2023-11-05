@@ -41,6 +41,9 @@ struct StreamMatchesView: View {
                         }
                     }
                 }
+                .refreshable {
+                    await viewModel.asyncGetListLiveMatches()
+                }
             } else {
                 ProgressView()
                     .tint(Color.white)
