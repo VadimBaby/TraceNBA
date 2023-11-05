@@ -23,19 +23,29 @@ struct StreamMatchesView: View {
         ZStack {
             GradientComponent()
             
-            ScrollView {
-                LazyVStack {
-                    LiveComponent()
-                        .frame(width: 250, height: 50)
-                    ForEach(viewModel.listLiveMatches) { match in
-                        MatchItemViewComponent(
-                            matchModel: match,
-                            dataService: dataService)
+            if let matches = viewModel.listLiveMatches {
+                ScrollView {
+                    LazyVStack {
+                        LiveComponent()
+                            .frame(width: 250, height: 50)
+                        if matches.isEmpty {
+                            NoLiveMatchViewComponent()
+                        } else {
+                            ForEach(matches) { match in
+                                MatchItemViewComponent(
+                                    matchModel: match,
+                                    dataService: dataService)
+                            }
+                        }
+                        
+                        Rectangle()
+                            .fill(.clear)
+                            .frame(height: 30)
                     }
-                    Rectangle()
-                        .fill(.clear)
-                        .frame(height: 30)
                 }
+            } else {
+                ProgressView()
+                    .tint(Color.white)
             }
         }
         .onAppear {

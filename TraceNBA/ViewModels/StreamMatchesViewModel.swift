@@ -8,7 +8,7 @@
 import Foundation
 
 class StreamMatchesViewModel: ObservableObject {
-    @Published private(set) var listLiveMatches: [MatchModel] = []
+    @Published private(set) var listLiveMatches: [MatchModel]? = nil
     
     private let manager: DataServiceProtocol
     
