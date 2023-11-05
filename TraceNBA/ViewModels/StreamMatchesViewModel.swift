@@ -20,21 +20,25 @@ final class StreamMatchesViewModel: ObservableObject {
     
     func getListLiveMatches() {
         let task1 = Task {
-            do {
-                let events = try await getLiveMatches()
-                
-                await MainActor.run {
-                    listLiveMatches = events
-                }
-            } catch {
-                await MainActor.run {
-                    listLiveMatches = []
-                }
-                print(error.localizedDescription)
-            }
+            await asyncGetListLiveMatches()
         }
         
         tasks.append(task1)
+    }
+    
+    func asyncGetListLiveMatches() async {
+        do {
+            let events = try await getLiveMatches()
+            
+            await MainActor.run {
+                listLiveMatches = events
+            }
+        } catch {
+            await MainActor.run {
+                listLiveMatches = []
+            }
+            print(error.localizedDescription)
+        }
     }
     
     private func getLiveMatches() async throws -> [MatchModel] {
