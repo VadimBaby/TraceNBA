@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */; };
+		2C3D5F5E2AF9563F0066790A /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5D2AF9563F0066790A /* GroupModel.swift */; };
+		2C3D5F602AF956620066790A /* PeriodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5F2AF956620066790A /* PeriodType.swift */; };
+		2C3D5F622AF9568B0066790A /* GroupNameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F612AF9568B0066790A /* GroupNameType.swift */; };
+		2C3D5F662AF958450066790A /* NameStatisticsItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F652AF958450066790A /* NameStatisticsItemType.swift */; };
+		2C3D5F682AF958640066790A /* StatisticsItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F672AF958640066790A /* StatisticsItemModel.swift */; };
+		2C3D5F6C2AF95AA10066790A /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F6B2AF95AA10066790A /* ValueType.swift */; };
 		2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */; };
 		2C4D69322AF28FA000CF5A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4D69312AF28FA000CF5A55 /* Assets.xcassets */; };
 		2C4D69352AF28FA000CF5A55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4D69342AF28FA000CF5A55 /* Preview Assets.xcassets */; };
@@ -56,6 +63,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchModel.swift; sourceTree = "<group>"; };
+		2C3D5F5D2AF9563F0066790A /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		2C3D5F5F2AF956620066790A /* PeriodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodType.swift; sourceTree = "<group>"; };
+		2C3D5F612AF9568B0066790A /* GroupNameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNameType.swift; sourceTree = "<group>"; };
+		2C3D5F652AF958450066790A /* NameStatisticsItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStatisticsItemType.swift; sourceTree = "<group>"; };
+		2C3D5F672AF958640066790A /* StatisticsItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsItemModel.swift; sourceTree = "<group>"; };
+		2C3D5F6B2AF95AA10066790A /* ValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueType.swift; sourceTree = "<group>"; };
 		2C4D692A2AF28F9F00CF5A55 /* TraceNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraceNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceNBAApp.swift; sourceTree = "<group>"; };
 		2C4D69312AF28FA000CF5A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,11 +177,14 @@
 			children = (
 				2C88F93E2AF358CA007B28F8 /* MatchModel.swift */,
 				2C88F9482AF35CA6007B28F8 /* PlayerModel.swift */,
+				2C3D5F672AF958640066790A /* StatisticsItemModel.swift */,
 				2C88F9402AF35973007B28F8 /* TeamModel.swift */,
 				2C88F9422AF359DC007B28F8 /* ScoreModel.swift */,
 				2C88F9442AF35A4D007B28F8 /* DataModel.swift */,
 				2C88F9462AF35BF3007B28F8 /* ManagerModel.swift */,
 				2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */,
+				2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */,
+				2C3D5F5D2AF9563F0066790A /* GroupModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,10 +213,14 @@
 			isa = PBXGroup;
 			children = (
 				2C88F94A2AF35F20007B28F8 /* Constants.swift */,
+				2C3D5F612AF9568B0066790A /* GroupNameType.swift */,
 				2C88F94F2AF362AF007B28F8 /* Errors.swift */,
 				2C88F9822AF4B653007B28F8 /* TypeEntity.swift */,
 				2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */,
+				2C3D5F652AF958450066790A /* NameStatisticsItemType.swift */,
+				2C3D5F6B2AF95AA10066790A /* ValueType.swift */,
 				2C9576F22AF782BB00BC7F75 /* TypeTime.swift */,
+				2C3D5F5F2AF956620066790A /* PeriodType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -346,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3D5F662AF958450066790A /* NameStatisticsItemType.swift in Sources */,
 				2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */,
 				2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */,
 				2C9576F32AF782BB00BC7F75 /* TypeTime.swift in Sources */,
@@ -356,17 +378,23 @@
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
 				2C88F93F2AF358CA007B28F8 /* MatchModel.swift in Sources */,
 				2C88F9682AF37DC4007B28F8 /* MockDataService.swift in Sources */,
+				2C3D5F622AF9568B0066790A /* GroupNameType.swift in Sources */,
+				2C3D5F5E2AF9563F0066790A /* GroupModel.swift in Sources */,
 				2C88F9412AF35973007B28F8 /* TeamModel.swift in Sources */,
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
+				2C3D5F682AF958640066790A /* StatisticsItemModel.swift in Sources */,
 				2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */,
 				2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
+				2C3D5F6C2AF95AA10066790A /* ValueType.swift in Sources */,
 				2C88F9492AF35CA6007B28F8 /* PlayerModel.swift in Sources */,
 				2C88F9892AF4BE59007B28F8 /* MatchItemImageViewModel.swift in Sources */,
 				2C88F94B2AF35F20007B28F8 /* Constants.swift in Sources */,
+				2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */,
 				2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,
 				2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */,
+				2C3D5F602AF956620066790A /* PeriodType.swift in Sources */,
 				2C9576EB2AF779D200BC7F75 /* NoDataViewComponent.swift in Sources */,
 				2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */,
 				2C88F9432AF359DC007B28F8 /* ScoreModel.swift in Sources */,
