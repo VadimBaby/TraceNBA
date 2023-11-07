@@ -17,7 +17,7 @@ struct StatisticsItemModel: Codable {
     let homeTotal: Int?
     let awayTotal: Int?
     
-    init(name: String, home: String, away: String, valueType: String, homeValue: Int, awayValue: Int, homeTotal: Int?, awayTotal: Int?) {
+    init(name: String, home: String, away: String, valueType: String, homeValue: Int, awayValue: Int, homeTotal: Int? = nil, awayTotal: Int? = nil) {
         self.home = home
         self.away = away
         self.homeValue = homeValue
