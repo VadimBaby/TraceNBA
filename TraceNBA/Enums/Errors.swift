@@ -13,4 +13,5 @@ enum Errors: Error {
     case badImage
     case badDate
     case cannotRefresh
+    case dataIsNil
 }
