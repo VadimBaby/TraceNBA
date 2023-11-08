@@ -24,8 +24,46 @@ struct StatisticsMatchView: View {
         ZStack {
             GradientComponent()
             
-            
+            if let statistics = viewModel.statistics,
+               let homeScore = matchModel.homeScore,
+               let awayScore = matchModel.awayScore {
+                
+                content(
+                    statistics: statistics,
+                    homeScore: homeScore,
+                    awayScore: awayScore
+                )
+                
+            } else if viewModel.statistics == nil {
+                progressView
+            } else {
+                NoDataViewComponent(message: .noStatisticsMatch)
+            }
         }
+        .onAppear {
+            viewModel.getStatisticsMatch(id: matchModel.id)
+        }
+        .onDisappear {
+            viewModel.cancelAllTasks()
+        }
+    }
+}
+
+extension StatisticsMatchView {
+    @ViewBuilder private func content(statistics: [StatisticsMatchModel], homeScore: ScoreModel, awayScore: ScoreModel) -> some View {
+        ScrollView {
+            MatchViewComponent(
+                match: matchModel,
+                homeScore: homeScore,
+                awayScore: awayScore,
+                dataService: dataService
+            )
+        }
+    }
+    
+    @ViewBuilder private var progressView: some View {
+        ProgressView()
+            .tint(Color.white)
     }
 }
 
