@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StatisticsMatchView: View {
+    @State private var showBoxScore: Bool = false
+    
     let matchModel: MatchModel
     
     @StateObject private var viewModel: StatisticsMatchViewModel
@@ -58,6 +60,26 @@ extension StatisticsMatchView {
                 awayScore: awayScore,
                 dataService: dataService
             )
+            
+            PickerStatisticsViewComponent(showBoxScore: $showBoxScore)
+            
+            if showBoxScore {
+                getBoxScoreView()
+            } else {
+                getSummaryView(statistics: statistics)
+            }
+        }
+    }
+    
+    @ViewBuilder private func getSummaryView(statistics: [StatisticsMatchModel]) -> some View {
+        ScrollView {
+            
+        }
+    }
+    
+    @ViewBuilder private func getBoxScoreView() -> some View {
+        ScrollView {
+            
         }
     }
     
