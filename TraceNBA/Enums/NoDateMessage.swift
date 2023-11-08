@@ -10,4 +10,5 @@ import Foundation
 enum NoDateMessage: String {
     case noLiveMatches = "Unfortunately, none of the teams aren't playing now"
     case noScheduleMatches = "Unfortunately, there is no match schedule for this day"
+    case noStatisticsMatch = "Unfortunately, the statistics of this match are not available yet"
 }
