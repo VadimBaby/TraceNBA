@@ -12,11 +12,12 @@ struct MatchItemImageComponent: View {
     @StateObject private var viewModel: MatchItemImageViewModel
     
     let id: Int
-    let imageScale: CGFloat = 70
+    let imageScale: CGFloat
     
-    init(id: Int, dataService: DataServiceProtocol) {
+    init(id: Int, dataService: DataServiceProtocol, imageScale: CGFloat = 70) {
         self.id = id
         self._viewModel = StateObject(wrappedValue: MatchItemImageViewModel(dataService: dataService))
+        self.imageScale = imageScale
     }
     
     var body: some View {
