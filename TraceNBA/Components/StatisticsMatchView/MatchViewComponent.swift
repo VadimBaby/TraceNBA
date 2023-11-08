@@ -1,5 +1,5 @@
 //
-//  MatchView.swift
+//  MatchViewComponent.swift
 //  TraceNBA
 //
 //  Created by Вадим Мартыненко on 08.11.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MatchView: View {
+struct MatchViewComponent: View {
     
     let match: MatchModel
     let dataService: DataServiceProtocol
@@ -20,7 +20,7 @@ struct MatchView: View {
     }
 }
 
-extension MatchView {
+extension MatchViewComponent {
     @ViewBuilder private var content: some View {
         HStack {
             getTeamLogo(
@@ -81,7 +81,7 @@ extension MatchView {
     ZStack {
         GradientComponent()
         
-        MatchView(match: MatchModel(
+        MatchViewComponent(match: MatchModel(
             id: 11548663,
             tournament: nil,
             homeTeam: TeamModel(
@@ -114,3 +114,4 @@ extension MatchView {
         ), dataService: MockDataService<DataModel>())
     }
 }
+
