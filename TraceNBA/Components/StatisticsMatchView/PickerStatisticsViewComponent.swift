@@ -16,17 +16,13 @@ struct PickerStatisticsViewComponent: View {
             getPickerItem(text: "Summary")
                 .foregroundStyle(showBoxScore ? Color.black : Color.white)
                 .onTapGesture {
-                    withAnimation(.linear(duration: 0.2)) {
-                        showBoxScore = false
-                    }
+                    showBoxScore = false
                 }
             
             getPickerItem(text: "Box Score")
                 .foregroundStyle(showBoxScore ? Color.white : Color.black)
                 .onTapGesture {
-                    withAnimation(.linear(duration: 0.2)) {
-                        showBoxScore = true
-                    }
+                    showBoxScore = true
                 }
         }
         .font(.title2)
