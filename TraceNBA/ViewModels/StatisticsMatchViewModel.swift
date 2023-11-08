@@ -49,7 +49,7 @@ class StatisticsMatchViewModel: ObservableObject {
         
         let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
         
-        guard let statistics = decodeData.statistics else { throw URLError(.badServerResponse) }
+        guard let statistics = decodeData.statistics else { throw Errors.dataIsNil }
         
         return statistics
     }
