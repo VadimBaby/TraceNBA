@@ -16,6 +16,24 @@ class StatisticsMatchViewModel: ObservableObject {
         self.dataService = dataService
     }
     
+    func asyncGetStatisticsMatch(id: Int, isRefresh: Bool) async {
+        do {
+            let statistics = try await getStatisticsMatchData(id: id, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.statistics = statistics
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                self.statistics = []
+            }
+            
+            print(error.localizedDescription)
+        }
+    }
+    
     private func getStatisticsMatchData(id: Int, isRefresh: Bool) async throws -> [StatisticsMatchModel] {
         let data = try await dataService.getStatisticsMatchData(id: id, isRefresh: isRefresh)
         
