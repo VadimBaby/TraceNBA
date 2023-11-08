@@ -10,6 +10,8 @@ import SwiftUI
 struct MatchViewComponent: View {
     
     let match: MatchModel
+    let homeScore: ScoreModel
+    let awayScore: ScoreModel
     let dataService: DataServiceProtocol
     
     private let imageScale: CGFloat = 90
@@ -31,8 +33,8 @@ extension MatchViewComponent {
             
             Spacer()
             
-            if let currentHome = match.homeScore?.current,
-               let currentAway = match.awayScore?.current {
+            if let currentHome = homeScore.current,
+               let currentAway = awayScore.current {
                 getScore(
                     currentHome: currentHome,
                     currentAway: currentAway
@@ -111,7 +113,24 @@ extension MatchViewComponent {
                 period4: 6
             ),
             startTimestamp: 1698890400
-        ), dataService: MockDataService<DataModel>())
+        ), 
+        homeScore: ScoreModel(
+            current: 86,
+            display: 86,
+            period1: 28,
+            period2: 28,
+            period3: 18,
+            period4: 12
+        ),
+        awayScore: ScoreModel(
+            current: 85,
+            display: 85,
+            period1: 31,
+            period2: 31,
+            period3: 24,
+            period4: 6
+        ),
+        dataService: MockDataService<DataModel>())
     }
 }
 
