@@ -8,7 +8,7 @@
 import Foundation
 
 class StatisticsMatchViewModel: ObservableObject {
-    @Published private(set) var statistics: [StatisticsMatchModel]? = []
+    @Published private(set) var statistics: [StatisticsMatchModel]? = nil
     
     let dataService: DataServiceProtocol
     
