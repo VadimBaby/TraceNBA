@@ -66,14 +66,24 @@ extension StatisticsMatchView {
             if showBoxScore {
                 getBoxScoreView()
             } else {
-                getSummaryView(statistics: statistics)
+                getSummaryView(
+                    statistics: statistics,
+                    homeScore: homeScore,
+                    awayScore: awayScore
+                )
             }
         }
     }
     
-    @ViewBuilder private func getSummaryView(statistics: [StatisticsMatchModel]) -> some View {
+    @ViewBuilder private func getSummaryView(statistics: [StatisticsMatchModel], homeScore: ScoreModel, awayScore: ScoreModel) -> some View {
         ScrollView {
-            
+            ScoreTableViewComponent(
+                homeNameCode: matchModel.homeTeam.nameCode,
+                awayHomeCode: matchModel.awayTeam.nameCode,
+                homeScore: homeScore,
+                awayScore: awayScore
+            )
+            .padding()
         }
     }
     
