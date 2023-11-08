@@ -20,7 +20,7 @@ class StatisticsMatchViewModel: ObservableObject {
     
     func getStatisticsMatch(id: Int) {
         let task1 = Task {
-            await asyncGetStatisticsMatch(id: id,isRefresh: false)
+            await asyncGetStatisticsMatch(id: id, isRefresh: false)
         }
         
         tasks.append(task1)
@@ -52,5 +52,11 @@ class StatisticsMatchViewModel: ObservableObject {
         guard let statistics = decodeData.statistics else { throw URLError(.badServerResponse) }
         
         return statistics
+    }
+    
+    func cancelAllTasks() {
+        tasks.forEach{ $0.cancel() }
+        
+        tasks = []
     }
 }
