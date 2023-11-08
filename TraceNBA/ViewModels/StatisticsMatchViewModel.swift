@@ -12,8 +12,18 @@ class StatisticsMatchViewModel: ObservableObject {
     
     let dataService: DataServiceProtocol
     
+    var tasks: [Task<Void, Never>] = []
+    
     init(dataService: DataServiceProtocol) {
         self.dataService = dataService
+    }
+    
+    func getStatisticsMatch(id: Int) {
+        let task1 = Task {
+            await asyncGetStatisticsMatch(id: id,isRefresh: false)
+        }
+        
+        tasks.append(task1)
     }
     
     func asyncGetStatisticsMatch(id: Int, isRefresh: Bool) async {
