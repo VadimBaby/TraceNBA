@@ -51,7 +51,7 @@ struct StatisticsMatchView: View {
 
 extension StatisticsMatchView {
     @ViewBuilder private func content(statistics: [StatisticsMatchModel], homeScore: ScoreModel, awayScore: ScoreModel) -> some View {
-        ScrollView {
+        VStack {
             MatchViewComponent(
                 match: matchModel,
                 homeScore: homeScore,
