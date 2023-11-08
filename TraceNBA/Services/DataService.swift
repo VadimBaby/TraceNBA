@@ -152,6 +152,10 @@ actor DataService: DataServiceProtocol {
         
     }
     
+    func getStatisticsMatchData(id: Int, isRefresh: Bool) async throws -> Data {
+        return try JSONEncoder().encode("")
+    }
+    
     private func getIntOfTypeTimeFromDate(date: Date, typeTime: TypeTime) throws -> Int {
         
         var formatter: DateFormatter
