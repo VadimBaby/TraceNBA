@@ -132,6 +132,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C0DBF1E2AFBAD48002DE51B /* EventsView */ = {
+			isa = PBXGroup;
+			children = (
+				2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */,
+				2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */,
+				2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */,
+			);
+			path = EventsView;
+			sourceTree = "<group>";
+		};
+		2C0DBF1F2AFBAD55002DE51B /* StreamMatchesView */ = {
+			isa = PBXGroup;
+			children = (
+				2C88F9612AF372F5007B28F8 /* LiveComponent.swift */,
+			);
+			path = StreamMatchesView;
+			sourceTree = "<group>";
+		};
+		2C0DBF202AFBAD60002DE51B /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				2C9576F62AF79B0000BC7F75 /* PlugRectangleViewComponent.swift */,
+				2C88F97C2AF40779007B28F8 /* GradientComponent.swift */,
+				2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */,
+			);
+			path = Universal;
+			sourceTree = "<group>";
+		};
 		2C4D69212AF28F9F00CF5A55 = {
 			isa = PBXGroup;
 			children = (
@@ -251,13 +279,9 @@
 		2C88F95E2AF36EF3007B28F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2C88F9612AF372F5007B28F8 /* LiveComponent.swift */,
-				2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */,
-				2C88F97C2AF40779007B28F8 /* GradientComponent.swift */,
-				2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */,
-				2C9576F62AF79B0000BC7F75 /* PlugRectangleViewComponent.swift */,
-				2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */,
-				2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */,
+				2C0DBF202AFBAD60002DE51B /* Universal */,
+				2C0DBF1F2AFBAD55002DE51B /* StreamMatchesView */,
+				2C0DBF1E2AFBAD48002DE51B /* EventsView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
