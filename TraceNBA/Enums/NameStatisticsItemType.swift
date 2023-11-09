@@ -11,7 +11,7 @@ enum NameStatisticsItemType: String, Codable {
     case freeThrows = "Free throws"
     case twoPointsThrows = "2 pointers"
     case threePointsThrows = "3 pointers"
-    case fieldGoals = "Fields goals"
+    case fieldGoals = "Field goals"
     case rebounds = "Rebounds"
     case defensiveRebounds = "Defensive rebounds"
     case offensiveRebounds = "Offensive rebounds"
