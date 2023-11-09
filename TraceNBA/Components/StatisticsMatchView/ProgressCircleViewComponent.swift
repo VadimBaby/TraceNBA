@@ -19,6 +19,8 @@ struct ProgressCircleViewComponent: View {
     )
     
     private var percent: Int {
+        guard total != 0 else { return Int(0) }
+        
         let result: Double = round(Double(value) / Double(total) * 100)
         
         return Int(result)
