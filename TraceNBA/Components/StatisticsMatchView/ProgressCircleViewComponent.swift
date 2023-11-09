@@ -54,7 +54,7 @@ struct ProgressCircleViewComponent: View {
                     }
                 
             }
-            .frame(width: 80, height: 80)
+            .frame(width: 90, height: 90)
     }
 }
 
