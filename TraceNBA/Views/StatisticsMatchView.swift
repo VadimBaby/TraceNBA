@@ -155,7 +155,7 @@ extension StatisticsMatchView {
                 total: totalAway
             )
         }
-        .padding()
+        .padding(.vertical)
     }
     
     @ViewBuilder private var progressView: some View {
