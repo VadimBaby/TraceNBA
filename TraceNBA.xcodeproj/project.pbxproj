@@ -13,6 +13,7 @@
 		2C0DBF272AFBDB39002DE51B /* PickerStatisticsViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF262AFBDB39002DE51B /* PickerStatisticsViewComponent.swift */; };
 		2C0DBF292AFBE0DD002DE51B /* ScoreTableViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF282AFBE0DD002DE51B /* ScoreTableViewComponent.swift */; };
 		2C0DBF2B2AFD1B26002DE51B /* ProgressCircleViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF2A2AFD1B26002DE51B /* ProgressCircleViewComponent.swift */; };
+		2C0DBF2D2AFD322F002DE51B /* PeriodPickerViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF2C2AFD322F002DE51B /* PeriodPickerViewComponent.swift */; };
 		2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */; };
 		2C3D5F5E2AF9563F0066790A /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5D2AF9563F0066790A /* GroupModel.swift */; };
 		2C3D5F602AF956620066790A /* PeriodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5F2AF956620066790A /* PeriodType.swift */; };
@@ -75,6 +76,7 @@
 		2C0DBF262AFBDB39002DE51B /* PickerStatisticsViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerStatisticsViewComponent.swift; sourceTree = "<group>"; };
 		2C0DBF282AFBE0DD002DE51B /* ScoreTableViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewComponent.swift; sourceTree = "<group>"; };
 		2C0DBF2A2AFD1B26002DE51B /* ProgressCircleViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewComponent.swift; sourceTree = "<group>"; };
+		2C0DBF2C2AFD322F002DE51B /* PeriodPickerViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodPickerViewComponent.swift; sourceTree = "<group>"; };
 		2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchModel.swift; sourceTree = "<group>"; };
 		2C3D5F5D2AF9563F0066790A /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		2C3D5F5F2AF956620066790A /* PeriodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodType.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				2C0DBF262AFBDB39002DE51B /* PickerStatisticsViewComponent.swift */,
 				2C0DBF2A2AFD1B26002DE51B /* ProgressCircleViewComponent.swift */,
 				2C0DBF282AFBE0DD002DE51B /* ScoreTableViewComponent.swift */,
+				2C0DBF2C2AFD322F002DE51B /* PeriodPickerViewComponent.swift */,
 			);
 			path = StatisticsMatchView;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				2C88F9892AF4BE59007B28F8 /* MatchItemImageViewModel.swift in Sources */,
 				2C0DBF1D2AFB4EE2002DE51B /* StatisticsMatchViewModel.swift in Sources */,
 				2C88F94B2AF35F20007B28F8 /* Constants.swift in Sources */,
+				2C0DBF2D2AFD322F002DE51B /* PeriodPickerViewComponent.swift in Sources */,
 				2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */,
 				2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,

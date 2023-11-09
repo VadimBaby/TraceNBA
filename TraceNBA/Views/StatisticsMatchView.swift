@@ -130,22 +130,12 @@ extension StatisticsMatchView {
                 .fontWeight(.medium)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            getPicker(statistics: statistics)
+            PeriodPickerViewComponent(
+                pickerSelection: $pickerSelection,
+                statistics: statistics
+            )
         }
         .foregroundStyle(Color.white)
-    }
-    
-    @ViewBuilder private func getPicker(statistics: [StatisticsMatchModel]) -> some View {
-        Picker(selection: $pickerSelection) {
-            ForEach(statistics, id: \.period) { statistic in
-                Text(statistic.period.rawValue)
-                    .tag(statistic.period)
-            }
-        } label: {
-            Text(pickerSelection.rawValue)
-                .font(.headline)
-        }
-        .tint(Color.white)
     }
     
     @ViewBuilder private func getScoreStatisticItemView(statisticsItem: StatisticsItemModel, totalHome: Int, totalAway: Int) -> some View {
