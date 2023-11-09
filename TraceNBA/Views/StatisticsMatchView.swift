@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StatisticsMatchView: View {
     @State private var showBoxScore: Bool = false
+    @State private var pickerSelection: PeriodType = .all
     
     let matchModel: MatchModel
     
@@ -84,9 +85,33 @@ extension StatisticsMatchView {
                     homeScore: homeScore,
                     awayScore: awayScore
                 )
+                
+                getTeamComparisonComponent(statistics: statistics)
             }
             .padding()
         }
+    }
+    
+    @ViewBuilder private func getTeamComparisonComponent(statistics: [StatisticsMatchModel]) -> some View {
+        HStack {
+            Text("Team comparison")
+                .font(.largeTitle)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Picker(selection: $pickerSelection) {
+                ForEach(statistics, id: \.period) { statistic in
+                    Text(statistic.period.rawValue)
+                        .tag(statistic.period)
+                }
+            } label: {
+                Text(pickerSelection.rawValue)
+                    .font(.headline)
+            }
+            .tint(Color.white)
+
+        }
+        .foregroundStyle(Color.white)
     }
     
     @ViewBuilder private func getBoxScoreView() -> some View {
