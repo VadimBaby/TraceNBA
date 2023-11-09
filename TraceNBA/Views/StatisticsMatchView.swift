@@ -77,12 +77,14 @@ extension StatisticsMatchView {
     
     @ViewBuilder private func getSummaryView(statistics: [StatisticsMatchModel], homeScore: ScoreModel, awayScore: ScoreModel) -> some View {
         ScrollView {
-            ScoreTableViewComponent(
-                homeNameCode: matchModel.homeTeam.nameCode,
-                awayHomeCode: matchModel.awayTeam.nameCode,
-                homeScore: homeScore,
-                awayScore: awayScore
-            )
+            VStack {
+                ScoreTableViewComponent(
+                    homeNameCode: matchModel.homeTeam.nameCode,
+                    awayHomeCode: matchModel.awayTeam.nameCode,
+                    homeScore: homeScore,
+                    awayScore: awayScore
+                )
+            }
             .padding()
         }
     }
