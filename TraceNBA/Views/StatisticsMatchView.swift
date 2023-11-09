@@ -93,23 +93,11 @@ extension StatisticsMatchView {
                     period: pickerSelection), id: \.name.rawValue) { statisticsItem in
                         if let totalHome = statisticsItem.homeTotal,
                            let totalAway = statisticsItem.awayTotal {
-                            HStack {
-                                ProgressCircleViewComponent(
-                                    value: statisticsItem.homeValue,
-                                    total: totalHome
-                                )
-                                
-                                Text(statisticsItem.name.rawValue)
-                                    .frame(maxWidth: .infinity)
-                                    .foregroundStyle(Color.white)
-                                    .font(.title2)
-                                
-                                ProgressCircleViewComponent(
-                                    value: statisticsItem.awayValue,
-                                    total: totalAway
-                                )
-                            }
-                            .padding()
+                            getScoreStatisticItemView(
+                                statisticsItem: statisticsItem,
+                                totalHome: totalHome,
+                                totalAway: totalAway
+                            )
                         }
                 }
             }
@@ -117,37 +105,10 @@ extension StatisticsMatchView {
         }
     }
     
-    @ViewBuilder private func getTeamComparisonComponent(statistics: [StatisticsMatchModel]) -> some View {
-        HStack(alignment: .bottom) {
-            Text("Team comparison")
-                .font(.largeTitle)
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Picker(selection: $pickerSelection) {
-                ForEach(statistics, id: \.period) { statistic in
-                    Text(statistic.period.rawValue)
-                        .tag(statistic.period)
-                }
-            } label: {
-                Text(pickerSelection.rawValue)
-                    .font(.headline)
-            }
-            .tint(Color.white)
-
-        }
-        .foregroundStyle(Color.white)
-    }
-    
     @ViewBuilder private func getBoxScoreView() -> some View {
         ScrollView {
             
         }
-    }
-    
-    @ViewBuilder private var progressView: some View {
-        ProgressView()
-            .tint(Color.white)
     }
     
     private func getScoringStatisticsItems(statistics: [StatisticsMatchModel], period: PeriodType) -> [StatisticsItemModel] {
@@ -158,6 +119,58 @@ extension StatisticsMatchView {
         guard let scoreGroup = groups.first(where: { $0.groupName == .scoring }) else { return [] }
         
         return scoreGroup.statisticsItems
+    }
+}
+
+extension StatisticsMatchView {
+    @ViewBuilder private func getTeamComparisonComponent(statistics: [StatisticsMatchModel]) -> some View {
+        HStack(alignment: .bottom) {
+            Text("Team comparison")
+                .font(.largeTitle)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            getPicker(statistics: statistics)
+        }
+        .foregroundStyle(Color.white)
+    }
+    
+    @ViewBuilder private func getPicker(statistics: [StatisticsMatchModel]) -> some View {
+        Picker(selection: $pickerSelection) {
+            ForEach(statistics, id: \.period) { statistic in
+                Text(statistic.period.rawValue)
+                    .tag(statistic.period)
+            }
+        } label: {
+            Text(pickerSelection.rawValue)
+                .font(.headline)
+        }
+        .tint(Color.white)
+    }
+    
+    @ViewBuilder private func getScoreStatisticItemView(statisticsItem: StatisticsItemModel, totalHome: Int, totalAway: Int) -> some View {
+        HStack {
+            ProgressCircleViewComponent(
+                value: statisticsItem.homeValue,
+                total: totalHome
+            )
+            
+            Text(statisticsItem.name.rawValue)
+                .frame(maxWidth: .infinity)
+                .foregroundStyle(Color.white)
+                .font(.title2)
+            
+            ProgressCircleViewComponent(
+                value: statisticsItem.awayValue,
+                total: totalAway
+            )
+        }
+        .padding()
+    }
+    
+    @ViewBuilder private var progressView: some View {
+        ProgressView()
+            .tint(Color.white)
     }
 }
 
