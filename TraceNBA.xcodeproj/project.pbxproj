@@ -196,6 +196,22 @@
 			path = StatisticsMatchView;
 			sourceTree = "<group>";
 		};
+		2C0DBF362AFDE500002DE51B /* EventsView */ = {
+			isa = PBXGroup;
+			children = (
+				2C9576E62AF7730900BC7F75 /* EventsView.swift */,
+			);
+			path = EventsView;
+			sourceTree = "<group>";
+		};
+		2C0DBF372AFDE50A002DE51B /* StreamMatchesView */ = {
+			isa = PBXGroup;
+			children = (
+				2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */,
+			);
+			path = StreamMatchesView;
+			sourceTree = "<group>";
+		};
 		2C4D69212AF28F9F00CF5A55 = {
 			isa = PBXGroup;
 			children = (
@@ -305,8 +321,8 @@
 		2C88F95B2AF36D20007B28F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2C9576E62AF7730900BC7F75 /* EventsView.swift */,
-				2C88F95C2AF36D4A007B28F8 /* StreamMatchesView.swift */,
+				2C0DBF372AFDE50A002DE51B /* StreamMatchesView */,
+				2C0DBF362AFDE500002DE51B /* EventsView */,
 				2C0DBF312AFDD4AA002DE51B /* StatisticsMatchView */,
 			);
 			path = Views;
