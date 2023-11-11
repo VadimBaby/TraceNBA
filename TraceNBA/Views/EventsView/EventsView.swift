@@ -67,6 +67,7 @@ struct EventsView: View {
                 viewModel.cancelAllTasks()
             }
         }
+        .tint(Color.white)
     }
 }
 
