@@ -39,5 +39,9 @@ struct MatchItemImageComponent: View {
 }
 
 #Preview {
-    MatchItemImageComponent(id: 1, dataService: DataService())
+    ZStack {
+        GradientComponent()
+        
+        MatchItemImageComponent(id: 1, dataService: DataService())
+    }
 }
