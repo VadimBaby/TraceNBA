@@ -29,7 +29,8 @@ struct StatisticsMatchView: View {
             
             if let statistics = viewModel.statistics,
                let homeScore = matchModel.homeScore,
-               let awayScore = matchModel.awayScore {
+               let awayScore = matchModel.awayScore,
+               !statistics.isEmpty {
                 
                 content(
                     statistics: statistics,
