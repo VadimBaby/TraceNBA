@@ -56,7 +56,7 @@ extension MatchViewComponent {
     @ViewBuilder private func getTeamLogo(id: Int, shortName: String, nameCode: String) -> some View {
         
         var teamTitle: String {
-            return shortName.count > 10 ? nameCode : shortName
+            return shortName.count > 6 ? nameCode : shortName
         }
         
         VStack {
@@ -71,6 +71,7 @@ extension MatchViewComponent {
                 .fontWeight(.medium)
                 .foregroundStyle(Color.white)
         }
+        .frame(width: 80)
 
     }
 }
