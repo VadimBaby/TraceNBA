@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatisticsMatchView: View {
-    @State var showBoxScore: Bool = false
+    @State var showTypeStatisticsView: TypeStatisticsView = .summary
     @State var pickerSelection: PeriodType = .all
     
     let matchModel: MatchModel

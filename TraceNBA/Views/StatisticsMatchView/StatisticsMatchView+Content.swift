@@ -17,16 +17,20 @@ extension StatisticsMatchView {
                     dataService: dataService
                 )
                 
-                PickerStatisticsViewComponent(showBoxScore: $showBoxScore)
+                PickerStatisticsViewComponent(
+                    showTypeStatisticsView: $showTypeStatisticsView
+                )
                 
-                if showBoxScore {
-                    getBoxScoreView()
-                } else {
+                if showTypeStatisticsView == .summary {
                     getSummaryView(
                         statistics: statistics,
                         homeScore: homeScore,
                         awayScore: awayScore
                     )
+                } else if showTypeStatisticsView == .box_score  {
+                    getBoxScoreView()
+                } else {
+                    ScrollView {}
                 }
             }
     }

@@ -9,34 +9,48 @@ import SwiftUI
 
 struct PickerStatisticsViewComponent: View {
     
-    @Binding public var showBoxScore: Bool
+    @Binding public var showTypeStatisticsView: TypeStatisticsView
     
     var body: some View {
         HStack(spacing: 0) {
-            getPickerItem(text: "Summary")
-                .foregroundStyle(showBoxScore ? Color.black : Color.white)
-                .onTapGesture {
-                    showBoxScore = false
-                }
+            getPickerItem(
+                text: "Summary",
+                typeView: .summary,
+                pickerView: $showTypeStatisticsView
+            )
             
-            getPickerItem(text: "Box Score")
-                .foregroundStyle(showBoxScore ? Color.white : Color.black)
-                .onTapGesture {
-                    showBoxScore = true
-                }
+            getPickerItem(
+                text: "Box score",
+                typeView: .box_score,
+                pickerView: $showTypeStatisticsView
+            )
+            
+            getPickerItem(
+                text: "Highlights",
+                typeView: .highlights,
+                pickerView: $showTypeStatisticsView
+            )
         }
         .font(.headline)
     }
 }
 
 extension PickerStatisticsViewComponent {
-    @ViewBuilder func getPickerItem(text: String) -> some View {
+    @ViewBuilder func getPickerItem(
+        text: String,
+        typeView: TypeStatisticsView,
+        pickerView: Binding<TypeStatisticsView>
+    ) -> some View {
         VStack(spacing: 5) {
             Text(text.uppercased())
             Rectangle()
                 .frame(height: 3)
         }
         .frame(maxWidth: .infinity)
+        .foregroundStyle(showTypeStatisticsView == typeView ? Color.white : Color.black)
+        .onTapGesture {
+            showTypeStatisticsView = typeView
+        }
     }
 }
 
@@ -44,6 +58,6 @@ extension PickerStatisticsViewComponent {
     ZStack {
         GradientComponent()
         
-        PickerStatisticsViewComponent(showBoxScore: .constant(false))
+        PickerStatisticsViewComponent(showTypeStatisticsView: .constant(TypeStatisticsView.summary))
     }
 }
