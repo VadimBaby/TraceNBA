@@ -25,7 +25,7 @@ class LocalFileManager {
         createFolderIfNeeded(typeFolder: typeFolder)
         
         guard
-            let data = image.jpegData(compressionQuality: 1.0),
+            let data = image.pngData(),
             let path = getPathForImage(name: name, typeFolder: typeFolder) else {
             print("Error getting data")
             return
@@ -118,7 +118,7 @@ class LocalFileManager {
                 .urls(for: .cachesDirectory, in: .userDomainMask)
                 .first?
                 .appendingPathComponent(folderName, conformingTo: .folder)
-                .appendingPathComponent("\(name).jpg", conformingTo: .image) else {
+                .appendingPathComponent("\(name).png", conformingTo: .image) else {
             print("Error getting path")
             return nil
         }
