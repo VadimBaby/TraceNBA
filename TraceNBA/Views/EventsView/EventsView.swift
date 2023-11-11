@@ -20,41 +20,52 @@ struct EventsView: View {
     }
     
     var body: some View {
-        ZStack {
-            GradientComponent()
-            
-            VStack {
-                ChangingDateViewComponent(viewModel: viewModel)
+        NavigationStack {
+            ZStack {
+                GradientComponent()
                 
-                if let matches = viewModel.scheduleMatches {
-                    ScrollView {
-                        if matches.isEmpty {
-                            NoDataViewComponent(message: .noScheduleMatches)
-                        } else {
-                            LazyVStack {
-                                ForEach(matches) { match in
-                                    MatchItemViewComponent(
-                                        matchModel: match,
-                                        dataService: dataService
-                                    )
+                VStack {
+                    ChangingDateViewComponent(viewModel: viewModel)
+                    
+                    if let matches = viewModel.scheduleMatches {
+                        ScrollView {
+                            if matches.isEmpty {
+                                NoDataViewComponent(message: .noScheduleMatches)
+                            } else {
+                                LazyVStack {
+                                    ForEach(matches) { match in
+                                        NavigationLink {
+                                            StatisticsMatchView(
+                                                matchModel: match,
+                                                dataService: dataService
+                                            )
+                                        } label: {
+                                            MatchItemViewComponent(
+                                                matchModel: match,
+                                                dataService: dataService
+                                            )
+                                        }
+                                        .tint(Color.black)
+
+                                    }
+                                    
+                                    PlugRectangleViewComponent()
                                 }
-                                
-                                PlugRectangleViewComponent()
                             }
                         }
+                        .refreshable {
+                            await viewModel.asyncGetScheduleMatches(isRefresh: true)
+                        }
+                    } else {
+                        ProgressView()
+                            .tint(Color.white)
+                            .frame(maxHeight: .infinity)
                     }
-                    .refreshable {
-                        await viewModel.asyncGetScheduleMatches(isRefresh: true)
-                    }
-                } else {
-                    ProgressView()
-                        .tint(Color.white)
-                        .frame(maxHeight: .infinity)
                 }
             }
-        }
-        .onDisappear {
-            viewModel.cancelAllTasks()
+            .onDisappear {
+                viewModel.cancelAllTasks()
+            }
         }
     }
 }
