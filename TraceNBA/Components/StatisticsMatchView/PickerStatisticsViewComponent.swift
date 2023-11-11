@@ -25,7 +25,7 @@ struct PickerStatisticsViewComponent: View {
                     showBoxScore = true
                 }
         }
-        .font(.title2)
+        .font(.headline)
     }
 }
 
