@@ -27,35 +27,14 @@ extension StatisticsMatchView {
         ForEach(getScoringStatisticsItems(
             statistics: statistics,
             period: pickerSelection), id: \.name.rawValue) { statisticsItem in
-                if let totalHome = statisticsItem.homeTotal,
-                   let totalAway = statisticsItem.awayTotal {
-                    getScoreStatisticItemView(
-                        statisticsItem: statisticsItem,
-                        totalHome: totalHome,
-                        totalAway: totalAway
-                    )
+                StatisticsItemViewComponent(statistic: statisticsItem) { value, total in
+                    if let total {
+                        ProgressCircleViewComponent(value: value, total: total)
+                    } else {
+                        Text("Total is nil")
+                    }
                 }
         }
-    }
-    
-    @ViewBuilder func getScoreStatisticItemView(statisticsItem: StatisticsItemModel, totalHome: Int, totalAway: Int) -> some View {
-        HStack {
-            ProgressCircleViewComponent(
-                value: statisticsItem.homeValue,
-                total: totalHome
-            )
-            
-            Text(statisticsItem.name.rawValue)
-                .frame(maxWidth: .infinity)
-                .foregroundStyle(Color.white)
-                .font(.title2)
-            
-            ProgressCircleViewComponent(
-                value: statisticsItem.awayValue,
-                total: totalAway
-            )
-        }
-        .padding(.vertical)
     }
     
     @ViewBuilder var progressView: some View {
