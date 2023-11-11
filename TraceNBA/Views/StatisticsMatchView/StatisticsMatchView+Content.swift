@@ -9,26 +9,26 @@ import SwiftUI
 
 extension StatisticsMatchView {
     @ViewBuilder func content(statistics: [StatisticsMatchModel], homeScore: ScoreModel, awayScore: ScoreModel) -> some View {
-        VStack {
-            MatchViewComponent(
-                match: matchModel,
-                homeScore: homeScore,
-                awayScore: awayScore,
-                dataService: dataService
-            )
-            
-            PickerStatisticsViewComponent(showBoxScore: $showBoxScore)
-            
-            if showBoxScore {
-                getBoxScoreView()
-            } else {
-                getSummaryView(
-                    statistics: statistics,
+            VStack {
+                MatchViewComponent(
+                    match: matchModel,
                     homeScore: homeScore,
-                    awayScore: awayScore
+                    awayScore: awayScore,
+                    dataService: dataService
                 )
+                
+                PickerStatisticsViewComponent(showBoxScore: $showBoxScore)
+                
+                if showBoxScore {
+                    getBoxScoreView()
+                } else {
+                    getSummaryView(
+                        statistics: statistics,
+                        homeScore: homeScore,
+                        awayScore: awayScore
+                    )
+                }
             }
-        }
     }
     
     @ViewBuilder private func getSummaryView(statistics: [StatisticsMatchModel], homeScore: ScoreModel, awayScore: ScoreModel) -> some View {
