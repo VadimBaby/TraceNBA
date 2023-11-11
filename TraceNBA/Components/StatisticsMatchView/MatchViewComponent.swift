@@ -14,7 +14,7 @@ struct MatchViewComponent: View {
     let awayScore: ScoreModel
     let dataService: DataServiceProtocol
     
-    private let imageScale: CGFloat = 50
+    private let imageScale: CGFloat = 80
     
     var body: some View {
         content
