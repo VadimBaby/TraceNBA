@@ -14,7 +14,7 @@ struct MatchViewComponent: View {
     let awayScore: ScoreModel
     let dataService: DataServiceProtocol
     
-    private let imageScale: CGFloat = 90
+    private let imageScale: CGFloat = 50
     
     var body: some View {
         content
@@ -24,14 +24,12 @@ struct MatchViewComponent: View {
 
 extension MatchViewComponent {
     @ViewBuilder private var content: some View {
-        HStack {
+        HStack(spacing: 30) {
             getTeamLogo(
                 id: match.homeTeam.id,
                 shortName: match.homeTeam.shortName,
                 nameCode: match.homeTeam.nameCode
             )
-            
-            Spacer()
             
             if let currentHome = homeScore.current,
                let currentAway = awayScore.current {
@@ -40,8 +38,6 @@ extension MatchViewComponent {
                     currentAway: currentAway
                 )
             }
-            
-            Spacer()
             
             getTeamLogo(
                 id: match.awayTeam.id,
@@ -53,7 +49,7 @@ extension MatchViewComponent {
     
     @ViewBuilder private func getScore(currentHome: Int, currentAway: Int) -> some View {
         Text("\(currentHome) : \(currentAway)")
-            .font(.system(size: 40, weight: .regular, design: .rounded))
+            .font(.system(size: 30, weight: .regular, design: .rounded))
             .foregroundStyle(Color.white)
     }
     
