@@ -25,6 +25,7 @@ struct StatisticsItemViewComponent<Content: View>: View {
                 .frame(maxWidth: .infinity)
                 .foregroundStyle(Color.white)
                 .font(.title2)
+                .multilineTextAlignment(.center)
             
             circle(statistic.awayValue, statistic.awayTotal)
         }
