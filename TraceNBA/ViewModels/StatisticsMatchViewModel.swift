@@ -19,6 +19,8 @@ class StatisticsMatchViewModel: ObservableObject {
     }
     
     func getStatisticsMatch(id: Int) {
+        guard statistics == nil else { return }
+        
         let task1 = Task {
             await asyncGetStatisticsMatch(id: id, isRefresh: false)
         }
@@ -27,6 +29,9 @@ class StatisticsMatchViewModel: ObservableObject {
     }
     
     func asyncGetStatisticsMatch(id: Int, isRefresh: Bool) async {
+        await MainActor.run {
+            statistics = nil
+        }
         do {
             let statistics = try await getStatisticsMatchData(id: id, isRefresh: isRefresh)
             
