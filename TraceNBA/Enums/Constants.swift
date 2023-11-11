@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum Constants {
     static let tournament: Int = 132
@@ -19,4 +20,12 @@ enum Constants {
         "988cae6b05mshdf3c117b5f5b58ap1d3ebfjsn290a68bd6831",
         "0ee6652a40mshb2a06f6f8ed8e7fp129ce4jsnb16762573247"
     ]
+    
+    static let firstGradientColor: Color = Color("FirstGradientColor")
+    static let secondGradientColor: Color = Color("SecondGradientColor")
+    static let gradient: LinearGradient = LinearGradient(
+        gradient: Gradient(colors: [Constants.firstGradientColor, Constants.secondGradientColor]),
+        startPoint: .leading,
+        endPoint: .trailing
+    )
 }
