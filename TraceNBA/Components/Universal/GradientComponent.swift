@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct GradientComponent: View {
-    
-    let firstGradientColor: Color = Color("FirstGradientColor")
-    let secondGradientColor: Color = Color("SecondGradientColor")
-    
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [firstGradientColor, secondGradientColor]), startPoint: .leading, endPoint: .trailing)
+        Constants.gradient
             .ignoresSafeArea()
     }
 }
