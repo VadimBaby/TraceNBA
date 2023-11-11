@@ -9,13 +9,13 @@ import SwiftUI
 
 struct NumberCircleViewComponent: View {
     
-    let number: Int
+    let value: Int
     
     var body: some View {
         Circle()
             .fill(.thickMaterial)
             .overlay {
-                Text("\(number)")
+                Text("\(value)")
                     .foregroundStyle(Constants.gradient)
                     .font(.largeTitle)
                     .fontWeight(.medium)
@@ -29,14 +29,14 @@ struct NumberCircleViewComponent: View {
         GradientComponent()
         
         HStack {
-            NumberCircleViewComponent(number: 5)
+            NumberCircleViewComponent(value: 5)
             
             Text("Steals")
                 .font(.title2)
                 .foregroundStyle(Color.white)
                 .frame(maxWidth: .infinity)
             
-            NumberCircleViewComponent(number: 7)
+            NumberCircleViewComponent(value: 7)
         }
         .padding()
     }
