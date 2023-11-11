@@ -23,6 +23,21 @@ extension StatisticsMatchView {
         .foregroundStyle(Color.white)
     }
     
+    @ViewBuilder func getScoringStatistics(statistics: [StatisticsMatchModel]) -> some View {
+        ForEach(getScoringStatisticsItems(
+            statistics: statistics,
+            period: pickerSelection), id: \.name.rawValue) { statisticsItem in
+                if let totalHome = statisticsItem.homeTotal,
+                   let totalAway = statisticsItem.awayTotal {
+                    getScoreStatisticItemView(
+                        statisticsItem: statisticsItem,
+                        totalHome: totalHome,
+                        totalAway: totalAway
+                    )
+                }
+        }
+    }
+    
     @ViewBuilder func getScoreStatisticItemView(statisticsItem: StatisticsItemModel, totalHome: Int, totalAway: Int) -> some View {
         HStack {
             ProgressCircleViewComponent(
@@ -41,21 +56,6 @@ extension StatisticsMatchView {
             )
         }
         .padding(.vertical)
-    }
-    
-    @ViewBuilder func getScoringStatistics(statistics: [StatisticsMatchModel]) -> some View {
-        ForEach(getScoringStatisticsItems(
-            statistics: statistics,
-            period: pickerSelection), id: \.name.rawValue) { statisticsItem in
-                if let totalHome = statisticsItem.homeTotal,
-                   let totalAway = statisticsItem.awayTotal {
-                    getScoreStatisticItemView(
-                        statisticsItem: statisticsItem,
-                        totalHome: totalHome,
-                        totalAway: totalAway
-                    )
-                }
-        }
     }
     
     @ViewBuilder var progressView: some View {
