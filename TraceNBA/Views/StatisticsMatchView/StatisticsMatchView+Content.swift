@@ -43,18 +43,7 @@ extension StatisticsMatchView {
                 
                 getTeamComparisonComponent(statistics: statistics)
                 
-                ForEach(getScoringStatisticsItems(
-                    statistics: statistics,
-                    period: pickerSelection), id: \.name.rawValue) { statisticsItem in
-                        if let totalHome = statisticsItem.homeTotal,
-                           let totalAway = statisticsItem.awayTotal {
-                            getScoreStatisticItemView(
-                                statisticsItem: statisticsItem,
-                                totalHome: totalHome,
-                                totalAway: totalAway
-                            )
-                        }
-                }
+                getScoringStatistics(statistics: statistics)
             }
             .padding()
         }
@@ -64,15 +53,5 @@ extension StatisticsMatchView {
         ScrollView {
             
         }
-    }
-    
-    private func getScoringStatisticsItems(statistics: [StatisticsMatchModel], period: PeriodType) -> [StatisticsItemModel] {
-        guard let statistic = statistics.first(where: { $0.period == period }) else { return [] }
-        
-        let groups = statistic.groups
-        
-        guard let scoreGroup = groups.first(where: { $0.groupName == .scoring }) else { return [] }
-        
-        return scoreGroup.statisticsItems
     }
 }

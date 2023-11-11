@@ -43,8 +43,33 @@ extension StatisticsMatchView {
         .padding(.vertical)
     }
     
+    @ViewBuilder func getScoringStatistics(statistics: [StatisticsMatchModel]) -> some View {
+        ForEach(getScoringStatisticsItems(
+            statistics: statistics,
+            period: pickerSelection), id: \.name.rawValue) { statisticsItem in
+                if let totalHome = statisticsItem.homeTotal,
+                   let totalAway = statisticsItem.awayTotal {
+                    getScoreStatisticItemView(
+                        statisticsItem: statisticsItem,
+                        totalHome: totalHome,
+                        totalAway: totalAway
+                    )
+                }
+        }
+    }
+    
     @ViewBuilder var progressView: some View {
         ProgressView()
             .tint(Color.white)
+    }
+    
+    private func getScoringStatisticsItems(statistics: [StatisticsMatchModel], period: PeriodType) -> [StatisticsItemModel] {
+        guard let statistic = statistics.first(where: { $0.period == period }) else { return [] }
+        
+        let groups = statistic.groups
+        
+        guard let scoreGroup = groups.first(where: { $0.groupName == .scoring }) else { return [] }
+        
+        return scoreGroup.statisticsItems
     }
 }
