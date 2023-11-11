@@ -23,20 +23,6 @@ extension StatisticsMatchView {
         .foregroundStyle(Color.white)
     }
     
-    @ViewBuilder func getScoringStatistics(statistics: [StatisticsMatchModel]) -> some View {
-        ForEach(getScoringStatisticsItems(
-            statistics: statistics,
-            period: pickerSelection), id: \.name.rawValue) { statisticsItem in
-                StatisticsItemViewComponent(statistic: statisticsItem) { value, total in
-                    if let total {
-                        ProgressCircleViewComponent(value: value, total: total)
-                    } else {
-                        Text("Total is nil")
-                    }
-                }
-        }
-    }
-    
     @ViewBuilder var progressView: some View {
         ProgressView()
             .tint(Color.white)

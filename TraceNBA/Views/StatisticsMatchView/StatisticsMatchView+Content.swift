@@ -43,7 +43,23 @@ extension StatisticsMatchView {
                 
                 getTeamComparisonComponent(statistics: statistics)
                 
-                getScoringStatistics(statistics: statistics)
+                ListGroupStatisticsViewComponent(
+                    statistics: statistics,
+                    groupName: .scoring,
+                    pickerSelection: pickerSelection) { value, total in
+                        if let total {
+                            ProgressCircleViewComponent(value: value, total: total)
+                        } else {
+                            Text("Total is nil")
+                        }
+                    }
+                
+                ListGroupStatisticsViewComponent(
+                    statistics: statistics,
+                    groupName: .other,
+                    pickerSelection: pickerSelection) { value, _ in
+                        NumberCircleViewComponent(value: value)
+                    }
             }
             .padding()
         }
