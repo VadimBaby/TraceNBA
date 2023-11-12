@@ -51,6 +51,31 @@ class StatisticsMatchViewModel: ObservableObject {
         }
     }
     
+    func asyncGetMatchLineups(id: Int, isRefresh: Bool) async {
+        await MainActor.run {
+            homeMatchLineups = nil
+            awayMatchLineups = nil
+        }
+        do {
+            let lineups = try await getMatchLineupsData(id: id, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                homeMatchLineups = lineups.home
+                awayMatchLineups = lineups.away
+            }
+            
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                homeMatchLineups = LineupsItemModel(players: nil, missingPlayers: nil)
+                awayMatchLineups = LineupsItemModel(players: nil, missingPlayers: nil)
+            }
+            
+            print(error.localizedDescription)
+        }
+    }
+    
     private func getMatchLineupsData(id: Int, isRefresh: Bool) async throws -> LineupsDataModel {
         let data = try await dataService.getMatchLineups(id: id, isRefresh: isRefresh)
         
