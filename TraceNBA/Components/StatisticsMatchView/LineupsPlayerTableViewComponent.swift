@@ -48,6 +48,7 @@ extension LineupsPlayerTableViewComponent {
                 }
             }
         }
+        .frame(height: 40)
     }
     
     @ViewBuilder func getTopLineupsPlayerTableItem(topItems: [TypeTopTableItem]) -> some View {
