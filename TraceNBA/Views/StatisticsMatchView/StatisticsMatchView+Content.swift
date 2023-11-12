@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension StatisticsMatchView {
-    @ViewBuilder func content(statistics: [StatisticsMatchModel], homeScore: ScoreModel, awayScore: ScoreModel) -> some View {
+    @ViewBuilder func content(id: Int, statistics: [StatisticsMatchModel], homeScore: ScoreModel, awayScore: ScoreModel) -> some View {
             VStack {
                 MatchViewComponent(
                     match: matchModel,
@@ -29,6 +29,9 @@ extension StatisticsMatchView {
                     )
                 } else if showTypeStatisticsView == .box_score  {
                     getBoxScoreView()
+                        .onAppear {
+                            viewModel.getLineupsMatch(id: id)
+                        }
                 } else {
                     ScrollView {}
                 }
@@ -70,8 +73,22 @@ extension StatisticsMatchView {
     }
     
     @ViewBuilder private func getBoxScoreView() -> some View {
-        ScrollView {
+        if let homeLineups = viewModel.homeMatchLineups,
+           let awayLineups = viewModel.homeMatchLineups {
             
+            if homeLineups.players.isEmpty && awayLineups.players.isEmpty {
+                NoDataViewComponent(message: .noMatchLineups)
+            } else {
+                ScrollView {
+                    
+                }
+            }
+            
+        } else {
+            VStack {
+                progressView
+            }
+            .frame(maxHeight: .infinity)
         }
     }
 }

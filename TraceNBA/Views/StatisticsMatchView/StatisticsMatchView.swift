@@ -33,6 +33,7 @@ struct StatisticsMatchView: View {
                !statistics.isEmpty {
                 
                 content(
+                    id: matchModel.id,
                     statistics: statistics,
                     homeScore: homeScore,
                     awayScore: awayScore
