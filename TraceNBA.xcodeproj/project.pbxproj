@@ -29,6 +29,7 @@
 		2C0DBF4E2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF4D2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift */; };
 		2C0DBF502B00BDE7002DE51B /* TypeTopTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF4F2B00BDE7002DE51B /* TypeTopTableItem.swift */; };
 		2C0DBF542B00BE94002DE51B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF532B00BE94002DE51B /* Int.swift */; };
+		2C0DBF562B00C291002DE51B /* ImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF552B00C291002DE51B /* ImageViewComponent.swift */; };
 		2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */; };
 		2C3D5F5E2AF9563F0066790A /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5D2AF9563F0066790A /* GroupModel.swift */; };
 		2C3D5F602AF956620066790A /* PeriodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5F2AF956620066790A /* PeriodType.swift */; };
@@ -61,7 +62,6 @@
 		2C88F97F2AF4099B007B28F8 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F97E2AF4099B007B28F8 /* LocalFileManager.swift */; };
 		2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */; };
 		2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9822AF4B653007B28F8 /* TypeEntity.swift */; };
-		2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */; };
 		2C88F9892AF4BE59007B28F8 /* MatchItemImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88F9882AF4BE59007B28F8 /* MatchItemImageViewModel.swift */; };
 		2C9576E12AF686BD00BC7F75 /* TournamentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */; };
 		2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */; };
@@ -107,6 +107,7 @@
 		2C0DBF4D2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineupsPlayerTableViewComponent.swift; sourceTree = "<group>"; };
 		2C0DBF4F2B00BDE7002DE51B /* TypeTopTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTopTableItem.swift; sourceTree = "<group>"; };
 		2C0DBF532B00BE94002DE51B /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		2C0DBF552B00C291002DE51B /* ImageViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewComponent.swift; sourceTree = "<group>"; };
 		2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchModel.swift; sourceTree = "<group>"; };
 		2C3D5F5D2AF9563F0066790A /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		2C3D5F5F2AF956620066790A /* PeriodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodType.swift; sourceTree = "<group>"; };
@@ -141,7 +142,6 @@
 		2C88F97E2AF4099B007B28F8 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemViewComponent.swift; sourceTree = "<group>"; };
 		2C88F9822AF4B653007B28F8 /* TypeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEntity.swift; sourceTree = "<group>"; };
-		2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemImageComponent.swift; sourceTree = "<group>"; };
 		2C88F9882AF4BE59007B28F8 /* MatchItemImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemImageViewModel.swift; sourceTree = "<group>"; };
 		2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentModel.swift; sourceTree = "<group>"; };
 		2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingDateViewComponent.swift; sourceTree = "<group>"; };
@@ -192,10 +192,10 @@
 		2C0DBF202AFBAD60002DE51B /* Universal */ = {
 			isa = PBXGroup;
 			children = (
-				2C88F9862AF4BD77007B28F8 /* MatchItemImageComponent.swift */,
 				2C9576F62AF79B0000BC7F75 /* PlugRectangleViewComponent.swift */,
 				2C88F97C2AF40779007B28F8 /* GradientComponent.swift */,
 				2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */,
+				2C0DBF552B00C291002DE51B /* ImageViewComponent.swift */,
 			);
 			path = Universal;
 			sourceTree = "<group>";
@@ -508,7 +508,6 @@
 				2C0DBF292AFBE0DD002DE51B /* ScoreTableViewComponent.swift in Sources */,
 				2C3D5F662AF958450066790A /* NameStatisticsItemType.swift in Sources */,
 				2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */,
-				2C88F9872AF4BD77007B28F8 /* MatchItemImageComponent.swift in Sources */,
 				2C9576F32AF782BB00BC7F75 /* TypeTime.swift in Sources */,
 				2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */,
 				2C9576E12AF686BD00BC7F75 /* TournamentModel.swift in Sources */,
@@ -521,6 +520,7 @@
 				2C0DBF4E2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift in Sources */,
 				2C0DBF412AFFA786002DE51B /* LineupsItemModel.swift in Sources */,
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
+				2C0DBF562B00C291002DE51B /* ImageViewComponent.swift in Sources */,
 				2C0DBF462AFFA8D8002DE51B /* LineupsItemMissingPlayerModel.swift in Sources */,
 				2C88F93F2AF358CA007B28F8 /* MatchModel.swift in Sources */,
 				2C88F9682AF37DC4007B28F8 /* MockDataService.swift in Sources */,

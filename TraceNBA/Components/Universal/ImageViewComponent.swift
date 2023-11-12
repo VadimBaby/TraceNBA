@@ -1,13 +1,13 @@
 //
-//  MatchItemImageComponent.swift
+//  ImageViewComponent.swift
 //  TraceNBA
 //
-//  Created by Вадим Мартыненко on 03.11.2023.
+//  Created by Вадим Мартыненко on 12.11.2023.
 //
 
 import SwiftUI
 
-struct MatchItemImageComponent: View {
+struct ImageViewComponent: View {
     
     @StateObject private var viewModel: MatchItemImageViewModel
     
@@ -44,6 +44,6 @@ struct MatchItemImageComponent: View {
     ZStack {
         GradientComponent()
         
-        MatchItemImageComponent(id: 1, typeEntiy: .team, dataService: DataService())
+        ImageViewComponent(id: 1, typeEntiy: .team, dataService: DataService())
     }
 }

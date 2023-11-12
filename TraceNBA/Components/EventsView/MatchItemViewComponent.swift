@@ -28,7 +28,7 @@ extension MatchItemViewComponent {
     @ViewBuilder private var content: some View {
         VStack {
             HStack {
-                MatchItemImageComponent(
+                ImageViewComponent(
                     id: matchModel.homeTeam.id,
                     typeEntiy: .team,
                     dataService: dataService
@@ -40,7 +40,7 @@ extension MatchItemViewComponent {
                 
                 Spacer()
                 
-                MatchItemImageComponent(
+                ImageViewComponent(
                     id: matchModel.awayTeam.id,
                     typeEntiy: .team,
                     dataService: dataService

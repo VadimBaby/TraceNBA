@@ -60,7 +60,7 @@ extension MatchViewComponent {
         }
         
         VStack {
-            MatchItemImageComponent(
+            ImageViewComponent(
                 id: id,
                 typeEntiy: .team,
                 imageScale: imageScale,
