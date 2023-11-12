@@ -51,6 +51,14 @@ class StatisticsMatchViewModel: ObservableObject {
         }
     }
     
+    private func getMatchLineupsData(id: Int, isRefresh: Bool) async throws -> LineupsDataModel {
+        let data = try await dataService.getMatchLineups(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(LineupsDataModel.self, from: data)
+        
+        return decodeData
+    }
+    
     private func getStatisticsMatchData(id: Int, isRefresh: Bool) async throws -> [StatisticsMatchModel] {
         let data = try await dataService.getStatisticsMatchData(id: id, isRefresh: isRefresh)
         
