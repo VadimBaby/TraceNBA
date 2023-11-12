@@ -271,4 +271,10 @@ actor DataService: DataServiceProtocol {
         
         return intTypeTime
     }
+    
+    func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data {
+        let dataModel = DataModel(highlights: FakeData.fakeMatchHighlights)
+        
+        return try JSONEncoder().encode(dataModel)
+    }
 }
