@@ -31,6 +31,7 @@
 		2C0DBF542B00BE94002DE51B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF532B00BE94002DE51B /* Int.swift */; };
 		2C0DBF562B00C291002DE51B /* ImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF552B00C291002DE51B /* ImageViewComponent.swift */; };
 		2C0DBF582B00C30C002DE51B /* ImageViewComponetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF572B00C30C002DE51B /* ImageViewComponetViewModel.swift */; };
+		2C0DBF5A2B00C559002DE51B /* PickerTeamViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF592B00C559002DE51B /* PickerTeamViewComponent.swift */; };
 		2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */; };
 		2C3D5F5E2AF9563F0066790A /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5D2AF9563F0066790A /* GroupModel.swift */; };
 		2C3D5F602AF956620066790A /* PeriodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5F2AF956620066790A /* PeriodType.swift */; };
@@ -109,6 +110,7 @@
 		2C0DBF532B00BE94002DE51B /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		2C0DBF552B00C291002DE51B /* ImageViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewComponent.swift; sourceTree = "<group>"; };
 		2C0DBF572B00C30C002DE51B /* ImageViewComponetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewComponetViewModel.swift; sourceTree = "<group>"; };
+		2C0DBF592B00C559002DE51B /* PickerTeamViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTeamViewComponent.swift; sourceTree = "<group>"; };
 		2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchModel.swift; sourceTree = "<group>"; };
 		2C3D5F5D2AF9563F0066790A /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		2C3D5F5F2AF956620066790A /* PeriodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodType.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				2C0DBF3A2AFF40FF002DE51B /* StatisticsItemViewComponent.swift */,
 				2C0DBF3C2AFF4590002DE51B /* ListGroupStatisticsViewComponent.swift */,
 				2C0DBF4D2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift */,
+				2C0DBF592B00C559002DE51B /* PickerTeamViewComponent.swift */,
 			);
 			path = StatisticsMatchView;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */,
 				2C9576E12AF686BD00BC7F75 /* TournamentModel.swift in Sources */,
 				2C88F9502AF362AF007B28F8 /* Errors.swift in Sources */,
+				2C0DBF5A2B00C559002DE51B /* PickerTeamViewComponent.swift in Sources */,
 				2C0DBF252AFBCA90002DE51B /* MatchViewComponent.swift in Sources */,
 				2C88F97D2AF40779007B28F8 /* GradientComponent.swift in Sources */,
 				2C0DBF392AFF3AC4002DE51B /* NumberCircleViewComponent.swift in Sources */,
