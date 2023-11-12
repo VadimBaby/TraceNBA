@@ -24,8 +24,10 @@ class LocalFileManager {
     func saveImage(image: UIImage, name: String, typeFolder: TypeFolder) {
         createFolderIfNeeded(typeFolder: typeFolder)
         
+        let data: Data? = typeFolder == .teams ? image.pngData() : image.jpegData(compressionQuality: 1.0)
+        
         guard
-            let data = image.pngData(),
+            let data,
             let path = getPathForImage(name: name, typeFolder: typeFolder) else {
             print("Error getting data")
             return
@@ -118,7 +120,7 @@ class LocalFileManager {
                 .urls(for: .cachesDirectory, in: .userDomainMask)
                 .first?
                 .appendingPathComponent(folderName, conformingTo: .folder)
-                .appendingPathComponent("\(name).png", conformingTo: .image) else {
+                .appendingPathComponent(typeFolder == .teams ? "\(name).png" : "\(name).jpeg", conformingTo: .image) else {
             print("Error getting path")
             return nil
         }
