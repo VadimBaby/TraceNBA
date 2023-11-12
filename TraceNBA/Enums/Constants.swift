@@ -810,4 +810,343 @@ enum Constants {
             ]
         )
     ]
+    
+    static let fakeLineupsMatch: LineupsDataModel = LineupsDataModel(
+        confirmed: true,
+        home: LineupsItemModel(
+            players: [
+                LineupsItemPlayerModel(
+                    player: PlayerModel(
+                        id: 817442,
+                        name: "Andrew Wiggins",
+                        firstName: "Andrew",
+                        lastName: "Wiggins ",
+                        shortName: "A. Wiggins",
+                        position: "F",
+                        country: CountryModel(name: "Canada", alpha2: "CA"),
+                        dateOfBirthTimestamp: 793497600
+                    ),
+                    shirtNumber: 22,
+                    jerseyNumber: "22",
+                    position: "F",
+                    statistics: PlayerStatisticsModel(
+                        secondsPlayed: 1518,
+                        points: 14,
+                        twoPointsMade: 6,
+                        twoPointAttempts: 9,
+                        threePointsMade: 0,
+                        threePointAttempts: 1,
+                        freeThrowsMade: 2,
+                        freeThrowAttempts: 2,
+                        fieldGoalsMade: 6,
+                        fieldGoalAttempts: 10,
+                        rebounds: 2,
+                        defensiveRebounds: 2,
+                        offensiveRebounds: 0,
+                        turnovers: 1,
+                        blocks: 0,
+                        personalFouls: 2,
+                        assists: 0,
+                        steals: 0,
+                        plusMinus: -50,
+                        fieldGoalPct: 60
+                    )
+                ),
+                LineupsItemPlayerModel(
+                    player: PlayerModel(
+                        id: 817050,
+                        name: "Stephen Curry",
+                        firstName: "Stephen",
+                        lastName: "Curry ",
+                        shortName: "S. Curry",
+                        position: "G",
+                        country: CountryModel(name: "USA", alpha2: "US"),
+                        dateOfBirthTimestamp: 574300800
+                    ),
+                    shirtNumber: 30,
+                    jerseyNumber: "30",
+                    position: "G",
+                    statistics: PlayerStatisticsModel(
+                        secondsPlayed: 1939,
+                        points: 21,
+                        twoPointsMade: 3,
+                        twoPointAttempts: 5,
+                        threePointsMade: 4,
+                        threePointAttempts: 10,
+                        freeThrowsMade: 3,
+                        freeThrowAttempts: 3,
+                        fieldGoalsMade: 7,
+                        fieldGoalAttempts: 15,
+                        rebounds: 5,
+                        defensiveRebounds: 4,
+                        offensiveRebounds: 1,
+                        turnovers: 7,
+                        blocks: 0,
+                        personalFouls: 3,
+                        assists: 3,
+                        steals: 0,
+                        plusMinus: -6,
+                        fieldGoalPct: 47
+                    )
+                ),
+                LineupsItemPlayerModel(
+                    player: PlayerModel(
+                        id: 1132126,
+                        name: "Jonathan Kuminga",
+                        firstName: "Jonathan",
+                        lastName: "Kuminga ",
+                        shortName: "J. Kuminga",
+                        position: "F",
+                        country: CountryModel(name: "USA", alpha2: "US"),
+                        dateOfBirthTimestamp: 1033862400
+                    ),
+                    shirtNumber: 0,
+                    jerseyNumber: "0",
+                    position: "F",
+                    statistics: PlayerStatisticsModel(
+                        secondsPlayed: 1027,
+                        points: 12,
+                        twoPointsMade: 3,
+                        twoPointAttempts: 7,
+                        threePointsMade: 1,
+                        threePointAttempts: 2,
+                        freeThrowsMade: 3,
+                        freeThrowAttempts: 3,
+                        fieldGoalsMade: 4,
+                        fieldGoalAttempts: 9,
+                        rebounds: 1,
+                        defensiveRebounds: 1,
+                        offensiveRebounds: 0,
+                        turnovers: 0,
+                        blocks: 0,
+                        personalFouls: 2,
+                        assists: 1,
+                        steals: 1,
+                        plusMinus: 3,
+                        fieldGoalPct: 44
+                    )
+                ),
+                LineupsItemPlayerModel(
+                    player: PlayerModel(
+                        id: 817122,
+                        name: "Draymond Green",
+                        firstName: "Draymond",
+                        lastName: "Green ",
+                        shortName: "D. Green",
+                        position: "F",
+                        country: CountryModel(name: "USA", alpha2: "US"),
+                        dateOfBirthTimestamp: 636508800
+                    ),
+                    shirtNumber: 23,
+                    jerseyNumber: "23",
+                    position: "F",
+                    statistics: PlayerStatisticsModel(
+                        secondsPlayed: 1650,
+                        points: 13,
+                        twoPointsMade: 2,
+                        twoPointAttempts: 3,
+                        threePointsMade: 2,
+                        threePointAttempts: 4,
+                        freeThrowsMade: 3,
+                        freeThrowAttempts: 5,
+                        fieldGoalsMade: 4,
+                        fieldGoalAttempts: 7,
+                        rebounds: 2,
+                        defensiveRebounds: 0,
+                        offensiveRebounds: 2,
+                        turnovers: 2,
+                        blocks: 2,
+                        personalFouls: 1,
+                        assists: 9,
+                        steals: 2,
+                        plusMinus: -5,
+                        fieldGoalPct: 57
+                    )
+                )
+            ],
+            missingPlayers: []
+        ),
+        away: LineupsItemModel(
+            players: [
+                LineupsItemPlayerModel(
+                    player: PlayerModel(
+                        id: 885258,
+                        name: "Malik Monk",
+                        firstName: "Malik",
+                        lastName: "Monk ",
+                        shortName: "M. Monk",
+                        position: "G",
+                        country: CountryModel(name: "USA", alpha2: "US"),
+                        dateOfBirthTimestamp: 886550400
+                    ),
+                    shirtNumber: 0,
+                    jerseyNumber: "0",
+                    position: "G",
+                    statistics: PlayerStatisticsModel(
+                        secondsPlayed: 1478,
+                        points: 16,
+                        twoPointsMade: 2,
+                        twoPointAttempts: 4,
+                        threePointsMade: 3,
+                        threePointAttempts: 5,
+                        freeThrowsMade: 3,
+                        freeThrowAttempts: 3,
+                        fieldGoalsMade: 5,
+                        fieldGoalAttempts: 9,
+                        rebounds: 3,
+                        defensiveRebounds: 0,
+                        offensiveRebounds: 3,
+                        turnovers: 3,
+                        blocks: 2,
+                        personalFouls: 1,
+                        assists: 2,
+                        steals: 0,
+                        plusMinus: 1,
+                        fieldGoalPct: 56
+                    )
+                ),
+                LineupsItemPlayerModel(
+                    player: PlayerModel(
+                        id: 885258,
+                        name: "Sasha Vezenkov",
+                        firstName: "",
+                        lastName: "",
+                        shortName: "S. Vezenkov",
+                        position: "F",
+                        country: CountryModel(name: "Bulgaria", alpha2: "BG"),
+                        dateOfBirthTimestamp: 807667200
+                    ),
+                    shirtNumber: 7,
+                    jerseyNumber: "7",
+                    position: "F",
+                    statistics: PlayerStatisticsModel(
+                        secondsPlayed: 1046,
+                        points: 2,
+                        twoPointsMade: 1,
+                        twoPointAttempts: 3,
+                        threePointsMade: 0,
+                        threePointAttempts: 3,
+                        freeThrowsMade: 0,
+                        freeThrowAttempts: 0,
+                        fieldGoalsMade: 1,
+                        fieldGoalAttempts: 6,
+                        rebounds: 5,
+                        defensiveRebounds: 5,
+                        offensiveRebounds: 0,
+                        turnovers: 1,
+                        blocks: 0,
+                        personalFouls: 2,
+                        assists: 0,
+                        steals: 0,
+                        plusMinus: -3,
+                        fieldGoalPct: 17
+                    )
+                ),
+                LineupsItemPlayerModel(
+                    player: PlayerModel(
+                        id: 816977,
+                        name: "Harrison Barnes",
+                        firstName: "Harrison",
+                        lastName: "Barnes ",
+                        shortName: "H. Barnes",
+                        position: "F",
+                        country: CountryModel(name: "USA", alpha2: "US"),
+                        dateOfBirthTimestamp: 707184000
+                    ),
+                    shirtNumber: 40,
+                    jerseyNumber: "40",
+                    position: "F",
+                    statistics: PlayerStatisticsModel(
+                        secondsPlayed: 1834,
+                        points: 14,
+                        twoPointsMade: 0,
+                        twoPointAttempts: 1,
+                        threePointsMade: 4,
+                        threePointAttempts: 7,
+                        freeThrowsMade: 2,
+                        freeThrowAttempts: 2,
+                        fieldGoalsMade: 4,
+                        fieldGoalAttempts: 8,
+                        rebounds: 1,
+                        defensiveRebounds: 0,
+                        offensiveRebounds: 1,
+                        turnovers: 1,
+                        blocks: 0,
+                        personalFouls: 0,
+                        assists: 1,
+                        steals: 1,
+                        plusMinus: 2,
+                        fieldGoalPct: 50
+                    )
+                ),
+                LineupsItemPlayerModel(
+                    player: PlayerModel(
+                        id: 846968,
+                        name: "Domantas Sabonis",
+                        firstName: "Domantas",
+                        lastName: "Sabonis ",
+                        shortName: "D. Sabonis",
+                        position: "FC",
+                        country: CountryModel(name: "Lithuania", alpha2: "LT"),
+                        dateOfBirthTimestamp: 831081600
+                    ),
+                    shirtNumber: 10,
+                    jerseyNumber: "10",
+                    position: "FC",
+                    statistics: PlayerStatisticsModel(
+                        secondsPlayed: 2225,
+                        points: 23,
+                        twoPointsMade: 8,
+                        twoPointAttempts: 15,
+                        threePointsMade: 0,
+                        threePointAttempts: 1,
+                        freeThrowsMade: 7,
+                        freeThrowAttempts: 12,
+                        fieldGoalsMade: 8,
+                        fieldGoalAttempts: 16,
+                        rebounds: 11,
+                        defensiveRebounds: 8,
+                        offensiveRebounds: 3,
+                        turnovers: 2,
+                        blocks: 0,
+                        personalFouls: 2,
+                        assists: 8,
+                        steals: 0,
+                        plusMinus: -4,
+                        fieldGoalPct: 50
+                    )
+                )
+            ],
+            missingPlayers: [
+                LineupsItemMissingPlayerModel(
+                    player: PlayerModel(
+                        id: 885244,
+                        name: "De'Aaron Fox",
+                        firstName: "De'Aaron",
+                        lastName: "Fox ",
+                        shortName: "D. Fox",
+                        position: "G",
+                        country: CountryModel(name: "USA", alpha2: "US"),
+                        dateOfBirthTimestamp: 882576000
+                    ),
+                    type: "missing",
+                    reason: 1
+                ),
+                LineupsItemMissingPlayerModel(
+                    player: PlayerModel(
+                        id: 817240,
+                        name: "Trey Lyles",
+                        firstName: "Trey",
+                        lastName: "Lyles ",
+                        shortName: "T. Lyles",
+                        position: "F",
+                        country: CountryModel(name: "Canada", alpha2: "CA"),
+                        dateOfBirthTimestamp: 815529600
+                    ),
+                    type: "missing",
+                    reason: 1
+                )
+            ]
+        )
+    )
 }
