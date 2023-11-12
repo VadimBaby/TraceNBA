@@ -193,7 +193,43 @@ actor DataService: DataServiceProtocol {
     }
     
     func getMatchLineups(id: Int, isRefresh: Bool) async throws -> Data {
-        return try JSONEncoder().encode(Constants.fakeLineupsMatch)
+        let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/match/\(id)/lineups"
+        
+        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        
+        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
+        
+        let headers = [
+            "X-RapidAPI-Key": apiKey,
+            "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
+        ]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let nowInterval: Double = Date().timeIntervalSince1970
+        
+        let differenceBetweenInterval: Double = nowInterval - lastRequestInterval
+        
+        if differenceBetweenInterval >= seconds {
+            lastRequestInterval = nowInterval + seconds
+        } else if differenceBetweenInterval < 0 {
+            guard !isRefresh else { throw Errors.cannotRefresh }
+            
+            lastRequestInterval = lastRequestInterval + seconds
+            
+            try await Task.sleep(for: .seconds(abs(differenceBetweenInterval) + seconds))
+            
+        } else {
+            lastRequestInterval = nowInterval + seconds
+            
+            try await Task.sleep(for: .seconds(seconds))
+        }
+        
+        let (response, _) = try await URLSession.shared.data(for: request)
+        
+        return response
     }
     
     private func getIntOfTypeTimeFromDate(date: Date, typeTime: TypeTime) throws -> Int {
