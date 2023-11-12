@@ -32,8 +32,11 @@ extension StatisticsMatchView {
                         .onAppear {
                             viewModel.getLineupsMatch(id: id)
                         }
-                } else {
-                    ScrollView {}
+                } else if showTypeStatisticsView == .highlights {
+                    highlightsView
+                        .onAppear {
+                            viewModel.getHighlights(id: id)
+                        }
                 }
             }
     }
@@ -99,6 +102,26 @@ extension StatisticsMatchView {
                 }
             }
             
+        } else {
+            VStack {
+                progressView
+            }
+            .frame(maxHeight: .infinity)
+        }
+    }
+    
+    @ViewBuilder private var highlightsView: some View {
+        if let highlights = viewModel.highlights {
+            if !highlights.isEmpty {
+                ScrollView {
+                    
+                }
+            } else {
+                VStack {
+                    NoDataViewComponent(message: .noMatchHighlights)
+                }
+                .frame(maxHeight: .infinity)
+            }
         } else {
             VStack {
                 progressView
