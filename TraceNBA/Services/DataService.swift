@@ -192,6 +192,10 @@ actor DataService: DataServiceProtocol {
         return response
     }
     
+    func getMatchLineups(id: Int, isRefresh: Bool) async throws -> Data {
+        return try JSONEncoder().encode(Constants.fakeLineupsMatch)
+    }
+    
     private func getIntOfTypeTimeFromDate(date: Date, typeTime: TypeTime) throws -> Int {
         
         var formatter: DateFormatter
