@@ -30,4 +30,19 @@ final class ImageViewComponetViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
+    
+    func getHighlightImage(urlString: String) async {
+        await MainActor.run {
+            self.image = nil
+        }
+        do {
+            let data = try await manager.getImageFromUrl(urlString: urlString)
+            
+            await MainActor.run {
+                self.image = UIImage(data: data)
+            }
+        } catch {
+            debugPrint(error)
+        }
+    }
 }
