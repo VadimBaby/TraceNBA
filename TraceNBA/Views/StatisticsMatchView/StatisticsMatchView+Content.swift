@@ -114,7 +114,16 @@ extension StatisticsMatchView {
         if let highlights = viewModel.highlights {
             if !highlights.isEmpty {
                 ScrollView {
-                    
+                    VStack(spacing: 30) {
+                        ForEach(highlights) { highlight in
+                            HighlightsItemViewComponent(
+                                highlight: highlight,
+                                dataService: dataService
+                            )
+                        }
+                        PlugRectangleViewComponent()
+                    }
+                    .padding()
                 }
             } else {
                 VStack {
