@@ -77,7 +77,10 @@ extension StatisticsMatchView {
            let awayLineups = viewModel.awayMatchLineups {
             
             if homeLineups.players.isEmpty && awayLineups.players.isEmpty {
-                NoDataViewComponent(message: .noMatchLineups)
+                VStack {
+                    NoDataViewComponent(message: .noMatchLineups)
+                }
+                .frame(maxHeight: .infinity)
             } else {
                 ZStack(alignment: .bottom) {
                     if showTeam == .homeTeam {
