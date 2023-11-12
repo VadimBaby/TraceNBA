@@ -48,7 +48,7 @@ struct ListGroupStatisticsViewComponent<Content: View>: View {
         
         ScrollView{
             VStack {
-                ListGroupStatisticsViewComponent(statistics: Constants.fakeStatisticsMatches, groupName: .scoring, pickerSelection: .all) { value, total in
+                ListGroupStatisticsViewComponent(statistics: FakeData.fakeStatisticsMatches, groupName: .scoring, pickerSelection: .all) { value, total in
                     if let total {
                         ProgressCircleViewComponent(value: value, total: total)
                     } else {
@@ -56,7 +56,7 @@ struct ListGroupStatisticsViewComponent<Content: View>: View {
                     }
                 }
                 
-                ListGroupStatisticsViewComponent(statistics: Constants.fakeStatisticsMatches, groupName: .other, pickerSelection: .all) { value, total in
+                ListGroupStatisticsViewComponent(statistics: FakeData.fakeStatisticsMatches, groupName: .other, pickerSelection: .all) { value, total in
                     NumberCircleViewComponent(value: value)
                 }
             }

@@ -76,6 +76,6 @@ extension LineupsPlayerTableViewComponent {
     ZStack {
         GradientComponent()
         
-        LineupsPlayerTableViewComponent(players: Constants.fakeLineupsMatch.home.players)
+        LineupsPlayerTableViewComponent(players: FakeData.fakeLineupsMatch.home.players)
     }
 }
