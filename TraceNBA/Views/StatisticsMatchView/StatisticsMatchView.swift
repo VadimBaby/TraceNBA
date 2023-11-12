@@ -10,6 +10,8 @@ import SwiftUI
 struct StatisticsMatchView: View {
     @State var showTypeStatisticsView: TypeStatisticsView = .summary
     @State var pickerSelection: PeriodType = .all
+    @State var showTeamAnimated: TypeShowTeam = .homeTeam
+    @State var showTeam: TypeShowTeam = .homeTeam
     
     let matchModel: MatchModel
     

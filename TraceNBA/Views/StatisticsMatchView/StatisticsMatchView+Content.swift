@@ -74,13 +74,25 @@ extension StatisticsMatchView {
     
     @ViewBuilder private func getBoxScoreView() -> some View {
         if let homeLineups = viewModel.homeMatchLineups,
-           let awayLineups = viewModel.homeMatchLineups {
+           let awayLineups = viewModel.awayMatchLineups {
             
             if homeLineups.players.isEmpty && awayLineups.players.isEmpty {
                 NoDataViewComponent(message: .noMatchLineups)
             } else {
-                ScrollView {
+                ZStack(alignment: .bottom) {
+                    if showTeam == .homeTeam {
+                        LineupsPlayerTableViewComponent(players: homeLineups.players)
+                    } else if showTeam == .awayTeam {
+                        LineupsPlayerTableViewComponent(players: awayLineups.players)
+                    }
                     
+                    PickerTeamViewComponent(
+                        showTeam: $showTeam, 
+                        showTeamAnimated: $showTeamAnimated,
+                        nameHomeTeam: matchModel.homeTeam.shortName,
+                        nameAwayTeam: matchModel.awayTeam.shortName
+                    )
+                    .padding()
                 }
             }
             
