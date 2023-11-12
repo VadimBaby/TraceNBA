@@ -105,6 +105,16 @@ class StatisticsMatchViewModel: ObservableObject {
         return statistics
     }
     
+    private func getMatchHighlightsData(id: Int, isRefresh: Bool) async throws -> [HighlightModel] {
+        let data = try await dataService.getMatchHighlights(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        guard let highlights = decodeData.highlights else { throw Errors.dataIsNil }
+        
+        return highlights
+    }
+    
     func cancelAllTasks() {
         tasks.forEach{ $0.cancel() }
         
