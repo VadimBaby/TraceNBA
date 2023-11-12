@@ -25,7 +25,7 @@ struct PickerTeamViewComponent: View {
     
     var body: some View {
         HStack {
-            Text(nameHomeTeam)
+            Text(nameHomeTeam.uppercased())
                 .frame(maxWidth: .infinity)
                 .frame(height: 60)
                 .background {
@@ -43,7 +43,7 @@ struct PickerTeamViewComponent: View {
                     }
                 }
             
-            Text(nameAwayTeam)
+            Text(nameAwayTeam.uppercased())
                 .frame(maxWidth: .infinity)
                 .frame(height: 60)
                 .background {
