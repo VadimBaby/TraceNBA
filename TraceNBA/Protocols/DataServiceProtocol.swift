@@ -18,4 +18,6 @@ protocol DataServiceProtocol {
     func getStatisticsMatchData(id: Int, isRefresh: Bool) async throws -> Data
     
     func getMatchLineups(id: Int, isRefresh: Bool) async throws -> Data
+    
+    func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data
 }
