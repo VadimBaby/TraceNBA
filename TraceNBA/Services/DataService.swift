@@ -277,4 +277,13 @@ actor DataService: DataServiceProtocol {
         
         return try JSONEncoder().encode(dataModel)
     }
+    
+    func getImageFromUrl(urlString: String) async throws -> Data {
+        
+        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        
+        let (response, _) = try await URLSession.shared.data(from: url)
+        
+        return response
+    }
 }
