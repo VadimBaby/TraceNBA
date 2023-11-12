@@ -62,8 +62,9 @@ extension MatchViewComponent {
         VStack {
             MatchItemImageComponent(
                 id: id,
-                dataService: dataService,
-                imageScale: imageScale
+                typeEntiy: .team,
+                imageScale: imageScale,
+                dataService: dataService
             )
             
             Text(teamTitle)

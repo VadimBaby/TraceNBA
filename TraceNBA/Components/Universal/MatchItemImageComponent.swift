@@ -12,12 +12,14 @@ struct MatchItemImageComponent: View {
     @StateObject private var viewModel: MatchItemImageViewModel
     
     let id: Int
+    let typeEntity: TypeEntity
     let imageScale: CGFloat
     
-    init(id: Int, dataService: DataServiceProtocol, imageScale: CGFloat = 70) {
+    init(id: Int, typeEntiy: TypeEntity, imageScale: CGFloat = 70, dataService: DataServiceProtocol) {
         self.id = id
         self._viewModel = StateObject(wrappedValue: MatchItemImageViewModel(dataService: dataService))
         self.imageScale = imageScale
+        self.typeEntity = typeEntiy
     }
     
     var body: some View {
@@ -33,7 +35,7 @@ struct MatchItemImageComponent: View {
             }
         }
         .task {
-            await viewModel.getTeamImage(id: id)
+            await viewModel.getTeamImage(id: id, entity: typeEntity)
         }
     }
 }
@@ -42,6 +44,6 @@ struct MatchItemImageComponent: View {
     ZStack {
         GradientComponent()
         
-        MatchItemImageComponent(id: 1, dataService: DataService())
+        MatchItemImageComponent(id: 1, typeEntiy: .team, dataService: DataService())
     }
 }

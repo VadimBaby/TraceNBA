@@ -19,9 +19,9 @@ final class MatchItemImageViewModel: ObservableObject {
         self.manager = dataService
     }
     
-    func getTeamImage(id: Int) async {
+    func getTeamImage(id: Int, entity: TypeEntity) async {
         do {
-            let uiImage = try await manager.getPhotoEntity(entity: .team, id: id)
+            let uiImage = try await manager.getPhotoEntity(entity: entity, id: id)
             
             await MainActor.run {
                 self.image = uiImage

@@ -30,6 +30,7 @@ extension MatchItemViewComponent {
             HStack {
                 MatchItemImageComponent(
                     id: matchModel.homeTeam.id,
+                    typeEntiy: .team,
                     dataService: dataService
                 )
                 
@@ -41,6 +42,7 @@ extension MatchItemViewComponent {
                 
                 MatchItemImageComponent(
                     id: matchModel.awayTeam.id,
+                    typeEntiy: .team,
                     dataService: dataService
                 )
             }
