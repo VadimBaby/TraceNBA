@@ -16,4 +16,6 @@ protocol DataServiceProtocol {
     func getScheduleMatchesData(dateSchedule: Date, isRefresh: Bool) async throws -> Data
     
     func getStatisticsMatchData(id: Int, isRefresh: Bool) async throws -> Data
+    
+    func getMatchLineups(id: Int, isRefresh: Bool) async throws -> Data
 }
