@@ -24,7 +24,7 @@ struct PlayerModel: Identifiable, Codable {
     let dateOfBirthTimestamp: Int
     let team: TeamModel?
     
-    init(id: Int, name: String, firstName: String, lastName: String, shortName: String, position: String, jerseyNumber: String? = nil, height: Int? = nil, dateOfBirthTimestamp: Int, team: TeamModel? = nil) {
+    init(id: Int, name: String, firstName: String, lastName: String, shortName: String, position: String, country: CountryModel, jerseyNumber: String? = nil, height: Int? = nil, dateOfBirthTimestamp: Int, team: TeamModel? = nil) {
         self.id = id
         self.name = name
         self.firstName = firstName
@@ -35,5 +35,6 @@ struct PlayerModel: Identifiable, Codable {
         self.height = height
         self.dateOfBirthTimestamp = dateOfBirthTimestamp
         self.team = team
+        self.country = country
     }
 }
