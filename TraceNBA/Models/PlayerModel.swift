@@ -14,8 +14,8 @@ struct PlayerDataModel: Codable {
 struct PlayerModel: Identifiable, Codable {
     let id: Int
     let name: String
-    let firstName: String
-    let lastName: String
+    let firstName: String?
+    let lastName: String?
     let shortName: String
     let position: String
     let country: CountryModel
