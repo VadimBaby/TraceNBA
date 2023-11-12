@@ -28,4 +28,51 @@ struct PlayerStatisticsModel: Codable {
     let steals: Int
     let plusMinus: Int
     let fieldGoalPct: Int
+    
+    func getStatisticFromString(string: String) -> Int? {
+        switch string {
+        case "secondsPlayed":
+            return self.secondsPlayed
+        case "points":
+            return self.points
+        case "twoPointsMade":
+            return self.twoPointsMade
+        case "twoPointAttempts":
+            return self.twoPointAttempts
+        case "threePointsMade":
+            return self.threePointsMade
+        case "threePointAttempts":
+            return self.threePointAttempts
+        case "freeThrowsMade":
+            return self.freeThrowsMade
+        case "freeThrowAttempts":
+            return self.freeThrowAttempts
+        case "fieldGoalsMade":
+            return self.fieldGoalsMade
+        case "fieldGoalAttempts":
+            return self.fieldGoalAttempts
+        case "rebounds":
+            return self.rebounds
+        case "defensiveRebounds":
+            return self.defensiveRebounds
+        case "offensiveRebounds":
+            return self.offensiveRebounds
+        case "turnovers":
+            return self.turnovers
+        case "blocks":
+            return self.blocks
+        case "personalFouls":
+            return self.personalFouls
+        case "assists":
+            return self.assists
+        case "steals":
+            return self.steals
+        case "plusMinus":
+            return self.plusMinus
+        case "fieldGoalPct":
+            return self.fieldGoalPct
+        default:
+            return nil
+        }
+    }
 }
