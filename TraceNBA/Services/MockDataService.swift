@@ -114,6 +114,16 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
         }
     }
     
+    func getImageFromUrl(url: String) async throws -> Data {
+        if let data = anyData {
+            let dataEncode = try JSONEncoder().encode(data)
+            
+            return dataEncode
+        } else {
+            return try JSONEncoder().encode("")
+        }
+    }
+    
     private func encodeRandomImageFromList(list: [String]) throws -> UIImage {
         guard let randomNameImage = list.randomElement() else { throw Errors.listIsEmpty }
         
