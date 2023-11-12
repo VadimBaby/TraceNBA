@@ -13,7 +13,7 @@ struct StatisticsMatchView: View {
     
     let matchModel: MatchModel
     
-    @StateObject private var viewModel: StatisticsMatchViewModel
+    @StateObject public var viewModel: StatisticsMatchViewModel
     
     let dataService: DataServiceProtocol
     
