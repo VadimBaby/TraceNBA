@@ -114,7 +114,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
         }
     }
     
-    func getImageFromUrl(url: String) async throws -> Data {
+    func getImageFromUrl(urlString: String) async throws -> Data {
         if let data = anyData {
             let dataEncode = try JSONEncoder().encode(data)
             
