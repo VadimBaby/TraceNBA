@@ -25,6 +25,7 @@
 		2C0DBF462AFFA8D8002DE51B /* LineupsItemMissingPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF452AFFA8D8002DE51B /* LineupsItemMissingPlayerModel.swift */; };
 		2C0DBF482AFFA943002DE51B /* PlayerStatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF472AFFA943002DE51B /* PlayerStatisticsModel.swift */; };
 		2C0DBF4A2AFFAB64002DE51B /* TypeStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF492AFFAB64002DE51B /* TypeStatisticsView.swift */; };
+		2C0DBF4C2B009242002DE51B /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF4B2B009242002DE51B /* CountryModel.swift */; };
 		2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */; };
 		2C3D5F5E2AF9563F0066790A /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5D2AF9563F0066790A /* GroupModel.swift */; };
 		2C3D5F602AF956620066790A /* PeriodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5F2AF956620066790A /* PeriodType.swift */; };
@@ -99,6 +100,7 @@
 		2C0DBF452AFFA8D8002DE51B /* LineupsItemMissingPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineupsItemMissingPlayerModel.swift; sourceTree = "<group>"; };
 		2C0DBF472AFFA943002DE51B /* PlayerStatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsModel.swift; sourceTree = "<group>"; };
 		2C0DBF492AFFAB64002DE51B /* TypeStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStatisticsView.swift; sourceTree = "<group>"; };
+		2C0DBF4B2B009242002DE51B /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchModel.swift; sourceTree = "<group>"; };
 		2C3D5F5D2AF9563F0066790A /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		2C3D5F5F2AF956620066790A /* PeriodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodType.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				2C88F9402AF35973007B28F8 /* TeamModel.swift */,
 				2C88F9422AF359DC007B28F8 /* ScoreModel.swift */,
 				2C88F9442AF35A4D007B28F8 /* DataModel.swift */,
+				2C0DBF4B2B009242002DE51B /* CountryModel.swift */,
 				2C0DBF472AFFA943002DE51B /* PlayerStatisticsModel.swift */,
 				2C88F9462AF35BF3007B28F8 /* ManagerModel.swift */,
 				2C9576E02AF686BD00BC7F75 /* TournamentModel.swift */,
@@ -527,6 +530,7 @@
 				2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,
 				2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */,
+				2C0DBF4C2B009242002DE51B /* CountryModel.swift in Sources */,
 				2C3D5F602AF956620066790A /* PeriodType.swift in Sources */,
 				2C9576EB2AF779D200BC7F75 /* NoDataViewComponent.swift in Sources */,
 				2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */,
