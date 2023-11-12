@@ -8,6 +8,6 @@
 import Foundation
 
 struct LineupsItemModel: Codable {
-    let players: [LineupsItemPlayerModel]?
-    let missingPlayers: [LineupsItemMissingPlayerModel]?
+    let players: [LineupsItemPlayerModel]
+    let missingPlayers: [LineupsItemMissingPlayerModel]
 }
