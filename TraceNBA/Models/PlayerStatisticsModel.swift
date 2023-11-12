@@ -27,7 +27,7 @@ struct PlayerStatisticsModel: Codable {
     let assists: Int
     let steals: Int
     let plusMinus: Int
-    let fieldGoalPct: Int
+    let fieldGoalPct: Int?
     
     func getStatisticFromString(string: String) -> Int? {
         switch string {
