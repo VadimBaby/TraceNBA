@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum TypeShowTeam {
-    case homeTeam
-    case awayTeam
-}
-
 struct PickerTeamViewComponent: View {
     
     @Binding var showTeam: TypeShowTeam
