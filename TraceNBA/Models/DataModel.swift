@@ -11,6 +11,7 @@ struct DataModel: Codable {
     let events: [MatchModel]?
     let players: [PlayerDataModel]?
     let statistics: [StatisticsMatchModel]?
+    let highlights: [HighlightModel]?
     let message: String?
     
     init(events: [MatchModel]) {
@@ -18,6 +19,7 @@ struct DataModel: Codable {
         self.players = nil
         self.message = nil
         self.statistics = nil
+        self.highlights = nil
     }
     
     init(players: [PlayerDataModel]) {
@@ -25,10 +27,20 @@ struct DataModel: Codable {
         self.events = nil
         self.message = nil
         self.statistics = nil
+        self.highlights = nil
     }
     
     init(statistics: [StatisticsMatchModel]) {
         self.statistics = statistics
+        self.events = nil
+        self.players = nil
+        self.message = nil
+        self.highlights = nil
+    }
+    
+    init(highlights: [HighlightModel]) {
+        self.highlights = highlights
+        self.statistics = nil
         self.events = nil
         self.players = nil
         self.message = nil
@@ -39,5 +51,6 @@ struct DataModel: Codable {
         self.players = nil
         self.events = nil
         self.statistics = nil
+        self.highlights = nil
     }
 }
