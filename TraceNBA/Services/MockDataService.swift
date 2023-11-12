@@ -103,6 +103,20 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
         }
     }
     
+    func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data {
+        if let data = anyData {
+            let dataEncode = try JSONEncoder().encode(data)
+            
+            return dataEncode
+        } else {
+            let dataModel = DataModel(highlights: FakeData.fakeMatchHighlights)
+            
+            let dataEncode = try JSONEncoder().encode(dataModel)
+            
+            return dataEncode
+        }
+    }
+    
     private func encodeRandomImageFromList(list: [String]) throws -> UIImage {
         guard let randomNameImage = list.randomElement() else { throw Errors.listIsEmpty }
         
