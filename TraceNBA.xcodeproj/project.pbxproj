@@ -27,6 +27,7 @@
 		2C0DBF4A2AFFAB64002DE51B /* TypeStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF492AFFAB64002DE51B /* TypeStatisticsView.swift */; };
 		2C0DBF4C2B009242002DE51B /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF4B2B009242002DE51B /* CountryModel.swift */; };
 		2C0DBF4E2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF4D2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift */; };
+		2C0DBF502B00BDE7002DE51B /* TypeTopTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF4F2B00BDE7002DE51B /* TypeTopTableItem.swift */; };
 		2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */; };
 		2C3D5F5E2AF9563F0066790A /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5D2AF9563F0066790A /* GroupModel.swift */; };
 		2C3D5F602AF956620066790A /* PeriodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5F2AF956620066790A /* PeriodType.swift */; };
@@ -103,6 +104,7 @@
 		2C0DBF492AFFAB64002DE51B /* TypeStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStatisticsView.swift; sourceTree = "<group>"; };
 		2C0DBF4B2B009242002DE51B /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		2C0DBF4D2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineupsPlayerTableViewComponent.swift; sourceTree = "<group>"; };
+		2C0DBF4F2B00BDE7002DE51B /* TypeTopTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTopTableItem.swift; sourceTree = "<group>"; };
 		2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchModel.swift; sourceTree = "<group>"; };
 		2C3D5F5D2AF9563F0066790A /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		2C3D5F5F2AF956620066790A /* PeriodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodType.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				2C3D5F612AF9568B0066790A /* GroupNameType.swift */,
 				2C88F94F2AF362AF007B28F8 /* Errors.swift */,
 				2C88F9822AF4B653007B28F8 /* TypeEntity.swift */,
+				2C0DBF4F2B00BDE7002DE51B /* TypeTopTableItem.swift */,
 				2C9576EC2AF77A1000BC7F75 /* NoDataMessage.swift */,
 				2C3D5F652AF958450066790A /* NameStatisticsItemType.swift */,
 				2C3D5F6B2AF95AA10066790A /* ValueType.swift */,
@@ -532,6 +535,7 @@
 				2C0DBF2D2AFD322F002DE51B /* PeriodPickerViewComponent.swift in Sources */,
 				2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */,
 				2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */,
+				2C0DBF502B00BDE7002DE51B /* TypeTopTableItem.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,
 				2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */,
 				2C0DBF4C2B009242002DE51B /* CountryModel.swift in Sources */,
