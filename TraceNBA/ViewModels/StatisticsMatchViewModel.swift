@@ -78,8 +78,8 @@ class StatisticsMatchViewModel: ObservableObject {
             print("Cannot refresh")
         } catch {
             await MainActor.run {
-                homeMatchLineups = LineupsItemModel(players: nil, missingPlayers: nil)
-                awayMatchLineups = LineupsItemModel(players: nil, missingPlayers: nil)
+                homeMatchLineups = LineupsItemModel(players: [], missingPlayers: [])
+                awayMatchLineups = LineupsItemModel(players: [], missingPlayers: [])
             }
             
             print(error.localizedDescription)
