@@ -20,4 +20,6 @@ protocol DataServiceProtocol {
     func getMatchLineups(id: Int, isRefresh: Bool) async throws -> Data
     
     func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data
+    
+    func getImageFromUrl(urlString: String) async throws -> Data
 }
