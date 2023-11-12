@@ -12,9 +12,6 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     
     let anyData: AnyData?
     
-    let listLiveMatches: [MatchModel] = FakeData.fakeListLiveMatches
-    let statisticsMatches: [StatisticsMatchModel] = FakeData.fakeStatisticsMatches
-    
     init(data: AnyData? = nil) {
         anyData = data
     }
@@ -29,7 +26,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
             
             return dataEncode
         } else {
-            let dataModel: DataModel = DataModel(events: self.listLiveMatches)
+            let dataModel: DataModel = DataModel(events: FakeData.fakeListLiveMatches)
             
             let data = try JSONEncoder().encode(dataModel)
             
@@ -47,7 +44,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
             
             return dataEncode
         } else {
-            let dataModel: DataModel = DataModel(events: self.listLiveMatches)
+            let dataModel: DataModel = DataModel(events: FakeData.fakeListLiveMatches)
             
             let data = try JSONEncoder().encode(dataModel)
             
@@ -81,7 +78,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
             
             return dataEncode
         } else {
-            let dataModel = DataModel(statistics: self.statisticsMatches)
+            let dataModel = DataModel(statistics: FakeData.fakeStatisticsMatches)
             
             let dataEncode = try JSONEncoder().encode(dataModel)
             
