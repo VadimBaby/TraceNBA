@@ -82,7 +82,7 @@ class StatisticsMatchViewModel: ObservableObject {
                 awayMatchLineups = LineupsItemModel(players: [], missingPlayers: [])
             }
             
-            print(error.localizedDescription)
+            debugPrint(error)
         }
     }
     
