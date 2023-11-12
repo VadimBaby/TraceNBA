@@ -87,6 +87,27 @@ class StatisticsMatchViewModel: ObservableObject {
         }
     }
     
+    func asyncGetMatchHighlights(id: Int, isRefresh: Bool) async {
+        await MainActor.run {
+            highlights = nil
+        }
+        do {
+            let highlights = try await getMatchHighlightsData(id: id, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.highlights = highlights
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                highlights = []
+            }
+            
+            debugPrint(error)
+        }
+    }
+    
     private func getMatchLineupsData(id: Int, isRefresh: Bool) async throws -> LineupsDataModel {
         let data = try await dataService.getMatchLineups(id: id, isRefresh: isRefresh)
         
