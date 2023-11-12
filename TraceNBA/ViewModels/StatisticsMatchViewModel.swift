@@ -41,6 +41,16 @@ class StatisticsMatchViewModel: ObservableObject {
         tasks.append(task2)
     }
     
+    func getHighlights(id: Int) {
+        guard highlights == nil else { return }
+        
+        let task3 = Task {
+            await asyncGetMatchHighlights(id: id, isRefresh: false)
+        }
+        
+        tasks.append(task3)
+    }
+    
     func asyncGetStatisticsMatch(id: Int, isRefresh: Bool) async {
         await MainActor.run {
             statistics = nil
