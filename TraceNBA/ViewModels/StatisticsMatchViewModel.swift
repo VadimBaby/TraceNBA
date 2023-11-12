@@ -11,6 +11,7 @@ class StatisticsMatchViewModel: ObservableObject {
     @Published private(set) var statistics: [StatisticsMatchModel]? = nil
     @Published private(set) var homeMatchLineups: LineupsItemModel? = nil
     @Published private(set) var awayMatchLineups: LineupsItemModel? = nil
+    @Published private(set) var highlights: [HighlightModel]? = nil
     
     let dataService: DataServiceProtocol
     
