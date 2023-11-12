@@ -65,7 +65,7 @@
 		2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E62AF7730900BC7F75 /* EventsView.swift */; };
 		2C9576E92AF7735400BC7F75 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */; };
 		2C9576EB2AF779D200BC7F75 /* NoDataViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */; };
-		2C9576ED2AF77A1000BC7F75 /* NoDateMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */; };
+		2C9576ED2AF77A1000BC7F75 /* NoDataMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576EC2AF77A1000BC7F75 /* NoDataMessage.swift */; };
 		2C9576F32AF782BB00BC7F75 /* TypeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F22AF782BB00BC7F75 /* TypeTime.swift */; };
 		2C9576F72AF79B0000BC7F75 /* PlugRectangleViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F62AF79B0000BC7F75 /* PlugRectangleViewComponent.swift */; };
 		2C9576F92AF7E65C00BC7F75 /* EventsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F82AF7E65C00BC7F75 /* EventsViewModel_Tests.swift */; };
@@ -142,7 +142,7 @@
 		2C9576E62AF7730900BC7F75 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataViewComponent.swift; sourceTree = "<group>"; };
-		2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDateMessage.swift; sourceTree = "<group>"; };
+		2C9576EC2AF77A1000BC7F75 /* NoDataMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataMessage.swift; sourceTree = "<group>"; };
 		2C9576F22AF782BB00BC7F75 /* TypeTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTime.swift; sourceTree = "<group>"; };
 		2C9576F62AF79B0000BC7F75 /* PlugRectangleViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugRectangleViewComponent.swift; sourceTree = "<group>"; };
 		2C9576F82AF7E65C00BC7F75 /* EventsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel_Tests.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 				2C3D5F612AF9568B0066790A /* GroupNameType.swift */,
 				2C88F94F2AF362AF007B28F8 /* Errors.swift */,
 				2C88F9822AF4B653007B28F8 /* TypeEntity.swift */,
-				2C9576EC2AF77A1000BC7F75 /* NoDateMessage.swift */,
+				2C9576EC2AF77A1000BC7F75 /* NoDataMessage.swift */,
 				2C3D5F652AF958450066790A /* NameStatisticsItemType.swift */,
 				2C3D5F6B2AF95AA10066790A /* ValueType.swift */,
 				2C9576F22AF782BB00BC7F75 /* TypeTime.swift */,
@@ -537,7 +537,7 @@
 				2C88F9432AF359DC007B28F8 /* ScoreModel.swift in Sources */,
 				2C0DBF4A2AFFAB64002DE51B /* TypeStatisticsView.swift in Sources */,
 				2C9576F72AF79B0000BC7F75 /* PlugRectangleViewComponent.swift in Sources */,
-				2C9576ED2AF77A1000BC7F75 /* NoDateMessage.swift in Sources */,
+				2C9576ED2AF77A1000BC7F75 /* NoDataMessage.swift in Sources */,
 				2C4D692E2AF28F9F00CF5A55 /* TraceNBAApp.swift in Sources */,
 				2C9576E92AF7735400BC7F75 /* EventsViewModel.swift in Sources */,
 				2C88F95D2AF36D4A007B28F8 /* StreamMatchesView.swift in Sources */,

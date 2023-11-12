@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoDataViewComponent: View {
     
-    let message: NoDateMessage
+    let message: NoDataMessage
     
     var body: some View {
         Text(message.rawValue)
