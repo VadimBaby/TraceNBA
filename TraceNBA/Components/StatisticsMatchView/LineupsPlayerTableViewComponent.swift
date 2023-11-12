@@ -27,6 +27,8 @@ struct LineupsPlayerTableViewComponent: View {
                         getLineupsPlayerTableItem(player: player, topItems: topItems)
                     }
                 }
+                
+                plugRectangle
             }
             .padding()
         }
@@ -61,6 +63,12 @@ extension LineupsPlayerTableViewComponent {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
+    }
+    
+    @ViewBuilder private var plugRectangle: some View {
+        Rectangle()
+            .fill(Color.clear)
+            .frame(height: 100)
     }
 }
 
