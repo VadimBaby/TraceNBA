@@ -30,6 +30,16 @@ class StatisticsMatchViewModel: ObservableObject {
         tasks.append(task1)
     }
     
+    func getLineupsMatch(id: Int) {
+        guard homeMatchLineups == nil || awayMatchLineups == nil else { return }
+        
+        let task2 = Task {
+            await asyncGetMatchLineups(id: id, isRefresh: false)
+        }
+        
+        tasks.append(task2)
+    }
+    
     func asyncGetStatisticsMatch(id: Int, isRefresh: Bool) async {
         await MainActor.run {
             statistics = nil
