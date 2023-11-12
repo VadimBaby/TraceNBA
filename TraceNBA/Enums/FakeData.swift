@@ -1127,4 +1127,34 @@ enum FakeData {
             ]
         )
     )
+    
+    static let fakeMatchHighlights: [HighlightModel] = [
+        HighlightModel(
+            title: "Golden State Warriors 102-101 Sacramento Kings",
+            subtitle: "Full Highlights",
+            url: "https://youtu.be/tzc5sx3T1E4",
+            thumbnailUrl: "https://i.ytimg.com/vi/tzc5sx3T1E4/maxresdefault.jpg",
+            id: 5114811,
+            createdAtTimestamp: 1698909350,
+            sourceUrl: "https://youtu.be/tzc5sx3T1E4"
+        ),
+        HighlightModel(
+            title: "Golden State Warriors 102-101 Sacramento Kings",
+            subtitle: "Short Highlights",
+            url: "https://youtu.be/McnBZHnE6aE",
+            thumbnailUrl: "https://i.ytimg.com/vi/McnBZHnE6aE/maxresdefault.jpg",
+            id: 5114809,
+            createdAtTimestamp: 1698909303,
+            sourceUrl: "https://youtu.be/McnBZHnE6aE"
+        ),
+        HighlightModel(
+            title: "Golden State Warriors 102-101 Sacramento Kings",
+            subtitle: "Final Ending",
+            url: "https://www.youtube.com/watch?v=Bavb-cbSgXE",
+            thumbnailUrl: "https://img.youtube.com/vi/Bavb-cbSgXE/hqdefault.jpg",
+            id: 5114815,
+            createdAtTimestamp: 1698909568,
+            sourceUrl: "https://www.youtube.com/watch?v=Bavb-cbSgXE"
+        )
+    ]
 }
