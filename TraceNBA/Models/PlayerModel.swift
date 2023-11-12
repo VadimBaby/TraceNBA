@@ -18,6 +18,7 @@ struct PlayerModel: Identifiable, Codable {
     let lastName: String
     let shortName: String
     let position: String
+    let country: CountryModel
     let jerseyNumber: String?
     let height: Int?
     let dateOfBirthTimestamp: Int
