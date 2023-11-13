@@ -14,12 +14,14 @@ struct ImageViewComponent: View {
     let id: Int
     let typeEntity: TypeEntity
     let imageScale: CGFloat
+    let colorProgressView: Color
     
-    init(id: Int, typeEntiy: TypeEntity, imageScale: CGFloat = 70, dataService: DataServiceProtocol) {
+    init(id: Int, typeEntiy: TypeEntity, imageScale: CGFloat = 70, colorProgressView: Color = Color.gray, dataService: DataServiceProtocol) {
         self.id = id
         self._viewModel = StateObject(wrappedValue: ImageViewComponetViewModel(dataService: dataService))
         self.imageScale = imageScale
         self.typeEntity = typeEntiy
+        self.colorProgressView = colorProgressView
     }
     
     var body: some View {
@@ -30,7 +32,7 @@ struct ImageViewComponent: View {
                     .frame(width: imageScale, height: imageScale)
             } else {
                 ProgressView()
-                    .tint(Color.gray)
+                    .tint(colorProgressView)
                     .frame(width: imageScale, height: imageScale)
             }
         }
@@ -44,6 +46,6 @@ struct ImageViewComponent: View {
     ZStack {
         GradientComponent()
         
-        ImageViewComponent(id: 1, typeEntiy: .team, dataService: DataService())
+        ImageViewComponent(id: 1, typeEntiy: .team, colorProgressView: Color.white, dataService: DataService())
     }
 }
