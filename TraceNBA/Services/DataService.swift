@@ -19,28 +19,7 @@ actor DataService: DataServiceProtocol {
         
         guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
         
-        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
-        
-        let headers = [
-            "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
-        ]
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        let nowInterval: Double = Date().timeIntervalSince1970
-        
-        let differenceBetweenInterval: Double = nowInterval - lastRequestInterval
-        
-        guard differenceBetweenInterval >= 0 else { throw Errors.cannotRefresh }
-        
-        let (response, _) = try await URLSession.shared.data(for: request)
-
-        print(String(data: response, encoding: .utf8))
-        
-        return response
+        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
     }
     
     func getScheduleMatchesData(dateSchedule: Date, isRefresh: Bool) async throws -> Data {
@@ -53,39 +32,7 @@ actor DataService: DataServiceProtocol {
         
         guard let url = URL(string: urlString) else { throw URLError(.badURL) }
         
-        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
-        
-        let headers = [
-            "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
-        ]
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        let nowInterval: Double = Date().timeIntervalSince1970
-        
-        let differenceBetweenInterval: Double = nowInterval - lastRequestInterval
-        
-        if differenceBetweenInterval >= seconds {
-            lastRequestInterval = nowInterval + seconds
-        } else if differenceBetweenInterval < 0 {
-            guard !isRefresh else { throw Errors.cannotRefresh }
-            
-            lastRequestInterval = lastRequestInterval + seconds
-            
-            try await Task.sleep(for: .seconds(abs(differenceBetweenInterval) + seconds))
-            
-        } else {
-            lastRequestInterval = nowInterval + seconds
-            
-            try await Task.sleep(for: .seconds(seconds))
-        }
-        
-        let (response, _) = try await URLSession.shared.data(for: request)
-        
-        return response
+        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
     }
     
     func getPhotoEntity(entity: TypeEntity, id: Int) async throws -> UIImage {
@@ -114,6 +61,7 @@ actor DataService: DataServiceProtocol {
         
         guard imageFromManager == nil else {
             guard let imageFromManager else { throw URLError(.badServerResponse) }
+            
             return imageFromManager
         }
         
@@ -157,39 +105,7 @@ actor DataService: DataServiceProtocol {
         
         guard let url = URL(string: urlString) else { throw URLError(.badURL) }
         
-        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
-        
-        let headers = [
-            "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
-        ]
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        let nowInterval: Double = Date().timeIntervalSince1970
-        
-        let differenceBetweenInterval: Double = nowInterval - lastRequestInterval
-        
-        if differenceBetweenInterval >= seconds {
-            lastRequestInterval = nowInterval + seconds
-        } else if differenceBetweenInterval < 0 {
-            guard !isRefresh else { throw Errors.cannotRefresh }
-            
-            lastRequestInterval = lastRequestInterval + seconds
-            
-            try await Task.sleep(for: .seconds(abs(differenceBetweenInterval) + seconds))
-            
-        } else {
-            lastRequestInterval = nowInterval + seconds
-            
-            try await Task.sleep(for: .seconds(seconds))
-        }
-        
-        let (response, _) = try await URLSession.shared.data(for: request)
-        
-        return response
+        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
     }
     
     func getMatchLineups(id: Int, isRefresh: Bool) async throws -> Data {
@@ -197,6 +113,27 @@ actor DataService: DataServiceProtocol {
         
         guard let url = URL(string: urlString) else { throw URLError(.badURL) }
         
+        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
+    }
+    
+    func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data {
+        let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/match/\(id)/highlights"
+        
+        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        
+        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
+    }
+    
+    func getImageFromUrl(urlString: String) async throws -> Data {
+        
+        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        
+        let (response, _) = try await URLSession.shared.data(from: url)
+        
+        return response
+    }
+    
+    private func getDataFromUrl(url: URL, isRefresh: Bool = false) async throws -> Data {
         guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
         
         let headers = [
@@ -270,54 +207,5 @@ actor DataService: DataServiceProtocol {
         guard let intTypeTime: Int = Int(typeTime) else { throw Errors.badDate }
         
         return intTypeTime
-    }
-    
-    func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data {
-        let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/match/\(id)/highlights"
-        
-        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
-        
-        guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
-        
-        let headers = [
-            "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "basketapi1.p.rapidapi.com"
-        ]
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        let nowInterval: Double = Date().timeIntervalSince1970
-        
-        let differenceBetweenInterval: Double = nowInterval - lastRequestInterval
-        
-        if differenceBetweenInterval >= seconds {
-            lastRequestInterval = nowInterval + seconds
-        } else if differenceBetweenInterval < 0 {
-            guard !isRefresh else { throw Errors.cannotRefresh }
-            
-            lastRequestInterval = lastRequestInterval + seconds
-            
-            try await Task.sleep(for: .seconds(abs(differenceBetweenInterval) + seconds))
-            
-        } else {
-            lastRequestInterval = nowInterval + seconds
-            
-            try await Task.sleep(for: .seconds(seconds))
-        }
-        
-        let (response, _) = try await URLSession.shared.data(for: request)
-        
-        return response
-    }
-    
-    func getImageFromUrl(urlString: String) async throws -> Data {
-        
-        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
-        
-        let (response, _) = try await URLSession.shared.data(from: url)
-        
-        return response
     }
 }
