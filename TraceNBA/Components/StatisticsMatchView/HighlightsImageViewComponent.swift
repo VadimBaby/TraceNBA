@@ -21,10 +21,21 @@ struct HighlightsImageViewComponent: View {
     var body: some View {
         ZStack {
             if let image = viewModel.image {
-                Image(uiImage: image)
-                    .resizable()
-                    .frame(maxWidth: .infinity)
-                    .scaledToFit()
+                ZStack {
+                    Image(uiImage: image)
+                        .resizable()
+                        .frame(maxWidth: .infinity)
+                        .scaledToFit()
+                    
+                    Image(systemName: "play.circle.fill")
+                        .font(.system(size: 60))
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(
+                            .ultraThickMaterial,
+                            .regularMaterial,
+                            .ultraThinMaterial
+                        )
+                }
             } else {
                 VStack {
                     ProgressView()
