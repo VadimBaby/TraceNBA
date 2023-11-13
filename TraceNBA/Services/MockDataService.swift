@@ -17,15 +17,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getLiveMatchesData(isRefresh: Bool) async throws -> Data {
-        if isRefresh {
-            throw Errors.cannotRefresh
-        }
-        
-        if let data = anyData {
-            let dataEncode = try JSONEncoder().encode(data)
-            
-            return dataEncode
-        } else {
+        try await getData(isRefresh: isRefresh) {
             let dataModel: DataModel = DataModel(events: FakeData.fakeListLiveMatches)
             
             let data = try JSONEncoder().encode(dataModel)
@@ -35,15 +27,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getScheduleMatchesData(dateSchedule: Date, isRefresh: Bool) async throws -> Data {
-        if isRefresh {
-            throw Errors.cannotRefresh
-        }
-        
-        if let data = anyData {
-            let dataEncode = try JSONEncoder().encode(data)
-            
-            return dataEncode
-        } else {
+        return try await getData(isRefresh: isRefresh) {
             let dataModel: DataModel = DataModel(events: FakeData.fakeListLiveMatches)
             
             let data = try JSONEncoder().encode(dataModel)
@@ -73,11 +57,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getStatisticsMatchData(id: Int, isRefresh: Bool) async throws -> Data {
-        if let data = anyData {
-            let dataEncode = try JSONEncoder().encode(data)
-            
-            return dataEncode
-        } else {
+        return try await getData(isRefresh: isRefresh) {
             let dataModel = DataModel(statistics: FakeData.fakeStatisticsMatches)
             
             let dataEncode = try JSONEncoder().encode(dataModel)
@@ -87,11 +67,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getMatchLineups(id: Int, isRefresh: Bool) async throws -> Data {
-        if let data = anyData {
-            let dataEncode = try JSONEncoder().encode(data)
-            
-            return dataEncode
-        } else {
+        return try await getData(isRefresh: isRefresh) {
             let dataModel: LineupsDataModel = FakeData.fakeLineupsMatch
             
             let dataEncode = try JSONEncoder().encode(dataModel)
@@ -101,11 +77,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data {
-        if let data = anyData {
-            let dataEncode = try JSONEncoder().encode(data)
-            
-            return dataEncode
-        } else {
+        return try await getData(isRefresh: isRefresh) {
             let dataModel = DataModel(highlights: FakeData.fakeMatchHighlights)
             
             let dataEncode = try JSONEncoder().encode(dataModel)
@@ -115,12 +87,22 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getImageFromUrl(urlString: String) async throws -> Data {
+        return try await getData(isRefresh: false) {
+            return try JSONEncoder().encode("")
+        }
+    }
+    
+    private func getData(isRefresh: Bool ,closure: () throws -> Data) async throws -> Data {
+        if isRefresh {
+            throw Errors.cannotRefresh
+        }
+        
         if let data = anyData {
             let dataEncode = try JSONEncoder().encode(data)
             
             return dataEncode
         } else {
-            return try JSONEncoder().encode("")
+            return try closure()
         }
     }
     
