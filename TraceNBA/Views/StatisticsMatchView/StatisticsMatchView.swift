@@ -12,6 +12,8 @@ struct StatisticsMatchView: View {
     @State var pickerSelection: PeriodType = .all
     @State var showTeamAnimated: TypeShowTeam = .homeTeam
     @State var showTeam: TypeShowTeam = .homeTeam
+    @State var sortedParameter: TypeTopTableItem = .pts
+    @State var isAscending: Bool = true
     
     let matchModel: MatchModel
     

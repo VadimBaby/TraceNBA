@@ -11,6 +11,9 @@ struct LineupsPlayerTableViewComponent: View {
     
     let players: [LineupsItemPlayerModel]
     
+    @Binding var sortedParameter: TypeTopTableItem
+    @Binding var isAscending: Bool
+    
     private let topItems: [TypeTopTableItem] = [.min, .pts, .reb, .ast]
     
     var body: some View {
@@ -23,7 +26,8 @@ struct LineupsPlayerTableViewComponent: View {
                     .frame(height: 1)
                 
                 VStack(spacing: 10) {
-                    ForEach(players, id: \.player.id) { player in
+                    ForEach(sortedPlayers(players: players), id: \.player.id) { player in
+                        
                         getLineupsPlayerTableItem(player: player, topItems: topItems)
                     }
                 }
@@ -34,6 +38,22 @@ struct LineupsPlayerTableViewComponent: View {
         }
         .font(.headline)
         .foregroundStyle(Color.white)
+    }
+    
+    private func sortedPlayers(players: [LineupsItemPlayerModel]) -> [LineupsItemPlayerModel] {
+        return players.sorted { first, second in
+            let firstResult: Int? = first.statistics.getStatisticFromString(string: sortedParameter.parameter)
+            
+            let secondResult: Int? = second.statistics.getStatisticFromString(string: sortedParameter.parameter)
+            
+            guard let firstResult, let secondResult else {
+                return first.statistics.assists > second.statistics.assists
+            }
+            
+            let result: Bool = firstResult > secondResult
+            
+            return isAscending ? result : !result
+        }
     }
 }
 
@@ -59,8 +79,24 @@ extension LineupsPlayerTableViewComponent {
                 .frame(width: 100, alignment: .leading)
             
             ForEach(topItems, id: \.self) { item in
-                Text(item.rawValue)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                HStack(spacing: 3) {
+                    Text(item.rawValue)
+                    
+                    if sortedParameter == item {
+                        Image(systemName: isAscending ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill")
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .center)
+                .onTapGesture {
+                    withAnimation(.easeInOut) {
+                        if sortedParameter == item {
+                            isAscending.toggle()
+                        } else {
+                            sortedParameter = item
+                            isAscending = true
+                        }
+                    }
+                }
             }
         }
     }
@@ -76,6 +112,10 @@ extension LineupsPlayerTableViewComponent {
     ZStack {
         GradientComponent()
         
-        LineupsPlayerTableViewComponent(players: FakeData.fakeLineupsMatch.home.players)
+        LineupsPlayerTableViewComponent(
+            players: FakeData.fakeLineupsMatch.home.players,
+            sortedParameter: .constant(.ast), 
+            isAscending: .constant(true)
+        )
     }
 }

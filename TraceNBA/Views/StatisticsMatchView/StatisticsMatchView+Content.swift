@@ -87,9 +87,17 @@ extension StatisticsMatchView {
             } else {
                 ZStack(alignment: .bottom) {
                     if showTeam == .homeTeam {
-                        LineupsPlayerTableViewComponent(players: homeLineups.players)
+                        LineupsPlayerTableViewComponent(
+                            players: homeLineups.players,
+                            sortedParameter: $sortedParameter,
+                            isAscending: $isAscending
+                        )
                     } else if showTeam == .awayTeam {
-                        LineupsPlayerTableViewComponent(players: awayLineups.players)
+                        LineupsPlayerTableViewComponent(
+                            players: awayLineups.players,
+                            sortedParameter: $sortedParameter,
+                            isAscending: $isAscending
+                        )
                     }
                     
                     PickerTeamViewComponent(
