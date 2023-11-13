@@ -10,9 +10,12 @@ import SwiftUI
 struct LineupsPlayerTableViewComponent: View {
     
     let players: [LineupsItemPlayerModel]
+    let matchModel: MatchModel
     
     @Binding var sortedParameter: TypeTopTableItem
     @Binding var isAscending: Bool
+    
+    let dataService: DataServiceProtocol
     
     private let topItems: [TypeTopTableItem] = [.min, .pts, .reb, .ast]
     
@@ -28,7 +31,16 @@ struct LineupsPlayerTableViewComponent: View {
                 VStack(spacing: 10) {
                     ForEach(sortedPlayers(players: players), id: \.player.id) { player in
                         
-                        getLineupsPlayerTableItem(player: player, topItems: topItems)
+                        NavigationLink {
+                            PlayerStatisticsView(
+                                lineupsPlayer: player, 
+                                matchModel: matchModel,
+                                dataService: dataService
+                            )
+                        } label: {
+                            getLineupsPlayerTableItem(player: player, topItems: topItems)
+                        }
+
                     }
                 }
                 
@@ -109,13 +121,17 @@ extension LineupsPlayerTableViewComponent {
 }
 
 #Preview {
-    ZStack {
-        GradientComponent()
-        
-        LineupsPlayerTableViewComponent(
-            players: FakeData.fakeLineupsMatch.home.players,
-            sortedParameter: .constant(.ast), 
-            isAscending: .constant(true)
-        )
+    NavigationStack {
+        ZStack {
+            GradientComponent()
+            
+            LineupsPlayerTableViewComponent(
+                players: FakeData.fakeLineupsMatch.home.players, 
+                matchModel: FakeData.fakeListLiveMatches.first!,
+                sortedParameter: .constant(.ast),
+                isAscending: .constant(true), 
+                dataService: MockDataService<DataModel>()
+            )
+        }
     }
 }
