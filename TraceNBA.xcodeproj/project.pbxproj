@@ -80,6 +80,7 @@
 		2C9576F92AF7E65C00BC7F75 /* EventsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F82AF7E65C00BC7F75 /* EventsViewModel_Tests.swift */; };
 		2CC2E2142B02622B000A0CF9 /* PlayerStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */; };
 		2CC2E2162B026F04000A0CF9 /* PlayerStatisticsView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */; };
+		2CC2E2192B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,7 @@
 		2C9576F82AF7E65C00BC7F75 /* EventsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel_Tests.swift; sourceTree = "<group>"; };
 		2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsView.swift; sourceTree = "<group>"; };
 		2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerStatisticsView+Components.swift"; sourceTree = "<group>"; };
+		2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffsetPreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */,
+				2CC2E2172B0332C5000A0CF9 /* PreferenceKeys */,
 				2C4D69582AF2A70C00CF5A55 /* TabBarView.swift */,
 				2C0DBF522B00BE2B002DE51B /* Extensions */,
 				2C88F95E2AF36EF3007B28F8 /* Components */,
@@ -437,6 +440,14 @@
 			path = PlayerStatisticsView;
 			sourceTree = "<group>";
 		};
+		2CC2E2172B0332C5000A0CF9 /* PreferenceKeys */ = {
+			isa = PBXGroup;
+			children = (
+				2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */,
+			);
+			path = PreferenceKeys;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -555,6 +566,7 @@
 				2C0DBF412AFFA786002DE51B /* LineupsItemModel.swift in Sources */,
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
 				2C0DBF562B00C291002DE51B /* ImageViewComponent.swift in Sources */,
+				2CC2E2192B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift in Sources */,
 				2CC2E2142B02622B000A0CF9 /* PlayerStatisticsView.swift in Sources */,
 				2C0DBF462AFFA8D8002DE51B /* LineupsItemMissingPlayerModel.swift in Sources */,
 				2C88F93F2AF358CA007B28F8 /* MatchModel.swift in Sources */,
