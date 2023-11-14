@@ -49,17 +49,13 @@ struct PlayerStatisticsView: View {
                     NavigationLink(destination: { Text("Profile") }) { profileText }
                     
                     VStack {
-                        Text("Points scored: \(lineupsPlayer.statistics.points)")
-                            .font(.title)
-                            .foregroundStyle(Color.white)
-                            .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        Text("Time played: \(lineupsPlayer.statistics.secondsPlayed.secondsToMinutesString()) minutes")
-                            .font(.title)
-                            .foregroundStyle(Color.white)
-                            .fontWeight(.medium)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        getTextStatistics(
+                            text: "Points scored: \(lineupsPlayer.statistics.points)"
+                        )
+                    
+                        getTextStatistics(
+                            text: "Time played: \(lineupsPlayer.statistics.secondsPlayed.secondsToMinutesString()) minutes"
+                        )
                     }
                     .padding()
                     

@@ -9,6 +9,14 @@ import Foundation
 import SwiftUI
 
 extension PlayerStatisticsView {
+    @ViewBuilder func getTextStatistics(text: String) -> some View {
+        Text(text)
+            .font(.title)
+            .foregroundStyle(Color.white)
+            .fontWeight(.medium)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
     @ViewBuilder var playerImage: some View {
         ImageViewComponent(
             id: lineupsPlayer.player.id,
