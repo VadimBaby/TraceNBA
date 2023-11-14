@@ -13,13 +13,24 @@ struct PlayerStatisticsView: View {
     let matchModel: MatchModel
     let dataService: DataServiceProtocol
     
+    @State private var toolBarColor: Color = Color.white
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        ZStack {
+        ZStack(alignment: .center) {
             GradientComponent()
             
             ScrollView {
                 VStack {
                     PlugRectangleViewComponent()
+                        .onScrollViewOffsetChanged { value in
+                            withAnimation(.easeInOut) {
+                                let color = value < 94 ? Color.black : Color.white
+                                
+                                toolBarColor = color
+                            }
+                        }
                     
                     ImageViewComponent(
                         id: lineupsPlayer.player.id,
@@ -64,7 +75,17 @@ struct PlayerStatisticsView: View {
                 }
             }
         }
+        .tint(toolBarColor)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: { dismiss() }, label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                    .foregroundStyle(toolBarColor)
+                })
+            }
             ToolbarItem(placement: .principal) {
                 HStack {
                     ImageViewComponent(
@@ -77,6 +98,7 @@ struct PlayerStatisticsView: View {
                     if let homeScore = matchModel.homeScore?.current,
                        let awayScore = matchModel.awayScore?.current {
                         Text("\(homeScore) : \(awayScore)")
+                            .foregroundStyle(toolBarColor)
                     }
                     
                     ImageViewComponent(
@@ -88,6 +110,7 @@ struct PlayerStatisticsView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func countYearsOldFormDateBirth(dataBirth: Int) -> String? {

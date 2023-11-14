@@ -14,7 +14,7 @@ extension View {
             .background {
                 GeometryReader { geo in
                     Text("")
-                        .preference(key: ScrollViewOffsetPreferenceKey.self, value: geo.frame(in: .global).minY)
+                        .preference(key: ScrollViewOffsetPreferenceKey.self, value: geo.frame(in: .scrollView).maxY)
                 }
             }
             .onPreferenceChange(ScrollViewOffsetPreferenceKey.self, perform: { value in
