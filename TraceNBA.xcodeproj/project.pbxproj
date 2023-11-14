@@ -81,6 +81,7 @@
 		2CC2E2142B02622B000A0CF9 /* PlayerStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */; };
 		2CC2E2162B026F04000A0CF9 /* PlayerStatisticsView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */; };
 		2CC2E2192B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */; };
+		2CC2E21B2B0333AA000A0CF9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E21A2B0333AA000A0CF9 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsView.swift; sourceTree = "<group>"; };
 		2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerStatisticsView+Components.swift"; sourceTree = "<group>"; };
 		2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffsetPreferenceKey.swift; sourceTree = "<group>"; };
+		2CC2E21A2B0333AA000A0CF9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				2C0DBF532B00BE94002DE51B /* Int.swift */,
+				2CC2E21A2B0333AA000A0CF9 /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				2C9141702B00EC5B0020AFA0 /* FakeData.swift in Sources */,
 				2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */,
 				2C0DBF482AFFA943002DE51B /* PlayerStatisticsModel.swift in Sources */,
+				2CC2E21B2B0333AA000A0CF9 /* View.swift in Sources */,
 				2C0DBF432AFFA870002DE51B /* LineupsItemPlayerModel.swift in Sources */,
 				2C0DBF542B00BE94002DE51B /* Int.swift in Sources */,
 				2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */,
