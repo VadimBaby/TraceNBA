@@ -32,15 +32,7 @@ struct PlayerStatisticsView: View {
                             }
                         }
                     
-                    ImageViewComponent(
-                        id: lineupsPlayer.player.id,
-                        typeEntiy: .player,
-                        imageScale: 160,
-                        colorProgressView: Color.white,
-                        dataService: dataService
-                    )
-                    .tint(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    playerImage
                     
                     Text(lineupsPlayer.player.name)
                         .foregroundStyle(Color.white)

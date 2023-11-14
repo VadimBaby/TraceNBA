@@ -9,6 +9,18 @@ import Foundation
 import SwiftUI
 
 extension PlayerStatisticsView {
+    @ViewBuilder var playerImage: some View {
+        ImageViewComponent(
+            id: lineupsPlayer.player.id,
+            typeEntiy: .player,
+            imageScale: 160,
+            colorProgressView: Color.white,
+            dataService: dataService
+        )
+        .tint(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 15))
+    }
+    
     @ViewBuilder var profileText: some View {
         Text("Profile")
             .foregroundStyle(Constants.gradient)
