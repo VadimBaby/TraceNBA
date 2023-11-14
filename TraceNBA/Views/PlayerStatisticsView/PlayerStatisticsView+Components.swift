@@ -66,11 +66,6 @@ extension PlayerStatisticsView {
                 total: nil
             ),
             (
-                title: "Rebounds",
-                value: playerStatistics.rebounds,
-                total: nil
-            ),
-            (
                 title: "Defensive rebounds",
                 value: playerStatistics.defensiveRebounds,
                 total: nil
