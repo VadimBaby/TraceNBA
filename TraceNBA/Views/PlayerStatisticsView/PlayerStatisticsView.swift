@@ -13,7 +13,7 @@ struct PlayerStatisticsView: View {
     let matchModel: MatchModel
     let dataService: DataServiceProtocol
     
-    @State private var toolBarColor: Color = Color.white
+    @State public var toolBarColor: Color = Color.white
     
     @Environment(\.dismiss) var dismiss
     
@@ -76,38 +76,8 @@ struct PlayerStatisticsView: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button(action: { dismiss() }, label: {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("Back")
-                    }
-                    .foregroundStyle(toolBarColor)
-                })
-            }
-            ToolbarItem(placement: .principal) {
-                HStack {
-                    ImageViewComponent(
-                        id: matchModel.homeTeam.id,
-                        typeEntiy: .team,
-                        imageScale: 30,
-                        dataService: dataService
-                    )
-                    
-                    if let homeScore = matchModel.homeScore?.current,
-                       let awayScore = matchModel.awayScore?.current {
-                        Text("\(homeScore) : \(awayScore)")
-                            .foregroundStyle(toolBarColor)
-                    }
-                    
-                    ImageViewComponent(
-                        id: matchModel.awayTeam.id,
-                        typeEntiy: .team,
-                        imageScale: 30,
-                        dataService: dataService
-                    )
-                }
-            }
+            ToolbarItem(placement: .topBarLeading) { backButton }
+            ToolbarItem(placement: .principal) { matchScore }
         }
         .navigationBarBackButtonHidden(true)
     }
