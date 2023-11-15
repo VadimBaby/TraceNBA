@@ -79,6 +79,7 @@
 		2C9576F32AF782BB00BC7F75 /* TypeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F22AF782BB00BC7F75 /* TypeTime.swift */; };
 		2C9576F72AF79B0000BC7F75 /* PlugRectangleViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F62AF79B0000BC7F75 /* PlugRectangleViewComponent.swift */; };
 		2C9576F92AF7E65C00BC7F75 /* EventsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F82AF7E65C00BC7F75 /* EventsViewModel_Tests.swift */; };
+		2C9B805D2B04996E00F98BA2 /* TypeIncidentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B805C2B04996E00F98BA2 /* TypeIncidentClass.swift */; };
 		2CC2E2142B02622B000A0CF9 /* PlayerStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */; };
 		2CC2E2162B026F04000A0CF9 /* PlayerStatisticsView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */; };
 		2CC2E2192B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */; };
@@ -171,6 +172,7 @@
 		2C9576F22AF782BB00BC7F75 /* TypeTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTime.swift; sourceTree = "<group>"; };
 		2C9576F62AF79B0000BC7F75 /* PlugRectangleViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugRectangleViewComponent.swift; sourceTree = "<group>"; };
 		2C9576F82AF7E65C00BC7F75 /* EventsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel_Tests.swift; sourceTree = "<group>"; };
+		2C9B805C2B04996E00F98BA2 /* TypeIncidentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeIncidentClass.swift; sourceTree = "<group>"; };
 		2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsView.swift; sourceTree = "<group>"; };
 		2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerStatisticsView+Components.swift"; sourceTree = "<group>"; };
 		2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffsetPreferenceKey.swift; sourceTree = "<group>"; };
@@ -312,8 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				2C4D692D2AF28F9F00CF5A55 /* TraceNBAApp.swift */,
-				2CC2E2172B0332C5000A0CF9 /* PreferenceKeys */,
 				2C4D69582AF2A70C00CF5A55 /* TabBarView.swift */,
+				2CC2E2172B0332C5000A0CF9 /* PreferenceKeys */,
 				2C0DBF522B00BE2B002DE51B /* Extensions */,
 				2C88F95E2AF36EF3007B28F8 /* Components */,
 				2C88F95B2AF36D20007B28F8 /* Views */,
@@ -385,6 +387,7 @@
 				2C3D5F612AF9568B0066790A /* GroupNameType.swift */,
 				2C88F94F2AF362AF007B28F8 /* Errors.swift */,
 				2C0DBF5B2B00CDB2002DE51B /* TypeShowTeam.swift */,
+				2C9B805C2B04996E00F98BA2 /* TypeIncidentClass.swift */,
 				2C88F9822AF4B653007B28F8 /* TypeEntity.swift */,
 				2C0DBF4F2B00BDE7002DE51B /* TypeTopTableItem.swift */,
 				2C9576EC2AF77A1000BC7F75 /* NoDataMessage.swift */,
@@ -605,6 +608,7 @@
 				2C0DBF1D2AFB4EE2002DE51B /* StatisticsMatchViewModel.swift in Sources */,
 				2C88F94B2AF35F20007B28F8 /* Constants.swift in Sources */,
 				2C0DBF3F2AFFA73C002DE51B /* LineupsDataModel.swift in Sources */,
+				2C9B805D2B04996E00F98BA2 /* TypeIncidentClass.swift in Sources */,
 				2C0DBF2D2AFD322F002DE51B /* PeriodPickerViewComponent.swift in Sources */,
 				2C0DBF582B00C30C002DE51B /* ImageViewComponetViewModel.swift in Sources */,
 				2C13BADC2B0123EF00554FF8 /* HighlightsItemViewComponent.swift in Sources */,
