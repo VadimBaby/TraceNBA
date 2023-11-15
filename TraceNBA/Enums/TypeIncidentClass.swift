@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TypeIncidentClass: String {
+enum TypeIncidentClass: String, Codable {
     case onePoint
     case twoPoints
     case threePoints
