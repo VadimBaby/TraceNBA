@@ -12,6 +12,7 @@ class StatisticsMatchViewModel: ObservableObject {
     @Published private(set) var homeMatchLineups: LineupsItemModel? = nil
     @Published private(set) var awayMatchLineups: LineupsItemModel? = nil
     @Published private(set) var highlights: [HighlightModel]? = nil
+    @Published private(set) var incidents: [IncidentModel]? = nil
     
     let dataService: DataServiceProtocol
     
@@ -49,6 +50,16 @@ class StatisticsMatchViewModel: ObservableObject {
         }
         
         tasks.append(task3)
+    }
+    
+    func getIncidents(id: Int) {
+        guard incidents == nil else { return }
+        
+        let task4 = Task {
+            await asyncGetMatchIncidents(id: id, isRefresh: false)
+        }
+        
+        tasks.append(task4)
     }
     
     func asyncGetStatisticsMatch(id: Int, isRefresh: Bool) async {
@@ -118,6 +129,27 @@ class StatisticsMatchViewModel: ObservableObject {
         }
     }
     
+    func asyncGetMatchIncidents(id: Int, isRefresh: Bool) async {
+        await MainActor.run {
+            incidents = nil
+        }
+        do {
+            let incidents = try await getMatchIncidentsData(id: id, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.incidents = incidents
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                incidents = []
+            }
+            
+            debugPrint(error)
+        }
+    }
+    
     private func getMatchLineupsData(id: Int, isRefresh: Bool) async throws -> LineupsDataModel {
         let data = try await dataService.getMatchLineups(id: id, isRefresh: isRefresh)
         
@@ -144,6 +176,16 @@ class StatisticsMatchViewModel: ObservableObject {
         guard let highlights = decodeData.highlights else { throw Errors.dataIsNil }
         
         return highlights
+    }
+    
+    private func getMatchIncidentsData(id: Int, isRefresh: Bool) async throws -> [IncidentModel] {
+        let data = try await dataService.getMatchIncidents(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        guard let incidents = decodeData.incidents else { throw Errors.dataIsNil }
+        
+        return incidents
     }
     
     func cancelAllTasks() {
