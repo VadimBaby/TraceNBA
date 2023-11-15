@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum IncidentType: String {
+enum IncidentType: String, Codable {
     case goal
     case period
     case unknown = "Unknown NameStatisticsItemType"
