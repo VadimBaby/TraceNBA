@@ -92,7 +92,7 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
         }
     }
     
-    func getMatchIncident(id: Int, isRefresh: Bool) async throws -> Data {
+    func getMatchIncidents(id: Int, isRefresh: Bool) async throws -> Data {
         return try await getData(isRefresh: isRefresh) {
             let dataModel = DataModel(incidents: FakeData.fakeMatchIncidents)
             
