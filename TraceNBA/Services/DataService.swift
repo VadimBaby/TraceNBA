@@ -16,10 +16,9 @@ actor DataService: DataServiceProtocol {
     let seconds: Double = 2.5
     
     func getLiveMatchesData(isRefresh: Bool) async throws -> Data {
+        let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/matches/live"
         
-        guard let url = URL(string: "https://basketapi1.p.rapidapi.com/api/basketball/matches/live") else { throw URLError(.badURL) }
-        
-        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
+        return try await getDataFromUrl(urlString: urlString, isRefresh: isRefresh)
     }
     
     func getScheduleMatchesData(dateSchedule: Date, isRefresh: Bool) async throws -> Data {
@@ -30,9 +29,7 @@ actor DataService: DataServiceProtocol {
         
         let urlString: String = "https://basketapi1.p.rapidapi.com/api/basketball/category/\(Constants.category)/events/\(day)/\(month)/\(year)"
         
-        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
-        
-        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
+        return try await getDataFromUrl(urlString: urlString, isRefresh: isRefresh)
     }
     
     func getPhotoEntity(entity: TypeEntity, id: Int) async throws -> UIImage {
@@ -103,33 +100,25 @@ actor DataService: DataServiceProtocol {
     func getStatisticsMatchData(id: Int, isRefresh: Bool) async throws -> Data {
         let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/match/\(id)/statistics"
         
-        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
-        
-        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
+        return try await getDataFromUrl(urlString: urlString, isRefresh: isRefresh)
     }
     
     func getMatchLineups(id: Int, isRefresh: Bool) async throws -> Data {
         let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/match/\(id)/lineups"
         
-        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
-        
-        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
+        return try await getDataFromUrl(urlString: urlString, isRefresh: isRefresh)
     }
     
     func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data {
         let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/match/\(id)/highlights"
         
-        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
-        
-        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
+        return try await getDataFromUrl(urlString: urlString, isRefresh: isRefresh)
     }
     
     func getMatchIncidents(id: Int, isRefresh: Bool) async throws -> Data {
         let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/match/\(id)/incidents"
         
-        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
-        
-        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
+        return try await getDataFromUrl(urlString: urlString, isRefresh: isRefresh)
     }
     
     func getImageFromUrl(urlString: String) async throws -> Data {
@@ -141,7 +130,10 @@ actor DataService: DataServiceProtocol {
         return response
     }
     
-    private func getDataFromUrl(url: URL, isRefresh: Bool = false) async throws -> Data {
+    private func getDataFromUrl(urlString: String, isRefresh: Bool = false) async throws -> Data {
+        
+        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        
         guard let apiKey = Constants.rapidKeys.randomElement() else { throw Errors.apiKeySetIsEmpty }
         
         let headers = [
