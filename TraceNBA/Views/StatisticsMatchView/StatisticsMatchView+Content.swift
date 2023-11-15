@@ -32,6 +32,10 @@ extension StatisticsMatchView {
                         .onAppear {
                             viewModel.getLineupsMatch(id: id)
                         }
+                } else if showTypeStatisticsView == .incidents {
+                    ScrollView {
+                        
+                    }
                 } else if showTypeStatisticsView == .highlights {
                     highlightsView
                         .onAppear {

@@ -26,12 +26,18 @@ struct PickerStatisticsViewComponent: View {
             )
             
             getPickerItem(
+                text: "Incidents",
+                typeView: .incidents,
+                pickerView: $showTypeStatisticsView
+            )
+            
+            getPickerItem(
                 text: "Highlights",
                 typeView: .highlights,
                 pickerView: $showTypeStatisticsView
             )
         }
-        .font(.headline)
+        .font(.callout)
     }
 }
 
