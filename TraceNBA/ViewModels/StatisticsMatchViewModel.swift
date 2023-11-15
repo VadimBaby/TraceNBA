@@ -137,7 +137,7 @@ class StatisticsMatchViewModel: ObservableObject {
             let incidents = try await getMatchIncidentsData(id: id, isRefresh: isRefresh)
             
             await MainActor.run {
-                self.incidents = incidents
+                self.incidents = incidents.reversed()
             }
         } catch Errors.cannotRefresh {
             print("Cannot refresh")
