@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct IncidentModel: Codable {
+struct IncidentModel: Codable, Identifiable {
     let homeScore: Int
     let awayScore: Int
     let player: PlayerModel?
-    let id: Int?
+    let id: Int
     let time: Int
     let isHome: Bool
     let incidentClass: TypeIncidentClass?
@@ -22,7 +22,7 @@ struct IncidentModel: Codable {
         self.homeScore = homeScore
         self.awayScore = awayScore
         self.player = player
-        self.id = id
+        self.id = id ?? Int.random(in: 1000..<9999)
         self.time = time
         self.isHome = isHome
         self.reversedPeriodTime = reversedPeriodTime
