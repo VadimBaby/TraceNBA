@@ -28,7 +28,7 @@ extension StatisticsMatchView {
                         awayScore: awayScore
                     )
                 } else if showTypeStatisticsView == .box_score  {
-                    getBoxScoreView()
+                    boxScoreView
                         .onAppear {
                             viewModel.getLineupsMatch(id: id)
                         }
@@ -79,7 +79,7 @@ extension StatisticsMatchView {
         }
     }
     
-    @ViewBuilder private func getBoxScoreView() -> some View {
+    @ViewBuilder private var boxScoreView: some View {
         if let homeLineups = viewModel.homeMatchLineups,
            let awayLineups = viewModel.awayMatchLineups {
             
