@@ -39,7 +39,8 @@ struct PlayerStatisticsView: View {
                         .font(.largeTitle)
                         .fontWeight(.medium)
                     
-                    if let yearString = countYearsOldFormDateBirth(dataBirth: lineupsPlayer.player.dateOfBirthTimestamp) {
+                    if let dateOfBirthTimestamp = lineupsPlayer.player.dateOfBirthTimestamp,
+                       let yearString = countYearsOldFormDateBirth(dataBirth: dateOfBirthTimestamp) {
                         Text(yearString + " years")
                             .foregroundStyle(Color(uiColor: UIColor.lightText))
                             .font(.title2)

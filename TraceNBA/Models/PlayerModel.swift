@@ -18,13 +18,13 @@ struct PlayerModel: Identifiable, Codable {
     let lastName: String?
     let shortName: String
     let position: String
-    let country: CountryModel
+    let country: CountryModel?
     let jerseyNumber: String?
     let height: Int?
-    let dateOfBirthTimestamp: Int
+    let dateOfBirthTimestamp: Int?
     let team: TeamModel?
     
-    init(id: Int, name: String, firstName: String, lastName: String, shortName: String, position: String, country: CountryModel, jerseyNumber: String? = nil, height: Int? = nil, dateOfBirthTimestamp: Int, team: TeamModel? = nil) {
+    init(id: Int, name: String, firstName: String, lastName: String, shortName: String, position: String, country: CountryModel? = nil, jerseyNumber: String? = nil, height: Int? = nil, dateOfBirthTimestamp: Int? = nil, team: TeamModel? = nil) {
         self.id = id
         self.name = name
         self.firstName = firstName
