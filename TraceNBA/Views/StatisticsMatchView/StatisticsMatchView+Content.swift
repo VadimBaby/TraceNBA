@@ -84,10 +84,9 @@ extension StatisticsMatchView {
            let awayLineups = viewModel.awayMatchLineups {
             
             if homeLineups.players.isEmpty && awayLineups.players.isEmpty {
-                VStack {
+                VStackMaxHeight {
                     NoDataViewComponent(message: .noMatchLineups)
                 }
-                .frame(maxHeight: .infinity)
             } else {
                 ZStack(alignment: .bottom) {
                     if showTeam == .homeTeam {
@@ -119,10 +118,9 @@ extension StatisticsMatchView {
             }
             
         } else {
-            VStack {
+            VStackMaxHeight {
                 progressView
             }
-            .frame(maxHeight: .infinity)
         }
     }
     
@@ -142,16 +140,14 @@ extension StatisticsMatchView {
                     .padding()
                 }
             } else {
-                VStack {
+                VStackMaxHeight {
                     NoDataViewComponent(message: .noMatchHighlights)
                 }
-                .frame(maxHeight: .infinity)
             }
         } else {
-            VStack {
+            VStackMaxHeight {
                 progressView
             }
-            .frame(maxHeight: .infinity)
         }
     }
 }
