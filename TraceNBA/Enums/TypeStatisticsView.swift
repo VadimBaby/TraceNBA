@@ -10,5 +10,6 @@ import Foundation
 enum TypeStatisticsView {
     case summary
     case box_score
+    case incidents
     case highlights
 }
