@@ -129,8 +129,16 @@ extension StatisticsMatchView {
         if let incidents = viewModel.incidents {
             if !incidents.isEmpty {
                 ScrollView {
-                    LazyVStack {
+                    LazyVStack(spacing: 30) {
+                        ForEach(incidents) { incident in
+                            IncidentItemViewComponent(
+                                incident: incident,
+                                matchModel: matchModel,
+                                dataService: dataService
+                            )
+                        }
                         
+                        PlugRectangleViewComponent()
                     }
                     .padding()
                 }
