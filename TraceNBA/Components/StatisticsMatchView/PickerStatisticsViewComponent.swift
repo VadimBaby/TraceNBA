@@ -13,29 +13,13 @@ struct PickerStatisticsViewComponent: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            getPickerItem(
-                text: "Summary",
-                typeView: .summary,
-                pickerView: $showTypeStatisticsView
-            )
-            
-            getPickerItem(
-                text: "Box score",
-                typeView: .box_score,
-                pickerView: $showTypeStatisticsView
-            )
-            
-            getPickerItem(
-                text: "Incidents",
-                typeView: .incidents,
-                pickerView: $showTypeStatisticsView
-            )
-            
-            getPickerItem(
-                text: "Highlights",
-                typeView: .highlights,
-                pickerView: $showTypeStatisticsView
-            )
+            ForEach(TypeStatisticsView.allCases, id: \.self) { item in
+                getPickerItem(
+                    text: item.rawValue,
+                    typeView: item,
+                    pickerView: $showTypeStatisticsView
+                )
+            }
         }
         .font(.callout)
     }
