@@ -11,14 +11,14 @@ struct IncidentModel: Codable, Identifiable {
     let homeScore: Int
     let awayScore: Int
     let player: PlayerModel?
-    let id: Int
+    let id: Int?
     let time: Int
     let isHome: Bool?
     let incidentClass: TypeIncidentClass?
-    let reversedPeriodTime: Int
+    let reversedPeriodTime: Int?
     let incidentType: IncidentType
     
-    init(homeScore: Int, awayScore: Int, player: PlayerModel?, id: Int?, time: Int, isHome: Bool?, incidentClass: String?, reversedPeriodTime: Int, incidentType: String) {
+    init(homeScore: Int, awayScore: Int, player: PlayerModel?, id: Int?, time: Int, isHome: Bool?, incidentClass: String?, reversedPeriodTime: Int?, incidentType: String) {
         self.homeScore = homeScore
         self.awayScore = awayScore
         self.player = player
