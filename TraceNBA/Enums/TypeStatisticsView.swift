@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum TypeStatisticsView {
+enum TypeStatisticsView: String, CaseIterable {
     case summary
-    case box_score
+    case box_score = "Box score"
     case incidents
     case highlights
 }
