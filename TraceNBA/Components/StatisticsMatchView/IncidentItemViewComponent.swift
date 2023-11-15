@@ -17,36 +17,55 @@ struct IncidentItemViewComponent: View {
         if let player = incident.player,
            let incidentClass = incident.incidentClass,
            incident.incidentType == .goal {
-            HStack {
-                ImageViewComponent(
-                    id: player.id,
-                    typeEntiy: .player,
-                    imageScale: 95,
-                    colorProgressView: Color.white,
-                    dataService: dataService
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-                
-                Spacer()
+            HStack(spacing: 40) {
+                NavigationLink(destination: { Text("Player profile") }, label: { getPlayerView(player: player)
+                })
                 
                 VStack {
                     if let points = incidentClass.point {
-                        Text("Scored: \(points) point")
+                        Text("Scored: ^[\(points) point](inflect: true)")
                             .font(.title3)
                             .fontWeight(.medium)
                     }
                     
                     matchView
                 }
-                .foregroundStyle(Color.white)
+            }
+            .foregroundStyle(Color.white)
+        }
+    }
+    
+    @ViewBuilder private func getPlayerView(player: PlayerModel) -> some View {
+        VStack {
+            ImageViewComponent(
+                id: player.id,
+                typeEntiy: .player,
+                imageScale: 95,
+                colorProgressView: Color.white,
+                dataService: dataService
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 15))
+            
+            HStack {
+                Text(player.shortName)
+                    .font(.headline)
+                if let isHome = incident.isHome {
+                    ImageViewComponent(
+                        id: isHome ? matchModel.homeTeam.id : matchModel.awayTeam.id,
+                        typeEntiy: .team,
+                        imageScale: 25,
+                        colorProgressView: Color.white,
+                        dataService: dataService
+                    )
+                }
             }
         }
     }
     
-    private var matchView: some View {
-        var imageScale: CGFloat = 50
+    @ViewBuilder private var matchView: some View {
+        let imageScale: CGFloat = 50
         
-        return HStack {
+        HStack {
             ImageViewComponent(
                 id: matchModel.homeTeam.id,
                 typeEntiy: .team,
@@ -70,12 +89,14 @@ struct IncidentItemViewComponent: View {
 }
 
 #Preview {
-    ZStack {
-        GradientComponent()
-        
-        IncidentItemViewComponent(
-            incident: FakeData.fakeMatchIncidents.first!,
-            matchModel: FakeData.fakeListLiveMatches.first!,
-            dataService: MockDataService<DataModel>())
+    NavigationStack {
+        ZStack {
+            GradientComponent()
+            
+            IncidentItemViewComponent(
+                incident: FakeData.fakeMatchIncidents.first!,
+                matchModel: FakeData.fakeListLiveMatches.first!,
+                dataService: MockDataService<DataModel>())
+        }
     }
 }
