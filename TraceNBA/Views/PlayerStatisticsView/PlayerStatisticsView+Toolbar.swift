@@ -13,6 +13,7 @@ extension PlayerStatisticsView {
         Button(action: { dismiss() }, label: {
             HStack {
                 Image(systemName: "chevron.left")
+                    .fontWeight(.medium)
                 Text("Back")
             }
             .foregroundStyle(toolBarColor)
