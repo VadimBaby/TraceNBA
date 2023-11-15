@@ -80,6 +80,7 @@
 		2C9576F72AF79B0000BC7F75 /* PlugRectangleViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F62AF79B0000BC7F75 /* PlugRectangleViewComponent.swift */; };
 		2C9576F92AF7E65C00BC7F75 /* EventsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9576F82AF7E65C00BC7F75 /* EventsViewModel_Tests.swift */; };
 		2C9B805D2B04996E00F98BA2 /* TypeIncidentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B805C2B04996E00F98BA2 /* TypeIncidentClass.swift */; };
+		2C9B805F2B049A0F00F98BA2 /* IncidentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B805E2B049A0F00F98BA2 /* IncidentType.swift */; };
 		2CC2E2142B02622B000A0CF9 /* PlayerStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */; };
 		2CC2E2162B026F04000A0CF9 /* PlayerStatisticsView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */; };
 		2CC2E2192B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */; };
@@ -173,6 +174,7 @@
 		2C9576F62AF79B0000BC7F75 /* PlugRectangleViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugRectangleViewComponent.swift; sourceTree = "<group>"; };
 		2C9576F82AF7E65C00BC7F75 /* EventsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel_Tests.swift; sourceTree = "<group>"; };
 		2C9B805C2B04996E00F98BA2 /* TypeIncidentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeIncidentClass.swift; sourceTree = "<group>"; };
+		2C9B805E2B049A0F00F98BA2 /* IncidentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentType.swift; sourceTree = "<group>"; };
 		2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsView.swift; sourceTree = "<group>"; };
 		2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerStatisticsView+Components.swift"; sourceTree = "<group>"; };
 		2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffsetPreferenceKey.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				2C0DBF5B2B00CDB2002DE51B /* TypeShowTeam.swift */,
 				2C9B805C2B04996E00F98BA2 /* TypeIncidentClass.swift */,
 				2C88F9822AF4B653007B28F8 /* TypeEntity.swift */,
+				2C9B805E2B049A0F00F98BA2 /* IncidentType.swift */,
 				2C0DBF4F2B00BDE7002DE51B /* TypeTopTableItem.swift */,
 				2C9576EC2AF77A1000BC7F75 /* NoDataMessage.swift */,
 				2C3D5F652AF958450066790A /* NameStatisticsItemType.swift */,
@@ -595,6 +598,7 @@
 				2C0DBF482AFFA943002DE51B /* PlayerStatisticsModel.swift in Sources */,
 				2CC2E21B2B0333AA000A0CF9 /* View.swift in Sources */,
 				2C0DBF432AFFA870002DE51B /* LineupsItemPlayerModel.swift in Sources */,
+				2C9B805F2B049A0F00F98BA2 /* IncidentType.swift in Sources */,
 				2C0DBF542B00BE94002DE51B /* Int.swift in Sources */,
 				2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,
