@@ -13,4 +13,5 @@ enum NoDataMessage: String {
     case noStatisticsMatch = "Unfortunately, the statistics of this match are not available yet"
     case noMatchLineups = "Unfortunately, the lineups of this match are not available yet"
     case noMatchHighlights = "Unfortunately, the highlights of this match are not available yet"
+    case noMatchIncidents = "Unfortunately, the incidents of this match are not available yet"
 }
