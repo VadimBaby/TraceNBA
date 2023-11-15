@@ -124,6 +124,14 @@ actor DataService: DataServiceProtocol {
         return try await getDataFromUrl(url: url, isRefresh: isRefresh)
     }
     
+    func getMatchIncidents(id: Int, isRefresh: Bool) async throws -> Data {
+        let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/match/\(id)/incidents"
+        
+        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        
+        return try await getDataFromUrl(url: url, isRefresh: isRefresh)
+    }
+    
     func getImageFromUrl(urlString: String) async throws -> Data {
         
         guard let url = URL(string: urlString) else { throw URLError(.badURL) }
