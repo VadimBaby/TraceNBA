@@ -124,6 +124,27 @@ extension StatisticsMatchView {
         }
     }
     
+    @ViewBuilder private var incidentsView: some View {
+        if let incidents = viewModel.incidents {
+            if !incidents.isEmpty {
+                ScrollView {
+                    LazyVStack {
+                        
+                    }
+                    .padding()
+                }
+            } else {
+                VStackMaxHeight {
+                    NoDataViewComponent(message: .noMatchIncidents)
+                }
+            }
+        } else {
+            VStackMaxHeight {
+                progressView
+            }
+        }
+    }
+    
     @ViewBuilder private var highlightsView: some View {
         if let highlights = viewModel.highlights {
             if !highlights.isEmpty {
