@@ -1157,4 +1157,90 @@ enum FakeData {
             sourceUrl: "https://www.youtube.com/watch?v=Bavb-cbSgXE"
         )
     ]
+    
+    static let fakeMatchIncidents: [IncidentModel] = [
+        IncidentModel(
+            homeScore: 115,
+            awayScore: 108,
+            player: PlayerModel(
+                id: 817177,
+                name: "Kyrie Irving",
+                firstName: "Kyrie",
+                lastName: "Irving ",
+                shortName: "K. Irving",
+                position: "G"
+            ),
+            id: 160448468,
+            time: 48,
+            isHome: true,
+            incidentClass: "onePoint",
+            reversedPeriodTime: 1,
+            incidentType: "goal"
+        ),
+        IncidentModel(
+            homeScore: 114,
+            awayScore: 108,
+            player: PlayerModel(
+                id: 817177,
+                name: "Kyrie Irving",
+                firstName: "Kyrie",
+                lastName: "Irving ",
+                shortName: "K. Irving",
+                position: "G"
+            ),
+            id: 160448464,
+            time: 48,
+            isHome: true,
+            incidentClass: "onePoint",
+            reversedPeriodTime: 1,
+            incidentType: "goal"
+        ),
+        IncidentModel(
+            homeScore: 113,
+            awayScore: 108,
+            player: PlayerModel(
+                id: 1133830,
+                name: "Evan Mobley",
+                firstName: "Evan",
+                lastName: "Mobley ",
+                shortName: "E. Mobley",
+                position: "F"
+            ),
+            id: 160448447,
+            time: 48,
+            isHome: false,
+            incidentClass: "twoPoints",
+            reversedPeriodTime: 1,
+            incidentType: "goal"
+        ),
+        IncidentModel(
+            homeScore: 108,
+            awayScore: 115,
+            player: nil,
+            id: nil,
+            time: 48,
+            isHome: nil,
+            incidentClass: nil,
+            reversedPeriodTime: 1,
+            incidentType: "period"
+        ),
+        IncidentModel(
+            homeScore: 111,
+            awayScore: 106,
+            player: PlayerModel(
+                id: 817177,
+                name: "Kyrie Irving",
+                firstName: "Kyrie",
+                lastName: "Irving ",
+                shortName: "K. Irving",
+                position: "G"
+            ),
+            id: 160448418,
+            time: 48,
+            isHome: true,
+            incidentClass: "threePoint",
+            reversedPeriodTime: 1,
+            incidentType: "goal"
+        )
+    ]
 }
