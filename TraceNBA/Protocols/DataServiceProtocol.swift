@@ -22,4 +22,6 @@ protocol DataServiceProtocol {
     func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data
     
     func getImageFromUrl(urlString: String) async throws -> Data
+    
+    func getMatchIncidents(id: Int, isRefresh: Bool) async throws -> Data
 }
