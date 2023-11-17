@@ -9,18 +9,14 @@ import SwiftUI
 
 struct PlayerProfileView: View {
     
-    let player: PlayerModel
-    let team: TeamModel
     let dataService: DataServiceProtocol
     
     @StateObject public var viewModel: PlayerProfileViewModel
     
-    init(player: PlayerModel, team: TeamModel, dataService: DataServiceProtocol) {
-        self.player = player
-        self.team = team
+    init(idPlayer: Int, dataService: DataServiceProtocol) {
         self.dataService = dataService
         self._viewModel = StateObject(wrappedValue: PlayerProfileViewModel(
-            idPlayer: player.id,
+            idPlayer: idPlayer,
             dataService: dataService
         ))
     }
@@ -30,12 +26,18 @@ struct PlayerProfileView: View {
             GradientComponent()
             
             VStack {
-                playerTitle
+                // playerTitle
                 
                 ScrollView {
                     
                 }
             }
+        }
+        .onAppear {
+            viewModel.getPlayerDetails()
+        }
+        .onDisappear {
+            viewModel.cancelAllTasks()
         }
         .toolbar {
             ToolbarItem(placement: .principal) { centerToolbarItem }
@@ -47,8 +49,7 @@ struct PlayerProfileView: View {
 #Preview {
     NavigationStack {
         PlayerProfileView(
-            player: FakeData.fakeLineupsMatch.home.players.first!.player,
-            team: FakeData.fakeListLiveMatches.first!.homeTeam,
+            idPlayer: 1,
             dataService: MockDataService<DataModel>()
         )
     }

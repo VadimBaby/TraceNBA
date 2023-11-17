@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension PlayerProfileView {
-    @ViewBuilder public var playerTitle: some View {
+    @ViewBuilder public func getPlayerTitle(player: PlayerModel) -> some View {
         VStack {
             ImageViewComponent(
                 id: player.id,
@@ -25,19 +25,21 @@ extension PlayerProfileView {
                     .fontWeight(.bold)
                     .foregroundStyle(Color.white)
                 
-                HStack {
-                    Text(team.name)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundStyle(Color(uiColor: UIColor.lightText))
-                    
-                    ImageViewComponent(
-                        id: team.id,
-                        typeEntiy: .team,
-                        imageScale: 30,
-                        colorProgressView: Color.white,
-                        dataService: dataService
-                    )
+                if let team = player.team {
+                    HStack {
+                        Text(team.name)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color(uiColor: UIColor.lightText))
+                        
+                        ImageViewComponent(
+                            id: team.id,
+                            typeEntiy: .team,
+                            imageScale: 30,
+                            colorProgressView: Color.white,
+                            dataService: dataService
+                        )
+                    }
                 }
             }
         }
@@ -47,8 +49,7 @@ extension PlayerProfileView {
 #Preview {
     NavigationStack {
         PlayerProfileView(
-            player: FakeData.fakeLineupsMatch.home.players.first!.player,
-            team: FakeData.fakeListLiveMatches.first!.homeTeam,
+            idPlayer: 1,
             dataService: MockDataService<DataModel>()
         )
     }
