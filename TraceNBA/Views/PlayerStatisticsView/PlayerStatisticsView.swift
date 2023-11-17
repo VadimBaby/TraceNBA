@@ -40,7 +40,7 @@ struct PlayerStatisticsView: View {
                         .fontWeight(.medium)
                     
                     if let dateOfBirthTimestamp = lineupsPlayer.player.dateOfBirthTimestamp,
-                       let yearString = countYearsOldFormDateBirth(dataBirth: dateOfBirthTimestamp) {
+                       let yearString = dateOfBirthTimestamp.getYearsOld() {
                         Text(yearString + " years")
                             .foregroundStyle(Color(uiColor: UIColor.lightText))
                             .font(.title2)
@@ -76,18 +76,6 @@ struct PlayerStatisticsView: View {
             ToolbarItem(placement: .principal) { matchScore }
         }
         .navigationBarBackButtonHidden(true)
-    }
-    
-    private func countYearsOldFormDateBirth(dataBirth: Int) -> String? {
-        let date: Date = Date(timeIntervalSince1970: TimeInterval(dataBirth))
-        
-        let nowDate: Date = Date()
-        
-        let yearDateComponents = Calendar.current.dateComponents([.year], from: date, to: nowDate)
-        
-        guard let year = yearDateComponents.year else { return nil}
-        
-        return String(year)
     }
 }
 
