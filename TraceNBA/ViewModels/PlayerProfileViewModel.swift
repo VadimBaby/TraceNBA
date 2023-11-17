@@ -50,7 +50,7 @@ class PlayerProfileViewModel: ObservableObject {
                     lastName: "error",
                     shortName: "error",
                     position: "error",
-                    error: Errors.badDate
+                    error: Errors.dataIsNil
                 )
             }
             
@@ -67,6 +67,10 @@ class PlayerProfileViewModel: ObservableObject {
     private func getPlayerDetailsData(id: Int, isRefresh: Bool) async throws -> PlayerModel {
         let data = try await dataService.getPlayerDetails(id: id, isRefresh: isRefresh)
         
-        return try JSONDecoder().decode(PlayerModel.self, from: data)
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        guard let player = decodeData.player else { throw URLError(.badServerResponse) }
+        
+        return player
     }
 }
