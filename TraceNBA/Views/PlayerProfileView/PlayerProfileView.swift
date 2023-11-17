@@ -27,9 +27,7 @@ struct PlayerProfileView: View {
             
             if let player = viewModel.player {
                 if player.error == nil {
-                    VStack {
-                        getPlayerTitle(player: player)
-                    }
+                    getContent(player: player)
                 } else {
                     VStackMaxHeight {
                         NoDataViewComponent(message: .noPlayerDetails)
