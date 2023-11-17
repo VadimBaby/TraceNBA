@@ -1243,4 +1243,26 @@ enum FakeData {
             incidentType: "goal"
         )
     ]
+    
+    static let fakePlayerDetails: PlayerModel = PlayerModel(
+        id: 846936,
+        name: "Caris LeVert",
+        firstName: "Caris",
+        lastName: "LeVert ",
+        shortName: "C. LeVert",
+        position: "G",
+        country: CountryModel(
+            name: "USA",
+            alpha2: "US"
+        ),
+        jerseyNumber: "3",
+        height: 198,
+        dateOfBirthTimestamp: 777772800,
+        team: TeamModel(
+            id: 3432,
+            name: "Cleveland Cavaliers",
+            shortName: "Cavaliers",
+            nameCode: "CLE"
+        )
+    )
 }
