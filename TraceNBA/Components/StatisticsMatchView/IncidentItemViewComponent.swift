@@ -18,7 +18,14 @@ struct IncidentItemViewComponent: View {
            let incidentClass = incident.incidentClass,
            incident.incidentType == .goal {
             HStack(spacing: 40) {
-                NavigationLink(destination: { Text("Player profile") }, label: { getPlayerView(player: player)
+                NavigationLink(destination: {
+                    
+                    PlayerProfileView(
+                        idPlayer: player.id,
+                        dataService: dataService
+                    )
+                    
+                }, label: { getPlayerView(player: player)
                 })
                 
                 VStack {
