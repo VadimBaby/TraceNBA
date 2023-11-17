@@ -10,7 +10,10 @@ import SwiftUI
 extension PlayerProfileView {
     @ViewBuilder public func getContent(player: PlayerModel) -> some View {
         VStack {
-            getPlayerTitle(player: player)
+            TitlePlayerViewComponent(
+                player: player,
+                dataService: dataService
+            )
             
             PickerTypeEntityPlayerViewComponent(showTypeEntityPlayer: $showTypeEntityPlayer)
             
@@ -18,31 +21,6 @@ extension PlayerProfileView {
                 
             }
         }
-    }
-    
-    @ViewBuilder public func getPlayerTitle(player: PlayerModel) -> some View {
-        HStack(spacing: 15) {
-            ImageViewComponent(
-                id: player.id,
-                typeEntiy: .player,
-                imageScale: 110,
-                colorProgressView: Color.white,
-                dataService: dataService
-            )
-            .clipShape(RoundedRectangle(cornerRadius: 15))
-            
-            VStack(alignment: .leading) {
-                VStack(alignment: .leading, spacing: 5) {
-                    getNamePlayer(player: player)
-                    
-                    getNameTeamWithImage(player: player)
-                }
-                
-                getPlayerDetails(player: player)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .padding(.horizontal)
     }
 }
 
