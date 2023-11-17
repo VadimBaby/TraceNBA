@@ -94,6 +94,7 @@ extension StatisticsMatchView {
                         LineupsPlayerTableViewComponent(
                             players: homeLineups.players, 
                             matchModel: matchModel,
+                            teamPlayers: matchModel.homeTeam,
                             sortedParameter: $sortedParameter,
                             isAscending: $isAscending, 
                             dataService: dataService
@@ -102,6 +103,7 @@ extension StatisticsMatchView {
                         LineupsPlayerTableViewComponent(
                             players: awayLineups.players, 
                             matchModel: matchModel,
+                            teamPlayers: matchModel.awayTeam,
                             sortedParameter: $sortedParameter,
                             isAscending: $isAscending,
                             dataService: dataService

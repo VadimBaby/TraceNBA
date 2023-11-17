@@ -11,6 +11,7 @@ struct LineupsPlayerTableViewComponent: View {
     
     let players: [LineupsItemPlayerModel]
     let matchModel: MatchModel
+    let teamPlayers: TeamModel
     
     @Binding var sortedParameter: TypeTopTableItem
     @Binding var isAscending: Bool
@@ -34,7 +35,8 @@ struct LineupsPlayerTableViewComponent: View {
                         NavigationLink {
                             PlayerStatisticsView(
                                 lineupsPlayer: player, 
-                                matchModel: matchModel,
+                                matchModel: matchModel, 
+                                teamPlayer: teamPlayers,
                                 dataService: dataService
                             )
                         } label: {
@@ -127,7 +129,8 @@ extension LineupsPlayerTableViewComponent {
             
             LineupsPlayerTableViewComponent(
                 players: FakeData.fakeLineupsMatch.home.players, 
-                matchModel: FakeData.fakeListLiveMatches.first!,
+                matchModel: FakeData.fakeListLiveMatches.first!, 
+                teamPlayers: FakeData.fakeListLiveMatches.first!.homeTeam,
                 sortedParameter: .constant(.ast),
                 isAscending: .constant(true), 
                 dataService: MockDataService<DataModel>()

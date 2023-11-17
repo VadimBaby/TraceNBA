@@ -11,6 +11,7 @@ struct PlayerStatisticsView: View {
     
     let lineupsPlayer: LineupsItemPlayerModel
     let matchModel: MatchModel
+    let teamPlayer: TeamModel
     let dataService: DataServiceProtocol
     
     @State public var toolBarColor: Color = Color.white
@@ -47,7 +48,15 @@ struct PlayerStatisticsView: View {
                             .fontWeight(.medium)
                     }
                     
-                    NavigationLink(destination: { Text("Profile") }) { profileText }
+                    NavigationLink(destination: {
+                        
+                        PlayerProfileView(
+                            player: lineupsPlayer.player,
+                            team: teamPlayer,
+                            dataService: dataService
+                        )
+                        
+                    }) { profileText }
                     
                     VStack {
                         getTextStatistics(
@@ -88,7 +97,8 @@ struct PlayerStatisticsView: View {
     NavigationStack {
         PlayerStatisticsView(
             lineupsPlayer: FakeData.fakeLineupsMatch.home.players.first!, 
-            matchModel: FakeData.fakeListLiveMatches.first!,
+            matchModel: FakeData.fakeListLiveMatches.first!, 
+            teamPlayer: FakeData.fakeListLiveMatches.first!.homeTeam,
             dataService: MockDataService<DataModel>()
         )
     }
