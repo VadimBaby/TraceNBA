@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Errors: Error {
+enum Errors: Error, Codable {
     case apiKeySetIsEmpty
     case listIsEmpty
     case badImage
