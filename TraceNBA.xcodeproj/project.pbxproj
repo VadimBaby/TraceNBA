@@ -90,6 +90,7 @@
 		2CC2E21B2B0333AA000A0CF9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E21A2B0333AA000A0CF9 /* View.swift */; };
 		2CC2E21D2B0349C1000A0CF9 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E21C2B0349C1000A0CF9 /* UINavigationController.swift */; };
 		2CDFB1572B07BD3D009BA1C1 /* TypeEntityPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDFB1562B07BD3D009BA1C1 /* TypeEntityPlayer.swift */; };
+		2CDFB1592B07BE82009BA1C1 /* PickerTypeEntityPlayerViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDFB1582B07BE82009BA1C1 /* PickerTypeEntityPlayerViewComponent.swift */; };
 		2CE10D1B2B0730B5003B6C81 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D1A2B0730B5003B6C81 /* PlayerProfileView.swift */; };
 		2CE10D1D2B07323C003B6C81 /* PlayerProfileView+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D1C2B07323C003B6C81 /* PlayerProfileView+Toolbar.swift */; };
 		2CE10D1F2B07329C003B6C81 /* PlayerProfileView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D1E2B07329C003B6C81 /* PlayerProfileView+Components.swift */; };
@@ -193,6 +194,7 @@
 		2CC2E21A2B0333AA000A0CF9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		2CC2E21C2B0349C1000A0CF9 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		2CDFB1562B07BD3D009BA1C1 /* TypeEntityPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEntityPlayer.swift; sourceTree = "<group>"; };
+		2CDFB1582B07BE82009BA1C1 /* PickerTypeEntityPlayerViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTypeEntityPlayerViewComponent.swift; sourceTree = "<group>"; };
 		2CE10D1A2B0730B5003B6C81 /* PlayerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileView.swift; sourceTree = "<group>"; };
 		2CE10D1C2B07323C003B6C81 /* PlayerProfileView+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerProfileView+Toolbar.swift"; sourceTree = "<group>"; };
 		2CE10D1E2B07329C003B6C81 /* PlayerProfileView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerProfileView+Components.swift"; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 		2CDFB1552B07BCF8009BA1C1 /* PlayerProfileViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				2CDFB1582B07BE82009BA1C1 /* PickerTypeEntityPlayerViewComponent.swift */,
 			);
 			path = PlayerProfileViewComponents;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				2C0DBF482AFFA943002DE51B /* PlayerStatisticsModel.swift in Sources */,
 				2CC2E21B2B0333AA000A0CF9 /* View.swift in Sources */,
 				2C0DBF432AFFA870002DE51B /* LineupsItemPlayerModel.swift in Sources */,
+				2CDFB1592B07BE82009BA1C1 /* PickerTypeEntityPlayerViewComponent.swift in Sources */,
 				2C9B805F2B049A0F00F98BA2 /* IncidentType.swift in Sources */,
 				2C0DBF542B00BE94002DE51B /* Int.swift in Sources */,
 				2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */,
