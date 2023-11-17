@@ -18,6 +18,36 @@ class PlayerProfileViewModel: ObservableObject {
         self.dataService = dataService
     }
     
+    func asyncGetPlayerDetails(isRefresh: Bool) async {
+        await MainActor.run {
+            self.player = nil
+        }
+        
+        do {
+            let player = try await getPlayerDetailsData(id: self.idPlayer, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.player = player
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                self.player = PlayerModel(
+                    id: 1,
+                    name: "error",
+                    firstName: "error",
+                    lastName: "error",
+                    shortName: "error",
+                    position: "error",
+                    error: Errors.badDate
+                )
+            }
+            
+            debugPrint(error)
+        }
+    }
+    
     private func getPlayerDetailsData(id: Int, isRefresh: Bool) async throws -> PlayerModel {
         let data = try await dataService.getPlayerDetails(id: id, isRefresh: isRefresh)
         
