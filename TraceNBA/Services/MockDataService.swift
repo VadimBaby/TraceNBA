@@ -17,23 +17,15 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getLiveMatchesData(isRefresh: Bool) async throws -> Data {
-        try await getData(isRefresh: isRefresh) {
-            let dataModel: DataModel = DataModel(events: FakeData.fakeListLiveMatches)
-            
-            let data = try JSONEncoder().encode(dataModel)
-            
-            return data
-        }
+        let codableModel: DataModel = DataModel(events: FakeData.fakeListLiveMatches)
+        
+        return try await getData(isRefresh: isRefresh, codableModel: codableModel)
     }
     
     func getScheduleMatchesData(dateSchedule: Date, isRefresh: Bool) async throws -> Data {
-        return try await getData(isRefresh: isRefresh) {
-            let dataModel: DataModel = DataModel(events: FakeData.fakeListLiveMatches)
-            
-            let data = try JSONEncoder().encode(dataModel)
-            
-            return data
-        }
+        let codableModel: DataModel = DataModel(events: FakeData.fakeListLiveMatches)
+        
+        return try await getData(isRefresh: isRefresh, codableModel: codableModel)
     }
     
     func getPhotoEntity(entity: TypeEntity, id: Int) async throws -> UIImage {
@@ -57,62 +49,40 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
     }
     
     func getStatisticsMatchData(id: Int, isRefresh: Bool) async throws -> Data {
-        return try await getData(isRefresh: isRefresh) {
-            let dataModel = DataModel(statistics: FakeData.fakeStatisticsMatches)
-            
-            let dataEncode = try JSONEncoder().encode(dataModel)
-            
-            return dataEncode
-        }
+        let codableModel = DataModel(statistics: FakeData.fakeStatisticsMatches)
+        
+        return try await getData(isRefresh: isRefresh, codableModel: codableModel)
     }
     
     func getMatchLineups(id: Int, isRefresh: Bool) async throws -> Data {
-        return try await getData(isRefresh: isRefresh) {
-            let dataModel: LineupsDataModel = FakeData.fakeLineupsMatch
-            
-            let dataEncode = try JSONEncoder().encode(dataModel)
-            
-            return dataEncode
-        }
+        let codableModel: LineupsDataModel = FakeData.fakeLineupsMatch
+        
+        return try await getData(isRefresh: isRefresh, codableModel: codableModel)
     }
     
     func getMatchHighlights(id: Int, isRefresh: Bool) async throws -> Data {
-        return try await getData(isRefresh: isRefresh) {
-            let dataModel = DataModel(highlights: FakeData.fakeMatchHighlights)
-            
-            let dataEncode = try JSONEncoder().encode(dataModel)
-            
-            return dataEncode
-        }
+        let codableModel = DataModel(highlights: FakeData.fakeMatchHighlights)
+        
+        return try await getData(isRefresh: isRefresh, codableModel: codableModel)
     }
     
     func getImageFromUrl(urlString: String) async throws -> Data {
-        return try await getData(isRefresh: false) {
-            return try JSONEncoder().encode("")
-        }
+        return try await getData(isRefresh: false)
     }
     
     func getMatchIncidents(id: Int, isRefresh: Bool) async throws -> Data {
-        return try await getData(isRefresh: isRefresh) {
-            let dataModel = DataModel(incidents: FakeData.fakeMatchIncidents)
-            
-            let dataEncode = try JSONEncoder().encode(dataModel)
-            
-            return dataEncode
-        }
+        let codableModel = DataModel(incidents: FakeData.fakeMatchIncidents)
+        
+        return try await getData(isRefresh: isRefresh, codableModel: codableModel)
     }
     
     func getPlayerDetails(id: Int, isRefresh: Bool) async throws -> Data {
-        return try await getData(isRefresh: isRefresh) {
-            let dataModel = DataModel(player: FakeData.fakePlayerDetails)
-            
-            let dataEncode = try JSONEncoder().encode(dataModel)
-            
-            return dataEncode
-        }
+        let codableModel = DataModel(player: FakeData.fakePlayerDetails)
+        
+        return try await getData(isRefresh: isRefresh, codableModel: codableModel)
     }
     
-    private func getData(isRefresh: Bool ,closure: () throws -> Data) async throws -> Data {
+    private func getData(isRefresh: Bool, codableModel: Codable? = nil) async throws -> Data {
         if isRefresh {
             throw Errors.cannotRefresh
         }
@@ -121,9 +91,15 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
             let dataEncode = try JSONEncoder().encode(data)
             
             return dataEncode
-        } else {
-            return try closure()
         }
+        
+        if let codableModel {
+            let dataEncode = try JSONEncoder().encode(codableModel)
+            
+            return dataEncode
+        }
+        
+        return try JSONEncoder().encode("")
     }
     
     private func encodeRandomImageFromList(list: [String]) throws -> UIImage {
