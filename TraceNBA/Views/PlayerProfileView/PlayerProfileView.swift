@@ -25,11 +25,20 @@ struct PlayerProfileView: View {
         ZStack {
             GradientComponent()
             
-            VStack {
-                // playerTitle
-                
-                ScrollView {
-                    
+            if let player = viewModel.player {
+                if player.error == nil {
+                    VStack {
+                        getPlayerTitle(player: player)
+                    }
+                } else {
+                    VStackMaxHeight {
+                        NoDataViewComponent(message: .noPlayerDetails)
+                    }
+                }
+            } else {
+                VStackMaxHeight {
+                    ProgressView()
+                        .tint(Color.white)
                 }
             }
         }
