@@ -92,6 +92,7 @@
 		2CE10D1B2B0730B5003B6C81 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D1A2B0730B5003B6C81 /* PlayerProfileView.swift */; };
 		2CE10D1D2B07323C003B6C81 /* PlayerProfileView+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D1C2B07323C003B6C81 /* PlayerProfileView+Toolbar.swift */; };
 		2CE10D1F2B07329C003B6C81 /* PlayerProfileView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D1E2B07329C003B6C81 /* PlayerProfileView+Components.swift */; };
+		2CE10D212B073B83003B6C81 /* PlayerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D202B073B83003B6C81 /* PlayerProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +193,7 @@
 		2CE10D1A2B0730B5003B6C81 /* PlayerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileView.swift; sourceTree = "<group>"; };
 		2CE10D1C2B07323C003B6C81 /* PlayerProfileView+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerProfileView+Toolbar.swift"; sourceTree = "<group>"; };
 		2CE10D1E2B07329C003B6C81 /* PlayerProfileView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerProfileView+Components.swift"; sourceTree = "<group>"; };
+		2CE10D202B073B83003B6C81 /* PlayerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,6 +393,7 @@
 			children = (
 				2C88F9652AF37711007B28F8 /* StreamMatchesViewModel.swift */,
 				2C9576E82AF7735400BC7F75 /* EventsViewModel.swift */,
+				2CE10D202B073B83003B6C81 /* PlayerProfileViewModel.swift */,
 				2C0DBF1C2AFB4EE2002DE51B /* StatisticsMatchViewModel.swift */,
 				2C0DBF572B00C30C002DE51B /* ImageViewComponetViewModel.swift */,
 			);
@@ -622,6 +625,7 @@
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
 				2C3D5F682AF958640066790A /* StatisticsItemModel.swift in Sources */,
 				2C621D112B034DE0004E0E79 /* PlayerStatisticsView+Toolbar.swift in Sources */,
+				2CE10D212B073B83003B6C81 /* PlayerProfileViewModel.swift in Sources */,
 				2C9141702B00EC5B0020AFA0 /* FakeData.swift in Sources */,
 				2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */,
 				2C0DBF482AFFA943002DE51B /* PlayerStatisticsModel.swift in Sources */,

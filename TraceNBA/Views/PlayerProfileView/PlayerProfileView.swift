@@ -13,6 +13,18 @@ struct PlayerProfileView: View {
     let team: TeamModel
     let dataService: DataServiceProtocol
     
+    @StateObject public var viewModel: PlayerProfileViewModel
+    
+    init(player: PlayerModel, team: TeamModel, dataService: DataServiceProtocol) {
+        self.player = player
+        self.team = team
+        self.dataService = dataService
+        self._viewModel = StateObject(wrappedValue: PlayerProfileViewModel(
+            idPlayer: player.id,
+            dataService: dataService
+        ))
+    }
+    
     var body: some View {
         ZStack {
             GradientComponent()
