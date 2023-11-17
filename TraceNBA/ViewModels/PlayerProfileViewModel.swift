@@ -58,6 +58,12 @@ class PlayerProfileViewModel: ObservableObject {
         }
     }
     
+    func cancelAllTasks() {
+        tasks.forEach{ $0.cancel() }
+        
+        tasks = []
+    }
+    
     private func getPlayerDetailsData(id: Int, isRefresh: Bool) async throws -> PlayerModel {
         let data = try await dataService.getPlayerDetails(id: id, isRefresh: isRefresh)
         
