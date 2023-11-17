@@ -67,10 +67,8 @@ class PlayerProfileViewModel: ObservableObject {
     private func getPlayerDetailsData(id: Int, isRefresh: Bool) async throws -> PlayerModel {
         let data = try await dataService.getPlayerDetails(id: id, isRefresh: isRefresh)
         
-        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        let decodeData = try JSONDecoder().decode(PlayerDataModel.self, from: data)
         
-        guard let player = decodeData.player else { throw URLError(.badServerResponse) }
-        
-        return player
+        return decodeData.player
     }
 }

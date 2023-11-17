@@ -13,7 +13,6 @@ struct DataModel: Codable {
     let statistics: [StatisticsMatchModel]?
     let highlights: [HighlightModel]?
     let incidents: [IncidentModel]?
-    let player: PlayerModel?
     let message: String?
     
     init(
@@ -22,7 +21,6 @@ struct DataModel: Codable {
         statistics: [StatisticsMatchModel]? = nil,
         highlights: [HighlightModel]? = nil,
         incidents: [IncidentModel]? = nil,
-        player: PlayerModel? = nil,
         message: String? = nil
     ) {
         self.events = events
@@ -30,7 +28,6 @@ struct DataModel: Codable {
         self.statistics = statistics
         self.highlights = highlights
         self.incidents = incidents
-        self.player = player
         self.message = message
     }
 }
