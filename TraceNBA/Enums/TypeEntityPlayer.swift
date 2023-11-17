@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TypeEntityPlayer: String {
+enum TypeEntityPlayer: String, CaseIterable {
     case statistics
     case nearMatches = "near matches"
     case transferHistory = "transfer history"
