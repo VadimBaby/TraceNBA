@@ -8,6 +8,8 @@
 import Foundation
 
 class PlayerProfileViewModel: ObservableObject {
+    @Published private(set) var player: PlayerModel? = nil
+    
     let idPlayer: Int
     let dataService: DataServiceProtocol
     
@@ -16,5 +18,9 @@ class PlayerProfileViewModel: ObservableObject {
         self.dataService = dataService
     }
     
-    
+    private func getPlayerDetailsData(id: Int, isRefresh: Bool) async throws -> PlayerModel {
+        let data = try await dataService.getPlayerDetails(id: id, isRefresh: isRefresh)
+        
+        return try JSONDecoder().decode(PlayerModel.self, from: data)
+    }
 }
