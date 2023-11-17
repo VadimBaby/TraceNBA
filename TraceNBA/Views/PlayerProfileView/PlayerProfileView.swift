@@ -13,6 +13,8 @@ struct PlayerProfileView: View {
     
     @StateObject public var viewModel: PlayerProfileViewModel
     
+    @State public var showTypeEntityPlayer: TypeEntityPlayer = .statistics
+    
     init(idPlayer: Int, dataService: DataServiceProtocol) {
         self.dataService = dataService
         self._viewModel = StateObject(wrappedValue: PlayerProfileViewModel(

@@ -12,6 +12,8 @@ extension PlayerProfileView {
         VStack {
             getPlayerTitle(player: player)
             
+            PickerTypeEntityPlayerViewComponent(showTypeEntityPlayer: $showTypeEntityPlayer)
+            
             ScrollView {
                 
             }
@@ -41,5 +43,14 @@ extension PlayerProfileView {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.horizontal)
+    }
+}
+
+#Preview {
+    NavigationStack {
+        PlayerProfileView(
+            idPlayer: 1,
+            dataService: MockDataService<DataModel>()
+        )
     }
 }
