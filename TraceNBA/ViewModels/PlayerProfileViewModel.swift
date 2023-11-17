@@ -13,9 +13,19 @@ class PlayerProfileViewModel: ObservableObject {
     let idPlayer: Int
     let dataService: DataServiceProtocol
     
+    var tasks: [Task<Void, Never>] = []
+    
     init(idPlayer: Int, dataService: DataServiceProtocol) {
         self.idPlayer = idPlayer
         self.dataService = dataService
+    }
+    
+    func getPlayerDetails() {
+        let task1 = Task {
+            await asyncGetPlayerDetails(isRefresh: false)
+        }
+        
+        tasks.append(task1)
     }
     
     func asyncGetPlayerDetails(isRefresh: Bool) async {
