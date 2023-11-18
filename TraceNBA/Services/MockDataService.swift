@@ -82,6 +82,12 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
         return try await getData(isRefresh: isRefresh, codableModel: codableModel)
     }
     
+    func getPlayerSeasons(id: Int, isRefresh: Bool) async throws -> Data {
+        let codableModel = DataModel(uniqueTournamentSeasons: FakeData.fakePlayerSeasons)
+        
+        return try await getData(isRefresh: isRefresh, codableModel: codableModel)
+    }
+    
     private func getData(isRefresh: Bool, codableModel: Codable? = nil) async throws -> Data {
         if isRefresh {
             throw Errors.cannotRefresh
