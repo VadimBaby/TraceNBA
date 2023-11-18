@@ -37,6 +37,23 @@ class PlayerProfileViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    private func getSeasonFromIndexOffset(offsetBy: Int) -> SeasonModel? {
+        guard let seasons = seasons,
+              let isActiveSeason = isActiveSeason else { return nil }
+        
+        let index = seasons.firstIndex { $0.id == isActiveSeason.id }
+        
+        guard let index else { return nil }
+        
+        let newSeasonIndex = seasons.index(index, offsetBy: offsetBy)
+        
+        guard newSeasonIndex >= 0 && newSeasonIndex < seasons.count else { return nil }
+        
+        let newSeason = seasons[newSeasonIndex]
+        
+        return newSeason
+    }
+    
     func getPlayerDetails() {
         let task1 = Task {
             await asyncGetPlayerDetails(isRefresh: false)
