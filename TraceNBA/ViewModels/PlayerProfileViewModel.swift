@@ -31,6 +31,14 @@ class PlayerProfileViewModel: ObservableObject {
         tasks.append(task1)
     }
     
+    func getPlayerSeasons() {
+        let task = Task {
+            await asyncGetPlayerSeasons(isRefresh: false)
+        }
+        
+        tasks.append(task)
+    }
+    
     func asyncGetPlayerDetails(isRefresh: Bool) async {
         await MainActor.run {
             self.player = nil
