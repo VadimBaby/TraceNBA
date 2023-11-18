@@ -8,6 +8,6 @@
 import Foundation
 
 struct UniqueTournamentSeasonsItem: Codable {
-    let uniqueTournament: TournamentModel
+    let uniqueTournament: UniqueTournamentModel
     let seasons: [SeasonModel]
 }
