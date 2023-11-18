@@ -11,6 +11,7 @@ class PlayerProfileViewModel: ObservableObject {
     @Published private(set) var player: PlayerModel? = nil
     @Published private(set) var seasons: [SeasonModel]? = nil
     @Published private(set) var statistics: PlayerStatisticsModel? = nil
+    @Published private(set) var isActiveSeason: SeasonModel? = nil
     
     let idPlayer: Int
     let dataService: DataServiceProtocol
@@ -63,6 +64,7 @@ class PlayerProfileViewModel: ObservableObject {
     func asyncGetPlayerSeasons(isRefresh: Bool) async {
         await MainActor.run {
             self.seasons = nil
+            self.isActiveSeason = nil
         }
         
         do {
@@ -70,12 +72,14 @@ class PlayerProfileViewModel: ObservableObject {
             
             await MainActor.run {
                 self.seasons = seasons
+                self.isActiveSeason = seasons.first
             }
         } catch Errors.cannotRefresh {
             print("Cannot refresh")
         } catch {
             await MainActor.run {
                 self.seasons = []
+                self.isActiveSeason = nil
             }
             
             debugPrint(error)
