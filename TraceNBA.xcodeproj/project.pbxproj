@@ -84,6 +84,7 @@
 		2C9B80612B049A6700F98BA2 /* IncidentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B80602B049A6700F98BA2 /* IncidentModel.swift */; };
 		2C9B80632B04ACE600F98BA2 /* VStackMaxHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B80622B04ACE600F98BA2 /* VStackMaxHeight.swift */; };
 		2C9B80652B04AF1400F98BA2 /* IncidentItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B80642B04AF1400F98BA2 /* IncidentItemViewComponent.swift */; };
+		2CC1715B2B088DA400235890 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1715A2B088DA400235890 /* Color.swift */; };
 		2CC2E2142B02622B000A0CF9 /* PlayerStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */; };
 		2CC2E2162B026F04000A0CF9 /* PlayerStatisticsView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */; };
 		2CC2E2192B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */; };
@@ -189,6 +190,7 @@
 		2C9B80602B049A6700F98BA2 /* IncidentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentModel.swift; sourceTree = "<group>"; };
 		2C9B80622B04ACE600F98BA2 /* VStackMaxHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStackMaxHeight.swift; sourceTree = "<group>"; };
 		2C9B80642B04AF1400F98BA2 /* IncidentItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentItemViewComponent.swift; sourceTree = "<group>"; };
+		2CC1715A2B088DA400235890 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2CC2E2132B02622B000A0CF9 /* PlayerStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsView.swift; sourceTree = "<group>"; };
 		2CC2E2152B026F04000A0CF9 /* PlayerStatisticsView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerStatisticsView+Components.swift"; sourceTree = "<group>"; };
 		2CC2E2182B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffsetPreferenceKey.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				2C0DBF532B00BE94002DE51B /* Int.swift */,
 				2CC2E21C2B0349C1000A0CF9 /* UINavigationController.swift */,
 				2CC2E21A2B0333AA000A0CF9 /* View.swift */,
+				2CC1715A2B088DA400235890 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				2CE10D212B073B83003B6C81 /* PlayerProfileViewModel.swift in Sources */,
 				2C9141702B00EC5B0020AFA0 /* FakeData.swift in Sources */,
 				2C9576E52AF772AD00BC7F75 /* ChangingDateViewComponent.swift in Sources */,
+				2CC1715B2B088DA400235890 /* Color.swift in Sources */,
 				2C0DBF482AFFA943002DE51B /* PlayerStatisticsModel.swift in Sources */,
 				2CC2E21B2B0333AA000A0CF9 /* View.swift in Sources */,
 				2C0DBF432AFFA870002DE51B /* LineupsItemPlayerModel.swift in Sources */,

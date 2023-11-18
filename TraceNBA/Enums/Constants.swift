@@ -21,10 +21,8 @@ enum Constants {
         "0ee6652a40mshb2a06f6f8ed8e7fp129ce4jsnb16762573247"
     ]
     
-    static let firstGradientColor: Color = Color("FirstGradientColor")
-    static let secondGradientColor: Color = Color("SecondGradientColor")
     static let gradient: LinearGradient = LinearGradient(
-        gradient: Gradient(colors: [Constants.firstGradientColor, Constants.secondGradientColor]),
+        gradient: Gradient(colors: [Color.firstGradientColor, Color.secondGradientColor]),
         startPoint: .leading,
         endPoint: .trailing
     )
