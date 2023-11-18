@@ -32,6 +32,32 @@ struct PlayerStatisticsModel: Codable {
     let tripleDoubles: Int?
     let appearances: Int?
     
+    init(secondsPlayed: Int, points: Int, twoPointsMade: Int, twoPointAttempts: Int, threePointsMade: Int, threePointAttempts: Int, freeThrowsMade: Int, freeThrowAttempts: Int, fieldGoalsMade: Int, fieldGoalAttempts: Int, rebounds: Int, defensiveRebounds: Int, offensiveRebounds: Int, turnovers: Int, blocks: Int, personalFouls: Int, assists: Int, steals: Int, plusMinus: Int, fieldGoalPct: Int? = nil, doubleDoubles: Int? = nil, tripleDoubles: Int? = nil, appearances: Int? = nil) {
+        self.secondsPlayed = secondsPlayed
+        self.points = points
+        self.twoPointsMade = twoPointsMade
+        self.twoPointAttempts = twoPointAttempts
+        self.threePointsMade = threePointsMade
+        self.threePointAttempts = threePointAttempts
+        self.freeThrowsMade = freeThrowsMade
+        self.freeThrowAttempts = freeThrowAttempts
+        self.fieldGoalsMade = fieldGoalsMade
+        self.fieldGoalAttempts = fieldGoalAttempts
+        self.rebounds = rebounds
+        self.defensiveRebounds = defensiveRebounds
+        self.offensiveRebounds = offensiveRebounds
+        self.turnovers = turnovers
+        self.blocks = blocks
+        self.personalFouls = personalFouls
+        self.assists = assists
+        self.steals = steals
+        self.plusMinus = plusMinus
+        self.fieldGoalPct = fieldGoalPct
+        self.doubleDoubles = doubleDoubles
+        self.tripleDoubles = tripleDoubles
+        self.appearances = appearances
+    }
+    
     func getStatisticFromString(string: String) -> Int? {
         switch string {
         case "secondsPlayed":
