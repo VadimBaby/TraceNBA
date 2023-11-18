@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class PlayerProfileViewModel: ObservableObject {
     @Published private(set) var player: PlayerModel? = nil
@@ -16,11 +17,24 @@ class PlayerProfileViewModel: ObservableObject {
     let idPlayer: Int
     let dataService: DataServiceProtocol
     
-    var tasks: [Task<Void, Never>] = []
+    private var tasks: [Task<Void, Never>] = []
+    
+    private var cancellables = Set<AnyCancellable>()
     
     init(idPlayer: Int, dataService: DataServiceProtocol) {
         self.idPlayer = idPlayer
         self.dataService = dataService
+    }
+    
+    func getSubcriber() {
+        $isActiveSeason
+            .debounce(for: .seconds(1.5), scheduler: DispatchQueue.main)
+            .sink { newSeason in
+                guard let season = newSeason else { return }
+                
+                self.getPlayerStatisticsRegularSeason(idSeason: season.id)
+            }
+            .store(in: &cancellables)
     }
     
     func getPlayerDetails() {
