@@ -60,6 +60,28 @@ class PlayerProfileViewModel: ObservableObject {
         }
     }
     
+    func asyncGetPlayerSeasons(isRefresh: Bool) async {
+        await MainActor.run {
+            self.seasons = nil
+        }
+        
+        do {
+            let seasons = try await getPlayerSeasons(id: self.idPlayer, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.seasons = seasons
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                self.seasons = []
+            }
+            
+            debugPrint(error)
+        }
+    }
+    
     func cancelAllTasks() {
         tasks.forEach{ $0.cancel() }
         
