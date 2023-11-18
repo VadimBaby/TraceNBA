@@ -9,6 +9,8 @@ import Foundation
 
 class PlayerProfileViewModel: ObservableObject {
     @Published private(set) var player: PlayerModel? = nil
+    @Published private(set) var seasons: [SeasonModel]? = nil
+    @Published private(set) var statistics: PlayerStatisticsModel? = nil
     
     let idPlayer: Int
     let dataService: DataServiceProtocol
