@@ -87,4 +87,16 @@ class PlayerProfileViewModel: ObservableObject {
         
         return uniqueTournamentSeasonsItem.seasons
     }
+    
+    private func getPlayerStatisticsRegularSeason(idPlayer: Int, idSeason: Int, isRefresh: Bool) async throws -> PlayerStatisticsModel {
+        let data = try await dataService.getPlayerStatisticsRegularSeason(
+            idPlayer: idPlayer,
+            idSeason: idSeason,
+            isRefresh: isRefresh
+        )
+        
+        let decodeData = try JSONDecoder().decode(PlayerStatisticsDataModel.self, from: data)
+        
+        return decodeData.statistics
+    }
 }
