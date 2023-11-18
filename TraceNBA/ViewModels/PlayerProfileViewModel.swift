@@ -43,6 +43,12 @@ class PlayerProfileViewModel: ObservableObject {
         isActiveSeason = newSeason
     }
     
+    func setPreviousSeason() {
+        guard let newSeason = getSeasonFromIndexOffset(offsetBy: 1) else { return }
+        
+        isActiveSeason = newSeason
+    }
+    
     private func getSeasonFromIndexOffset(offsetBy: Int) -> SeasonModel? {
         guard let seasons = seasons,
               let isActiveSeason = isActiveSeason else { return nil }
