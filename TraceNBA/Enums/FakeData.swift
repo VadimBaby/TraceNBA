@@ -1328,4 +1328,30 @@ enum FakeData {
             ]
         )
     ]
+    
+    static let fakePlayerStatistics: PlayerStatisticsModel = PlayerStatisticsModel(
+        secondsPlayed: 139384,
+        points: 1690,
+        twoPointsMade: 589,
+        twoPointAttempts: 873,
+        threePointsMade: 57,
+        threePointAttempts: 149,
+        freeThrowsMade: 341,
+        freeThrowAttempts: 415,
+        fieldGoalsMade: 646,
+        fieldGoalAttempts: 1022,
+        rebounds: 817,
+        defensiveRebounds: 650,
+        offensiveRebounds: 167,
+        turnovers: 247,
+        blocks: 47,
+        personalFouls: 174,
+        assists: 678,
+        steals: 87,
+        plusMinus: 640,
+        fieldGoalPct: nil,
+        doubleDoubles: 58,
+        tripleDoubles: 29,
+        appearances: 69
+    )
 }
