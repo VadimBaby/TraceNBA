@@ -28,4 +28,6 @@ protocol DataServiceProtocol {
     func getPlayerDetails(id: Int, isRefresh: Bool) async throws -> Data
     
     func getPlayerSeasons(id: Int, isRefresh: Bool) async throws -> Data
+    
+    func getPlayerStatisticsRegualarSeason(idPlayer: Int, idSeason: Int, isRefresh: Bool) async throws -> Data
 }
