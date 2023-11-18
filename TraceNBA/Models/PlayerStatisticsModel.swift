@@ -28,6 +28,9 @@ struct PlayerStatisticsModel: Codable {
     let steals: Int
     let plusMinus: Int
     let fieldGoalPct: Int?
+    let doubleDoubles: Int?
+    let tripleDoubles: Int?
+    let appearances: Int?
     
     func getStatisticFromString(string: String) -> Int? {
         switch string {
@@ -71,6 +74,12 @@ struct PlayerStatisticsModel: Codable {
             return self.plusMinus
         case "fieldGoalPct":
             return self.fieldGoalPct
+        case "doubleDoubles":
+            return self.doubleDoubles
+        case "tripleDoubles":
+            return self.tripleDoubles
+        case "appearances":
+            return self.appearances
         default:
             return nil
         }
