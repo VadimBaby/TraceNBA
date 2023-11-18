@@ -73,4 +73,18 @@ class PlayerProfileViewModel: ObservableObject {
         
         return decodeData.player
     }
+    
+    private func getPlayerSeasons(id: Int, isRefresh: Bool) async throws -> [SeasonModel] {
+        let data = try await dataService.getPlayerSeasons(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        guard let uniqueTournamentSeasons = decodeData.uniqueTournamentSeasons else { throw URLError(.badServerResponse) }
+        
+        let uniqueTournamentSeasonsItem = uniqueTournamentSeasons.first { $0.uniqueTournament.id == Constants.tournament }
+        
+        guard let uniqueTournamentSeasonsItem else { throw Errors.dataIsNil }
+        
+        return uniqueTournamentSeasonsItem.seasons
+    }
 }
