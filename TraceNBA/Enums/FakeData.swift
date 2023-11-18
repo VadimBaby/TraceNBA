@@ -1265,4 +1265,67 @@ enum FakeData {
             nameCode: "CLE"
         )
     )
+    
+    static let fakePlayerSeasons: [UniqueTournamentSeasonsItem] = [
+        UniqueTournamentSeasonsItem(
+            uniqueTournament: UniqueTournamentModel(
+                name: "NBA",
+                slug: "nba",
+                id: 132
+            ),
+            seasons: [
+                SeasonModel(
+                    id: 54105,
+                    name: "NBA 23/24",
+                    editor: false,
+                    year: "23/24"
+                ),
+                SeasonModel(
+                    id: 56094,
+                    name: "NBA In-Season Tournament 2023",
+                    editor: false,
+                    year: "NBA In-Season Tournament 2023"
+                ),
+                SeasonModel(
+                    id: 45096,
+                    name: "NBA 22/23",
+                    editor: false,
+                    year: "22/23"
+                ),
+                SeasonModel(
+                    id: 38191,
+                    name: "NBA 21/22",
+                    editor: false,
+                    year: "21/22"
+                ),
+                SeasonModel(
+                    id: 34951,
+                    name: "NBA 20/21",
+                    editor: false,
+                    year: "20/21"
+                )
+            ]
+        ),
+        UniqueTournamentSeasonsItem(
+            uniqueTournament: UniqueTournamentModel(
+                name: "NBA Preseason",
+                slug: "nba-preseason",
+                id: 2329
+            ),
+            seasons: [
+                SeasonModel(
+                    id: 54640,
+                    name: "NBA Preseason 2023",
+                    editor: false,
+                    year: "2023"
+                ),
+                SeasonModel(
+                    id: 44744,
+                    name: "NBA Preseason 22/23",
+                    editor: false,
+                    year: "22/23"
+                )
+            ]
+        )
+    ]
 }
