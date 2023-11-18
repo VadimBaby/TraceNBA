@@ -68,7 +68,7 @@ class PlayerProfileViewModel: ObservableObject {
         }
         
         do {
-            let seasons = try await getPlayerSeasons(id: self.idPlayer, isRefresh: isRefresh)
+            let seasons = try await getPlayerSeasonsData(id: self.idPlayer, isRefresh: isRefresh)
             
             await MainActor.run {
                 self.seasons = seasons
@@ -92,7 +92,7 @@ class PlayerProfileViewModel: ObservableObject {
         }
         
         do {
-            let statistics = try await getPlayerStatisticsRegularSeason(idPlayer: idSeason, idSeason: idSeason, isRefresh: isRefresh)
+            let statistics = try await getPlayerStatisticsRegularSeasonData(idPlayer: idSeason, idSeason: idSeason, isRefresh: isRefresh)
             
             await MainActor.run {
                 self.statistics = statistics
@@ -122,7 +122,7 @@ class PlayerProfileViewModel: ObservableObject {
         return decodeData.player
     }
     
-    private func getPlayerSeasons(id: Int, isRefresh: Bool) async throws -> [SeasonModel] {
+    private func getPlayerSeasonsData(id: Int, isRefresh: Bool) async throws -> [SeasonModel] {
         let data = try await dataService.getPlayerSeasons(id: id, isRefresh: isRefresh)
         
         let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
@@ -136,7 +136,7 @@ class PlayerProfileViewModel: ObservableObject {
         return uniqueTournamentSeasonsItem.seasons
     }
     
-    private func getPlayerStatisticsRegularSeason(idPlayer: Int, idSeason: Int, isRefresh: Bool) async throws -> PlayerStatisticsModel {
+    private func getPlayerStatisticsRegularSeasonData(idPlayer: Int, idSeason: Int, isRefresh: Bool) async throws -> PlayerStatisticsModel {
         let data = try await dataService.getPlayerStatisticsRegularSeason(
             idPlayer: idPlayer,
             idSeason: idSeason,
