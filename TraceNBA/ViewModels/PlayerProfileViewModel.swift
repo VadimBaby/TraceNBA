@@ -14,6 +14,7 @@ class PlayerProfileViewModel: ObservableObject {
     @Published private(set) var statistics: PlayerStatisticsModel? = nil
     @Published private(set) var isActiveSeason: SeasonModel? = nil
     @Published private(set) var hasError: Bool = false
+    
     let idPlayer: Int
     let dataService: DataServiceProtocol
     
@@ -49,12 +50,14 @@ class PlayerProfileViewModel: ObservableObject {
         guard let newSeason = getSeasonFromIndexOffset(offsetBy: -1) else { return }
         
         isActiveSeason = newSeason
+        statistics = nil
     }
     
     func setPreviousSeason() {
         guard let newSeason = getSeasonFromIndexOffset(offsetBy: 1) else { return }
         
         isActiveSeason = newSeason
+        statistics = nil
     }
     
     func getPlayerDetails() {
@@ -143,7 +146,7 @@ class PlayerProfileViewModel: ObservableObject {
         }
         
         do {
-            let statistics = try await getPlayerStatisticsRegularSeasonData(idPlayer: idSeason, idSeason: idSeason, isRefresh: isRefresh)
+            let statistics = try await getPlayerStatisticsRegularSeasonData(idPlayer: idPlayer, idSeason: idSeason, isRefresh: isRefresh)
             
             await MainActor.run {
                 self.statistics = statistics
@@ -195,6 +198,8 @@ class PlayerProfileViewModel: ObservableObject {
             idSeason: idSeason,
             isRefresh: isRefresh
         )
+        
+        print(String(data: data, encoding: .utf8))
         
         let decodeData = try JSONDecoder().decode(PlayerStatisticsDataModel.self, from: data)
         
