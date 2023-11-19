@@ -40,6 +40,11 @@ extension PlayerProfileView {
     @ViewBuilder public func getViewContent(seasons: [SeasonModel]) -> some View {
         if showTypeEntityPlayer == .statistics {
             getStatisticsContent(seasons: seasons)
+        } else if showTypeEntityPlayer == .nearMatches {
+            nearMatchesContent
+                .onAppear {
+                    viewModel.getPlayerNearMatches()
+                }
         }
     }
 }

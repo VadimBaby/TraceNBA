@@ -26,6 +26,61 @@ extension PlayerProfileView {
             }
         }
     }
+    
+    @ViewBuilder public var nearMatchesContent: some View {
+        if viewModel.nextEvent == nil && viewModel.previousEvent == nil && !viewModel.hasNearEventError {
+            VStackMaxHeight {
+                ProgressView()
+                    .tint(Color.white)
+            }
+        } else if viewModel.hasNearEventError {
+            VStackMaxHeight {
+                NoDataViewComponent(message: .noPlayerNearMatches)
+            }
+        } else {
+            ScrollView {
+                VStack {
+                    if let previousEvent = viewModel.previousEvent {
+                        getNearMatchesItem(
+                            event: previousEvent,
+                            typeEvent: .previousEvent
+                        )
+                    }
+                    
+                    if let nextEvent = viewModel.nextEvent {
+                        getNearMatchesItem(
+                            event: nextEvent, 
+                            typeEvent: .nextMatch
+                        )
+                    }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder public func getNearMatchesItem(event: MatchModel, typeEvent: TypeNearMatch) -> some View {
+        VStack {
+            Text(typeEvent.rawValue)
+                .font(.title)
+                .foregroundStyle(Color.white)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
+            
+            NavigationLink(destination: {
+                StatisticsMatchView(
+                    matchModel: event,
+                    dataService: dataService
+                )
+            }, label: {
+                MatchItemViewComponent(
+                    matchModel: event,
+                    dataService: dataService
+                )
+                .tint(Color.black)
+            })
+        }
+    }
 }
 
 #Preview {
