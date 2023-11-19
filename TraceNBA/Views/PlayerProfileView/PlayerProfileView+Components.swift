@@ -8,7 +8,13 @@
 import SwiftUI
 
 extension PlayerProfileView {
-    
+    @ViewBuilder public func getStatisticsContent(seasons: [SeasonModel]) -> some View {
+        PickerSeasonPlayerViewComponent(viewModel: viewModel)
+        
+        ScrollView {
+            
+        }
+    }
 }
 
 #Preview {

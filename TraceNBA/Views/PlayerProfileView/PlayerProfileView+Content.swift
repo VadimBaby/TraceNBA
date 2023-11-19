@@ -19,9 +19,7 @@ extension PlayerProfileView {
             
             if let seasons = viewModel.seasons {
                 if !seasons.isEmpty {
-                    ScrollView {
-                        
-                    }
+                    getViewContent(seasons: seasons)
                 } else {
                     NoDataViewComponent(message: .noPlayerSeasons)
                 }
@@ -34,6 +32,12 @@ extension PlayerProfileView {
         }
         .onAppear {
             viewModel.getPlayerSeasons()
+        }
+    }
+    
+    @ViewBuilder public func getViewContent(seasons: [SeasonModel]) -> some View {
+        if showTypeEntityPlayer == .statistics {
+            getStatisticsContent(seasons: seasons)
         }
     }
 }
