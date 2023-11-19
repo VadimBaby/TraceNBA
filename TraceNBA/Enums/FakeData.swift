@@ -1354,4 +1354,81 @@ enum FakeData {
         tripleDoubles: 29,
         appearances: 69
     )
+    
+    static let fakePlayerTransferHistory: [TransferModel] = [
+        TransferModel(
+            player: PlayerModel(
+                id: 846936,
+                name: "Caris LeVert",
+                firstName: "Caris",
+                lastName: "LeVert ",
+                shortName: "C. LeVert",
+                position: "G"
+            ),
+            transferFrom: TeamModel(
+                id: 3419,
+                name: "Indiana Pacers",
+                shortName: "Pacers",
+                nameCode: "IND"
+            ),
+            transferTo: TeamModel(
+                id: 3419,
+                name: "Cleveland Cavaliers",
+                shortName: "Cavaliers",
+                nameCode: "CLE"
+            ),
+            fromTeamName: "Indiana Pacers",
+            toTeamName: "Cleveland Cavaliers",
+            id: 1370702,
+            transferDateTimestamp: 1644105600
+        ),
+        TransferModel(
+            player: PlayerModel(
+                id: 846936,
+                name: "Caris LeVert",
+                firstName: "Caris",
+                lastName: "LeVert ",
+                shortName: "C. LeVert",
+                position: "G"
+            ),
+            transferFrom: TeamModel(
+                id: 3436,
+                name: "Brooklyn Nets",
+                shortName: "Nets",
+                nameCode: "IND"
+            ),
+            transferTo: TeamModel(
+                id: 3419,
+                name: "Indiana Pacers",
+                shortName: "Pacers",
+                nameCode: "IND"
+            ),
+            fromTeamName: "Brooklyn Nets",
+            toTeamName: "Indiana Pacers",
+            id: 1170646,
+            transferDateTimestamp: 1610582400
+        ),
+        TransferModel(
+            player: PlayerModel(
+                id: 846936,
+                name: "Caris LeVert",
+                firstName: "Caris",
+                lastName: "LeVert ",
+                shortName: "C. LeVert",
+                position: "G"
+            ),
+            transferTo: TeamModel(
+                id: 3436,
+                name: "Brooklyn Nets",
+                shortName: "Nets",
+                nameCode: "IND"
+            ),
+            fromTeamName: "",
+            toTeamName: "Brooklyn Nets",
+            round: 1,
+            pick: 20,
+            id: 251961,
+            transferDateTimestamp: 1466640000
+        )
+    ]
 }
