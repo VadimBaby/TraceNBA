@@ -89,6 +89,7 @@
 		2CB2D8D52B09EE950072A216 /* StatisticsPlayerViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2D8D42B09EE950072A216 /* StatisticsPlayerViewComponent.swift */; };
 		2CB2D8D72B0A418B0072A216 /* TypeNearMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2D8D62B0A418B0072A216 /* TypeNearMatch.swift */; };
 		2CB2D8DB2B0A556B0072A216 /* TransferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2D8DA2B0A556B0072A216 /* TransferModel.swift */; };
+		2CB2D8DD2B0A5BFF0072A216 /* TransferItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2D8DC2B0A5BFF0072A216 /* TransferItemViewComponent.swift */; };
 		2CC1715B2B088DA400235890 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1715A2B088DA400235890 /* Color.swift */; };
 		2CC1715D2B08900400235890 /* SeasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1715C2B08900400235890 /* SeasonModel.swift */; };
 		2CC1715F2B0890AC00235890 /* UniqueTournamentSeasonsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1715E2B0890AC00235890 /* UniqueTournamentSeasonsItem.swift */; };
@@ -202,6 +203,7 @@
 		2CB2D8D42B09EE950072A216 /* StatisticsPlayerViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPlayerViewComponent.swift; sourceTree = "<group>"; };
 		2CB2D8D62B0A418B0072A216 /* TypeNearMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeNearMatch.swift; sourceTree = "<group>"; };
 		2CB2D8DA2B0A556B0072A216 /* TransferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferModel.swift; sourceTree = "<group>"; };
+		2CB2D8DC2B0A5BFF0072A216 /* TransferItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferItemViewComponent.swift; sourceTree = "<group>"; };
 		2CC1715A2B088DA400235890 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2CC1715C2B08900400235890 /* SeasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonModel.swift; sourceTree = "<group>"; };
 		2CC1715E2B0890AC00235890 /* UniqueTournamentSeasonsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueTournamentSeasonsItem.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				2CB2D8D22B09DE720072A216 /* PickerSeasonPlayerViewComponent.swift */,
 				2CB2D8D42B09EE950072A216 /* StatisticsPlayerViewComponent.swift */,
 				2CDFB15A2B07D50F009BA1C1 /* TitlePlayerViewComponent.swift */,
+				2CB2D8DC2B0A5BFF0072A216 /* TransferItemViewComponent.swift */,
 			);
 			path = PlayerProfileViewComponents;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				2C3D5F662AF958450066790A /* NameStatisticsItemType.swift in Sources */,
 				2CDFB15B2B07D50F009BA1C1 /* TitlePlayerViewComponent.swift in Sources */,
 				2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */,
+				2CB2D8DD2B0A5BFF0072A216 /* TransferItemViewComponent.swift in Sources */,
 				2C9576F32AF782BB00BC7F75 /* TypeTime.swift in Sources */,
 				2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */,
 				2CB2D8D72B0A418B0072A216 /* TypeNearMatch.swift in Sources */,
