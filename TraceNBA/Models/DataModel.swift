@@ -16,6 +16,7 @@ struct DataModel: Codable {
     let uniqueTournamentSeasons: [UniqueTournamentSeasonsItem]?
     let previousEvent: MatchModel?
     let nextEvent: MatchModel?
+    let transferHistory: [TransferModel]?
     let message: String?
     
     init(
@@ -27,6 +28,7 @@ struct DataModel: Codable {
         uniqueTournamentSeasons: [UniqueTournamentSeasonsItem]? = nil,
         previousEvent: MatchModel? = nil,
         nextEvent: MatchModel? = nil,
+        transferHistory: [TransferModel]? = nil,
         message: String? = nil
     ) {
         self.events = events
@@ -37,6 +39,7 @@ struct DataModel: Codable {
         self.uniqueTournamentSeasons = uniqueTournamentSeasons
         self.previousEvent = previousEvent
         self.nextEvent = nextEvent
+        self.transferHistory = transferHistory
         self.message = message
     }
 }
