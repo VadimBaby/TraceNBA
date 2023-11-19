@@ -11,8 +11,21 @@ extension PlayerProfileView {
     @ViewBuilder public func getStatisticsContent(seasons: [SeasonModel]) -> some View {
         PickerSeasonPlayerViewComponent(viewModel: viewModel)
         
-        ScrollView {
-            
+        if let statistics = viewModel.statistics {
+            if !viewModel.hasError {
+                ScrollView {
+                    
+                }
+            } else {
+                VStackMaxHeight {
+                    NoDataViewComponent(message: .noPlayerStatisticsRegularSeason)
+                }
+            }
+        } else {
+            VStackMaxHeight {
+                ProgressView()
+                    .tint(Color.white)
+            }
         }
     }
 }
