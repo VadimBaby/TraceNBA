@@ -45,6 +45,11 @@ extension PlayerProfileView {
                 .onAppear {
                     viewModel.getPlayerNearMatches()
                 }
+        } else if showTypeEntityPlayer == .transferHistory {
+            transferHistoryContent
+                .onAppear {
+                    viewModel.getPlayerTransferHistory()
+                }
         }
     }
 }
