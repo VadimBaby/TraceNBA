@@ -30,7 +30,6 @@ struct PickerSeasonPlayerViewComponent: View {
             }
             .font(.system(.title2, design: .rounded, weight: .medium))
             .foregroundStyle(Color.white)
-            .frame(height: 60)
         }
     }
 }
