@@ -201,7 +201,28 @@ class PlayerProfileViewModel: ObservableObject {
             
             debugPrint(error)
         }
-
+    }
+    
+    func asyncGetPlayerTransferHistory(isRefresh: Bool) async {
+        await MainActor.run {
+            self.transferHistory = nil
+        }
+        
+        do {
+            let transferHistory = try await getPlayerTransferHistoryData(id: idPlayer, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.transferHistory = transferHistory
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                self.transferHistory = []
+            }
+            
+            debugPrint(error)
+        }
     }
     
     func cancelAllTasks() {
