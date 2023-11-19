@@ -24,6 +24,14 @@ class PlayerProfileViewModel: ObservableObject {
     init(idPlayer: Int, dataService: DataServiceProtocol) {
         self.idPlayer = idPlayer
         self.dataService = dataService
+        
+        getSubcriber()
+    }
+    
+    deinit {
+        cancellables.forEach{ $0.cancel() }
+        
+        cancellables = []
     }
     
     func getSubcriber() {
