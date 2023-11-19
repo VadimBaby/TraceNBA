@@ -254,7 +254,7 @@ class PlayerProfileViewModel: ObservableObject {
         return decodeData
     }
     
-    private func getPlayerTransferHistory(id: Int, isRefresh: Bool) async throws -> [TransferModel] {
+    private func getPlayerTransferHistoryData(id: Int, isRefresh: Bool) async throws -> [TransferModel] {
         let data = try await dataService.getPlayerTransferHistory(id: id, isRefresh: isRefresh)
         
         let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
