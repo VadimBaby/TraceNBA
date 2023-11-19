@@ -20,7 +20,10 @@ struct NumberCircleViewComponent: View {
                     .font(.largeTitle)
                     .fontWeight(.medium)
             }
-            .frame(width: 90, height: 90)
+            .frame(
+                width: Constants.sizeCircles,
+                height: Constants.sizeCircles
+            )
     }
 }
 
