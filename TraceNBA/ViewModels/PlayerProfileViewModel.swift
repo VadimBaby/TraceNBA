@@ -96,6 +96,14 @@ class PlayerProfileViewModel: ObservableObject {
         tasks.append(task)
     }
     
+    func getPlayerTransferHistory() {
+        let task = Task {
+            await asyncGetPlayerTransferHistory(isRefresh: false)
+        }
+        
+        tasks.append(task)
+    }
+    
     func asyncGetPlayerDetails(isRefresh: Bool) async {
         await MainActor.run {
             self.player = nil
