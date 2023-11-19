@@ -208,6 +208,14 @@ class PlayerProfileViewModel: ObservableObject {
         return statistics
     }
     
+    private func getPlayerNearMatches(id: Int, isRefresh: Bool) async throws -> DataModel {
+        let data = try await dataService.getPlayerNearMatches(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        return decodeData
+    }
+    
     private func getSeasonFromIndexOffset(offsetBy: Int) -> SeasonModel? {
         guard let seasons = seasons,
               let isActiveSeason = isActiveSeason else { return nil }
