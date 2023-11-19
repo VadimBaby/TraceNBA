@@ -21,7 +21,9 @@ extension PlayerProfileView {
                 if !seasons.isEmpty {
                     getViewContent(seasons: seasons)
                 } else {
-                    NoDataViewComponent(message: .noPlayerSeasons)
+                    VStackMaxHeight {
+                        NoDataViewComponent(message: .noPlayerSeasons)
+                    }
                 }
             } else {
                 VStackMaxHeight {
