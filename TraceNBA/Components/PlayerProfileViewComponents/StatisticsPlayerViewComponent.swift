@@ -15,6 +15,16 @@ struct StatisticsPlayerViewComponent: View {
         ScrollView {
             VStack(spacing: 30) {
                 getStatisticsItem(
+                    name: "Points",
+                    value: statistics.points
+                )
+                
+                getTimeStatistics(
+                    name: "Seconds played",
+                    value: statistics.secondsPlayed
+                )
+                
+                getStatisticsItem(
                     name: "Free throws",
                     value: statistics.freeThrowsMade,
                     total: statistics.freeThrowAttempts
@@ -113,6 +123,21 @@ extension StatisticsPlayerViewComponent {
             } else {
                 NumberCircleViewComponent(value: value)
             }
+        }
+    }
+    
+    @ViewBuilder public func getTimeStatistics(name: String, value: Int) -> some View {
+        HStack {
+            Text(name)
+                .font(.title)
+                .fontWeight(.medium)
+                .foregroundStyle(Color.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Text("\(value)")
+                .foregroundStyle(Color.white)
+                .font(.title)
+                .fontWeight(.bold)
         }
     }
 }
