@@ -15,6 +15,7 @@ class PlayerProfileViewModel: ObservableObject {
     @Published private(set) var isActiveSeason: SeasonModel? = nil
     @Published private(set) var previousEvent: MatchModel? = nil
     @Published private(set) var nextEvent: MatchModel? = nil
+    @Published private(set) var playerTransferHistory: [TransferModel]? = nil
     @Published private(set) var hasPlayerStatisticsError: Bool = false
     @Published private(set) var hasNearEventError: Bool = false
     
