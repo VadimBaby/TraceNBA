@@ -87,6 +87,14 @@ class PlayerProfileViewModel: ObservableObject {
         tasks.append(task)
     }
     
+    func getPlayerNearMatches() {
+        let task = Task {
+            await asyncGetPlayerNearMatches(isRefresh: false)
+        }
+        
+        tasks.append(task)
+    }
+    
     func asyncGetPlayerDetails(isRefresh: Bool) async {
         await MainActor.run {
             self.player = nil
@@ -175,7 +183,7 @@ class PlayerProfileViewModel: ObservableObject {
         }
         
         do {
-            let dataModel = try await getPlayerNearMatches(id: idPlayer, isRefresh: isRefresh)
+            let dataModel = try await getPlayerNearMatchesData(id: idPlayer, isRefresh: isRefresh)
             
             await MainActor.run {
                 self.previousEvent = dataModel.previousEvent
@@ -237,7 +245,7 @@ class PlayerProfileViewModel: ObservableObject {
         return statistics
     }
     
-    private func getPlayerNearMatches(id: Int, isRefresh: Bool) async throws -> DataModel {
+    private func getPlayerNearMatchesData(id: Int, isRefresh: Bool) async throws -> DataModel {
         let data = try await dataService.getPlayerNearMatches(id: id, isRefresh: isRefresh)
         
         let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
