@@ -26,4 +26,17 @@ extension Int {
         
         return String(year)
     }
+    
+    func getStringDate(_ dateStyle: DateFormatter.Style = .long) -> String {
+        let date: Date = Date(timeIntervalSince1970: TimeInterval(self))
+        
+        var formatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateStyle = dateStyle
+            
+            return formatter
+        }
+        
+        return formatter.string(from: date)
+    }
 }
