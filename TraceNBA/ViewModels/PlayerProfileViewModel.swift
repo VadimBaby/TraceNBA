@@ -16,6 +16,7 @@ class PlayerProfileViewModel: ObservableObject {
     @Published private(set) var previousEvent: MatchModel? = nil
     @Published private(set) var nextEvent: MatchModel? = nil
     @Published private(set) var hasError: Bool = false
+    @Published private(set) var hasNearEventError: Bool = false
     
     let idPlayer: Int
     let dataService: DataServiceProtocol
@@ -164,6 +165,34 @@ class PlayerProfileViewModel: ObservableObject {
             
             debugPrint(error)
         }
+    }
+    
+    func asyncGetPlayerNearMatches(isRefresh: Bool) async {
+        await MainActor.run {
+            self.previousEvent = nil
+            self.nextEvent = nil
+            self.hasNearEventError = false
+        }
+        
+        do {
+            let dataModel = try await getPlayerNearMatches(id: idPlayer, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.previousEvent = dataModel.previousEvent
+                self.nextEvent = dataModel.nextEvent
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                self.previousEvent = nil
+                self.nextEvent = nil
+                self.hasNearEventError = true
+            }
+            
+            debugPrint(error)
+        }
+
     }
     
     func cancelAllTasks() {
