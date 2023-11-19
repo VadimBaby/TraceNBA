@@ -17,9 +17,23 @@ extension PlayerProfileView {
             
             PickerTypeEntityPlayerViewComponent(showTypeEntityPlayer: $showTypeEntityPlayer)
             
-            ScrollView {
-                
+            if let seasons = viewModel.seasons {
+                if !seasons.isEmpty {
+                    ScrollView {
+                        
+                    }
+                } else {
+                    NoDataViewComponent(message: .noPlayerSeasons)
+                }
+            } else {
+                VStackMaxHeight {
+                    ProgressView()
+                        .tint(Color.white)
+                }
             }
+        }
+        .onAppear {
+            viewModel.getPlayerSeasons()
         }
     }
 }
