@@ -15,7 +15,7 @@ class PlayerProfileViewModel: ObservableObject {
     @Published private(set) var isActiveSeason: SeasonModel? = nil
     @Published private(set) var previousEvent: MatchModel? = nil
     @Published private(set) var nextEvent: MatchModel? = nil
-    @Published private(set) var hasError: Bool = false
+    @Published private(set) var hasPlayerStatisticsError: Bool = false
     @Published private(set) var hasNearEventError: Bool = false
     
     let idPlayer: Int
@@ -145,7 +145,7 @@ class PlayerProfileViewModel: ObservableObject {
     func asyncGetPlayerStatisticsRegularSeason(idSeason: Int, isRefresh: Bool) async {
         await MainActor.run {
             self.statistics = nil
-            self.hasError = false
+            self.hasPlayerStatisticsError = false
         }
         
         do {
@@ -153,14 +153,14 @@ class PlayerProfileViewModel: ObservableObject {
             
             await MainActor.run {
                 self.statistics = statistics
-                self.hasError = false
+                self.hasPlayerStatisticsError = false
             }
         } catch Errors.cannotRefresh {
             print("Cannot refresh")
         } catch {
             await MainActor.run {
                 self.statistics = nil
-                self.hasError = true
+                self.hasPlayerStatisticsError = true
             }
             
             debugPrint(error)

@@ -12,7 +12,7 @@ extension PlayerProfileView {
         PickerSeasonPlayerViewComponent(viewModel: viewModel)
         
         if let statistics = viewModel.statistics {
-            if !viewModel.hasError {
+            if !viewModel.hasPlayerStatisticsError {
                 StatisticsPlayerViewComponent(statistics: statistics)
             } else {
                 VStackMaxHeight {
