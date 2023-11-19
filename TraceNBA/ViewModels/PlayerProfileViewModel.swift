@@ -199,11 +199,11 @@ class PlayerProfileViewModel: ObservableObject {
             isRefresh: isRefresh
         )
         
-        print(String(data: data, encoding: .utf8))
-        
         let decodeData = try JSONDecoder().decode(PlayerStatisticsDataModel.self, from: data)
         
-        return decodeData.statistics
+        guard let statistics = decodeData.statistics else { throw Errors.dataIsNil }
+        
+        return statistics
     }
     
     private func getSeasonFromIndexOffset(offsetBy: Int) -> SeasonModel? {

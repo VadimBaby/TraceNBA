@@ -8,5 +8,5 @@
 import Foundation
 
 struct PlayerStatisticsDataModel: Codable {
-    let statistics: PlayerStatisticsModel
+    let statistics: PlayerStatisticsModel?
 }
