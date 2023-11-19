@@ -13,9 +13,7 @@ extension PlayerProfileView {
         
         if let statistics = viewModel.statistics {
             if !viewModel.hasError {
-                ScrollView {
-                    
-                }
+                StatisticsPlayerViewComponent(statistics: statistics)
             } else {
                 VStackMaxHeight {
                     NoDataViewComponent(message: .noPlayerStatisticsRegularSeason)

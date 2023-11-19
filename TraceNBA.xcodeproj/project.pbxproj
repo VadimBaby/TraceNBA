@@ -86,6 +86,7 @@
 		2C9B80652B04AF1400F98BA2 /* IncidentItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B80642B04AF1400F98BA2 /* IncidentItemViewComponent.swift */; };
 		2CB2D8D12B08D6770072A216 /* PlayerStatisticsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2D8D02B08D6770072A216 /* PlayerStatisticsDataModel.swift */; };
 		2CB2D8D32B09DE720072A216 /* PickerSeasonPlayerViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2D8D22B09DE720072A216 /* PickerSeasonPlayerViewComponent.swift */; };
+		2CB2D8D52B09EE950072A216 /* StatisticsPlayerViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2D8D42B09EE950072A216 /* StatisticsPlayerViewComponent.swift */; };
 		2CC1715B2B088DA400235890 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1715A2B088DA400235890 /* Color.swift */; };
 		2CC1715D2B08900400235890 /* SeasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1715C2B08900400235890 /* SeasonModel.swift */; };
 		2CC1715F2B0890AC00235890 /* UniqueTournamentSeasonsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1715E2B0890AC00235890 /* UniqueTournamentSeasonsItem.swift */; };
@@ -196,6 +197,7 @@
 		2C9B80642B04AF1400F98BA2 /* IncidentItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentItemViewComponent.swift; sourceTree = "<group>"; };
 		2CB2D8D02B08D6770072A216 /* PlayerStatisticsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsDataModel.swift; sourceTree = "<group>"; };
 		2CB2D8D22B09DE720072A216 /* PickerSeasonPlayerViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSeasonPlayerViewComponent.swift; sourceTree = "<group>"; };
+		2CB2D8D42B09EE950072A216 /* StatisticsPlayerViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPlayerViewComponent.swift; sourceTree = "<group>"; };
 		2CC1715A2B088DA400235890 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2CC1715C2B08900400235890 /* SeasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonModel.swift; sourceTree = "<group>"; };
 		2CC1715E2B0890AC00235890 /* UniqueTournamentSeasonsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueTournamentSeasonsItem.swift; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 			children = (
 				2CDFB1582B07BE82009BA1C1 /* PickerTypeEntityPlayerViewComponent.swift */,
 				2CB2D8D22B09DE720072A216 /* PickerSeasonPlayerViewComponent.swift */,
+				2CB2D8D42B09EE950072A216 /* StatisticsPlayerViewComponent.swift */,
 				2CDFB15A2B07D50F009BA1C1 /* TitlePlayerViewComponent.swift */,
 			);
 			path = PlayerProfileViewComponents;
@@ -665,6 +668,7 @@
 				2C88F9472AF35BF3007B28F8 /* ManagerModel.swift in Sources */,
 				2CE10D232B075A27003B6C81 /* PlayerProfileView+Content.swift in Sources */,
 				2C3D5F682AF958640066790A /* StatisticsItemModel.swift in Sources */,
+				2CB2D8D52B09EE950072A216 /* StatisticsPlayerViewComponent.swift in Sources */,
 				2C621D112B034DE0004E0E79 /* PlayerStatisticsView+Toolbar.swift in Sources */,
 				2CE10D212B073B83003B6C81 /* PlayerProfileViewModel.swift in Sources */,
 				2C9141702B00EC5B0020AFA0 /* FakeData.swift in Sources */,
