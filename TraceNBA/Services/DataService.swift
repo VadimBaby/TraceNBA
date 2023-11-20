@@ -167,6 +167,12 @@ actor DataService: DataServiceProtocol {
         return try await getDataFromUrl(urlString: urlString, isRefresh: isRefresh)
     }
     
+    func getTeamDetails(id: Int, isRefresh: Bool) async throws -> Data {
+        let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/team/\(id)"
+        
+        return try await getDataFromUrl(urlString: urlString, isRefresh: isRefresh)
+    }
+    
     private func getDataFromUrl(urlString: String, isRefresh: Bool = false) async throws -> Data {
         
         guard let url = URL(string: urlString) else { throw URLError(.badURL) }
