@@ -294,6 +294,16 @@ class PlayerProfileViewModel: ObservableObject {
         return transferHistory
     }
     
+    private func getPlayerMediaData(id: Int, isRefresh: Bool) async throws -> [HighlightModel] {
+        let data = try await dataService.getPlayerMedia(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        guard let media = decodeData.media else { throw Errors.dataIsNil }
+        
+        return media
+    }
+    
     private func getSeasonFromIndexOffset(offsetBy: Int) -> SeasonModel? {
         guard let seasons = seasons,
               let isActiveSeason = isActiveSeason else { return nil }
