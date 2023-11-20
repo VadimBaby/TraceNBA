@@ -8,6 +8,8 @@
 import Foundation
 
 class TeamProfileViewModel: ObservableObject {
+    @Published private(set) var teamDetails: TeamModel? = nil
+    
     private let id: Int
     private let dataService: DataServiceProtocol
     
