@@ -36,4 +36,6 @@ protocol DataServiceProtocol {
     func getPlayerTransferHistory(id: Int, isRefresh: Bool) async throws -> Data
     
     func getPlayerMedia(id: Int, isRefresh: Bool) async throws -> Data
+    
+    func getTeamDetails(id: Int, isRefresh: Bool) async throws -> Data
 }
