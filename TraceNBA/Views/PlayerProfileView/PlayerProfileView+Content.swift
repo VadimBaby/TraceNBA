@@ -50,6 +50,11 @@ extension PlayerProfileView {
                 .onAppear {
                     viewModel.getPlayerTransferHistory()
                 }
+        } else if showTypeEntityPlayer == .highlights {
+            mediaPlayer
+                .onAppear {
+                    viewModel.getPlayerMedia()
+                }
         }
     }
 }
