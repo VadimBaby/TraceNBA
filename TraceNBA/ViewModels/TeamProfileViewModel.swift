@@ -14,9 +14,19 @@ class TeamProfileViewModel: ObservableObject {
     private let id: Int
     private let dataService: DataServiceProtocol
     
+    private var tasks: [Task<Void, Never>] = []
+    
     init(id: Int, dataService: DataServiceProtocol) {
         self.id = id
         self.dataService = dataService
+    }
+    
+    func getTeamDetails() {
+        let task = Task {
+            await asyncGetTeamDetails(isRefresh: false)
+        }
+        
+        tasks.append(task)
     }
     
     func asyncGetTeamDetails(isRefresh: Bool) async {
