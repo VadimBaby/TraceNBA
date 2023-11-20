@@ -234,6 +234,28 @@ class PlayerProfileViewModel: ObservableObject {
         }
     }
     
+    func asyncGetPlayerMedia(isRefresh: Bool) async {
+        await MainActor.run {
+            self.media = nil
+        }
+        
+        do {
+            let media = try await getPlayerMediaData(id: idPlayer, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.media = media
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                self.media = []
+            }
+            
+            debugPrint(error)
+        }
+    }
+    
     func cancelAllTasks() {
         tasks.forEach{ $0.cancel() }
         
