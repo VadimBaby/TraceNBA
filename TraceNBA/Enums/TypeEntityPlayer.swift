@@ -11,7 +11,7 @@ enum TypeEntityPlayer: String, CaseIterable {
     case statistics
     case nearMatches = "near matches"
     case transferHistory = "transfer history"
-    case highlights
+    case media
     
     var title: String {
         return self.rawValue.uppercased()
