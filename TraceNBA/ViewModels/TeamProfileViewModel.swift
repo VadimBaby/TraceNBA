@@ -9,6 +9,7 @@ import Foundation
 
 class TeamProfileViewModel: ObservableObject {
     @Published private(set) var teamDetails: TeamModel? = nil
+    @Published private(set) var hasErrorTeamDetails: Bool = false
     
     private let id: Int
     private let dataService: DataServiceProtocol
@@ -21,6 +22,7 @@ class TeamProfileViewModel: ObservableObject {
     func asyncGetTeamDetails(isRefresh: Bool) async {
         await MainActor.run {
             teamDetails = nil
+            self.hasErrorTeamDetails = false
         }
         
         do {
@@ -28,12 +30,14 @@ class TeamProfileViewModel: ObservableObject {
             
             await MainActor.run {
                 self.teamDetails = teamDetails
+                self.hasErrorTeamDetails = false
             }
         } catch Errors.cannotRefresh {
             print("Cannot refresh")
         } catch {
             await MainActor.run {
                 self.teamDetails = nil
+                self.hasErrorTeamDetails = true
             }
             
             debugPrint(error)
