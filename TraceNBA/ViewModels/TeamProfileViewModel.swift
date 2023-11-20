@@ -17,4 +17,14 @@ class TeamProfileViewModel: ObservableObject {
         self.id = id
         self.dataService = dataService
     }
+    
+    private func getTeamDetailsData(id: Int, isRefresh: Bool) async throws -> TeamModel {
+        let data = try await dataService.getTeamDetails(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        guard let team = decodeData.team else { throw Errors.dataIsNil }
+        
+        return team
+    }
 }
