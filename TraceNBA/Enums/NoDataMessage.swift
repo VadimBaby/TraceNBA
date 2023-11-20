@@ -19,4 +19,5 @@ enum NoDataMessage: String {
     case noPlayerStatisticsRegularSeason = "Unfortunately, the statistics of this season is not available"
     case noPlayerNearMatches = "Unfortunately, the near matches of this player is not available"
     case noPlayerTransferHistory = "Unfortunately, the transfer history of this player is not available"
+    case noPlayerMedia = "Unfortunately, the media of this player are not available"
 }
