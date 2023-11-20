@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct TeamProfileView: View {
-    
     let id: Int
-    let dataSerivce: DataServiceProtocol
+    let dataService: DataServiceProtocol
+    
+    @StateObject private var viewModel: TeamProfileViewModel
+    
+    init(id: Int, dataService: DataServiceProtocol) {
+        self.id = id
+        self.dataService = dataService
+        self._viewModel = StateObject(wrappedValue: TeamProfileViewModel(
+            id: id,
+            dataService: dataService
+        ))
+    }
     
     var body: some View {
         ZStack {
@@ -24,6 +34,6 @@ struct TeamProfileView: View {
 #Preview {
     TeamProfileView(
         id: 1,
-        dataSerivce: MockDataService<DataModel>()
+        dataService: MockDataService<DataModel>()
     )
 }
