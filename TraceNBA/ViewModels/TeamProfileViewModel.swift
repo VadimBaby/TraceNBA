@@ -63,4 +63,10 @@ class TeamProfileViewModel: ObservableObject {
         
         return team
     }
+    
+    func cancelAllTasks() {
+        tasks.forEach{ $0.cancel() }
+        
+        tasks = []
+    }
 }
