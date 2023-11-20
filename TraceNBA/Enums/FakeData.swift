@@ -1431,4 +1431,20 @@ enum FakeData {
             transferDateTimestamp: 1466640000
         )
     ]
+    
+    static let fakeTeam: TeamModel = TeamModel(
+        id: 3436,
+        name: "Brooklyn Nets",
+        shortName: "Nets",
+        nameCode: "BKN",
+        manager: ManagerModel(
+            id: 794620,
+            name: "Jacque Vaughn",
+            shortName: "J. Vaughn"
+        ),
+        venue: VenueModel(
+            city: CityModel(name: "Brooklyn"),
+            stadium: StadiumModel(name: "Barclays Center")
+        )
+    )
 }
