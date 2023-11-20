@@ -42,7 +42,8 @@ extension TitlePlayerViewComponent {
     @ViewBuilder public func getNamePlayer(player: PlayerModel) -> some View {
         VStack(alignment: .leading) {
             if let firstName = player.firstName,
-               let lastName = player.lastName {
+               let lastName = player.lastName,
+               !firstName.isEmpty && !lastName.isEmpty {
                 Text(firstName)
                 Text(lastName)
             } else {
