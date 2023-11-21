@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NearMatchesItem: View {
+struct NearMatchesItemComponent: View {
     
     let event: MatchModel
     let typeEvent: TypeNearMatch
@@ -39,7 +39,7 @@ struct NearMatchesItem: View {
 }
 
 #Preview {
-    NearMatchesItem(
+    NearMatchesItemComponent(
         event: FakeData.fakeListLiveMatches.first!,
         typeEvent: .nextMatch,
         dataService: MockDataService<DataModel>()

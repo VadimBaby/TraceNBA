@@ -41,7 +41,7 @@ extension PlayerProfileView {
             ScrollView {
                 VStack {
                     if let previousEvent = viewModel.previousEvent {
-                        NearMatchesItem(
+                        NearMatchesItemComponent(
                             event: previousEvent,
                             typeEvent: .previousEvent,
                             dataService: dataService
@@ -49,7 +49,7 @@ extension PlayerProfileView {
                     }
                     
                     if let nextEvent = viewModel.nextEvent {
-                        NearMatchesItem(
+                        NearMatchesItemComponent(
                             event: nextEvent, 
                             typeEvent: .nextMatch,
                             dataService: dataService
