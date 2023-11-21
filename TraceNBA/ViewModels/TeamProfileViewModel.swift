@@ -12,6 +12,7 @@ class TeamProfileViewModel: ObservableObject {
     @Published private(set) var previousEvent: MatchModel? = nil
     @Published private(set) var nextEvent: MatchModel? = nil
     @Published private(set) var players: [PlayerDataModel]? = nil
+    @Published private(set) var media: [HighlightModel]? = nil
     @Published private(set) var hasTeamDetailsError: Bool = false
     @Published private(set) var hasNearMatchesError: Bool = false
     
