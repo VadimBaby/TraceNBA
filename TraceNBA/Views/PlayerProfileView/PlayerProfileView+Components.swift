@@ -50,11 +50,13 @@ extension PlayerProfileView {
                     
                     if let nextEvent = viewModel.nextEvent {
                         NearMatchesItemComponent(
-                            event: nextEvent, 
+                            event: nextEvent,
                             typeEvent: .nextMatch,
                             dataService: dataService
                         )
                     }
+                    
+                    PlugRectangleViewComponent()
                 }
             }
         }
