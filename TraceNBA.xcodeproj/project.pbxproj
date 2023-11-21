@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C0D0D7A2B0CE0AC003DAB01 /* PlayerItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D0D792B0CE0AC003DAB01 /* PlayerItemViewComponent.swift */; };
+		2C0D0D7C2B0CE806003DAB01 /* HighlightsViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D0D7B2B0CE806003DAB01 /* HighlightsViewComponent.swift */; };
 		2C0DBF1B2AFB4EA3002DE51B /* StatisticsMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF1A2AFB4EA3002DE51B /* StatisticsMatchView.swift */; };
 		2C0DBF1D2AFB4EE2002DE51B /* StatisticsMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF1C2AFB4EE2002DE51B /* StatisticsMatchViewModel.swift */; };
 		2C0DBF252AFBCA90002DE51B /* MatchViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBF242AFBCA90002DE51B /* MatchViewComponent.swift */; };
@@ -131,6 +132,7 @@
 
 /* Begin PBXFileReference section */
 		2C0D0D792B0CE0AC003DAB01 /* PlayerItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerItemViewComponent.swift; sourceTree = "<group>"; };
+		2C0D0D7B2B0CE806003DAB01 /* HighlightsViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewComponent.swift; sourceTree = "<group>"; };
 		2C0DBF1A2AFB4EA3002DE51B /* StatisticsMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchView.swift; sourceTree = "<group>"; };
 		2C0DBF1C2AFB4EE2002DE51B /* StatisticsMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchViewModel.swift; sourceTree = "<group>"; };
 		2C0DBF242AFBCA90002DE51B /* MatchViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewComponent.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				2C0DBF552B00C291002DE51B /* ImageViewComponent.swift */,
 				2C9B80622B04ACE600F98BA2 /* VStackMaxHeight.swift */,
 				2C30960A2B0C9C1F00350AB9 /* NearMatchesItemComponent.swift */,
+				2C0D0D7B2B0CE806003DAB01 /* HighlightsViewComponent.swift */,
 			);
 			path = UniversalComponents;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				2C0DBF432AFFA870002DE51B /* LineupsItemPlayerModel.swift in Sources */,
 				2CDFB1592B07BE82009BA1C1 /* PickerTypeEntityPlayerViewComponent.swift in Sources */,
 				2C9B805F2B049A0F00F98BA2 /* IncidentType.swift in Sources */,
+				2C0D0D7C2B0CE806003DAB01 /* HighlightsViewComponent.swift in Sources */,
 				2C0DBF542B00BE94002DE51B /* Int.swift in Sources */,
 				2C9576E72AF7730900BC7F75 /* EventsView.swift in Sources */,
 				2C4D69592AF2A70C00CF5A55 /* TabBarView.swift in Sources */,

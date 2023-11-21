@@ -51,7 +51,11 @@ extension PlayerProfileView {
                     viewModel.getPlayerTransferHistory()
                 }
         } else if showTypeEntityPlayer == .media {
-            mediaPlayer
+            HighlightsViewComponent(
+                highlights: viewModel.media,
+                noDataMessage: .noPlayerMedia,
+                dataService: dataService
+            )
                 .onAppear {
                     viewModel.getPlayerMedia()
                 }

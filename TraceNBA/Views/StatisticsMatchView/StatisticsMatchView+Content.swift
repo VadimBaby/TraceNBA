@@ -38,7 +38,11 @@ extension StatisticsMatchView {
                             viewModel.getIncidents(id: id)
                         }
                 } else if showTypeStatisticsView == .highlights {
-                    highlightsView
+                    HighlightsViewComponent(
+                        highlights: viewModel.highlights,
+                        noDataMessage: .noMatchHighlights,
+                        dataService: dataService
+                    )
                         .onAppear {
                             viewModel.getHighlights(id: id)
                         }
@@ -145,33 +149,6 @@ extension StatisticsMatchView {
             } else {
                 VStackMaxHeight {
                     NoDataViewComponent(message: .noMatchIncidents)
-                }
-            }
-        } else {
-            VStackMaxHeight {
-                progressView
-            }
-        }
-    }
-    
-    @ViewBuilder private var highlightsView: some View {
-        if let highlights = viewModel.highlights {
-            if !highlights.isEmpty {
-                ScrollView {
-                    VStack(spacing: 30) {
-                        ForEach(highlights) { highlight in
-                            HighlightsItemViewComponent(
-                                highlight: highlight,
-                                dataService: dataService
-                            )
-                        }
-                        PlugRectangleViewComponent()
-                    }
-                    .padding()
-                }
-            } else {
-                VStackMaxHeight {
-                    NoDataViewComponent(message: .noMatchHighlights)
                 }
             }
         } else {

@@ -20,7 +20,11 @@ extension TeamProfileView {
                     viewModel.getTeamPlayers()
                 }
         } else if showTypeEntityTeam == .media {
-            mediaTeam
+            HighlightsViewComponent(
+                highlights: viewModel.media,
+                noDataMessage: .noTeamMedia,
+                dataService: dataService
+            )
                 .onAppear {
                     viewModel.getTeamMedia()
                 }
