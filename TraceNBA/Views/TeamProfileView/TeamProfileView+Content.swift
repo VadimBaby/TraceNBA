@@ -14,6 +14,11 @@ extension TeamProfileView {
                 .onAppear {
                     viewModel.getTeamNearMatches()
                 }
+        } else if showTypeEntityTeam == .teamPlayers {
+            players
+                .onAppear {
+                    viewModel.getTeamPlayers()
+                }
         }
     }
 }

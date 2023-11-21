@@ -42,6 +42,33 @@ extension TeamProfileView {
             }
         }
     }
+    
+    @ViewBuilder public var players: some View {
+        if let players = viewModel.players {
+            if !players.isEmpty {
+                ScrollView {
+                    LazyVStack(spacing: 30) {
+                        ForEach(players, id: \.player.id) { player in
+                            PlayerItemViewComponent(
+                                player: player.player,
+                                dataService: dataService
+                            )
+                        }
+                    }
+                    .padding()
+                }
+            } else {
+                VStackMaxHeight {
+                    NoDataViewComponent(message: .noTeamPlayers)
+                }
+            }
+        } else {
+            VStackMaxHeight {
+                ProgressView()
+                    .tint(Color.white)
+            }
+        }
+    }
 }
 
 #Preview {
