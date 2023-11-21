@@ -69,6 +69,34 @@ extension TeamProfileView {
             }
         }
     }
+    
+    @ViewBuilder public var mediaTeam: some View {
+        if let media = viewModel.media {
+            if !media.isEmpty {
+                ScrollView {
+                    VStack(spacing: 30) {
+                        ForEach(media) { item in
+                            HighlightsItemViewComponent(
+                                highlight: item,
+                                dataService: dataService
+                            )
+                        }
+                        PlugRectangleViewComponent()
+                    }
+                    .padding()
+                }
+            } else {
+                VStackMaxHeight {
+                    NoDataViewComponent(message: .noMatchHighlights)
+                }
+            }
+        } else {
+            VStackMaxHeight {
+                ProgressView()
+                    .tint(Color.white)
+            }
+        }
+    }
 }
 
 #Preview {

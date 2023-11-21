@@ -19,6 +19,11 @@ extension TeamProfileView {
                 .onAppear {
                     viewModel.getTeamPlayers()
                 }
+        } else if showTypeEntityTeam == .media {
+            mediaTeam
+                .onAppear {
+                    viewModel.getTeamMedia()
+                }
         }
     }
 }
