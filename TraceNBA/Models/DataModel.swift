@@ -10,6 +10,7 @@ import Foundation
 struct DataModel: Codable {
     let events: [MatchModel]?
     let players: [PlayerDataModel]?
+    let foreignPlayers: [PlayerDataModel]?
     let statistics: [StatisticsMatchModel]?
     let highlights: [HighlightModel]?
     let incidents: [IncidentModel]?
@@ -24,6 +25,7 @@ struct DataModel: Codable {
     init(
         events: [MatchModel]? = nil,
         players: [PlayerDataModel]? = nil,
+        foreignPlayers: [PlayerDataModel]? = nil,
         statistics: [StatisticsMatchModel]? = nil,
         highlights: [HighlightModel]? = nil,
         incidents: [IncidentModel]? = nil,
@@ -37,6 +39,7 @@ struct DataModel: Codable {
     ) {
         self.events = events
         self.players = players
+        self.foreignPlayers = foreignPlayers
         self.statistics = statistics
         self.highlights = highlights
         self.incidents = incidents
