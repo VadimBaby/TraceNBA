@@ -26,14 +26,35 @@ struct TeamProfileView: View {
         ZStack {
             GradientComponent()
             
-            Text("TeamProfileView")
+            if let teamDetails = viewModel.teamDetails {
+                if !viewModel.hasErrorTeamDetails {
+                    Text("Lets go")
+                } else {
+                    VStackMaxHeight {
+                        NoDataViewComponent(message: .noTeamDetails)
+                    }
+                }
+            } else {
+                VStackMaxHeight {
+                    ProgressView()
+                        .tint(Color.white)
+                }
+            }
+        }
+        .onAppear {
+            viewModel.getTeamDetails()
+        }
+        .onDisappear {
+            viewModel.cancelAllTasks()
         }
     }
 }
 
 #Preview {
-    TeamProfileView(
-        id: 1,
-        dataService: MockDataService<DataModel>()
-    )
+    NavigationStack {
+        TeamProfileView(
+            id: 1,
+            dataService: MockDataService<DataModel>()
+        )
+    }
 }
