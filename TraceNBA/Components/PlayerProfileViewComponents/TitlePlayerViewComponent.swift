@@ -57,19 +57,26 @@ extension TitlePlayerViewComponent {
     
     @ViewBuilder public func getNameTeamWithImage(player: PlayerModel) -> some View {
         if let team = player.team {
-            HStack {
-                Text(team.name)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundStyle(Color(uiColor: UIColor.lightText))
-                
-                ImageViewComponent(
+            NavigationLink(destination: {
+                TeamProfileView(
                     id: team.id,
-                    typeEntiy: .team,
-                    imageScale: 30,
-                    colorProgressView: Color.white,
                     dataService: dataService
                 )
+            }) {
+                HStack {
+                    Text(team.name)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color(uiColor: UIColor.lightText))
+                    
+                    ImageViewComponent(
+                        id: team.id,
+                        typeEntiy: .team,
+                        imageScale: 30,
+                        colorProgressView: Color.white,
+                        dataService: dataService
+                    )
+                }
             }
         }
     }
@@ -91,12 +98,14 @@ extension TitlePlayerViewComponent {
 }
 
 #Preview {
-    ZStack {
-        GradientComponent()
-        
-        TitlePlayerViewComponent(
-            player: FakeData.fakePlayerDetails,
-            dataService: MockDataService<DataModel>()
-        )
+    NavigationStack {
+        ZStack {
+            GradientComponent()
+            
+            TitlePlayerViewComponent(
+                player: FakeData.fakePlayerDetails,
+                dataService: MockDataService<DataModel>()
+            )
+        }
     }
 }
