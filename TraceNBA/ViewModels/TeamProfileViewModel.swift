@@ -9,6 +9,8 @@ import Foundation
 
 class TeamProfileViewModel: ObservableObject {
     @Published private(set) var teamDetails: TeamModel? = nil
+    @Published private(set) var previousEvent: MatchModel? = nil
+    @Published private(set) var nextEvent: MatchModel? = nil
     @Published private(set) var hasErrorTeamDetails: Bool = false
     
     private let id: Int
