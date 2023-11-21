@@ -125,6 +125,28 @@ class TeamProfileViewModel: ObservableObject {
         }
     }
     
+    func asyncGetTeamMedia(isRefresh: Bool) async {
+        await MainActor.run {
+            self.media = nil
+        }
+        
+        do {
+            let media = try await getTeamMediaData(id: self.id, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.media = media
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                self.media = []
+            }
+            
+            debugPrint(error)
+        }
+    }
+    
     private func getTeamDetailsData(id: Int, isRefresh: Bool) async throws -> TeamModel {
         let data = try await dataService.getTeamDetails(id: id, isRefresh: isRefresh)
         
