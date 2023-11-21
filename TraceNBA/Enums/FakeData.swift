@@ -1447,4 +1447,34 @@ enum FakeData {
             stadium: StadiumModel(name: "Barclays Center")
         )
     )
+    
+    static let fakeListPlayers: [PlayerDataModel] = [
+        PlayerDataModel(player: PlayerModel(
+            id: 940807,
+            name: "Mikal Bridges",
+            firstName: "Mikal",
+            lastName: "Bridges ",
+            shortName: "M. Bridges",
+            position: "F",
+            dateOfBirthTimestamp: 841363200
+        )),
+        PlayerDataModel(player: PlayerModel(
+            id: 940807,
+            name: "Mikal Bridges",
+            firstName: "Mikal",
+            lastName: "Bridges ",
+            shortName: "M. Bridges",
+            position: "F",
+            dateOfBirthTimestamp: 841363200
+        )),
+        PlayerDataModel(player: PlayerModel(
+            id: 940807,
+            name: "Mikal Bridges",
+            firstName: "Mikal",
+            lastName: "Bridges ",
+            shortName: "M. Bridges",
+            position: "F",
+            dateOfBirthTimestamp: 841363200
+        )),
+    ]
 }
