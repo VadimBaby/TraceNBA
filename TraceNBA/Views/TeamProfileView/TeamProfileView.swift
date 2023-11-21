@@ -13,6 +13,8 @@ struct TeamProfileView: View {
     
     @StateObject private var viewModel: TeamProfileViewModel
     
+    @State private var showTypeEntityTeam: TypeEntityTeam = .nearMatches
+    
     init(id: Int, dataService: DataServiceProtocol) {
         self.id = id
         self.dataService = dataService
@@ -34,6 +36,12 @@ struct TeamProfileView: View {
                             dataService: dataService
                         )
                         .padding()
+                        
+                        PickerTypeEntityTeamViewComponent(
+                            showTypeEntityTeam: $showTypeEntityTeam
+                        )
+                        
+                        ScrollView {}
                     }
                 } else {
                     VStackMaxHeight {
