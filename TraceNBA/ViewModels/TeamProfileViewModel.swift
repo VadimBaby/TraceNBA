@@ -153,6 +153,16 @@ class TeamProfileViewModel: ObservableObject {
         return players
     }
     
+    private func getTeamMediaData(id: Int, isRefresh: Bool) async throws -> [HighlightModel] {
+        let data = try await dataService.getTeamMedia(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        guard let media = decodeData.media else { throw Errors.dataIsNil }
+        
+        return media
+    }
+    
     func cancelAllTasks() {
         tasks.forEach{ $0.cancel() }
         
