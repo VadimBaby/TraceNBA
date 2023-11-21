@@ -147,17 +147,9 @@ class TeamProfileViewModel: ObservableObject {
         
         let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
         
-        var players: [PlayerDataModel] = []
+        guard let players = decodeData.players else { throw Errors.dataIsNil }
         
-        if let playersData = decodeData.players {
-            players.append(contentsOf: playersData)
-        }
-        
-        if let foreignPlayersData = decodeData.foreignPlayers {
-            players.append(contentsOf: foreignPlayersData)
-        }
-        
-        return players.sorted(by: {$0.player.name > $1.player.name})
+        return players
     }
     
     func cancelAllTasks() {
