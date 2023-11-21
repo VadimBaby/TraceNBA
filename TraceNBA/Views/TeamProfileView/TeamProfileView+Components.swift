@@ -87,7 +87,7 @@ extension TeamProfileView {
                 }
             } else {
                 VStackMaxHeight {
-                    NoDataViewComponent(message: .noMatchHighlights)
+                    NoDataViewComponent(message: .noTeamMedia)
                 }
             }
         } else {

@@ -107,7 +107,7 @@ extension PlayerProfileView {
                 }
             } else {
                 VStackMaxHeight {
-                    NoDataViewComponent(message: .noMatchHighlights)
+                    NoDataViewComponent(message: .noPlayerMedia)
                 }
             }
         } else {
