@@ -41,6 +41,14 @@ class TeamProfileViewModel: ObservableObject {
         tasks.append(task)
     }
     
+    func getTeamPlayers() {
+        let task = Task {
+            await asyncGetTeamDetails(isRefresh: false)
+        }
+        
+        tasks.append(task)
+    }
+    
     func asyncGetTeamDetails(isRefresh: Bool) async {
         await MainActor.run {
             teamDetails = nil
