@@ -50,6 +50,14 @@ class TeamProfileViewModel: ObservableObject {
         tasks.append(task)
     }
     
+    func getTeamMedia() {
+        let task = Task {
+            await asyncGetTeamMedia(isRefresh: false)
+        }
+        
+        tasks.append(task)
+    }
+    
     func asyncGetTeamDetails(isRefresh: Bool) async {
         await MainActor.run {
             teamDetails = nil
