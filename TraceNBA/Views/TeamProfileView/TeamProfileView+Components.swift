@@ -36,6 +36,8 @@ extension TeamProfileView {
                             dataService: dataService
                         )
                     }
+                    
+                    PlugRectangleViewComponent()
                 }
             }
         }
