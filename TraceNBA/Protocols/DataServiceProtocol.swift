@@ -38,4 +38,6 @@ protocol DataServiceProtocol {
     func getPlayerMedia(id: Int, isRefresh: Bool) async throws -> Data
     
     func getTeamDetails(id: Int, isRefresh: Bool) async throws -> Data
+    
+    func getTeamNearMatches(id: Int, isRefresh: Bool) async throws -> Data 
 }
