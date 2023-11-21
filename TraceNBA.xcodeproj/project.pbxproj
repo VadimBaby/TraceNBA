@@ -246,24 +246,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C0DBF1E2AFBAD48002DE51B /* EventsView */ = {
+		2C0DBF1E2AFBAD48002DE51B /* EventsViewComponents */ = {
 			isa = PBXGroup;
 			children = (
 				2C88F9802AF4B32E007B28F8 /* MatchItemViewComponent.swift */,
 				2C9576E42AF772AD00BC7F75 /* ChangingDateViewComponent.swift */,
 			);
-			path = EventsView;
+			path = EventsViewComponents;
 			sourceTree = "<group>";
 		};
-		2C0DBF1F2AFBAD55002DE51B /* StreamMatchesView */ = {
+		2C0DBF1F2AFBAD55002DE51B /* StreamMatchesViewComponents */ = {
 			isa = PBXGroup;
 			children = (
 				2C88F9612AF372F5007B28F8 /* LiveComponent.swift */,
 			);
-			path = StreamMatchesView;
+			path = StreamMatchesViewComponents;
 			sourceTree = "<group>";
 		};
-		2C0DBF202AFBAD60002DE51B /* Universal */ = {
+		2C0DBF202AFBAD60002DE51B /* UniversalComponents */ = {
 			isa = PBXGroup;
 			children = (
 				2C13BADB2B0123EF00554FF8 /* HighlightsItemViewComponent.swift */,
@@ -273,10 +273,10 @@
 				2C0DBF552B00C291002DE51B /* ImageViewComponent.swift */,
 				2C9B80622B04ACE600F98BA2 /* VStackMaxHeight.swift */,
 			);
-			path = Universal;
+			path = UniversalComponents;
 			sourceTree = "<group>";
 		};
-		2C0DBF212AFBB061002DE51B /* StatisticsMatchView */ = {
+		2C0DBF212AFBB061002DE51B /* StatisticsMatchViewComponents */ = {
 			isa = PBXGroup;
 			children = (
 				2C0DBF242AFBCA90002DE51B /* MatchViewComponent.swift */,
@@ -292,7 +292,7 @@
 				2C0DBF4D2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift */,
 				2C0DBF592B00C559002DE51B /* PickerTeamViewComponent.swift */,
 			);
-			path = StatisticsMatchView;
+			path = StatisticsMatchViewComponents;
 			sourceTree = "<group>";
 		};
 		2C0DBF312AFDD4AA002DE51B /* StatisticsMatchView */ = {
@@ -349,6 +349,13 @@
 				2C3095F72B0B8DE100350AB9 /* TeamProfileView.swift */,
 			);
 			path = TeamProfileView;
+			sourceTree = "<group>";
+		};
+		2C3095FD2B0C617A00350AB9 /* TeamProfileViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TeamProfileViewComponents;
 			sourceTree = "<group>";
 		};
 		2C4D69212AF28F9F00CF5A55 = {
@@ -495,11 +502,12 @@
 		2C88F95E2AF36EF3007B28F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2C3095FD2B0C617A00350AB9 /* TeamProfileViewComponents */,
 				2CDFB1552B07BCF8009BA1C1 /* PlayerProfileViewComponents */,
-				2C0DBF212AFBB061002DE51B /* StatisticsMatchView */,
-				2C0DBF202AFBAD60002DE51B /* Universal */,
-				2C0DBF1F2AFBAD55002DE51B /* StreamMatchesView */,
-				2C0DBF1E2AFBAD48002DE51B /* EventsView */,
+				2C0DBF212AFBB061002DE51B /* StatisticsMatchViewComponents */,
+				2C0DBF202AFBAD60002DE51B /* UniversalComponents */,
+				2C0DBF1F2AFBAD55002DE51B /* StreamMatchesViewComponents */,
+				2C0DBF1E2AFBAD48002DE51B /* EventsViewComponents */,
 			);
 			path = Components;
 			sourceTree = "<group>";
