@@ -42,6 +42,9 @@
 		2C3096012B0C6AF000350AB9 /* TypeEntityTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3096002B0C6AF000350AB9 /* TypeEntityTeam.swift */; };
 		2C3096032B0C6B8600350AB9 /* PickerTypeEntityTeamViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3096022B0C6B8600350AB9 /* PickerTypeEntityTeamViewComponent.swift */; };
 		2C3096052B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3096042B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift */; };
+		2C3096072B0C9B3E00350AB9 /* TeamProfileView+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3096062B0C9B3E00350AB9 /* TeamProfileView+Content.swift */; };
+		2C3096092B0C9BBA00350AB9 /* TeamProfileView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3096082B0C9BBA00350AB9 /* TeamProfileView+Components.swift */; };
+		2C30960B2B0C9C1F00350AB9 /* NearMatchesItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30960A2B0C9C1F00350AB9 /* NearMatchesItemComponent.swift */; };
 		2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */; };
 		2C3D5F5E2AF9563F0066790A /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5D2AF9563F0066790A /* GroupModel.swift */; };
 		2C3D5F602AF956620066790A /* PeriodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5F2AF956620066790A /* PeriodType.swift */; };
@@ -161,6 +164,9 @@
 		2C3096002B0C6AF000350AB9 /* TypeEntityTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEntityTeam.swift; sourceTree = "<group>"; };
 		2C3096022B0C6B8600350AB9 /* PickerTypeEntityTeamViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTypeEntityTeamViewComponent.swift; sourceTree = "<group>"; };
 		2C3096042B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamProfileView+Toolbar.swift"; sourceTree = "<group>"; };
+		2C3096062B0C9B3E00350AB9 /* TeamProfileView+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamProfileView+Content.swift"; sourceTree = "<group>"; };
+		2C3096082B0C9BBA00350AB9 /* TeamProfileView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamProfileView+Components.swift"; sourceTree = "<group>"; };
+		2C30960A2B0C9C1F00350AB9 /* NearMatchesItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMatchesItemComponent.swift; sourceTree = "<group>"; };
 		2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchModel.swift; sourceTree = "<group>"; };
 		2C3D5F5D2AF9563F0066790A /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		2C3D5F5F2AF956620066790A /* PeriodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodType.swift; sourceTree = "<group>"; };
@@ -280,6 +286,7 @@
 				2C9576EA2AF779D200BC7F75 /* NoDataViewComponent.swift */,
 				2C0DBF552B00C291002DE51B /* ImageViewComponent.swift */,
 				2C9B80622B04ACE600F98BA2 /* VStackMaxHeight.swift */,
+				2C30960A2B0C9C1F00350AB9 /* NearMatchesItemComponent.swift */,
 			);
 			path = UniversalComponents;
 			sourceTree = "<group>";
@@ -355,6 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				2C3095F72B0B8DE100350AB9 /* TeamProfileView.swift */,
+				2C3096062B0C9B3E00350AB9 /* TeamProfileView+Content.swift */,
+				2C3096082B0C9BBA00350AB9 /* TeamProfileView+Components.swift */,
 				2C3096042B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift */,
 			);
 			path = TeamProfileView;
@@ -682,6 +691,7 @@
 				2C88F9552AF368D3007B28F8 /* DataServiceProtocol.swift in Sources */,
 				2C3095FA2B0B8E4C00350AB9 /* TeamProfileViewModel.swift in Sources */,
 				2CB2D8DD2B0A5BFF0072A216 /* TransferItemViewComponent.swift in Sources */,
+				2C3096092B0C9BBA00350AB9 /* TeamProfileView+Components.swift in Sources */,
 				2C9576F32AF782BB00BC7F75 /* TypeTime.swift in Sources */,
 				2C88F9832AF4B653007B28F8 /* TypeEntity.swift in Sources */,
 				2CB2D8D72B0A418B0072A216 /* TypeNearMatch.swift in Sources */,
@@ -752,6 +762,7 @@
 				2C3096032B0C6B8600350AB9 /* PickerTypeEntityTeamViewComponent.swift in Sources */,
 				2C0DBF582B00C30C002DE51B /* ImageViewComponetViewModel.swift in Sources */,
 				2C3095F82B0B8DE100350AB9 /* TeamProfileView.swift in Sources */,
+				2C30960B2B0C9C1F00350AB9 /* NearMatchesItemComponent.swift in Sources */,
 				2C13BADC2B0123EF00554FF8 /* HighlightsItemViewComponent.swift in Sources */,
 				2C9B80612B049A6700F98BA2 /* IncidentModel.swift in Sources */,
 				2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */,
@@ -766,6 +777,7 @@
 				2CE10D1F2B07329C003B6C81 /* PlayerProfileView+Components.swift in Sources */,
 				2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */,
 				2C88F9432AF359DC007B28F8 /* ScoreModel.swift in Sources */,
+				2C3096072B0C9B3E00350AB9 /* TeamProfileView+Content.swift in Sources */,
 				2C0DBF4A2AFFAB64002DE51B /* TypeStatisticsView.swift in Sources */,
 				2C9576F72AF79B0000BC7F75 /* PlugRectangleViewComponent.swift in Sources */,
 				2C9576ED2AF77A1000BC7F75 /* NoDataMessage.swift in Sources */,

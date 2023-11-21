@@ -11,9 +11,9 @@ struct TeamProfileView: View {
     let id: Int
     let dataService: DataServiceProtocol
     
-    @StateObject private var viewModel: TeamProfileViewModel
+    @StateObject public var viewModel: TeamProfileViewModel
     
-    @State private var showTypeEntityTeam: TypeEntityTeam = .nearMatches
+    @State public var showTypeEntityTeam: TypeEntityTeam = .nearMatches
     
     init(id: Int, dataService: DataServiceProtocol) {
         self.id = id
@@ -41,7 +41,7 @@ struct TeamProfileView: View {
                             showTypeEntityTeam: $showTypeEntityTeam
                         )
                         
-                        ScrollView {}
+                        content
                     }
                 } else {
                     VStackMaxHeight {
