@@ -41,6 +41,7 @@
 		2C3095FF2B0C61F200350AB9 /* TeamDetailsViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3095FE2B0C61F200350AB9 /* TeamDetailsViewComponent.swift */; };
 		2C3096012B0C6AF000350AB9 /* TypeEntityTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3096002B0C6AF000350AB9 /* TypeEntityTeam.swift */; };
 		2C3096032B0C6B8600350AB9 /* PickerTypeEntityTeamViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3096022B0C6B8600350AB9 /* PickerTypeEntityTeamViewComponent.swift */; };
+		2C3096052B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3096042B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift */; };
 		2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */; };
 		2C3D5F5E2AF9563F0066790A /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5D2AF9563F0066790A /* GroupModel.swift */; };
 		2C3D5F602AF956620066790A /* PeriodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5F5F2AF956620066790A /* PeriodType.swift */; };
@@ -159,6 +160,7 @@
 		2C3095FE2B0C61F200350AB9 /* TeamDetailsViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewComponent.swift; sourceTree = "<group>"; };
 		2C3096002B0C6AF000350AB9 /* TypeEntityTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEntityTeam.swift; sourceTree = "<group>"; };
 		2C3096022B0C6B8600350AB9 /* PickerTypeEntityTeamViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTypeEntityTeamViewComponent.swift; sourceTree = "<group>"; };
+		2C3096042B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamProfileView+Toolbar.swift"; sourceTree = "<group>"; };
 		2C3D5F592AF953820066790A /* StatisticsMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMatchModel.swift; sourceTree = "<group>"; };
 		2C3D5F5D2AF9563F0066790A /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		2C3D5F5F2AF956620066790A /* PeriodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodType.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				2C3095F72B0B8DE100350AB9 /* TeamProfileView.swift */,
+				2C3096042B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift */,
 			);
 			path = TeamProfileView;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
 				2C0DBF562B00C291002DE51B /* ImageViewComponent.swift in Sources */,
 				2CB2D8D32B09DE720072A216 /* PickerSeasonPlayerViewComponent.swift in Sources */,
+				2C3096052B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift in Sources */,
 				2CC2E2192B0332EB000A0CF9 /* ScrollViewOffsetPreferenceKey.swift in Sources */,
 				2CC2E2142B02622B000A0CF9 /* PlayerStatisticsView.swift in Sources */,
 				2C0DBF462AFFA8D8002DE51B /* LineupsItemMissingPlayerModel.swift in Sources */,

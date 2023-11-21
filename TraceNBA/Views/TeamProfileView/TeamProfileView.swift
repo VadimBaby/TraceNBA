@@ -61,6 +61,10 @@ struct TeamProfileView: View {
         .onDisappear {
             viewModel.cancelAllTasks()
         }
+        .toolbar {
+            ToolbarItem(placement: .principal) { centerToolbarItem }
+        }
+        .navigationBarBackButtonHidden(false)
     }
 }
 
