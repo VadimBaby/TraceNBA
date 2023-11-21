@@ -41,16 +41,18 @@ extension PlayerProfileView {
             ScrollView {
                 VStack {
                     if let previousEvent = viewModel.previousEvent {
-                        getNearMatchesItem(
+                        NearMatchesItem(
                             event: previousEvent,
-                            typeEvent: .previousEvent
+                            typeEvent: .previousEvent,
+                            dataService: dataService
                         )
                     }
                     
                     if let nextEvent = viewModel.nextEvent {
-                        getNearMatchesItem(
+                        NearMatchesItem(
                             event: nextEvent, 
-                            typeEvent: .nextMatch
+                            typeEvent: .nextMatch,
+                            dataService: dataService
                         )
                     }
                 }
@@ -83,30 +85,6 @@ extension PlayerProfileView {
                 ProgressView()
                     .tint(Color.white)
             }
-        }
-    }
-    
-    @ViewBuilder public func getNearMatchesItem(event: MatchModel, typeEvent: TypeNearMatch) -> some View {
-        VStack {
-            Text(typeEvent.rawValue)
-                .font(.title)
-                .foregroundStyle(Color.white)
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
-            
-            NavigationLink(destination: {
-                StatisticsMatchView(
-                    matchModel: event,
-                    dataService: dataService
-                )
-            }, label: {
-                MatchItemViewComponent(
-                    matchModel: event,
-                    dataService: dataService
-                )
-                .tint(Color.black)
-            })
         }
     }
     
