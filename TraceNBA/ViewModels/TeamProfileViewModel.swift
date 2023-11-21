@@ -112,6 +112,24 @@ class TeamProfileViewModel: ObservableObject {
         return decodeData
     }
     
+    private func getTeamPlayersData(id: Int, isRefresh: Bool) async throws -> [PlayerDataModel] {
+        let data = try await dataService.getTeamPlayers(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        var players: [PlayerDataModel] = []
+        
+        if let playersData = decodeData.players {
+            players.append(contentsOf: playersData)
+        }
+        
+        if let foreignPlayersData = decodeData.foreignPlayers {
+            players.append(contentsOf: foreignPlayersData)
+        }
+        
+        return players.sorted(by: {$0.player.name > $1.player.name})
+    }
+    
     func cancelAllTasks() {
         tasks.forEach{ $0.cancel() }
         
