@@ -39,9 +39,13 @@ struct NearMatchesItemComponent: View {
 }
 
 #Preview {
-    NearMatchesItemComponent(
-        event: FakeData.fakeListLiveMatches.first!,
-        typeEvent: .nextMatch,
-        dataService: MockDataService<DataModel>()
-    )
+    ZStack {
+        GradientComponent()
+        
+        NearMatchesItemComponent(
+            event: FakeData.fakeListLiveMatches.first!,
+            typeEvent: .nextMatch,
+            dataService: MockDataService<DataModel>()
+        )
+    }
 }
