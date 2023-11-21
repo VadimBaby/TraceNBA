@@ -12,6 +12,7 @@ class TeamProfileViewModel: ObservableObject {
     @Published private(set) var previousEvent: MatchModel? = nil
     @Published private(set) var nextEvent: MatchModel? = nil
     @Published private(set) var hasErrorTeamDetails: Bool = false
+    @Published private(set) var hasNearMatchesError: Bool = false
     
     private let id: Int
     private let dataService: DataServiceProtocol
@@ -50,6 +51,34 @@ class TeamProfileViewModel: ObservableObject {
             await MainActor.run {
                 self.teamDetails = nil
                 self.hasErrorTeamDetails = true
+            }
+            
+            debugPrint(error)
+        }
+    }
+    
+    func asyncGetTeamNearMatches(isRefresh: Bool) async {
+        await MainActor.run {
+            self.nextEvent = nil
+            self.previousEvent = nil
+            self.hasNearMatchesError = false
+        }
+        
+        do {
+            let dataModel = try await getTeamNearMatchesData(id: self.id, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.previousEvent = dataModel.previousEvent
+                self.nextEvent = dataModel.nextEvent
+                self.hasNearMatchesError = false
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                self.nextEvent = nil
+                self.previousEvent = nil
+                self.hasNearMatchesError = true
             }
             
             debugPrint(error)
