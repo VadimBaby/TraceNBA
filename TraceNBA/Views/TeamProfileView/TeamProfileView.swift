@@ -28,7 +28,13 @@ struct TeamProfileView: View {
             
             if let teamDetails = viewModel.teamDetails {
                 if !viewModel.hasErrorTeamDetails {
-                    Text("Lets go")
+                    VStack {
+                        TeamDetailsViewComponent(
+                            team: teamDetails,
+                            dataService: dataService
+                        )
+                        .padding()
+                    }
                 } else {
                     VStackMaxHeight {
                         NoDataViewComponent(message: .noTeamDetails)
