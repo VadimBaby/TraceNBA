@@ -64,6 +64,14 @@ class TeamProfileViewModel: ObservableObject {
         return team
     }
     
+    private func getTeamNearMatchesData(id: Int, isRefresh: Bool) async throws -> DataModel {
+        let data = try await dataService.getTeamNearMatches(id: id, isRefresh: isRefresh)
+        
+        let decodeData = try JSONDecoder().decode(DataModel.self, from: data)
+        
+        return decodeData
+    }
+    
     func cancelAllTasks() {
         tasks.forEach{ $0.cancel() }
         
