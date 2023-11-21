@@ -25,11 +25,17 @@ struct MatchViewComponent: View {
 extension MatchViewComponent {
     @ViewBuilder private var content: some View {
         HStack(spacing: 30) {
-            getTeamLogo(
-                id: match.homeTeam.id,
-                shortName: match.homeTeam.shortName,
-                nameCode: match.homeTeam.nameCode
-            )
+            NavigationLink(destination: {
+                TeamProfileView(
+                    id: match.homeTeam.id,
+                    dataService: dataService)
+            }) {
+                getTeamLogo(
+                    id: match.homeTeam.id,
+                    shortName: match.homeTeam.shortName,
+                    nameCode: match.homeTeam.nameCode
+                )
+            }
             
             if let currentHome = homeScore.current,
                let currentAway = awayScore.current {
@@ -39,11 +45,18 @@ extension MatchViewComponent {
                 )
             }
             
-            getTeamLogo(
-                id: match.awayTeam.id,
-                shortName: match.awayTeam.shortName,
-                nameCode: match.awayTeam.nameCode
-            )
+            NavigationLink(destination: {
+                TeamProfileView(
+                    id: match.awayTeam.id,
+                    dataService: dataService
+                )
+            }) {
+                getTeamLogo(
+                    id: match.awayTeam.id,
+                    shortName: match.awayTeam.shortName,
+                    nameCode: match.awayTeam.nameCode
+                )
+            }
         }
     }
     
