@@ -11,7 +11,7 @@ class TeamProfileViewModel: ObservableObject {
     @Published private(set) var teamDetails: TeamModel? = nil
     @Published private(set) var previousEvent: MatchModel? = nil
     @Published private(set) var nextEvent: MatchModel? = nil
-    @Published private(set) var hasErrorTeamDetails: Bool = false
+    @Published private(set) var hasTeamDetailsError: Bool = false
     @Published private(set) var hasNearMatchesError: Bool = false
     
     private let id: Int
@@ -35,7 +35,7 @@ class TeamProfileViewModel: ObservableObject {
     func asyncGetTeamDetails(isRefresh: Bool) async {
         await MainActor.run {
             teamDetails = nil
-            self.hasErrorTeamDetails = false
+            self.hasTeamDetailsError = false
         }
         
         do {
@@ -43,14 +43,14 @@ class TeamProfileViewModel: ObservableObject {
             
             await MainActor.run {
                 self.teamDetails = teamDetails
-                self.hasErrorTeamDetails = false
+                self.hasTeamDetailsError = false
             }
         } catch Errors.cannotRefresh {
             print("Cannot refresh")
         } catch {
             await MainActor.run {
                 self.teamDetails = nil
-                self.hasErrorTeamDetails = true
+                self.hasTeamDetailsError = true
             }
             
             debugPrint(error)

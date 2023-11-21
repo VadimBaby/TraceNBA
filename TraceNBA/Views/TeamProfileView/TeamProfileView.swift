@@ -29,7 +29,7 @@ struct TeamProfileView: View {
             GradientComponent()
             
             if let teamDetails = viewModel.teamDetails {
-                if !viewModel.hasErrorTeamDetails {
+                if !viewModel.hasTeamDetailsError {
                     VStack {
                         TeamDetailsViewComponent(
                             team: teamDetails,
