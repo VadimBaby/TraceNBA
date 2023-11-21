@@ -9,6 +9,7 @@ import Foundation
 
 enum TypeEntityTeam: String, CaseIterable {
     case nearMatches = "near matches"
+    case teamPlayers = "team players"
     case transfers
     case media
     
