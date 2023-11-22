@@ -1477,4 +1477,48 @@ enum FakeData {
             dateOfBirthTimestamp: 841363200
         )),
     ]
+    
+    static let fakeSearchResults: [SearchModel] = [
+        SearchModel(
+            entity: SearchEntityModel(
+                id: 3428,
+                name: "Golden State Warriors",
+                nameCode: "GSW",
+                shortName: "Warriors",
+                country: CountryModel(
+                    name: "USA",
+                    alpha2: "US"
+                ),
+                firstName: nil,
+                lastName: nil,
+                team: nil
+            ),
+            type: "team"
+        ),
+        SearchModel(
+            entity: SearchEntityModel(
+                id: 817050,
+                name: "Stephen Curry",
+                nameCode: nil,
+                shortName: "S. Curry",
+                country: CountryModel(
+                    name: "USA",
+                    alpha2: "US"
+                ),
+                firstName: "Stephen",
+                lastName: "Curry ",
+                team: TeamModel(
+                    id: 3428,
+                    name: "Golden State Warriors",
+                    shortName: "Warriors",
+                    nameCode: "GSW",
+                    country: CountryModel(
+                        name: "USA",
+                        alpha2: "US"
+                    )
+                )
+            ),
+            type: "player"
+        )
+    ]
 }
