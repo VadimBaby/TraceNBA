@@ -16,6 +16,28 @@ class SearchViewModel: ObservableObject {
         self.dataService = dataService
     }
     
+    func asyncGetSearchResults(search: String, isRefresh: Bool) async {
+        await MainActor.run {
+            self.results = nil
+        }
+        
+        do {
+            let results = try await searchData(search: search, isRefresh: isRefresh)
+            
+            await MainActor.run {
+                self.results = results
+            }
+        } catch Errors.cannotRefresh {
+            print("Cannot refresh")
+        } catch {
+            await MainActor.run {
+                self.results = []
+            }
+            
+            debugPrint(error)
+        }
+    }
+    
     private func searchData(search: String, isRefresh: Bool) async throws -> [SearchModel] {
         guard !search.isEmpty else { throw Errors.searchIsEmpty }
         
