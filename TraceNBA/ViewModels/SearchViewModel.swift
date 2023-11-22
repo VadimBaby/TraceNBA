@@ -12,6 +12,8 @@ class SearchViewModel: ObservableObject {
     
     private let dataService: DataServiceProtocol
     
+    private var tasks: [Task<Void, Never>] = []
+    
     init(dataService: DataServiceProtocol) {
         self.dataService = dataService
     }
