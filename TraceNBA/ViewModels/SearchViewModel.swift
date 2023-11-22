@@ -18,6 +18,14 @@ class SearchViewModel: ObservableObject {
         self.dataService = dataService
     }
     
+    func search(search: String) {
+        let task = Task {
+            await asyncGetSearchResults(search: search, isRefresh: false)
+        }
+        
+        tasks.append(task)
+    }
+    
     func asyncGetSearchResults(search: String, isRefresh: Bool) async {
         await MainActor.run {
             self.results = nil
