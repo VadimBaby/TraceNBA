@@ -24,15 +24,6 @@ struct TabBarView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            Text("Home")
-                .tabItem {
-                    VStack {
-                        Text("Home")
-                        Image(systemName: "house")
-                    }
-                }
-                .tag(0)
-            
             Text("Search")
                 .tabItem {
                     VStack {
@@ -40,7 +31,7 @@ struct TabBarView: View {
                         Image(systemName: "magnifyingglass")
                     }
                 }
-                .tag(1)
+                .tag(0)
             
             StreamMatchesView(dataService: dataService)
                 .tabItem {
@@ -49,7 +40,7 @@ struct TabBarView: View {
                         Image(systemName: "dot.radiowaves.left.and.right")
                     }
                 }
-                .tag(2)
+                .tag(1)
             
             EventsView(dataService: dataService)
                 .tabItem {
@@ -58,7 +49,7 @@ struct TabBarView: View {
                         Image(systemName: "calendar")
                     }
                 }
-                .tag(3)
+                .tag(2)
             
             Text("Settings")
                 .tabItem {
@@ -67,7 +58,7 @@ struct TabBarView: View {
                         Image(systemName: "gear")
                     }
                 }
-                .tag(4)
+                .tag(3)
         }
         .tint(Color.green)
     }
