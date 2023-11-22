@@ -27,7 +27,7 @@ struct TitlePlayerViewComponent: View {
                 VStack(alignment: .leading, spacing: 5) {
                     getNamePlayer(player: player)
                     
-                    getNameTeamWithImage(player: player)
+                    getNameTeamWithImageNavigationLink(player: player)
                 }
                 
                 getPlayerDetails(player: player)
@@ -55,28 +55,38 @@ extension TitlePlayerViewComponent {
         .foregroundStyle(Color.white)
     }
     
-    @ViewBuilder public func getNameTeamWithImage(player: PlayerModel) -> some View {
+    @ViewBuilder public func getNameTeamWithImageNavigationLink(player: PlayerModel) -> some View {
         if let team = player.team {
-            NavigationLink(destination: {
-                TeamProfileView(
-                    id: team.id,
-                    dataService: dataService
-                )
-            }) {
-                HStack {
-                    Text(team.name)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundStyle(Color(uiColor: UIColor.lightText))
-                    
-                    ImageViewComponent(
+            if team.name != "No team" {
+                NavigationLink(destination: {
+                    TeamProfileView(
                         id: team.id,
-                        typeEntiy: .team,
-                        imageScale: 30,
-                        colorProgressView: Color.white,
                         dataService: dataService
                     )
+                }) {
+                    getNameTeamWithImage(player: player)
                 }
+            } else {
+                getNameTeamWithImage(player: player)
+            }
+        }
+    }
+    
+    @ViewBuilder public func getNameTeamWithImage(player: PlayerModel) -> some View {
+        if let team = player.team {
+            HStack {
+                Text(team.name)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color(uiColor: UIColor.lightText))
+                
+                ImageViewComponent(
+                    id: team.id,
+                    typeEntiy: .team,
+                    imageScale: 30,
+                    colorProgressView: Color.white,
+                    dataService: dataService
+                )
             }
         }
     }

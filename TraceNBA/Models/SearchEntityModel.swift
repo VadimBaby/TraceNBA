@@ -12,7 +12,7 @@ struct SearchEntityModel: Codable, Identifiable {
     let name: String
     let nameCode: String?
     let shortName: String
-    let country: CountryModel
+    let country: CountryModel?
     let firstName: String?
     let lastName: String?
     let team: TeamModel?
@@ -22,7 +22,7 @@ struct SearchEntityModel: Codable, Identifiable {
         name: String,
         nameCode: String? = nil,
         shortName: String,
-        country: CountryModel,
+        country: CountryModel? = nil,
         firstName: String? = nil,
         lastName: String? = nil,
         team: TeamModel? = nil

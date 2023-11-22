@@ -59,12 +59,16 @@ class SearchViewModel: ObservableObject {
         
         return results.filter { item in
             if item.type == .team {
-                return item.entity.country.name == "USA"
-            } else if item.type == .player {
-                guard let team = item.entity.team,
-                      let country = team.country else { return false }
+                guard let country = item.entity.country else { return false }
                 
                 return country.name == "USA"
+            } else if item.type == .player {
+                guard let team = item.entity.team else { return false }
+                
+                guard let country = team.country,
+                      let nameCountry = country.name else { return team.name == "No team" }
+                
+                return nameCountry == "USA"
             }
             
             return false

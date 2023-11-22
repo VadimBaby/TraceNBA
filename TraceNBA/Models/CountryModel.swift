@@ -8,6 +8,6 @@
 import Foundation
 
 struct CountryModel: Codable {
-    let name: String
-    let alpha2: String
+    let name: String?
+    let alpha2: String?
 }
