@@ -8,6 +8,7 @@
 import Foundation
 
 class SearchViewModel: ObservableObject {
+    @Published private(set) var results: [SearchModel]? = nil
     
     private let dataService: DataServiceProtocol
     
