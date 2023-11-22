@@ -23,7 +23,7 @@ struct ScoreTableViewComponent: View {
             getTeamScoreLine(nameCode: homeNameCode, score: homeScore)
             
             Rectangle()
-                .fill(Color.black)
+                .fill(Color.primary)
                 .frame(height: 1)
             
             getTeamScoreLine(nameCode: awayHomeCode, score: awayScore)
@@ -96,7 +96,7 @@ extension ScoreTableViewComponent {
                 TextMaxWidth(text: "\(current)")
             }
         }
-        .foregroundStyle(Color.black)
+        .foregroundStyle(Color.primary)
     }
     
     @ViewBuilder private func TextMaxWidth(text: String) -> some View {

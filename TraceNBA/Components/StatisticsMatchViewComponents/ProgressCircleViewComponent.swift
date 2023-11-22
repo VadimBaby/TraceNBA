@@ -49,7 +49,7 @@ struct ProgressCircleViewComponent: View {
                             
                             Text("\(value)/\(total)")
                                 .font(.headline)
-                                .foregroundStyle(Color(uiColor: UIColor.systemGray4))
+                                .foregroundStyle(Color.white.opacity(0.8))
                         }
                     }
                 

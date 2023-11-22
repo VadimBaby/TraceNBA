@@ -26,7 +26,7 @@ struct PlayerStatisticsView: View {
                     PlugRectangleViewComponent()
                         .onScrollViewOffsetChanged { value in
                             withAnimation(.easeInOut) {
-                                let color = value < 30 ? Color.black : Color.white
+                                let color = value < 30 ? Color.primary : Color.white
                                 
                                 toolBarColor = color
                             }

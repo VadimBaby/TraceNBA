@@ -32,7 +32,7 @@ struct NearMatchesItemComponent: View {
                     matchModel: event,
                     dataService: dataService
                 )
-                .tint(Color.black)
+                .tint(Color.primary)
             })
         }
     }

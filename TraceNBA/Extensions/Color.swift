@@ -12,5 +12,4 @@ extension Color {
     static let firstGradientColor: Color = Color("FirstGradientColor")
     static let secondGradientColor: Color = Color("SecondGradientColor")
     static let lightText: Color = Color(uiColor: UIColor.lightText)
-    static let ternaryColor: Color = Color("TernaryColor")
 }

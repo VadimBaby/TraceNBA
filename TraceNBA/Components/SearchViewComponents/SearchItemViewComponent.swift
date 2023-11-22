@@ -34,7 +34,7 @@ struct SearchItemViewComponent: View {
                 )
                 
                 Text(result.entity.name)
-                    .foregroundStyle(Color.black)
+                    .foregroundStyle(Color.primary)
                     .font(.title2)
                     .fontWeight(.medium)
                     .frame(maxWidth: .infinity, alignment: .leading)

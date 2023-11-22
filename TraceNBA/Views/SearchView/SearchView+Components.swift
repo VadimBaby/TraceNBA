@@ -11,14 +11,14 @@ extension SearchView {
     @ViewBuilder public var searchView: some View {
         HStack {
             TextField("Search:", text: $search)
-                .foregroundStyle(Color.black)
+                .foregroundStyle(Color.primary)
                 .padding()
                 .frame(height: 50)
                 .background {
                     RoundedRectangle(cornerRadius: 15)
                         .fill(.thinMaterial)
                 }
-                .tint(Color.black)
+                .tint(Color.primary)
             
             Button(action: {
                 if !search.isEmpty {

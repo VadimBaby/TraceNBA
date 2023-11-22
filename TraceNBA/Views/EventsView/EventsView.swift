@@ -45,7 +45,7 @@ struct EventsView: View {
                                                 dataService: dataService
                                             )
                                         }
-                                        .tint(Color.black)
+                                        .tint(Color.primary)
 
                                     }
                                     
