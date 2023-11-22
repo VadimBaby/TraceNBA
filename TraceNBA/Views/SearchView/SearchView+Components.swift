@@ -18,6 +18,7 @@ extension SearchView {
                     RoundedRectangle(cornerRadius: 15)
                         .fill(.thinMaterial)
                 }
+                .tint(Color.black)
             
             Button(action: {
                 if !search.isEmpty {
