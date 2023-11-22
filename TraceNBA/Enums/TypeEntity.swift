@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TypeEntity: String {
+enum TypeEntity: String, Codable {
     case team
     case player
     case manager
