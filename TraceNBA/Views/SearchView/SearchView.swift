@@ -13,6 +13,8 @@ struct SearchView: View {
     
     @StateObject public var viewModel: SearchViewModel
     
+    @State public var search: String = ""
+    
     init(dataService: DataServiceProtocol) {
         self.dataService = dataService
         self._viewModel = StateObject(wrappedValue: SearchViewModel(dataService: dataService))
@@ -23,8 +25,12 @@ struct SearchView: View {
             ZStack {
                 GradientComponent()
                 
-                Text("search")
-                    .foregroundStyle(Color.white)
+                VStack {
+                    searchView
+                }
+            }
+            .onDisappear {
+                viewModel.cancelAllTasks()
             }
         }
     }

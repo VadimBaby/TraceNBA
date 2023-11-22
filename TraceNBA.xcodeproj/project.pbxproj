@@ -122,6 +122,7 @@
 		2CE3EC4F2B0DC4B400C0A896 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC4E2B0DC4B300C0A896 /* SearchModel.swift */; };
 		2CE3EC512B0DCC8700C0A896 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC502B0DCC8700C0A896 /* SearchViewModel.swift */; };
 		2CE3EC552B0DCFFC00C0A896 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */; };
+		2CE3EC572B0DD10900C0A896 /* SearchView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC562B0DD10900C0A896 /* SearchView+Components.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +253,7 @@
 		2CE3EC4E2B0DC4B300C0A896 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		2CE3EC502B0DCC8700C0A896 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		2CE3EC562B0DD10900C0A896 /* SearchView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchView+Components.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */,
+				2CE3EC562B0DD10900C0A896 /* SearchView+Components.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				2CE10D1F2B07329C003B6C81 /* PlayerProfileView+Components.swift in Sources */,
 				2C88F9622AF372F5007B28F8 /* LiveComponent.swift in Sources */,
 				2C88F9432AF359DC007B28F8 /* ScoreModel.swift in Sources */,
+				2CE3EC572B0DD10900C0A896 /* SearchView+Components.swift in Sources */,
 				2C3096072B0C9B3E00350AB9 /* TeamProfileView+Content.swift in Sources */,
 				2C0DBF4A2AFFAB64002DE51B /* TypeStatisticsView.swift in Sources */,
 				2C9576F72AF79B0000BC7F75 /* PlugRectangleViewComponent.swift in Sources */,
