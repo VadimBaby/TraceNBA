@@ -15,6 +15,8 @@ struct SearchView: View {
     
     @State public var search: String = ""
     
+    @FocusState public var searchFocus: Bool
+    
     init(dataService: DataServiceProtocol) {
         self.dataService = dataService
         self._viewModel = StateObject(wrappedValue: SearchViewModel(dataService: dataService))
@@ -29,6 +31,9 @@ struct SearchView: View {
                     searchView
                     
                     content
+                        .onTapGesture {
+                            searchFocus = false
+                        }
                 }
             }
             .onDisappear {

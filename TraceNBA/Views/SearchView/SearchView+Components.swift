@@ -19,9 +19,11 @@ extension SearchView {
                         .fill(.thinMaterial)
                 }
                 .tint(Color.primary)
+                .focused($searchFocus)
             
             Button(action: {
                 if !search.isEmpty {
+                    searchFocus = false
                     viewModel.search(search: search)
                 }
             }) {

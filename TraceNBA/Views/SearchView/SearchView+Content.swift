@@ -28,6 +28,7 @@ extension SearchView {
                 VStackMaxHeight {
                     NoDataViewComponent(message: .noSearchResults)
                 }
+                .contentShape(Rectangle())
             }
         } else {
             VStackMaxHeight {
