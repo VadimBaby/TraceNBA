@@ -51,14 +51,14 @@ struct TabBarView: View {
                 }
                 .tag(2)
             
-            Text("Settings")
-                .tabItem {
-                    VStack {
-                        Text("Settings")
-                        Image(systemName: "gear")
-                    }
-                }
-                .tag(3)
+//            Text("Settings")
+//                .tabItem {
+//                    VStack {
+//                        Text("Settings")
+//                        Image(systemName: "gear")
+//                    }
+//                }
+//                .tag(3)
         }
         .tint(Color.green)
     }
