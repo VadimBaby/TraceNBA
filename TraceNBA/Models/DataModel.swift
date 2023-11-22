@@ -19,6 +19,7 @@ struct DataModel: Codable {
     let transferHistory: [TransferModel]?
     let media: [HighlightModel]?
     let team: TeamModel?
+    let results: [SearchModel]?
     let message: String?
     
     init(
@@ -33,6 +34,7 @@ struct DataModel: Codable {
         transferHistory: [TransferModel]? = nil,
         media: [HighlightModel]? = nil,
         team: TeamModel? = nil,
+        results: [SearchModel]? = nil,
         message: String? = nil
     ) {
         self.events = events
@@ -46,6 +48,7 @@ struct DataModel: Codable {
         self.transferHistory = transferHistory
         self.media = media
         self.team = team
+        self.results = results
         self.message = message
     }
 }
