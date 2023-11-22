@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TypeEntity {
+enum TypeEntity: String {
     case team
     case player
     case manager
