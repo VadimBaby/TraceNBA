@@ -14,4 +14,5 @@ enum Errors: Error, Codable {
     case badDate
     case cannotRefresh
     case dataIsNil
+    case searchIsNil
 }
