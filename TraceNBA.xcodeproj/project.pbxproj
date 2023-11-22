@@ -123,6 +123,7 @@
 		2CE3EC512B0DCC8700C0A896 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC502B0DCC8700C0A896 /* SearchViewModel.swift */; };
 		2CE3EC552B0DCFFC00C0A896 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */; };
 		2CE3EC572B0DD10900C0A896 /* SearchView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC562B0DD10900C0A896 /* SearchView+Components.swift */; };
+		2CE3EC592B0DE56D00C0A896 /* SearchView+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC582B0DE56D00C0A896 /* SearchView+Content.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -254,6 +255,7 @@
 		2CE3EC502B0DCC8700C0A896 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		2CE3EC562B0DD10900C0A896 /* SearchView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchView+Components.swift"; sourceTree = "<group>"; };
+		2CE3EC582B0DE56D00C0A896 /* SearchView+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchView+Content.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -611,6 +613,7 @@
 			children = (
 				2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */,
 				2CE3EC562B0DD10900C0A896 /* SearchView+Components.swift */,
+				2CE3EC582B0DE56D00C0A896 /* SearchView+Content.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				2C0DBF4E2B00A4B3002DE51B /* LineupsPlayerTableViewComponent.swift in Sources */,
 				2C0DBF412AFFA786002DE51B /* LineupsItemModel.swift in Sources */,
 				2C88F94E2AF360EF007B28F8 /* DataService.swift in Sources */,
+				2CE3EC592B0DE56D00C0A896 /* SearchView+Content.swift in Sources */,
 				2C0DBF562B00C291002DE51B /* ImageViewComponent.swift in Sources */,
 				2CB2D8D32B09DE720072A216 /* PickerSeasonPlayerViewComponent.swift in Sources */,
 				2C3096052B0C6DA500350AB9 /* TeamProfileView+Toolbar.swift in Sources */,

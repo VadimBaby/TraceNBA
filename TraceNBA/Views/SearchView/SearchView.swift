@@ -27,6 +27,8 @@ struct SearchView: View {
                 
                 VStack {
                     searchView
+                    
+                    content
                 }
             }
             .onDisappear {
