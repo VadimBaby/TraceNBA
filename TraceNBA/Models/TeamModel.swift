@@ -14,6 +14,7 @@ struct TeamModel: Identifiable, Codable {
     let shortName: String
     let manager: ManagerModel?
     let venue: VenueModel?
+    let country: CountryModel?
     
     init(
         id: Int,
@@ -21,7 +22,8 @@ struct TeamModel: Identifiable, Codable {
         shortName: String,
         nameCode: String,
         manager: ManagerModel? = nil,
-        venue: VenueModel? = nil
+        venue: VenueModel? = nil,
+        country: CountryModel? = nil
     ) {
         self.id = id
         self.name = name
@@ -29,5 +31,6 @@ struct TeamModel: Identifiable, Codable {
         self.nameCode = nameCode
         self.manager = manager
         self.venue = venue
+        self.country = country
     }
 }
