@@ -19,6 +19,8 @@ extension SearchView {
                                 dataService: dataService
                             )
                         }
+                        
+                        PlugRectangleViewComponent()
                     }
                     .padding()
                 }
