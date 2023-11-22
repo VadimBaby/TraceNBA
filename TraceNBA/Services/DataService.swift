@@ -192,7 +192,7 @@ actor DataService: DataServiceProtocol {
     }
     
     func search(search: String, isRefresh: Bool) async throws -> Data {
-        guard !search.isEmpty else { throw Errors.searchIsNil }
+        guard !search.isEmpty else { throw Errors.searchIsEmpty }
         
         let urlString = "https://basketapi1.p.rapidapi.com/api/basketball/search/\(search)"
         
