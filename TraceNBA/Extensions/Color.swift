@@ -11,4 +11,5 @@ import SwiftUI
 extension Color {
     static let firstGradientColor: Color = Color("FirstGradientColor")
     static let secondGradientColor: Color = Color("SecondGradientColor")
+    static let lightText: Color = Color(uiColor: UIColor.lightText)
 }
