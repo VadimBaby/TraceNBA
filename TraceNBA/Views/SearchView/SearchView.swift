@@ -35,6 +35,7 @@ struct SearchView: View {
                 viewModel.cancelAllTasks()
             }
         }
+        .tint(Color.white)
     }
 }
 
