@@ -70,4 +70,10 @@ class SearchViewModel: ObservableObject {
             return false
         }
     }
+    
+    func cancelAllTasks() {
+        tasks.forEach{ $0.cancel() }
+        
+        tasks = []
+    }
 }
