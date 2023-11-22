@@ -12,11 +12,15 @@ extension SearchView {
         if let results = viewModel.results {
             if !results.isEmpty {
                 ScrollView {
-                    VStack {
+                    LazyVStack(spacing: 30) {
                         ForEach(results, id: \.entity.id) { result in
-                            Text(result.entity.name)
+                            SearchItemViewComponent(
+                                result: result,
+                                dataService: dataService
+                            )
                         }
                     }
+                    .padding()
                 }
             } else {
                 VStackMaxHeight {

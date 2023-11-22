@@ -124,6 +124,7 @@
 		2CE3EC552B0DCFFC00C0A896 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */; };
 		2CE3EC572B0DD10900C0A896 /* SearchView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC562B0DD10900C0A896 /* SearchView+Components.swift */; };
 		2CE3EC592B0DE56D00C0A896 /* SearchView+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC582B0DE56D00C0A896 /* SearchView+Content.swift */; };
+		2CE3EC5B2B0DE61500C0A896 /* SearchItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC5A2B0DE61500C0A896 /* SearchItemViewComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +257,7 @@
 		2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		2CE3EC562B0DD10900C0A896 /* SearchView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchView+Components.swift"; sourceTree = "<group>"; };
 		2CE3EC582B0DE56D00C0A896 /* SearchView+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchView+Content.swift"; sourceTree = "<group>"; };
+		2CE3EC5A2B0DE61500C0A896 /* SearchItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -621,6 +623,7 @@
 		2CE3EC532B0DCFE300C0A896 /* SearchViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				2CE3EC5A2B0DE61500C0A896 /* SearchItemViewComponent.swift */,
 			);
 			path = SearchViewComponents;
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 				2CDFB1572B07BD3D009BA1C1 /* TypeEntityPlayer.swift in Sources */,
 				2C0DBF4C2B009242002DE51B /* CountryModel.swift in Sources */,
 				2CE3EC4F2B0DC4B400C0A896 /* SearchModel.swift in Sources */,
+				2CE3EC5B2B0DE61500C0A896 /* SearchItemViewComponent.swift in Sources */,
 				2C3D5F602AF956620066790A /* PeriodType.swift in Sources */,
 				2C9576EB2AF779D200BC7F75 /* NoDataViewComponent.swift in Sources */,
 				2CE10D1F2B07329C003B6C81 /* PlayerProfileView+Components.swift in Sources */,
