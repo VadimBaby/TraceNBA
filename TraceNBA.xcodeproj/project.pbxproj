@@ -120,6 +120,7 @@
 		2CE10D232B075A27003B6C81 /* PlayerProfileView+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D222B075A27003B6C81 /* PlayerProfileView+Content.swift */; };
 		2CE3EC4D2B0DC3FC00C0A896 /* SearchEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC4C2B0DC3FC00C0A896 /* SearchEntityModel.swift */; };
 		2CE3EC4F2B0DC4B400C0A896 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC4E2B0DC4B300C0A896 /* SearchModel.swift */; };
+		2CE3EC512B0DCC8700C0A896 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC502B0DCC8700C0A896 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 		2CE10D222B075A27003B6C81 /* PlayerProfileView+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerProfileView+Content.swift"; sourceTree = "<group>"; };
 		2CE3EC4C2B0DC3FC00C0A896 /* SearchEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntityModel.swift; sourceTree = "<group>"; };
 		2CE3EC4E2B0DC4B300C0A896 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		2CE3EC502B0DCC8700C0A896 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,6 +484,7 @@
 				2C0DBF1C2AFB4EE2002DE51B /* StatisticsMatchViewModel.swift */,
 				2C0DBF572B00C30C002DE51B /* ImageViewComponetViewModel.swift */,
 				2C3095F92B0B8E4C00350AB9 /* TeamProfileViewModel.swift */,
+				2CE3EC502B0DCC8700C0A896 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				2C9B805D2B04996E00F98BA2 /* TypeIncidentClass.swift in Sources */,
 				2C0DBF2D2AFD322F002DE51B /* PeriodPickerViewComponent.swift in Sources */,
 				2C3096032B0C6B8600350AB9 /* PickerTypeEntityTeamViewComponent.swift in Sources */,
+				2CE3EC512B0DCC8700C0A896 /* SearchViewModel.swift in Sources */,
 				2C0DBF582B00C30C002DE51B /* ImageViewComponetViewModel.swift in Sources */,
 				2C3095F82B0B8DE100350AB9 /* TeamProfileView.swift in Sources */,
 				2C30960B2B0C9C1F00350AB9 /* NearMatchesItemComponent.swift in Sources */,
