@@ -32,6 +32,7 @@ struct SearchItemViewComponent: View {
                     typeEntiy: result.type,
                     dataService: dataService
                 )
+                .clipShape(.rect(cornerRadius: result.type == .player ? 15 : 0))
                 
                 Text(result.entity.name)
                     .foregroundStyle(Color.primary)
