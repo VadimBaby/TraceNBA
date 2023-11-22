@@ -119,6 +119,7 @@
 		2CE10D212B073B83003B6C81 /* PlayerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D202B073B83003B6C81 /* PlayerProfileViewModel.swift */; };
 		2CE10D232B075A27003B6C81 /* PlayerProfileView+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE10D222B075A27003B6C81 /* PlayerProfileView+Content.swift */; };
 		2CE3EC4D2B0DC3FC00C0A896 /* SearchEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC4C2B0DC3FC00C0A896 /* SearchEntityModel.swift */; };
+		2CE3EC4F2B0DC4B400C0A896 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC4E2B0DC4B300C0A896 /* SearchModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +247,7 @@
 		2CE10D202B073B83003B6C81 /* PlayerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileViewModel.swift; sourceTree = "<group>"; };
 		2CE10D222B075A27003B6C81 /* PlayerProfileView+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerProfileView+Content.swift"; sourceTree = "<group>"; };
 		2CE3EC4C2B0DC3FC00C0A896 /* SearchEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntityModel.swift; sourceTree = "<group>"; };
+		2CE3EC4E2B0DC4B300C0A896 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +446,7 @@
 				2CC1715C2B08900400235890 /* SeasonModel.swift */,
 				2C88F9442AF35A4D007B28F8 /* DataModel.swift */,
 				2CB2D8DA2B0A556B0072A216 /* TransferModel.swift */,
+				2CE3EC4E2B0DC4B300C0A896 /* SearchModel.swift */,
 				2CE3EC4C2B0DC3FC00C0A896 /* SearchEntityModel.swift */,
 				2C3095FB2B0B8F5800350AB9 /* VenueModel.swift */,
 				2C9B80602B049A6700F98BA2 /* IncidentModel.swift */,
@@ -784,6 +787,7 @@
 				2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */,
 				2CDFB1572B07BD3D009BA1C1 /* TypeEntityPlayer.swift in Sources */,
 				2C0DBF4C2B009242002DE51B /* CountryModel.swift in Sources */,
+				2CE3EC4F2B0DC4B400C0A896 /* SearchModel.swift in Sources */,
 				2C3D5F602AF956620066790A /* PeriodType.swift in Sources */,
 				2C9576EB2AF779D200BC7F75 /* NoDataViewComponent.swift in Sources */,
 				2CE10D1F2B07329C003B6C81 /* PlayerProfileView+Components.swift in Sources */,
