@@ -24,7 +24,7 @@ struct TabBarView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            Text("Search")
+            SearchView(dataService: dataService)
                 .tabItem {
                     VStack {
                         Text("Search")

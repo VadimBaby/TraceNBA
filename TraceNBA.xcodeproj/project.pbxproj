@@ -121,6 +121,7 @@
 		2CE3EC4D2B0DC3FC00C0A896 /* SearchEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC4C2B0DC3FC00C0A896 /* SearchEntityModel.swift */; };
 		2CE3EC4F2B0DC4B400C0A896 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC4E2B0DC4B300C0A896 /* SearchModel.swift */; };
 		2CE3EC512B0DCC8700C0A896 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC502B0DCC8700C0A896 /* SearchViewModel.swift */; };
+		2CE3EC552B0DCFFC00C0A896 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +251,7 @@
 		2CE3EC4C2B0DC3FC00C0A896 /* SearchEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntityModel.swift; sourceTree = "<group>"; };
 		2CE3EC4E2B0DC4B300C0A896 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		2CE3EC502B0DCC8700C0A896 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +527,7 @@
 		2C88F95B2AF36D20007B28F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2CE3EC522B0DCFDB00C0A896 /* SearchView */,
 				2C3095F62B0B8DD100350AB9 /* TeamProfileView */,
 				2CE10D192B07309F003B6C81 /* PlayerProfileView */,
 				2CC2E2122B026216000A0CF9 /* PlayerStatisticsView */,
@@ -538,6 +541,7 @@
 		2C88F95E2AF36EF3007B28F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2CE3EC532B0DCFE300C0A896 /* SearchViewComponents */,
 				2C3095FD2B0C617A00350AB9 /* TeamProfileViewComponents */,
 				2CDFB1552B07BCF8009BA1C1 /* PlayerProfileViewComponents */,
 				2C0DBF212AFBB061002DE51B /* StatisticsMatchViewComponents */,
@@ -598,6 +602,21 @@
 				2CE10D1C2B07323C003B6C81 /* PlayerProfileView+Toolbar.swift */,
 			);
 			path = PlayerProfileView;
+			sourceTree = "<group>";
+		};
+		2CE3EC522B0DCFDB00C0A896 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				2CE3EC542B0DCFFB00C0A896 /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		2CE3EC532B0DCFE300C0A896 /* SearchViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchViewComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -787,6 +806,7 @@
 				2C3D5F5A2AF953820066790A /* StatisticsMatchModel.swift in Sources */,
 				2C88F9662AF37711007B28F8 /* StreamMatchesViewModel.swift in Sources */,
 				2C0DBF502B00BDE7002DE51B /* TypeTopTableItem.swift in Sources */,
+				2CE3EC552B0DCFFC00C0A896 /* SearchView.swift in Sources */,
 				2C88F9452AF35A4D007B28F8 /* DataModel.swift in Sources */,
 				2C88F9812AF4B32E007B28F8 /* MatchItemViewComponent.swift in Sources */,
 				2CDFB1572B07BD3D009BA1C1 /* TypeEntityPlayer.swift in Sources */,
