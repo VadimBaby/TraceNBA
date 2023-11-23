@@ -27,6 +27,8 @@ class TeamProfileViewModel: ObservableObject {
     }
     
     func getTeamDetails() {
+        guard self.teamDetails == nil else { return }
+        
         let task = Task {
             await asyncGetTeamDetails(isRefresh: false)
         }
@@ -35,6 +37,8 @@ class TeamProfileViewModel: ObservableObject {
     }
     
     func getTeamNearMatches() {
+        guard self.previousEvent == nil && self.nextEvent == nil else { return }
+        
         let task = Task {
             await asyncGetTeamNearMatches(isRefresh: false)
         }
@@ -43,6 +47,8 @@ class TeamProfileViewModel: ObservableObject {
     }
     
     func getTeamPlayers() {
+        guard self.players == nil else { return }
+        
         let task = Task {
             await asyncGetTeamPlayers(isRefresh: false)
         }
@@ -51,6 +57,8 @@ class TeamProfileViewModel: ObservableObject {
     }
     
     func getTeamMedia() {
+        guard self.media == nil else { return }
+        
         let task = Task {
             await asyncGetTeamMedia(isRefresh: false)
         }

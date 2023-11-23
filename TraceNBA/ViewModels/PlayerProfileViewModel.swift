@@ -66,6 +66,8 @@ class PlayerProfileViewModel: ObservableObject {
     }
     
     func getPlayerDetails() {
+        guard self.player == nil else { return }
+        
         let task1 = Task {
             await asyncGetPlayerDetails(isRefresh: false)
         }
@@ -74,6 +76,8 @@ class PlayerProfileViewModel: ObservableObject {
     }
     
     func getPlayerSeasons() {
+        guard self.seasons == nil else { return }
+        
         let task = Task {
             await asyncGetPlayerSeasons(isRefresh: false)
         }
@@ -82,6 +86,8 @@ class PlayerProfileViewModel: ObservableObject {
     }
     
     func getPlayerStatisticsRegularSeason(idSeason: Int) {
+        guard self.statistics == nil else { return }
+        
         let task = Task {
             await asyncGetPlayerStatisticsRegularSeason(idSeason: idSeason, isRefresh: false)
         }
@@ -90,6 +96,8 @@ class PlayerProfileViewModel: ObservableObject {
     }
     
     func getPlayerNearMatches() {
+        guard self.previousEvent == nil && self.nextEvent == nil else { return }
+        
         let task = Task {
             await asyncGetPlayerNearMatches(isRefresh: false)
         }
@@ -98,6 +106,8 @@ class PlayerProfileViewModel: ObservableObject {
     }
     
     func getPlayerTransferHistory() {
+        guard self.transferHistory == nil else { return }
+        
         let task = Task {
             await asyncGetPlayerTransferHistory(isRefresh: false)
         }
@@ -106,6 +116,8 @@ class PlayerProfileViewModel: ObservableObject {
     }
     
     func getPlayerMedia() {
+        guard self.media == nil else { return }
+        
         let task = Task {
             await asyncGetPlayerMedia(isRefresh: false)
         }
