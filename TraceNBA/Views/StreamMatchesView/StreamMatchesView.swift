@@ -20,41 +20,45 @@ struct StreamMatchesView: View {
     }
     
     var body: some View {
-        ZStack {
-            GradientComponent()
-            
-            if let matches = viewModel.listLiveMatches {
-                ScrollView {
-                    LazyVStack {
-                        LiveComponent()
-                            .frame(width: 250, height: 50)
-                        if matches.isEmpty {
-                            NoDataViewComponent(message: .noLiveMatches)
-                        } else {
-                            ForEach(matches) { match in
-                                MatchItemViewComponent(
-                                    matchModel: match,
-                                    dataService: dataService)
+        NavigationStack {
+            ZStack {
+                GradientComponent()
+                
+                if let matches = viewModel.listLiveMatches {
+                    ScrollView {
+                        LazyVStack {
+                            LiveComponent()
+                                .frame(width: 250, height: 50)
+                            if matches.isEmpty {
+                                NoDataViewComponent(message: .noLiveMatches)
+                            } else {
+                                ForEach(matches) { match in
+                                    MatchItemViewComponent(
+                                        matchModel: match,
+                                        dataService: dataService
+                                    )
+                                }
+                                
+                                PlugRectangleViewComponent()
                             }
-                            
-                            PlugRectangleViewComponent()
                         }
                     }
+                    .refreshable {
+                        await viewModel.asyncGetListLiveMatches(isRefresh: true)
+                    }
+                } else {
+                    ProgressView()
+                        .tint(Color.white)
                 }
-                .refreshable {
-                    await viewModel.asyncGetListLiveMatches(isRefresh: true)
-                }
-            } else {
-                ProgressView()
-                    .tint(Color.white)
+            }
+            .onAppear {
+                viewModel.getListLiveMatches()
+            }
+            .onDisappear {
+                viewModel.cancelAllTasks()
             }
         }
-        .onAppear {
-            viewModel.getListLiveMatches()
-        }
-        .onDisappear {
-            viewModel.cancelAllTasks()
-        }
+        .tint(Color.white)
     }
 }
 
