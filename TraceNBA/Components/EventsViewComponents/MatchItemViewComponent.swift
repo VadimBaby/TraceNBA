@@ -13,14 +13,22 @@ struct MatchItemViewComponent: View {
     let dataService: DataServiceProtocol
     
     var body: some View {
-        content
-            .frame(height: 105)
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 15)
-                    .fill(.thickMaterial)
+        NavigationLink(destination: {
+            StatisticsMatchView(
+                matchModel: matchModel,
+                dataService: dataService
             )
-            .padding(.horizontal)
+        }) {
+            content
+                .frame(height: 105)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(.thickMaterial)
+                )
+                .padding(.horizontal)
+        }
+        .tint(Color.primary)
     }
 }
 

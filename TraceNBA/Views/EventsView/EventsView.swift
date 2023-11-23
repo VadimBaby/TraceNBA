@@ -34,19 +34,10 @@ struct EventsView: View {
                             } else {
                                 LazyVStack {
                                     ForEach(matches) { match in
-                                        NavigationLink {
-                                            StatisticsMatchView(
-                                                matchModel: match,
-                                                dataService: dataService
-                                            )
-                                        } label: {
-                                            MatchItemViewComponent(
-                                                matchModel: match,
-                                                dataService: dataService
-                                            )
-                                        }
-                                        .tint(Color.primary)
-
+                                        MatchItemViewComponent(
+                                            matchModel: match,
+                                            dataService: dataService
+                                        )
                                     }
                                     
                                     PlugRectangleViewComponent()
