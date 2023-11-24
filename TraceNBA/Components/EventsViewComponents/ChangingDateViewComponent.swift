@@ -13,7 +13,7 @@ struct ChangingDateViewComponent: View {
     
     var formatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
+        formatter.dateFormat = "d MMMM"
         
         return formatter
     }
