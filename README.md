@@ -8,10 +8,10 @@ Thanks to its convenient and intuitive interface, TraceNBA allows you to stay in
 
 # Screenshots
 
-<span><img src="screenshots/1.png" alt="screenshots/1" width="270px"></span>
-<span><img src="screenshots/2.png" alt="screenshots/2" width="270px"></span>
-<span><img src="screenshots/3.png" alt="screenshots/3" width="270px"></span>
-<span><img src="screenshots/4.png" alt="screenshots/4" width="270px"></span>
-<span><img src="screenshots/5.png" alt="screenshots/5" width="270px"></span>
-<span><img src="screenshots/6.png" alt="screenshots/6" width="270px"></span>
-<span><img src="screenshots/7.png" alt="screenshots/7" width="270px"></span>
+<span><img src="screenshots/1.PNG" alt="screenshots/1" width="270px"></span>
+<span><img src="screenshots/2.PNG" alt="screenshots/2" width="270px"></span>
+<span><img src="screenshots/3.PNG" alt="screenshots/3" width="270px"></span>
+<span><img src="screenshots/4.PNG" alt="screenshots/4" width="270px"></span>
+<span><img src="screenshots/5.PNG" alt="screenshots/5" width="270px"></span>
+<span><img src="screenshots/6.PNG" alt="screenshots/6" width="270px"></span>
+<span><img src="screenshots/7.PNG" alt="screenshots/7" width="270px"></span>
