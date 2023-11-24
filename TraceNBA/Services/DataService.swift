@@ -277,4 +277,8 @@ actor DataService: DataServiceProtocol {
         
         return intTypeTime
     }
+    
+    func setLastRequestIntervalAsDate() async {
+        lastRequestInterval = Date().timeIntervalSince1970
+    }
 }

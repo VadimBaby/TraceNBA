@@ -175,4 +175,6 @@ actor MockDataService<AnyData: Codable>: DataServiceProtocol {
         
         return uiImage
     }
+    
+    func setLastRequestIntervalAsDate() {}
 }

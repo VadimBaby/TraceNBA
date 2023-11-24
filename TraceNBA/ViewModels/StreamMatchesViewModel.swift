@@ -64,6 +64,10 @@ final class StreamMatchesViewModel: ObservableObject {
     func cancelAllTasks() {
         tasks.forEach{ $0.cancel() }
         tasks = []
+        
+        Task {
+            await manager.setLastRequestIntervalAsDate()
+        }
     }
     
     func getLiveMatches_Tests() async throws -> [MatchModel] {

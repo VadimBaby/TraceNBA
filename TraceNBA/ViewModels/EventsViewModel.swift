@@ -113,5 +113,9 @@ final class EventsViewModel: ObservableObject {
         tasks.forEach{ $0.cancel() }
         
         tasks = []
+        
+        Task {
+            await dataService.setLastRequestIntervalAsDate()
+        }
     }
 }

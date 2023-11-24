@@ -280,6 +280,10 @@ class PlayerProfileViewModel: ObservableObject {
         tasks.forEach{ $0.cancel() }
         
         tasks = []
+        
+        Task {
+            await dataService.setLastRequestIntervalAsDate()
+        }
     }
     
     private func getPlayerDetailsData(id: Int, isRefresh: Bool) async throws -> PlayerModel {

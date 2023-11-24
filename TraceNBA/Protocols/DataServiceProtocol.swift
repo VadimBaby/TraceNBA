@@ -46,4 +46,6 @@ protocol DataServiceProtocol {
     func getTeamMedia(id: Int, isRefresh: Bool) async throws -> Data
     
     func search(search: String, isRefresh: Bool) async throws -> Data
+    
+    func setLastRequestIntervalAsDate() async
 }
