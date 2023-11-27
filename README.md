@@ -15,3 +15,4 @@ Thanks to its convenient and intuitive interface, TraceNBA allows you to stay in
 <span><img src="screenshots/5.PNG" alt="screenshots/5" width="270px"></span>
 <span><img src="screenshots/6.PNG" alt="screenshots/6" width="270px"></span>
 <span><img src="screenshots/7.PNG" alt="screenshots/7" width="270px"></span>
+<span><img src="screenshots/7.PNG" alt="screenshots/8" width="270px"></span>
